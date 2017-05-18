@@ -1,0 +1,141 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar  4 09:13:43 2017
+
+@author: hollymandel
+"""
+
+from sympy import *
+import numpy as np
+import math as math
+
+def straight(N,k,d):
+        if math.ceil(k/d) > math.floor(k/d):
+            val = 0
+        else: 
+            val = binomial(N/d,k/d)
+        return val
+
+def rushShi(m,tableauHeight,d,doubleStart,doubleEnd):
+    topList = []
+    bottomList = []
+    for n in range(1,int(tableauHeight)+1):
+        if n in range(int(doubleStart),int(doubleEnd)+1):
+            if (m + n) % d == 0:
+                topList = topList + [ (m+n), (m+n) ]
+            if n % d == 0:
+                bottomList = bottomList + [ n, n ]
+        else:
+            if (m + n) % d == 0:
+                topList = topList + [ (m+n)  ]
+            if n % d == 0:
+                bottomList = bottomList + [ n ]
+                
+    outPut = 1
+    if len(topList) > len(bottomList):
+        outPut = 0
+    else:                               
+        for j in topList:
+            outPut *= j
+        for j in bottomList:
+            outPut *= (1/j)
+    
+    return topList, bottomList,outPut
+
+# I think what I will want later is a symbolic expression
+# Want symbolic: m
+# Want numerical: tableauHeight,d,doubleStart,doubleEnd
+# Assume valid d
+
+# I DID NOT CHECK THAT THE PARAMETERS BELOW ARE RIGHT FOR THE GIVEN TABLEAU SHAPE
+
+#def rushShiSymbolic(tableauHeight,d,doubleStart,doubleEnd):
+#    topList = []
+#    bottomList = []
+#    m = Symbol('m',integer=True)
+#    for n in range(1,int(tableauHeight/d)):
+#        topList = topList + [n+m]
+#        bottomList = bottomList + [n]
+#        if doubleStart < tableauHeight-n*d & tableauHeight-n*d < doubleEnd:
+#            topList = topList + [n+m]
+#            
+#        if doubleStart < n*d & n*d < doubleEnd:
+#            bottomList = bottomList + [n]
+#
+#    topProduct = 1
+#    bottomProduct = 1
+#    if len(topList) > len(bottomList):
+#        outPut = 0
+#    else:                               
+#        for j in topList:
+#            topProduct *= j
+#        for j in bottomList:
+#            bottomProduct *= j
+#
+#    return topProduct,bottomProduct
+#
+#[a,b] = rushShiSymbolic(10,2,4,6)
+#print(a)
+#print(b)
+
+# N = desired max ht, tableauMaxHt
+def promoteOrbits(N,posetMaxRank,fullContentOrbits):  
+    contentLength = len(fullContentOrbits)  
+    promotedOrbits = []
+    alytPrediction = []
+    for j in range(0,contentLength):
+        maxHt = fullContentOrbits[j][0]
+        orbitSize = fullContentOrbits[j][1]
+        numOrbits = fullContentOrbits[j][2]
+        for d in range(1,posetMaxRank+1):
+            if N % d == 0 and posetMaxRank % d == 0:
+                numTableaux = int(straight(N,maxHt,d) * orbitSize)
+                promotedPeriod = int(orbitSize * (N/d) / gcd(int((N-posetMaxRank)/d),int(orbitSize)))
+                promotedOrbits += [ promotedPeriod, numTableaux, d, j+1 ]
+    numRows = int(len(promotedOrbits)/4)
+    promotedOrbits = np.reshape(promotedOrbits,[numRows,4], order='C')    
+    return promotedOrbits
+
+def collectPromotedOrbits(N,posetMaxRank,fullContentOrbits,promotedOrbits):
+    # goal: get the data into the same form as the Rush-Shi prediction. So, for every 
+    # d, find out how many tableaux corresponding to that coperiod d 
+    outPut = []
+    numPromotedOrbits = len(promotedOrbits);
+    for d in range(1,posetMaxRank+1):
+        if N % d == 0 and posetMaxRank % d == 0:
+            thisSum = 0
+            for k in range(0,numPromotedOrbits):
+                getPd = promotedOrbits[k][0]
+                getTableaux = promotedOrbits[k][1]
+                if int(N/getPd) % d == 0:
+                    thisSum += getTableaux
+            outPut += [N/d,thisSum]
+    
+    outPut = np.reshape(outPut,[int(len(outPut)/2),2], order = 'C')
+            
+    return outPut
+            
+
+#l = 5; m = 2; 
+fullContentOrbits = [[7,1,1],[8,2,1]] # maxHt, orbit size, number of orbits
+N = 21; posetMaxRank = 7;
+
+rushShiPred = []
+for d in range(1,int(posetMaxRank)+1):
+    if N % d == 0 and posetMaxRank % d == 0:       
+        [a,b,outPut] = rushShi(14,7,d,(posetMaxRank+1)/2,(posetMaxRank+1)/2)
+        rushShiPred += [ N/d, outPut ]
+
+tally = int(len(rushShiPred)/2)
+rushShiPred = np.reshape(rushShiPred,[tally,2])
+print(rushShiPred)
+
+promotedOrbits = promoteOrbits(N,posetMaxRank,fullContentOrbits)
+print("promoted period, number of tableaux, coperiod, enry in input")
+print(promotedOrbits)
+
+outPut = collectPromotedOrbits(N,posetMaxRank,fullContentOrbits,promotedOrbits)
+print(outPut)
+#
+#

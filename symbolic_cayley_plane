@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 17 14:25:17 2017
+
+@author: hollymandel
+"""
+
+from sympy import *
+import numpy as np
+np.set_printoptions(threshold=1000000000)
+import math as math
+from IPython import embed
+import symbolic_poset_functions
+
+tableauIn = [1,1,1,2,2,2,2,2,1,1,1]
+#tableauIn = [1,1,1,2,1,1,1]
+maxRank = len(tableauIn)-1
+fullContentOrbits = [
+        [11,1,1],
+        [12,3,1],
+        [12,12,1],
+        [13,13,6],
+        [14,7,2],
+        [14,14,12],
+        [15,15,13],
+        [16,2,1],
+        [16,4,1],
+        [16,8,1],
+        [16,16,4]]
+
+#promotedOrbits = promoteOrbitsSymbolic(tableauIn,fullContentOrbits)
+
+# decide which of the possible d divide m+11 
+# say this step is done (including "propagating")
+# assume  m > 5 so that all orbits promoted
+m = Symbol('m')
+collectPeriods = {}
+rushShiPeriods = {}
+
+dVals = [1,2,4,5] # a valid possible combination
+
+for d in range(1,12):
+    [a,b,getRushShiPeriod] = symbolic_poset_functions.rushShiSymbolic(d,tableauIn)
+    rushShiPeriods[(m+maxRank+1)/d] = getRushShiPeriod
+                   
+for d in dVals:   
+    for t in range(0,len(fullContentOrbits)):
+        # compute number of content vectors
+        fcHt = fullContentOrbits[t][0]
+        tau_f = fullContentOrbits[t][1]
+        numOrbits = fullContentOrbits[t][2]
+        [numerator,denominator,quotient] = symbolic_poset_functions.rushShiSymbolic(d,np.ones([fcHt,1], dtype=int, order='C'))
+        numTableaux =numerator*tau_f*numOrbits/denominator
+        # compute resulting period
+        tau_c = (m + maxRank + 1)/d
+        period = tau_f * tau_c/int(gcd(fcHt/d,tau_f))
+        if period in collectPeriods.keys():
+            collectPeriods[period] += numTableaux
+        else:
+            collectPeriods[period] = numTableaux
+                          
+print(rushShiPeriods.keys())
+
+for t in list(collectPeriods.keys()):
+    if t not in rushShiPeriods.keys():
+        rushShiPeriods[t] = 0  
+        print(t)
+
+differences = {}
+for t in list(collectPeriods.keys()):
+    differences[t] = rushShiPeriods[t] - collectPeriods[t]
+    
+# well this doesn't match yet
+
+                          
+
+        
+        
+        
+        
+
+

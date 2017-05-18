@@ -1,0 +1,109 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar  4 09:13:43 2017
+
+@author: hollymandel
+"""
+
+from sympy import *
+import numpy as np
+import math as math
+
+# want tableau-describing input to be array of multiplicities
+def rushShiSymbolic(d,tableauIn):
+    topList = Symbol('topList',int=True)
+    topList = 1
+    bottomList = 1
+    lenTopList = 0
+    lenBotList = 0
+    m = Symbol('m',int=true)
+    maxRank = len(tableauIn) - 1
+    
+    t = 0
+    while t*d < maxRank+1:
+        downExponent = tableauIn[maxRank-t]
+        upExponent = tableauIn[t]
+        topList *= (m+maxRank+1-t*d)**downExponent
+        bottomList *= ((1+t)*d)**upExponent
+        t += 1  
+    outPut = topList / bottomList
+    
+    return topList, bottomList, outPut
+
+#N = desired max ht, tableauMaxHt
+def promoteOrbitsSymbolic(tableauIn,fullContentOrbits): 
+    # Since our two varieties of interest have prime maximum rank, I am only 
+    # writing in the case where d = 1 and d = maxRank and having it give out 
+    # inputs for either case. The difference will be determined by hand in
+    # the collectPromotedOrbits stage
+    maxRank = len(tableauIn)-1
+    m = Symbol('m',int=true)
+    N = m + maxRank + 1
+    contentLength = len(fullContentOrbits)  
+    promotedOrbits = []
+    alytPrediction = []    
+    for j in range(0,contentLength):
+        maxHt = fullContentOrbits[j][0]
+        orbitSize = fullContentOrbits[j][1]
+        numOrbits = fullContentOrbits[j][2]
+        for d in [1,maxRank+1]:
+            straightShape = np.ones([maxRank+maxHt,1], dtype=int, order='C')
+            [ topList,bottomList,numContentVectors ] = rushShiSymbolic(d,straightShape)
+            numTableauxNumerator = topList * int(orbitSize)
+            numTableauxDenominator = bottomList
+            promotedPeriod = orbitSize * (N/d) / gcd(int(maxRank/d),int(orbitSize))
+            promotedOrbits += [ promotedPeriod, numTableauxNumerator, numTableauxDenominator, d, j+1 ]       
+    numRows = int(len(promotedOrbits)/5)
+    promotedOrbits = np.reshape(promotedOrbits,[numRows,5], order='C')    
+    return promotedOrbits
+
+
+def collectPromotedOrbits(tableauIn,fullContentOrbits,promotedOrbits):
+    # goal: get the data into the same form as the Rush-Shi prediction. So, for every 
+    # d, find out how many tableaux corresponding to that coperiod d 
+    outPut = []
+    maxRank = len(tableauIn)-1
+    numPromotedOrbits = len(promotedOrbits);
+    m = Symbol('m',int=True)
+    N = m + maxRank + 1
+    for d in [1,maxRank+1]:
+        thisNum = 0
+        thisDenom = 0
+        for k in range(0,numPromotedOrbits):
+            getPd = promotedOrbits[k][0]
+            getTableauxNumerator = promotedOrbits[k][1]
+            getTableauxDenominator = promotedOrbits[k][2]
+            if getPd % d == 0:
+                thisSum += getTableaux
+        outPut += [d,thisNum,thisDenom]
+    
+    outPut = np.reshape(outPut,[int(len(outPut)/2),2], order = 'C')
+            
+    return outPut
+            
+#l = 5; m = 2; 
+tableauIn = [1]
+maxRank = len(tableauIn)-1
+fullContentOrbits = [[4,1,1],[5,2,1]] # maxHt, orbit size, number of orbits
+promotedOrbits = promoteOrbitsSymbolic(tableauIn,fullContentOrbits)
+print(promotedOrbits)
+
+rushShiPred = []
+m = Symbol('m',int=True)
+for d in range(1,int(maxRank)+1):
+    if maxRank % d == 0:       
+        [a,b,outPut] = rushShiSymbolic(d,tableauIn)
+        rushShiPred += [ (m + maxRank + 1)/d, outPut ]
+
+tally = int(len(rushShiPred)/2)
+rushShiPred = np.reshape(rushShiPred,[tally,2])
+print(rushShiPred)
+
+promotedOrbits = promoteOrbitsSymbolic(tableauIn,fullContentOrbits)
+print("promoted period, number of tableaux, coperiod, enry in input")
+print(promotedOrbits)
+
+#outPut = collectPromotedOrbits(tableauIn,fullContentOrbits,promotedOrbits)
+#print(outPut)
+
