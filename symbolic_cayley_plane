@@ -35,7 +35,7 @@ fullContentOrbits = [[7,1,1],[8,2,1]]
 # decide which of the possible d divide m+11 
 # say this step is done (including "propagating")
 # assume  m > 5 so that all orbits promoted
-m = Symbol('m')
+m = Symbol('m',int=True)
 collectPeriods = {}
 rushShiPeriods = {}
 
@@ -57,14 +57,16 @@ for t in range(0,len(fullContentOrbits)):
             tau_f = fullContentOrbits[t][1]
             numOrbits = fullContentOrbits[t][2]
             [numerator,denominator,quotient] = symbolic_poset_functions.rushShiSymbolic(d,np.ones([fcHt,1], dtype=int, order='C'))
+            numerator = sympify(numerator)
+            numerator = numerator.subs(m,m-(fcHt-(maxRank+1)))
             numTableaux =numerator*tau_f*numOrbits/denominator
             origNumTableaux[d] = numTableaux
-            for u in range(0,s-1):
+            for u in range(0,s):
                 e = dVals[u]
                 if fcHt % e == 0:
                     if e % d == 0:
-#                        numTableaux += saveNumTableaux[e]*(-1)**(dLevels[s]-dLevels[u])
                         numTableaux += -saveNumTableaux[e]
+
             saveNumTableaux[d] = numTableaux
                           
             # compute resulting period
@@ -74,8 +76,7 @@ for t in range(0,len(fullContentOrbits)):
                 collectPeriods[period] += numTableaux
             else:
                 collectPeriods[period] = numTableaux
-                          
-#print(rushShiPeriods.keys())
+
 
 for t in list(collectPeriods.keys()):
     if t not in rushShiPeriods.keys():
