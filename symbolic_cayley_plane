@@ -13,21 +13,22 @@ import math as math
 from IPython import embed
 import symbolic_poset_functions
 
-tableauIn = [1,1,1,2,2,2,2,2,1,1,1]
-#tableauIn = [1,1,1,2,1,1,1]
+#tableauIn = [1,1,1,2,2,2,2,2,1,1,1]
+tableauIn = [1,1,1,2,1,1,1]
 maxRank = len(tableauIn)-1
-fullContentOrbits = [
-        [11,1,1],
-        [12,3,1],
-        [12,12,1],
-        [13,13,6],
-        [14,7,2],
-        [14,14,12],
-        [15,15,13],
-        [16,2,1],
-        [16,4,1],
-        [16,8,1],
-        [16,16,4]]
+fullContentOrbits = [[7,1,1],[8,2,1]]
+#fullContentOrbits = [
+#        [11,1,1],
+#        [12,3,1],
+#        [12,12,1],
+#        [13,13,6],
+#        [14,7,2],
+#        [14,14,12],
+#        [15,15,13],
+#        [16,2,1],
+#        [16,4,1],
+#        [16,8,1],
+#        [16,16,4]]
 
 #promotedOrbits = promoteOrbitsSymbolic(tableauIn,fullContentOrbits)
 
@@ -38,41 +39,55 @@ m = Symbol('m')
 collectPeriods = {}
 rushShiPeriods = {}
 
-dVals = [1,2,4,5] # a valid possible combination
-
-for d in range(1,12):
+#dVals = [1,2,4,5] # a valid possible combination
+dVals = [8,4,2,1]
+dLevels = [4,3,2,1]
+for d in dVals:
     [a,b,getRushShiPeriod] = symbolic_poset_functions.rushShiSymbolic(d,tableauIn)
     rushShiPeriods[(m+maxRank+1)/d] = getRushShiPeriod
                    
-for d in dVals:   
-    for t in range(0,len(fullContentOrbits)):
+for t in range(0,len(fullContentOrbits)):
+    origNumTableaux = {}
+    saveNumTableaux = {}
+    for s in range(0,len(dVals)):
+        d = dVals[s]
         # compute number of content vectors
         fcHt = fullContentOrbits[t][0]
-        tau_f = fullContentOrbits[t][1]
-        numOrbits = fullContentOrbits[t][2]
-        [numerator,denominator,quotient] = symbolic_poset_functions.rushShiSymbolic(d,np.ones([fcHt,1], dtype=int, order='C'))
-        numTableaux =numerator*tau_f*numOrbits/denominator
-        # compute resulting period
-        tau_c = (m + maxRank + 1)/d
-        period = tau_f * tau_c/int(gcd(fcHt/d,tau_f))
-        if period in collectPeriods.keys():
-            collectPeriods[period] += numTableaux
-        else:
-            collectPeriods[period] = numTableaux
+        if fcHt % d == 0:
+            tau_f = fullContentOrbits[t][1]
+            numOrbits = fullContentOrbits[t][2]
+            [numerator,denominator,quotient] = symbolic_poset_functions.rushShiSymbolic(d,np.ones([fcHt,1], dtype=int, order='C'))
+            numTableaux =numerator*tau_f*numOrbits/denominator
+            origNumTableaux[d] = numTableaux
+            for u in range(0,s-1):
+                e = dVals[u]
+                if fcHt % e == 0:
+                    if e % d == 0:
+#                        numTableaux += saveNumTableaux[e]*(-1)**(dLevels[s]-dLevels[u])
+                        numTableaux += -saveNumTableaux[e]
+            saveNumTableaux[d] = numTableaux
                           
-print(rushShiPeriods.keys())
+            # compute resulting period
+            tau_c = (m + maxRank + 1)/d
+            period = (tau_f * tau_c)/int(gcd(fcHt/d,tau_f))
+            if period in collectPeriods.keys():
+                collectPeriods[period] += numTableaux
+            else:
+                collectPeriods[period] = numTableaux
+                          
+#print(rushShiPeriods.keys())
 
 for t in list(collectPeriods.keys()):
     if t not in rushShiPeriods.keys():
         rushShiPeriods[t] = 0  
-        print(t)
+#        print(t)
 
 differences = {}
 for t in list(collectPeriods.keys()):
     differences[t] = rushShiPeriods[t] - collectPeriods[t]
     
-# well this doesn't match yet
-
+# REHASH RUSH SHI PREDICTION FOR STRAIGHT SHAPES TO DEAL WITH LOWER-THAN-EXPECTED
+# PERIOD - 5/22/17
                           
 
         
