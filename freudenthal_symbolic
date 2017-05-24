@@ -13,22 +13,17 @@ import math as math
 from IPython import embed
 import symbolic_poset_functions
 
-tableauIn = [1,1,1,2,2,2,2,2,1,1,1]
+tableauIn = [1,1,1,1,2,2,2,2,3,2,2,2,2,1,1,1,1]
 #tableauIn = [1,1,1,2,1,1,1]
 maxRank = len(tableauIn)-1
 #fullContentOrbits = [[7,1,1],[8,2,1]]
 fullContentOrbits = [
-        [11,1,1],
-        [12,3,1],
-        [12,12,1],
-        [13,13,6],
-        [14,7,2],
-        [14,14,12],
-        [15,15,13],
-        [16,2,1],
-        [16,4,1],
-        [16,8,1],
-        [16,16,4]]
+        [17,1,1],
+        [18,2,1],
+        [18,18,2],
+        [19,19,30],
+        [20,20,228]]
+
 
 #promotedOrbits = promoteOrbitsSymbolic(tableauIn,fullContentOrbits)
 
@@ -39,40 +34,37 @@ m = Symbol('m',int=True)
 
 
 true = []
-powers = [2,4,8,16]
+powers = [2,4]
 ones = [1]
 # possible divisors
 #[2 3 5 7 11 13]
 loopId = 0
-for x2 in range(0,4+1):
-    for x3 in range(0,1+1):
+for x2 in range(0,2+1):
+    for x3 in range(0,2+1):
         for x5 in range(0,1+1):
-            for x7 in range(0,1+1):
-                for x11 in range(0,1+1):
-                    for x13 in range(0,1+1):
+            for x17 in range(0,1+1):
+                for x19 in range(0,1+1):
                         
                         collectPeriods = {}
                         rushShiPeriods = {}
                         dVals = []
                         
-                        if x2 > 3:
-                            dVals.append(16)
-                        if x3 > 0 & x5 > 0:
+                        if x2 > 1 & x5 > 0:
+                            dVals.append(20)
+                        if x19 > 0:
+                            dVals.append(19)
+                        if x2 > 0 & x3 > 1:
+                            dVals.append(18)
+                        if x17 > 0:
+                            dVals.append(17)
+                        if x5 > 0 & x3 > 0:
                             dVals.append(15)
-                        if x2 > 0 & x7 > 0:
-                            dVals.append(14)
-                        if x13 > 0:
-                            dVals.append(13)
-                        if x2 > 1 & x3 > 0:
+                        if x3 > 0 & x2 > 1:
                             dVals.append(12)
-                        if x11 > 0:
-                            dVals.append(11)
                         if x2 > 0 & x5 > 0:
                             dVals.append(10)
-                        if x2 > 2:
-                            dVals.append(8)
-                        if x7 > 0:
-                            dVals.append(7)
+                        if x3 > 1:
+                            dVals.append(9)
                         if x2 > 0 & x3 > 0:
                             dVals.append(6)
                         if x5 > 0:
