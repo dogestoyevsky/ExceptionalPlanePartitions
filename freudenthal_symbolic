@@ -95,7 +95,7 @@ for x2 in range(0,2+1):
                                     [numerator,denominator,quotient] = symbolic_poset_functions.rushShiSymbolic(d,np.ones([fcHt,1], dtype=int, order='C'))
                                     numerator = sympify(numerator)
                                     numerator = numerator.subs(m,m-(fcHt-(maxRank+1)))
-                                    numTableaux =numerator*tau_f*numOrbits/denominator
+                                    numTableaux = numerator*tau_f*numOrbits/denominator
                                     origNumTableaux[d] = numTableaux
                                     for u in range(0,s):
                                         e = dVals[u]

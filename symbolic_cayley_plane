@@ -91,6 +91,8 @@ for x2 in range(0,4+1):
                             rushShiPeriods[(m+maxRank+1)/d] = getRushShiPeriod
                                            
                         for t in range(0,len(fullContentOrbits)):
+                            tau_f = fullContentOrbits[t][1]
+                            numOrbits = fullContentOrbits[t][2]
                             origNumTableaux = {}
                             saveNumTableaux = {}
                             for s in range(0,len(dVals)):
@@ -98,12 +100,11 @@ for x2 in range(0,4+1):
                                 # compute number of content vectors
                                 fcHt = fullContentOrbits[t][0]
                                 if fcHt % d == 0:
-                                    tau_f = fullContentOrbits[t][1]
-                                    numOrbits = fullContentOrbits[t][2]
+
                                     [numerator,denominator,quotient] = symbolic_poset_functions.rushShiSymbolic(d,np.ones([fcHt,1], dtype=int, order='C'))
                                     numerator = sympify(numerator)
                                     numerator = numerator.subs(m,m-(fcHt-(maxRank+1)))
-                                    numTableaux =numerator*tau_f*numOrbits/denominator
+                                    numTableaux =numerator/denominator
                                     origNumTableaux[d] = numTableaux
                                     for u in range(0,s):
                                         e = dVals[u]
@@ -124,9 +125,9 @@ for x2 in range(0,4+1):
                                         if getGcd % u == 0:
                                             periodPrime = period*u
                                             if periodPrime in collectPeriods.keys():
-                                                collectPeriods[periodPrime] += numTableaux
+                                                collectPeriods[periodPrime] += tau_f*numOrbits*numTableaux
                                             else:
-                                                collectPeriods[periodPrime] = numTableaux
+                                                collectPeriods[periodPrime] = tau_f*numOrbits*numTableaux
                              
                         
                         
