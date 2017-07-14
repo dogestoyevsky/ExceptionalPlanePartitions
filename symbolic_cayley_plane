@@ -135,15 +135,15 @@ for x2 in range(0,4+1):
                             if t not in rushShiPeriods.keys():
                                 rushShiPeriods[t] = 0  
                         
-                        allTrue = 1
+                        allTrue = 0
                         differences = {}
                         for t in list(collectPeriods.keys()):
                             differencesGet = rushShiPeriods[t] - collectPeriods[t]
                             differencesGet = sympify(differencesGet)
                             differencesGet = simplify(differencesGet)
                             differences[t] = differencesGet
-                            if differences[t] != 0:
-                                allTrue = 0
+                            if differences[t] == 0:
+                                allTrue = 1
                                        
                         true += [ allTrue ]
                         
