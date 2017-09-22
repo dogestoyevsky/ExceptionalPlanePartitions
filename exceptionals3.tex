@@ -1,0 +1,1001 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath,amsfonts,amssymb,mathabx,shuffle,latexsym,breqn,stmaryrd,mathtools}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage[backref=page]{hyperref}
+\usepackage{ytableau}
+\usepackage{tikz-cd}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes, backgrounds,arrows.meta,positioning,plotmarks,decorations.markings}
+\tikzset{>=Straight Barb,
+  head/.style = {fill = white, text=black},
+  plaque/.style = {draw, rectangle, minimum size = 10mm}, 
+  pil/.style={->,thick},
+  pilpil/.style={<->,thick},
+  junct/.style = {draw,circle,inner sep=0.5pt,outer sep=0pt, fill=black}
+  }
+ 
+%\usepackage{fullpage}
+\setlength{\evensidemargin}{0in} 
+\setlength{\textheight}{8.4in}      
+\setlength{\textwidth}{6in}    
+\setlength{\topmargin}{0in}      
+\setlength{\oddsidemargin}{0in} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dynkin things
+\newcommand{\dynkinradius}{.10cm}
+\newcommand{\dynkinstep}{.48cm}
+\newcommand{\dynkinblack}[2]{\fill (\dynkinstep*#1,\dynkinstep*#2) circle (\dynkinradius);}
+%\newcommand{\dynkinXsize}{1.5}
+\newcommand{\dynkinwhite}[2]{\filldraw[fill=SkyBlue,draw=black] (\dynkinstep*#1,\dynkinstep*#2) circle (\dynkinradius);}
+\newcommand{\dynkinline}[4]{\draw[thin] (\dynkinstep*#1,\dynkinstep*#2) -- (\dynkinstep*#3,\dynkinstep*#4);}
+\newcommand{\dynkindots}[4]{\draw[dotted,very thick] (\dynkinstep*#1,\dynkinstep*#2) -- (\dynkinstep*#3,\dynkinstep*#4);}
+\newcommand{\dynkindoubleline}[4]{\draw[double,double distance between line centers=0.17em,postaction={decorate}] (\dynkinstep*#1,\dynkinstep*#2) -- (\dynkinstep*#3,\dynkinstep*#4);}
+
+\newenvironment{dynkin}{\begin{tikzpicture}[decoration={markings,mark=at position 0.7 with {\arrow{>[scale=.7]}}}]}
+{\end{tikzpicture}}
+
+\usepackage{enumitem}
+\newlist{arrowlist}{itemize}{1}
+\setlist[arrowlist]{label=$\Rightarrow$}
+\newcommand{\x}{\ensuremath{\mathsf{x}}}
+\newcommand{\y}{\ensuremath{\mathsf{y}}}
+\newcommand{\e}{\ensuremath{\mathsf{e}}}
+\newcommand{\aaa}{\ensuremath{\mathsf{a}}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Environments 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{examplex}[theorem]{Example}
+\newenvironment{example}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\diamondsuit$}\examplex}
+  {\popQED\endexamplex}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MACROS for this particular document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\ex}{ex}
+\newcommand{\wt}{\ensuremath{\mathrm{wt}}}
+\newcommand{\kwt}{\ensuremath{\mathrm{kwt}}}
+\newcommand{\rev}{\ensuremath{\mathrm{rev}}}
+\newcommand{\inv}{\ensuremath{\mathrm{inv}}}
+\newcommand{\reduct}{\ensuremath{\mathtt{reduct}}}
+\newcommand{\Des}{\ensuremath{\mathrm{Des}}}
+\newcommand{\SSYT}{\ensuremath{\mathrm{SSYT}}}
+\newcommand{\SYT}{\ensuremath{\mathrm{SYT}}}
+\newcommand{\sit}{\ensuremath{\mathrm{sit}}}
+\newcommand{\gen}{\ensuremath{\mathrm{gen}}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\inc}{\ensuremath{\mathrm{Inc}}}
+\newcommand{\incgl}{\inc_{\mathrm{gl}}}
+\newcommand{\pro}{\mathcal{P}}
+\newcommand{\evac}{\mathcal{E}}
+\newcommand{\rot}{\ensuremath{\mathsf{rot}}}
+\newcommand{\Frame}{\ensuremath{\mathsf{Frame}}}
+\newcommand{\rect}{\ensuremath{\mathsf{rect}}}
+\newcommand{\LIS}{\ensuremath{\mathsf{LIS}}}
+\newcommand{\swap}{\ensuremath{\mathsf{swap}}}
+\newcommand{\ein}{\ensuremath{\mathsf{In}}}
+\newcommand{\eout}{\ensuremath{\mathsf{Out}}}
+\newcommand{\decr}{\ensuremath{\mathsf{Decr}}}
+\newcommand{\partialfill}{\ensuremath{\mathsf{PartialFilling}}}
+\newcommand{\bulltab}{\ensuremath{\mathsf{BulletTableaux}}}
+\newcommand{\slide}{\ensuremath{\mathsf{slide}}}
+\newcommand{\rep}{\ensuremath{\mathsf{Rep}}}
+\newcommand{\blank}{\phantom{2}}
+\newcommand{\shape}{\ensuremath{\mathsf{sh}}}
+\newcommand{\id}{\ensuremath{\mathrm{id}}}
+\newcommand{\bbb}{\ensuremath{\mathsf{b}}}
+\newcommand{\dist}{\ensuremath{\mathrm{Dist}}}
+\newcommand{\rank}{\ensuremath{\mathrm{rk}}}
+\newcommand{\mot}{\ensuremath{\mathrm{Mot}}}
+\newcommand{\pp}{\ensuremath{\mathsf{PP}}}
+\newcommand{\deflate}{\ensuremath{\mathsf{Defl}}}
+\newcommand{\inflate}{\ensuremath{\mathsf{VecInfl}}}
+\newcommand{\tinflate}{\ensuremath{\mathsf{Infl}}}
+\newcommand{\content}{\ensuremath{\mathsf{Con}}}
+\newcommand{\compress}{\ensuremath{\mathsf{DeflCon}}}
+
+\newcommand{\uu}{\mathcal{I}}
+
+% Fancy comments
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\holly}[1]{\todo[size=\tiny,color=blue!30]{#1 \\ \hfill --- Holly}}
+\newcommand{\Holly}[1]{\todo[size=\tiny,inline,color=blue!30]{#1
+      \\ \hfill --- Holly}}
+\newcommand{\oliver}[1]{\todo[size=\tiny,color=red!30]{#1 \\ \hfill --- Oliver}}
+\newcommand{\Oliver}[1]{\todo[size=\tiny,inline,color=red!30]{#1
+      \\ \hfill --- Oliver}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  TITLE PAGE information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%     [Short Title]{Full Title}
+\title[Orbits of plane partitions]{On orbits of plane partitions of exceptional Lie type}  
+
+%    Information for first author
+\author[H. Mandel]{Holly Mandel}
+\address[HM]{Department of Mathematics, University of California, Berkeley, \linebreak Berkeley, CA 94720}
+\email{holly.mandel@berkeley.edu}
+%\thanks{}
+
+\author[O. Pechenik]{Oliver Pechenik}
+\address[OP]{Department of Mathematics, University of Michigan, Ann Arbor, MI 48109}
+\email{pechenik@umich.edu}
+%\thanks{}
+
+%    General info
+\subjclass[2010]{Primary 05A15; Secondary 05E18, 06A07, 17B25}
+
+\date{\today}
+
+%\dedicatory{}
+
+\keywords{plane partition, increasing tableau, promotion, rowmotion, exceptional Lie algebra, minuscule poset, cyclic sieving phenomenon}
+
+
+\begin{abstract}
+Associated to any minuscule flag variety $X$ is the distributive lattice $Y_X$ of its Schubert varieties under containment. The poset $P_X$ of join irreducibles of $Y_X$ is called a \emph{minuscule poset} and exhibits many nice properties, including a beautiful multiplicative formula due to R.~Proctor (1984) for enumerating its plane partitions of height $k$, i.e.\ order ideals in the product $P_X \times {\bf k}$ of $P_X$ with a chain poset of size $k$. 
+
+Considering a natural action on plane partitions first studied by P.~Cameron and D.~Fon-der-Flaass (1995) in the case where $X$ is a type $A$ Grassmannian, D.~Rush and X.~Shi (2013) proved an instance of the \emph{cyclic sieving phenomenon}, yielding refined enumerations of plane partitions by orbit size for all minuscule $X$ when $k \leq 2$. They noted that this result does not extend to $k>2$ when $X$ is of Lie type $A$ or $B$; however, when $X$ is one of the two minuscule flag varieties of type $E$, they conjectured explicit instances of cyclic sieving for all $k$.
+
+We prove their conjecture in the case that $X$ is the Cayley plane of type $E_6$. We further prove the new case $k=4$ of their conjecture for the other exceptional minuscule flag variety, the Freudenthal variety of type $E_7$, but show that it fails for $k>4$. In addition, we give a new proof of the unpublished result of D.~Rush and X.~Shi (2011) that cyclic sieving holds for all $k$ when $X$ is an even-dimensional quadric of type $D$. 
+
+Our argument proceeds throughout by using ideas of K.~Dilks, O.~Pechenik, and J.~Striker (2017) to relate the action on plane partitions to combinatorics derived from $K$-theoretic Schubert calculus. The advantage of this translation is that it enables us to finitize the problem, converting much of it into a manageable calculation with the $K$-theoretic jeu de taquin of H.~Thomas and A.~Yong (2009). 
+\end{abstract}
+
+\maketitle
+%\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Introduction}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec:introduction}
+
+The \emph{minuscule posets} are a remarkable collection of partially-ordered sets that arise naturally from the representation theory of Lie algebras or alternatively from the Schubert calculus of certain generalized flag varieties. We study dynamic enumerative properties of plane partitions over these posets.
+
+A special case of this situation is that of ordinary plane partitions fitting inside a fixed rectangular box. In this context, P.~Cameron and D.~Fon-der-Flaass \cite{Cameron.Fonderflaass} initiated the study of a combinatorially-natural operator $\Psi$. This operator is now generally known as \emph{rowmotion} and has become a subject of intense study (cf., e.g., \cite{Panyushev,Striker.Williams,Armstrong.Stump.Thomas,Rush.Shi,Einstein.Propp,Propp.Roby,Grinberg.Roby:2,Grinberg.Roby:1,DPS,Vorland}).
+We will define and describe in detail both minuscule posets and the operation of rowmotion in Sections~\ref{sec:minuscule} and \ref{sec:rowmotion}, respectively.
+
+Let $\pp^k(P)$ denote the set of plane partitions of height at most $k$ over $P$, that is to say the set of order ideals in the product $P \times {\bf k}$ of $P$ with a chain poset of size $k$. Let $f_P^k$ denote the generating function that enumerates $\pp^k(P)$  by cardinality. In the special case $k \leq 2$, D.~Rush and X.~Shi \cite{Rush.Shi} showed that $f_P^k$ also encodes the orbit structure of rowmotion via an instance of the {\bf cyclic sieving phenomenon} (introduced by V.~Reiner, D.~Stanton, and D.~White \cite{Reiner.Stanton.White}). That is to say that for $k \leq 2$, the number of minuscule plane partitions fixed by the $d$-fold application of rowmotion $\Psi^d$ is the evaluation of the polynomial $f_P^k$ at $\zeta^d$, where $\zeta$ is any primitive $n$th root-of-unity and $n$ is the order of $\Psi$ on $\pp^k(P)$. 
+
+It was noted, however, in \cite{Rush.Shi} that this instance of cyclic sieving does not extend to the case $k\geq 3$ for general minuscule posets.
+Nonetheless, D.~Rush and X.~Shi conjectured the following. (The minuscule posets in question are illustrated in Figure~\ref{fig:min_poset_E}.)
+\begin{conjecture}[{\cite[Conjecture~11.1]{Rush.Shi}}]\label{conj:rush.shi}
+Let $P$ be one of the two minuscule posets associated to an exceptional Lie algebra of type $E$ and let $k \in \mathbb{Z}_{\geq 0}$. Then $f_P^k$ is a cyclic sieving polynomial for the action of $\Psi$ on $\pp^k(P)$.
+\end{conjecture}
+
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.27\textwidth}
+		\centering
+		\ydiagram{5,2+3,3+3,3+5}
+		\caption{Cayley poset}
+	\end{subfigure} \\ \vspace{4mm}
+	\begin{subfigure}[b]{0.27\textwidth}
+		\centering
+		\ydiagram{6,3+3,4+3,4+5,4+5,7+2,8+1,8+1,8+1}
+		\caption{Freudenthal poset}
+	\end{subfigure}
+\caption{The two minuscule posets associated to exceptional Lie algebras of type $E$. Here we have drawn the posets to resemble Young diagrams, so that the boxes are the elements of the poset and each box covers the box immediately above it and the box immediately to its left (if such boxes exist). Hence the minimal element of each poset is the box at the far left of the top row.
+ The Cayley poset is associated to $E_6$, while the Freudenthal poset is associated to $E_7$. (There is no minuscule poset associated to $E_8$.)}
+\label{fig:min_poset_E}
+\end{figure}
+
+Our main result is to completely resolve Conjecture~\ref{conj:rush.shi}. 
+\begin{theorem}\label{thm:exceptionals}
+Conjecture~\ref{conj:rush.shi} holds for the $E_6$ minuscule poset (cf.~Figure~\ref{fig:min_poset_E}A) and all $k$, but holds for the $E_7$ minuscule poset (cf.~Figure~\ref{fig:min_poset_E}B) only when $k \leq 4$. 
+\end{theorem}  
+Verification of Conjecture~\ref{conj:rush.shi} in the the cases $k \leq 4$ for the $E_6$ minuscule poset and $k \leq 3$ for the $E_7$ minuscule poset was previously reported in \cite{Rush.Shi}. Our new results are therefore:
+\begin{itemize}
+\item cyclic sieving for the $E_6$ minuscule poset when $k > 4$,
+\item cyclic sieving for the $E_7$ minuscule poset when $k = 4$,
+\item and that the conjectured cyclic sieving for the $E_7$ minuscule poset fails in the case $k > 4$.
+\end{itemize}
+
+Our approach to proving Theorem~\ref{thm:exceptionals} is to extend the ideas of K.~Dilks, O.~Pechenik, and J.~Striker \cite{DPS} to this minuscule setting, thereby relating the action of $\Psi$ to the action of \emph{$K$-promotion} on \emph{increasing tableaux}. $K$-promotion was first studied in \cite{Pechenik} building on combinatorial tools for $K$-theoretic Schubert calculus due to H.~Thomas and A.~Yong \cite{Thomas.Yong:K}. We show that the action of $K$-promotion is controlled by its behavior on a finite subset of increasing tableaux. By understanding the orbit structure of this subset, we are able to determine the complete orbit structure, thereby proving Theorem~\ref{thm:exceptionals}.
+
+As a warm-up to illustrate our methods, we prove the following fact.
+\begin{theorem}\label{thm:propeller}
+Let $P$ be a minuscule poset associated to any even-dimensional quadric of type $D$ (cf.~Figure~\ref{fig:min_poset}C) and let $k \in \mathbb{Z}_{\geq 0}$. Then $f_P^k$ is a cyclic sieving polynomial for the action of $\Psi$ on $\pp^k(P)$.
+\end{theorem}
+Theorem~\ref{thm:propeller} was previously announced by D.~Rush and X.~Shi \cite[Theorem~10.1]{Rush.Shi}; however, they omitted their proof \cite[\textsection 10]{Rush.Shi:report} from their published paper. We believe that our alternative proof of Theorem~\ref{thm:propeller} via $K$-theoretic combinatorics provides a different understanding.
+
+Often instances of the cyclic sieving phenomenon can be proven using representation theoretic techniques \cite{Reiner.Stanton.White, Rhoades:thesis}, and when instances are established in a more direct fashion (as we do here), it may be a clue toward as yet undeveloped representation theory (cf.\ \cite{Rhoades:skein}). To us, the results in Theorems~\ref{thm:exceptionals} and \ref{thm:propeller} suggest the existence of new symmetric group module structures on the sets $\pp^k(P)$; however, we do not currently understand how to build such structures with the requisite properties in these cases.
+
+This paper is organized as follows. In Section~\ref{sec:minuscule}, we define the minuscule posets, classify them, and recall certain properties we will use. In Section~\ref{sec:rowmotion}, we collect the facts we need about the rowmotion operator $\Psi$. Section~\ref{sec:Kpromotion} concerns the operation of $K$-promotion on increasing tableaux, the key tool in our proofs of Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}. In Section~\ref{sec:equivariant}, we demonstrate the equivariant bijection between $\pp^k(P)$ under the action of $\Psi$ and certain increasing tableaux under $K$-promotion, extending the main observation of \cite{DPS}.
+Finally, Section~\ref{sec:arithmetic} is devoted to study of these increasing tableaux; our results in this last section prove Theorems~\ref{thm:exceptionals} and \ref{thm:propeller} via the equivariant bijection of Section~\ref{sec:equivariant}.
+
+\section{Minuscule posets}\label{sec:minuscule}
+
+Let ${\sf G}$ be a complex connected reductive Lie group with maximal torus ${\sf T}$. Denote by $W$ the Weyl group $N({\sf T})/{\sf T}$. The root system $\Phi$ of ${\sf G}$ may be partitioned $\Phi^+ \sqcup \Phi^-$ into positive and negative roots according to a choice $\Delta$ of simple roots. There is a natural poset structure on $\Phi^+$ obtained through the transitive closure of the covering relation $\alpha \lessdot \beta$ if and only if $\beta - \alpha \in \Delta$. The choice of bipartition of $\Phi$ into positive and negative roots further specifies a choice of a Borel subgroup ${\sf B} \subset {\sf G}$ and an opposite Borel subgroup ${\sf B}_- \subset {\sf G}$ with ${\sf B} \cap {\sf B}_- = {\sf T}$.
+
+We say $\delta \in \Delta$ is {\bf minuscule} if for every $\alpha \in \Phi^+$, $\delta^\vee$ appears with multiplicity at most $1$ in the simple coroot expansion of $\alpha^\vee$. The classification of minuscule roots is well known and is illustrated in Figure~\ref{fig:minuscule} in terms of Dynkin diagrams.
+
+\begin{figure}[h]
+ \renewcommand*{\arraystretch}{1.5}
+\begin{tabular}{|>{$}r<{$}m{2.8cm}|}
+\hline
+A_n &
+  \begin{dynkin}
+    \dynkinline{1}{0}{3}{0};
+    \dynkindots{3}{0}{4}{0};
+    \dynkinline{4}{0}{6}{0};
+    \foreach \x in {1,...,6}
+    {\dynkinwhite{\x}{0}}
+  \end{dynkin}
+ \\  \hline B_n &
+  \begin{dynkin}
+    \dynkinline{1}{0}{2}{0};
+    \dynkindots{2}{0}{3}{0};
+    \dynkinline{3}{0}{4}{0};
+    \dynkindoubleline{4}{0}{5}{0};
+    \dynkinwhite{5}{0};
+    \foreach \x in {1,...,4}
+    {
+        \dynkinblack{\x}{0}
+    }
+  \end{dynkin}
+\\ \hline   C_n 
+&
+  \begin{dynkin}
+    \dynkinline{1}{0}{2}{0};
+    \dynkindots{2}{0}{3}{0};
+    \dynkinline{3}{0}{4}{0};
+    \dynkindoubleline{5}{0}{4}{0};
+    \dynkinwhite{1}{0};
+    \foreach \x in {2,...,5}
+    {
+        \dynkinblack{\x}{0}
+    }
+  \end{dynkin}
+\\ \hline 
+D_n
+&
+  \begin{dynkin}
+    \foreach \x in {2,...,4}
+    {
+        \dynkinblack{\x}{0}
+    }
+        \dynkinline{3}{0}{4}{0}
+    \dynkinline{4}{0}{4.5}{.9}
+    \dynkinline{4}{0}{4.5}{-.9}
+        \dynkinline{1}{0}{2}{0}
+    \dynkinwhite{4.5}{.9}
+    \dynkinwhite{4.5}{-.9}
+        \dynkinwhite{1}{0}
+    \dynkindots{2}{0}{3}{0}
+  \end{dynkin}
+\\  \hline  E_6 
+&
+  \begin{dynkin}
+    \foreach \x in {2,...,4}
+    {
+        \dynkinblack{\x}{0}
+    }
+        \dynkinline{1}{0}{5}{0}
+    \dynkinline{3}{0}{3}{1}
+    \dynkinwhite{1}{0}
+    \dynkinwhite{5}{0}
+    \dynkinblack{3}{1}
+  \end{dynkin}
+\\    E_7
+&
+  \begin{dynkin}
+    \foreach \x in {1,...,5}
+    {
+        \dynkinblack{\x}{0}
+    }
+        \dynkinline{1}{0}{6}{0}
+    \dynkinline{3}{0}{3}{1}
+    \dynkinwhite{6}{0}
+    \dynkinblack{3}{1}
+  \end{dynkin} \\
+  \hline
+\end{tabular}
+\caption{In each of the finite-type Dynkin diagrams above, each minuscule root is marked as a pale blue circle, while the non-minuscule simple roots are marked in black. In type $A_n$, every node is minuscule, while in the other types only the indicated leaves are minuscule. The remaining finite-type Dynkin diagrams are omitted as they have no minuscule roots.}\label{fig:minuscule}
+\end{figure}
+
+For each minuscule simple root $\delta$, there is an associated {\bf minuscule poset} $P_\delta$ obtained as the subposet of $\Phi^+$ induced on those positive roots $\alpha$ where $\delta$ appears with nonzero coefficient in the simple root expansion of $\alpha$. 
+
+Alternatively, one may obtain the minuscule posets via the geometry of certain generalized flag varieties. If ${\sf P}_\delta \subset {\sf B}$ denotes the maximal parabolic subgroup of $G$ associated to the minuscule simple root $\delta$, then the space $X = {\sf G} / {\sf P}_\delta$ is called a {\bf minuscule variety}. The minuscule varieties are smooth projective varieties with various nice geometric properties (cf.~\cite{Billey.Lakshmibai} for details). The natural action of the Borel subgroup ${\sf B}$ on $X$ has finitely-many orbits, whose Zariski closures are the {\bf Schubert varieties}. Given two Schubert varieties in $X$, it is known that they are either disjoint or else one is a subset of the other. Indeed the poset $Y_X$ of Schubert varieties of $X$ with respect to inclusion is a distributive lattice and its corresponding poset of join irreducibles is the minuscule poset $P_\delta$ for the minuscule simple root $\delta$.
+
+The minuscule posets are completely classified. Their Hasse diagrams are exhibited in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. Our focus will be on the {\bf propellers}, the {\bf Cayley poset}, and the {\bf Freudenthal poset} as described in Figures~\ref{fig:min_poset}C, \ref{fig:min_poset_E}A, and \ref{fig:min_poset_E}B, respectively. The propeller with $k$ elements ($k \geq 6$) is associated to the minuscule node that is not adjacent to the trivalent node in the $D_{\frac{k+2}{2}}$ Dynkin diagram, the Cayley poset is associated to the unique minuscule simple root for $E_6$, and the Freudenthal poset is associated to the unique minuscule simple root for $E_7$ (cf.\ Figure~\ref{fig:minuscule}). The corresponding minuscule varieties are, respectively, even-dimensional quadric hypersurfaces, the octonionic projective plane (or Cayley plane), and the Freudenthal variety. The remaining minuscule roots yield minuscule posets that are \emph{rectangles} or \emph{shifted staircases} (illustrated in Figure~\ref{fig:min_poset}A and B); although these are perhaps the most interesting of the minuscule posets, we will not consider them further in this paper. They correspond respectively to type $A$ Grassmannians and to maximal orthogonal Grassmannians.
+
+A poset that is linearly ordered is called a {\bf chain}; we denote the chain of size $k$ by ${\bf k}$. Recall that by a {\bf plane partition} of height at most $k$ over $P$, we mean an order ideal of the product poset $P \times {\bf k}$.  Clearly, a such a plane partition may be identified with a weakly order-reversing map $P \to {\bf k}$. The poset $P$ is called {\bf Gaussian} if the generating function $f_P^k$ enumerating plane partitions of height at most $k$ over $P$ according to cardinality may be expressed in the form
+\[
+\frac{(1 - x^{h_1 + m})(1 - x^{h_2 + m})\cdots(1 - x^{h_t + m})}{(1 - x^{h_1})(1 - x^{h_2})\cdots(1 - x^{h_t})},
+\]
+for some nonnegative integers $t, h_1, h_2, \dots, h_t \in \mathbb{Z}_{\geq 0}$ independent of $k$.
+R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed, it is conjectured that there are no other Gaussian posets. Given the beautiful form of these generating functions, it is perhaps not too surprising that $f_P^k$ should in some instances play a role in cyclic sieving phenomena, as in Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}.
+
+\begin{figure}[h]
+	\begin{subfigure}[b]{0.27\textwidth}
+		\centering
+		\ydiagram{4,4,4}
+		\caption{Rectangle}
+	\end{subfigure}
+	\hspace{2cm}
+	\begin{subfigure}[b]{0.27\textwidth}
+		\centering
+		\ydiagram{4,1+3,2+2,3+1}
+		\caption{Shifted staircase}
+	\end{subfigure} \\
+	\vspace{3mm}
+	\begin{subfigure}[b]{0.27\textwidth}
+		\centering
+		\ydiagram{5,3+5}
+		\caption{Propeller}
+	\end{subfigure}
+\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in English tableau orientation. The elements of each poset are the boxes, and each box is covered by any box immediately below it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary height, and width equal to their height. Propellers consist of two rows of arbitrary but equal length, overlapping by two boxes in the center. The Cayley and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
+\end{figure}
+
+\section{The rowmotion operator $\Psi$}\label{sec:rowmotion}
+
+If $P$ is any poset, let $J(P)$ denote the set of all its order ideals. For $\uu \in J(P)$ an order ideal of $P$, we define $\Psi(\uu) \in J(P)$ to be the order ideal generated by the minimal elements of the complement $P - \uu$. This action is closely related to that described in \cite{Brouwer.Schrijver} and \cite{Duchet} in slightly different contexts. It was first considered as an action on order ideals by J.~Striker and N.~Williams \cite{Striker.Williams}; we follow them in referring to $\Psi$ as {\bf rowmotion}.
+
+Here, we recall the facts that we will need about rowmotion. For $x \in P$, define the {\bf toggle at $x$} to be the operator $t_x : J(P) \to J(P)$ defined by
+\[
+t_x(\uu) = \left\{ \begin{array}{ll}
+        \uu \cup \{x\}, & \text{for } x \notin \uu \text{ and } \uu \cup \{x\} \in J(P); \\
+        \uu - \{x\}, & \text{for } x \in \uu \text{ and } \uu - \{x\} \in J(P);\\
+        \uu, & \text{otherwise. }
+        \end{array} \right.
+\]
+A {\bf $3$-dimensional lattice projection} of a finite ranked poset P is an order and rank preserving map $\pi : P \to \mathbb{Z}^3$, where the partial order on $\mathbb{Z}^3$ is given by componentwise comparison and $\mathbb{Z}^3$ is ranked by the sum of the coordinates. Considering the classification of minuscule posets in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}, observe that for every minuscule $P$ and any $k > 0$, the poset $P \times {\bf k}$ has an injective $3$-dimensional lattice projection. For $v = \{\pm 1 \}^3$ and $i \in \mathbb{Z}$, let 
+\[
+\tau_{\pi,v}^i = \prod_{\langle v, \pi(x) \rangle = i} t_x.
+\]
+That is, $\tau_{\pi,v}^i$ is the composition of the toggles $t_x$ for all $x$ with $\pi(x)$ lying on the affine plane defined by $\langle v, \cdot \rangle = i$. Since the toggles $t_{x_1}$ and $t_{x_2}$ clearly commute whenever neither $x_1$ nor $x_2$ covers the other, this composition is well-defined. Then {\bf  $(\pi, v)$-motion} on $P$ is the operator
+\[
+\mot_{\pi, v} \coloneqq \prod_{i \in \mathbb{Z}} \tau_{\pi,v}^i,
+\]
+where the factors are taken in reverse of the natural order. Note that in this product, only finitely-many factors act nontrivially, since $P$ intersects only a finite number of the affine planes defined by $\langle v, \cdot \rangle = i$. We recall the following pair of results, which are fundamental to our further analysis of rowmotion on minuscule plane partitions.
+
+\begin{proposition}[{\cite[Lemma~1]{Cameron.Fonderflaass}}; {\cite[Proposition~3.18]{DPS}}]
+\label{prop:psi_is_toggle}
+For any finite ranked poset $P$ with a $3$-dimensional lattice projection $\pi$, we have the equality of operators on $J(P)$
+\[
+\pushQED{\qed}
+ \Psi  = \mot_{\pi, (1,1,1)}. \qedhere \popQED \] \let\qed\relax
+\end{proposition}
+
+\begin{proposition}[{\cite[Theorem~3.25]{DPS}}]
+\label{prop:conjugate_actions}
+For any finite ranked poset $P$ with a $3$-dimensional lattice projection $\pi$ and any vectors $v,w \in \{ \pm 1 \}^3$, there is an equivariant bijection between $J(P)$ under $\mot_{\pi, v}$ and $J(P)$ under $\mot_{\pi,w}$. In particular, $\mot_{\pi, v}$ and $\mot_{\pi,w}$ induce the same multiset of orbit cardinalities on $J(P)$. \qed
+\end{proposition}
+
+\section{$K$-promotion of increasing tableaux}\label{sec:Kpromotion}
+
+\subsection{Definitions}\label{sec:Kpro_defs}
+A classical approach to the cohomological Schubert calculus of complex type $A$ Grassmannians is to use the jeu de taquin on standard Young tableaux introduced by M.-P.~Sch\"utzenberger (cf.~\cite{Fulton} or \cite{Manivel} for expositions of the classical jeu de taquin theory). A theme of modern Schubert calculus has been extending such theories into richer generalized cohomology theories and in particular into the $K$-theory ring of algebraic vector bundles. For a partial survey of recent work related to $K$-theoretic Schubert calculus, see \cite{Pechenik.Yong:genomic}.
+
+The first $K$-theoretic Littlewood-Richardson rule was discovered by A.~Buch \cite{Buch}; this rule, however, was not based on jeu de taquin. H.~Thomas and A.~Yong \cite{Thomas.Yong:K} later found a different Littlewood-Richardson rule for the same structure coefficients by directly extending M.-P.~Sch\"utzenberger's jeu de taquin. This latter rule was conjectured in \cite{Thomas.Yong:K} to extend to the $K$-theoretic Schubert structure coefficients of all minuscule varieties, as was proven by a combination of \cite{Buch.Ravikumar,Clifford.Thomas.Yong,Buch.Samuel}. In this Thomas-Yong theory, the role of standard Young tableaux is filled by \emph{increasing tableaux}.
+
+\begin{definition}
+Let $\lambda$ be a order ideal in a minuscule poset, considered as an English-orientation Young diagram as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of positive integers to the boxes of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from top to bottom down columns. Let $\inc^q(\lambda)$ denote the set of all increasing tableaux of shape $\lambda$ with all entries at most $q$. We may identify $\inc^q(\lambda)$ with the set of all strictly order-preserving maps from the poset $\lambda$ to the chain poset ${\bf q}$ of size $q$.
+\end{definition}
+
+Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro$ on $\inc^q(\lambda)$, directly extending M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. Since studying the action of $\pro$ will be fundamental to our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}, we must recall the definition of $\pro$. 
+We will indeed use both the original formulation from \cite{Pechenik}, as well as an alternative formulation from \cite[Proposition~2.4]{DPS}.
+
+Let $T \in \inc^q(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps $i$ and $i+1$ in each component that is a single box, and acts trivially on each non-trivial connected component. {\bf $K$-promotion} may then be defined by
+\[
+\pro(T) \coloneqq \rho_{q-1} \circ \dots \circ \rho_1(T).
+\]
+Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fig:kbk}, while an example of the full process of $K$-promotion is shown in Figure~\ref{fig:promotion}. We will relate $K$-Bender-Knuth operators to toggles in Section~\ref{sec:equivariant}.
+
+\begin{figure}[h]
+\begin{tikzpicture}
+\node (A) {\ytableaushort{1235,\none 45, \none \none 6} };
+\node[above right = 1 and 1 of A] (B) {\ytableaushort{1245, \none 35,\none \none 6}};
+\node[ right = 1 and 1 of A] (C) {\ytableaushort{1234, \none 45,\none \none 6}};
+\node[below right = 1 and 1 of A] (D) {\ytableaushort{1236, \none 45,\none \none 6}};
+\path (A) edge[pilpil,shorten >=-8mm] node[above]{$\rho_3$} (B);
+\path (A) edge[pilpil] node[above]{$\rho_4$} (C);
+\path (A) edge[pilpil] node[above]{$\rho_5$} (D);
+\end{tikzpicture}
+\caption{The three increasing tableaux in the right column are obtained from the increasing tableau at left by applying the indicated $K$-Bender-Knuth operators. The arrows point in both directions since each $K$-Bender-Knuth operator is involutive.}\label{fig:kbk}
+\end{figure}
+
+\begin{figure}[h]
+\begin{tikzpicture}
+\node (T) {$T= \;$\ytableaushort{12345,\none \none 567, \none \none \none 78{10}, \none \none \none 89{11}{12}{13}}};
+\node[right  = 1 of T] (T4) {\ytableaushort{ 12345,\none \none 467, \none \none \none 78{10}, \none \none \none 89{11}{12}{13} }};
+\node[right  = 1 of T4] (T5) {\ytableaushort{ 12346,\none \none 457, \none \none \none 78{10}, \none \none \none 89{11}{12}{13} }};
+\node[below  = 1.3 of T] (T6) {\ytableaushort{ 12346,\none \none 457, \none \none \none 68{10}, \none \none \none 89{11}{12}{13} }};
+\node[right  = 1 of T6] (T7) {\ytableaushort{ 12346,\none \none 457, \none \none \none 68{10}, \none \none \none 79{11}{12}{13} }};
+\node[right  = 1 of T7] (T9) {\ytableaushort{ 12346,\none \none 457, \none \none \none 689, \none \none \none 7{10}{11}{12}{13} }\hspace{-4em}$=\pro(T)$};
+\node[below left = -.3 and -2.7 of T9] (fake1) {};
+\node[below left = -.3 and -3.2 of T9] (fake2) {};
+\node[below left = -.3 and -3.7 of T9] (fake3) {};
+\node[below left = -.3 and -4.2 of T9] (fake4) {};
+\node[below left = -.3 and -4.7 of T9] (fake5) {};
+\node[below left = -.3 and -5.2 of T9] (fake6) {};
+\node[above left = -.3 and -1.5 of T] (fake7) {};
+\node[above left = -.3 and -2.0 of T] (fake8) {};
+\node[above left = -.3 and -2.5 of T] (fake9) {};
+\node[above left = -.3 and -3.0 of T] (fake10) {};
+\node[above left = -.3 and -3.5 of T] (fake11) {};
+\node[above left = -.3 and -4.0 of T] (fake12) {};
+\path (T) edge[pil]  node[above]{$\rho_4$} (T4);
+\path (T4) edge[pil] node[above]{$\rho_5$} (T5);
+\draw[->, thick] (T5.south) .. node[above]{$\rho_6$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
+%\path (T5) edge[pil] node[above]{$\rho_6$} (T6);
+\path (T6) edge[pil] node[above]{$\rho_7$} (T7);
+%\draw (3) to [out=330,in=300,looseness=8] (3);
+\path (T7) edge[pil,out=330,in=320,looseness=2] node[below]{$\rho_8$} (T7);
+\path (T7) edge[pil] node[above]{$\rho_9$} (T9);
+\path (fake2) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{10}$} (fake1);
+\path (fake4) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{11}$} (fake3);
+\path (fake6) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{12}$} (fake5);
+\path (fake8) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{1}$} (fake7);
+\path (fake10) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{2}$} (fake9);
+\path (fake12) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{3}$} (fake11);
+%\path (T9) edge[pil,out=290,in=280,looseness=6] node[below]{$\rho_{10}$} (T9);
+%\path (T9) edge[pil,out=310,in=300,looseness=4] node[below]{$\rho_{11}$} (T9);
+%\path (T9) edge[pil,out=330,in=320,looseness=2] node[below]{$\rho_{11}$} (T9);
+%\path (T9) edge[pil,out=7,in=90,looseness=2] node[below]{$\rho_{12}$} (T9);
+\end{tikzpicture}
+\caption{The calculation of the $K$-promotion $\pro(T)$ of the increasing tableau $T$ (on the Cayley poset) through the action of a sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
+\end{figure}
+
+Suppose $T \in \inc^q(\lambda)$ and consider $T$ as a map from $\lambda$ to the chain poset ${\bf q}$. We say that $T$ is {\bf gapless} if this map is surjective; otherwise, $T$ is {\bf gappy}. We write $\incgl^q(\lambda)$ for the set of all gapless tableaux in $\inc^q(\lambda)$.
+
+For $T \in \inc^q(\lambda)$, let $N_T \coloneqq |\mathrm{range}(T)|$ be the number of distinct labels in $T$. For each $q$, we define the {\bf deflation} map \[\deflate^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda)\] by
+\[
+[\deflate^q(T)](\x) =
+\# \{ h \in \mathrm{range}(T): h \leq T(\x) \} ,
+\]
+for $T \in \inc^q(\lambda)$ and $\x \in \lambda$. Note that $\deflate^q(T) \in \incgl^{N_T}(\lambda)$ and that $N_T \leq q$.
+
+For a positive integer $j \in \mathbb{Z}_{>0}$, write $[j]$ for the set $\{ 1, 2, \dots, j\}$. Let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function \[ \content^q : \inc^q(\lambda) \to \coprod_{0 \leq  k \leq q} \binom{[q]}{k} \] by 
+\[
+\content^q(T) = (c_1, \dots, c_q),
+\] 
+where $c_k = 1$ if $k \in \mathrm{range}(T)$ and $c_k = 0$ if $k \notin \mathrm{range}(T)$.
+
+\begin{example}\label{ex:deflate}
+If $T = \ytableaushort{125,456} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{124,345} \in \inc^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \{0,1\}^7$.
+\end{example}
+
+Clearly, the product map \[\compress^q = (\deflate^q,\content^q) : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda) \times \binom{[q]}{k} \] is injective.
+%We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
+Indeed, a left inverse for $\compress^q$ is given as follows. 
+For a binary vector $v \in \{0,1\}^{q}$, let $N_v \coloneqq \langle v, (1,...,1) \rangle$ be the number of $1$s in $v$, and define a {\bf vector inflation} map \[\inflate^q_v : [N_v] \to [q]\] by
+\[ \inflate^q_v(k) = \min_{n \in [q]} \left( \sum_{\ell = 1}^n v_\ell = k \right).\] Then, $\inflate^q_{\content^q(T)} \circ \deflate^q(T) = T$. Therefore, the map $(S,v) \mapsto \inflate^q_v \circ S$ is a left inverse for $\compress^q$. 
+
+\begin{example}\label{ex:reinflate}
+Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5] \to [7]$ is given by 
+\begin{align*}
+\inflate_v(1) &= 1, \\
+\inflate_v(2) &= 2, \\
+\inflate_v(3) &= 4, \\
+\inflate_v(4) &= 5, \\
+\inflate_v(5) &= 6. \\
+\end{align*}
+Now, for $S = \ytableaushort{124,345}$, we have $\inflate^7_v \circ S = \ytableaushort{125,456}$. Note that this process has recovered the tableau $T$ of Example~\ref{ex:deflate} from $S=\deflate^7(T)$ and $v=\content^7(T)$.
+\end{example}
+
+\subsection{The relation between $K$-promotion and deflation}
+By determining the relation between the maps $\compress^q$ and $\pro$, we will show that the behavior of $\pro$ is controlled by its action on the subset of gapless increasing tableaux. Much of the power of this observation comes from the fact that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$, and that therefore the action of $\pro$ on the set of all increasing tableaux of shape $\lambda$ is governed by finite data.
+
+
+To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^q(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow q+1}$ replace each instance of $\bullet$ with $q+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion: \[\pro = \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}.\] (This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}.)
+
+\begin{figure}
+%\includegraphics[scale=.35]{lemma_4p2.jpg}
+\begin{tikzpicture}
+\node (T) {$T = \ytableaushort{123,257}$};
+\node[right=1.5 of T] (D) {\ytableaushort{\bullet 23,257}};
+\node[right = 1.5 of D] (T2) {\ytableaushort{2 \bullet 3, \bullet 57}};
+\node[below right = 1.5 and 0 of T] (T3) {\ytableaushort{23 \bullet, \bullet 5 7}};
+\node[right = 1.5 of T3] (Tres3) {\ytableaushort{23,\none}};
+\node[above left = -.2 and -0.7 of D] (fake1) {};
+\node[above left = -.2 and -2.0 of D] (fake2) {};
+\path (T) edge[pil] node[above]{$\rep_{1 \rightarrow \bullet}$} (D);
+\path (D) edge[pil] node[above]{$\swap_2$} (T2); 
+\path (T3) edge[pil] node[above]{restrict} (Tres3);
+\draw[->, thick] (T2.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T2) and ([yshift=3cm] T3) .. (T3.north);
+\path (fake2) edge[pil, out=90, in=90, looseness=1.5] node[above]{$\swap_1$} (fake1);
+\end{tikzpicture}
+\caption{The tableau $T_3$ is obtained from $T$ by first applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_1$, $\swap_2$, and $\swap_3$, and then restricting to those boxes with labels less than or equal to $3$.}
+\end{figure}
+
+Using this characterization of $\pro$, we give names to the intermediate products of this process.
+For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 1, \dots, q, \bullet \rbrace$ by 
+\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{1,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $[N]$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $1$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. The following lemma uses these intermediate products to show that $K$-promotion acts on a gappy tableau and its deflation in essentially the same way, provided that the gappy tableau contains at least one $1$. 
+
+%-- not obvious that $\lambda_{dksfhkds}$ is a shape but don't think need this here -- 
+\begin{lemma} \label{lem:bullet_placement}
+Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then for all $\x \in \lambda$,
+ \begin{equation}\label{eq:gappy_promotion2}
+\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet
+\end{equation}
+for $1 \leq k \leq N_T$.
+\end{lemma}
+\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$. In the base case $k = 1$,  $\rep_{1 \rightarrow \bullet}(T)_{1}$ has a $\bullet$ in each box $\x \in \lambda$ such that $T(\x) = 1$ and $\rep_{1 \rightarrow \bullet}(\deflate^q(T))_{1}$ has a $\bullet$ in each box $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $1 \in \mathrm{range}(T)$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
+
+
+Now, say the statement holds for all $T$ and for $k < t$. On the one hand, if $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$, then $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $x'$ adjacent to $x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labelled with values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x)$. This occurs if and only if $\deflate^q(T)(\x) = t$, in which case $\deflate^q(T)^{(t-1)}(\x) = t$. In addition, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)} = \bullet$. Therefore, these conditions are equivalent to $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
+
+On the other hand, if $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$, then there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By identical reasoning, this is equivalent to the statement that there is no $\x'$ such that, $T(\x') = i_t$, which is equivalent to the statement that there is no $\x'$ such that $\deflate^q(T)(\x') = \deflate^q(T)^{(t-1)}(\x') = t$. Since $\deflate^q(T)^{(t-1)}(x) = \bullet$ by the inductive hypothesis, this is equivalent to $\deflate^q(T)^{(t-1)}(x) = \bullet$ and $\deflate^q(T)^{(t)}(x) = \bullet$.
+\end{proof}
+
+\begin{lemma} \label{lem:gappy_promotion}
+Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$.  Then, for $1 \leq k \leq N_T$, we have
+\begin{equation}\label{eq:gappy_promotion}
+ \inflate^q_{\content^q(T)} \circ (\deflate^q(T)_k) = T_{i_k}. 
+\end{equation}
+ That is, the two functions are identical tableaux on the same domain. 
+\end{lemma}
+
+\begin{proof}  We proceed by induction on $k$. The base case is trivial for any $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$, since $\lambda(\deflate^q(T)^{(1)})$ and $\lambda(T^{(1)})$ are both the empty tableau.
+%To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
+
+Now, assume that the lemma holds for all increasing tableaux in the case $k < t$. We look first at the left side of Equation~(\ref{eq:gappy_promotion}). If $\x \in \lambda \left( \deflate^q(T)^{(t-1)} \right)$, then 
+\[
+[\swap_{t}(T^{(t-1)})](\x) = T^{(t-1)}(\x).
+\]
+ If 
+ \[\x \in \lambda(\deflate^q(T)^{(t)}) \setminus \lambda(\deflate^q(T)^{(t-1)}),\]
+  then either $[\deflate^q(T)^{(t-1)}](\x) = \bullet$ or $[\deflate^q(T)^{(t-1)}](\x) = t$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $[\deflate^q(T)^{(t-1)}](\x') = t$. In the latter case, we must have that for all boxes $\x'$ adjacent to $\x$, $[\deflate^q(T)^{(t-1)}](\x') \neq \bullet$. 
+
+Now, we consider the right side of Equation~(\ref{eq:gappy_promotion}). If $\x \in \lambda \left(T^{(i_{t-1})} \right)$, then we have
+\[
+\left[ \swap_{\ell+1} \left(T^{(\ell)} \right) \right](\x) = T^{(\ell)}(\x)
+\]
+ for all $i_{t-1} \leq \ell \leq i_t$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $T_{i_{t}}(\x)$ must be strictly greater than $i_{t-1}$ and at most $i_{t}$. Thus, we must have that $T_{i_{t}}(\x) = i_{t}$, since $\swap_\ell$ does not change the content of a tableau for any $\ell$. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x') = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. By Lemma~\ref{lem:bullet_placement}, this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$.
+
+This shows that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^q(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
+\end{proof}
+
+\begin{remark}
+As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ is, in fact, in $\inc^q \left(\lambda \left( T^{(k)} \right) \right)$. However, we do not need this observation here.
+\end{remark}
+
+\begin{lemma}\label{lem:deflation_commutation}
+Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. In the notation above, 
+\begin{align*}
+ \deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
+ & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
+\end{align*}
+\end{lemma}
+\begin{proof}
+Say $\x \not \in \lambda(T^{(q)})$, that is,  $T^{(q)}(\x) = \bullet$.  Then 
+\[
+[\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = q.
+\]
+Now by \cite[Lemma~2.1]{DPS}, the content vector of  
+\[
+\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = \pro(T)
+\]
+ is a rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector, and clearly $q$ is the greatest, so 
+ \[
+ \deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = q_T.
+ \]
+  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate(T)^{(N_T)})$, we have
+  \[
+  [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
+  \] 
+
+Now say $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
+\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
+Therefore it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
+\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate(T)_{N_T}). \]
+
+Now, since $x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = n_k$ for some $2 \leq k \leq q_T$. Then, 
+\[
+\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = n_k-1.
+\]
+Because the content vector shifts cyclically, this implies that 
+ \[
+ [\deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = k-1.
+ \]
+  On the other hand, 
+  \[
+  [\swap_q \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = k,
+  \]
+   so 
+   \[
+   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate(T)](\x) = k-1.\]
+\end{proof}
+
+\subsection{Computation of period}\label{sec:period}
+  (A little more elaboration, like the fact that $K$-pro does nothing if no $1$). The above shows that if we define $K: --$
+\begin{dmath*}
+K(\deflate(T),\content(T)) =
+\begin{cases}
+    (\pro(\deflate(T)),\Sigma(\content(T)),  & \text{if } \content(T)\langle 1 \rangle = 1; \\        
+   (\deflate(T),\Sigma(\content(T)), & \text{otherwise;}
+\end{cases}
+\end{dmath*}
+then $\compress \circ \pro^n(T) = K^n \circ \compress(T)$. Now, since $\compress$ is an injection, $\pro^n(T) = T$ exactly when $\compress \circ \pro^n(T) = \compress \circ T$. So we are reduced to looking at what powers $n$ of $K$ stabilize $\compress(T)$. 
+Clearly we must have $\Sigma^n(\content(T)) = \content(T)$.  In addition, we must have that $\pro^{n'}(\deflate(T))$, where $n'$ is $n$ minus the number of times that $K^\ell(W(T))$ does not have $1$ in its content vector for $\ell \in 1,...,n$. 
+Now say that the period of $\content(T)$ is $\ell$ and say there are $r$ $0$'s in the first $\ell$ entries of $\content(T)$ which then repeat $q/\ell$ times. Then if $n = \ell$, $n' = \ell - r$. Now say we know that the period of $\deflate(T)$ is $\tau$. This reasoning shows that $K^n (\compress(T)) = \compress(T)$ if and only if $n = e \ell$ for some positive integer $e$ and $n = s \tau + e  r$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $e \ell$ and $s \tau + e r$ for the same $e$. But $e \ell = s\tau + er$ implies that $e(\ell-r) = s\tau$. Since $\ell > r \geq 0$ the minimum of $e \ell$ is clearly achieved when $e$ is minimal, which occurs when $e(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
+\begin{equation*}
+n = e \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
+\end{equation*}
+
+
+\textbf{This paragraph probably goes away}
+Let $\lambda$ be a shape of maximum rank $N$. We establish an injection, which we call $W(T) = (W_1(T),W_2(T))$, from increasing tableaux of height $q > N$ to pairs of increasing tableaux of height less than or equal to $N+1$ and binary vectors of length $q$. In addition, let $\Sigma$ be a function that permutes vectors of length $n$ by moving entry $n$ to entry $n-1$ modulo $n$, We then show that for $T \in \inc^q(\lambda)$
+\begin{enumerate}
+\item if $T(0,0) =1$, then $\pro(T) = W^{-1}(\pro(W_1(T)),\Sigma(W_2(T))$
+\item if $T(0,0) > 1$, then $\pro(T) = W^{-1}(W_1(T),\Sigma(W_2(T))$.
+\end{enumerate} 
+We then use this description to compute the period of an inflated orbit. The basic idea is that K-Promotion acts in two separate ways on a tableau: it changes the relative order of certain boxes and permutes the content vector. These two actions are independent, unless $1$ is not an entry in the tableau, in which case only the content vector permutation occurs. 
+\textbf{End this paragraph probably goes away}
+\\
+
+\section{The equivariant bijection}\label{sec:equivariant}
+\subsection{Bijection between plane partitions and increasing tableaux.} 
+
+Let $\e_i$ be the $i$th standard basis vector in $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the $i$th coordinate projection map. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1,...,d_r \in \{1, 2 \}$, and signs $n_1,...,n_r \in \{ \pm 1 \}$ such that 
+\[\left\{ \x + \sum_{k=1}^\ell n_k \e_{d_k} :  1\leq j \leq r \right\} \subseteq \lambda\]
+ and $\x + \sum_{k=1}^r n_k \e_{d_k} = \x'$. Given these data, define $\x_0 = \x$ and $\x_\ell = \x + \sum_{k=1}^\ell n_k \e_{d_k}$ for $1 \leq \ell \leq r$. Then the sequence $\left( \x_\ell  \right)_{0 \leq \ell \leq r}$ is called a {\bf path of length} $r$. If $n_k = 1$ for all $k$, then the path is called a {\bf chain}. We call a finite nonempty connected subset of $\mathbb{Z}_{\geq 0}^2$ a {\bf shape}.  Shapes inherit a partial order from the natural componentwise partial order on $\mathbb{Z}^2$. A shape poset is ranked by the rank function $\text{rk}(x_1,x_2) = x_1 + x_2$.
+
+We say that the shape $\lambda$ is {\bf convex} if $\x\in \lambda$ and $\x + k  \e_d \in \lambda $ for some $d \in \{1, 2\}$ and $k \in \mathbb{Z}_{> 0}$ together imply  that $\{\x + j \e_d : 1 \leq j \leq k-1 \} \subseteq \lambda.$
+
+For any shape $\lambda$, let \[a_i(\lambda) = \max \{ \pi_i(\x) \colon \x \in \lambda\}\] and \[\aaa_\lambda = \big(a_1(\lambda),a_{2}(\lambda)\big) \in \mathbb{Z}^2.\] We say the shape $\lambda$ is {\bf justified} if $(0,0) \in \lambda$ and $\aaa_{\lambda} \in \lambda$. Define 
+\[
+\lambda^\star \coloneqq \lbrace \aaa_\lambda - \x: \x \in \lambda \rbrace.
+\] It is clear that $\lambda^{\star}$ is a shape and that if $\lambda$ is convex (resp.\ justified), then $\lambda^\star$ is convex (resp.\ justified).  Define the {\bf rank} of $\lambda$ 
+\[ 
+\rank(\lambda) = \max_{\x \in \lambda} \rank(\x).
+\]
+
+The following elementary lemmas determine useful characteristics of the shapes considered in this paper. 
+
+\begin{lemma} \label{lem:convex_chain}
+Let $\lambda$ be a convex shape and let $\x,\x' \in \lambda$ be distinct. If $\x \leq \x'$, then $\lambda$ contains a chain from $\x$ to $\x'$. 
+\end{lemma}
+
+\begin{proof} 
+Let $\x = (i,j)$ and $\x' = (i',j')$. Because $\x \leq \x'$, we have $i \leq i'$ and $j \leq j'$. Since $\lambda$ is a shape, there is at least one path from $\x$ to $\x'$. Take such a path $P = (\x_{\ell})_{0\leq \ell \leq r}$ of minimal length, characterized by directions $d_1,...,d_r \in \{ 1,2 \}$ and signs $n_1,...,n_r \in \{ \pm 1\}$.  We claim that $P$ is a chain. 
+
+If not, then $n_t  = -1$ for some $1 \leq t \leq r$. Let $t$ be the least such index. For  $0 \leq \ell \leq r$, define $(i_\ell, j_\ell) = \x_\ell$, so that in particular $(i_0, j_0) = (i,j)$ and $(i_r, j_r) = (i',j')$.
+
+
+Since $n_t = -1$, either $i_t = i_{t-1} -1$ or $j_t = j_{t-1} -1$.  Without loss of generality, we may assume $i_t = i_{t-1} -1$. 
+
+Suppose there is no $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_t = i_0 - 1$. Furthermore, since $i' = i_r \geq i_0$, there must be a least $k > t$ such that $i_k = i_0 = i_{t-1}$. Let $q = j_k - j_{t-1} $. Then clearly the subpath $(\x_{\ell})_{t-1\leq \ell \leq k}$ of $P$ has length at least $|q| + 2$.
+However by convexity, the path 
+\[
+\bigg( (i_{t-1}, j_{t-1}),   (i_{t-1}, j_{t-1} + \frac{q}{|q|}), (i_{t-1}, j_{t-1} + 2\frac{q}{|q|}), \dots , (i_{t-1}, j_{t-1} + |q|\frac{q}{|q|}) \bigg)
+\]
+of length $|q|$ from $(i_{t-1}, j_{t-1})$ to $(i_k, j_k)$ lies entirely inside $\lambda$, contradicting the minimality of $P$.
+
+Otherwise, consider the greatest $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_{h-1} = i_t$. By minimality of $t$, we have $j_t \geq j_{h-1}$. Let $q = j_t - j_{h-1}$. Now the subpath $(\x_{\ell})_{h-1\leq \ell \leq t}$ of $P$ has length $q + 2$. However by convexity, the path 
+\[
+\big( (i_{h-1}, j_{h-1}),   (i_{h-1}, j_{h-1} + 1), (i_{h-1}, j_{h-1} + 2), \dots , (i_{h-1}, j_{h-1} + q) \big)
+\]
+of length $q$ from $(i_{h-1}, j_{h-1})$ to $(i_t, j_t)$ lies entirely inside $\lambda$, contradicting the minimality of $P$.
+%If $i_t \geq i'$, then certainly $i_t \geq i = i_0$, so $t \geq 2$ and $i_t = i_{t-k}$ for some $k > 0$. If instead $i_t < i'$, then there must be some  $t < s \leq r$ with  $i_s = i_{t-1}$. Thus in both cases there are $u,v$ with $0 \leq u \leq r$ and $0 \leq v \leq r$ such that $i_u = i_v$ and $n_w  = -1$ for $u < w \leq v$. 
+%But by convexity, all elements $(i_u,x)$ for $x \in (j_u,j_v)$ (or $(j_v,j_u)$) are contained in $\lambda$. Now the direct path along these elements has $\vert j_v-j_u \vert$ steps, while the path $(i_u,j_u),(i_{u+1},j_{u+1}),...,(i_v,j_v)$ must have at least $\vert j_v-j_u \vert + 2$ steps, since it has at least $\vert j_v - j_u \vert$ steps along the second dimension and at least two steps along the first dimension, one in the negative direction and one to cancel it out. This contradicts the minimality of this path, so no such $t$ exists and the path is a chain.  
+\end{proof}
+
+\begin{lemma}\label{lem:max_chain_same}
+Let $\lambda$ be a convex justified shape. Then every maximal chain has length $a_1(\lambda) + a_2(\lambda)$. 
+\end{lemma}
+\begin{proof} 
+Since for all $\x \in \lambda$ we have $(0,0) \leq \x$ and $\x \leq (a_1(\lambda),a_2(\lambda))$, all maximal chains must start at $(0,0)$ and end at $(a_1(\lambda),a_2(\lambda))$ by Lemma~\ref{lem:convex_chain}. But clearly any chain between these two elements has the desired length.
+\end{proof} 
+
+For a shape $\lambda$, an increasing tableau on the poset $\lambda$ is equivalent to a map $T: \lambda \rightarrow \mathbb{Z}_{>0}$ such that whenever $\x \in \lambda$ and $\x+\e_i \in \lambda$ for $i \in \lbrace 1,2 \rbrace$, then $T(\x) < T(\x+\e_i)$. The {\bf height} of an increasing tableau $T$ is the maximum value in its range. Recall that $\inc^q(\lambda)$ is the set of all increasing tableaux of height at most $q$ and base $\lambda$. 
+
+Fix a justified convex shape $\lambda$ and $m \in \mathbb{Z}_{> 0}$. Now, we define a poset
+\[
+\lambda \times [m] \coloneqq \{ (\x, y) \in \mathbb{Z}^3: \x \in \lambda, 0 \leq y \leq  m-1 \},
+\] with the partial order given by restricting the natural partial order on $\mathbb{Z}^3$, that is
+\[{\sf p} \geq {\sf q} \text{ if and only if } {\sf p}  - {\sf q} \in \mathbb{Z}_{\geq 0}^3.\]
+Recall that for any poset $P$, we write $J(P)$ for the collection of all order ideals of $P$.  Note that $J(\lambda \times [m])$ is exactly the set of all plane partitions of height at most $m$ over the poset $\lambda$.
+
+ Define the map $\Omega : J(\lambda \times [m]) \rightarrow \inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ as follows. 
+% We write $2^A$ for the power set of a set $A$. 
+ First, define the function 
+ \[
+ \mathrm{ht}: \mathbb{Z}_{\geq 0}^2 \times 2^{(\mathbb{Z}_{\geq 0}^3)} \rightarrow \mathbb{Z}_{\geq 0},
+ \] where $2^{(\mathbb{Z}_{\geq 0}^3)}$ denotes the power set of $\mathbb{Z}_{\geq 0}^3$ by 
+ \[ \mathrm{ht}(\x,S) \coloneqq  \# \{ y \in \mathbb{Z}_{\geq 0} : (\x,y) \in S \}.  \]  
+Intuitively, if an order ideal is viewed as a pile of blocks, then $\mathrm{ht}$ gives the number of blocks in a given column. Next, for $I \in J(\lambda \times [m])$, define $\Omega(I) \coloneqq T,$
+where the increasing tableau \[T : \lambda^\star \to [\rank(\lambda) + m + 1 ] \] is given by 
+\[ T( \x )= \mathrm{ht}(\aaa_\lambda - \x,I) + \rank(\x)+1.\] 
+
+\begin{proposition}\label{prop:bijection}
+If $\lambda$ is a justified convex shape, then 
+\[\Omega : J(\lambda \times [m]) \rightarrow \inc^{\rank(\lambda)+ m+1}(\lambda^\star)
+\]
+ is a bijection.
+\end{proposition}
+\begin{proof}
+Since $\lambda$ is justified and convex, $\lambda^{\star}$ has an element of rank $0$ and all maximal chains in $\lambda^\star$ have equal length by Lemma~\ref{lem:max_chain_same}. Hence the function $\Omega$ coincides with the map from \cite[Proposition~8.2]{HPPW}, and so by \cite[Proposition~8.2]{HPPW} we have that $\Omega$ is a bijection between plane partitions over $\lambda$ and increasing tableaux over $\lambda^\star$.
+\end{proof}
+
+Note, in particular, that Proposition~\ref{prop:bijection} applies to all of the minuscule posets, realized as justified convex shapes as in Figures~\ref{fig:min_poset_E} and~\ref{fig:min_poset}.
+
+\subsection{Equivariance of $\Omega$.} 
+The following is the key observation enabling our approach to proving Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Proposition~\ref{prop:equivariant} is a mild extension of \cite[Lemma~4.2]{DPS} and our proof follow the same outline. We however still give a somewhat detailed proof, as there are a few extra subtleties in our case.
+
+The following gives an easy and useful way to determine whether a subset of $\lambda \times [m]$ is an order ideal. 
+\begin{lemma}\label{lem:whos_an_ideal?}
+The subset $Q \subseteq \lambda \times [m]$ is an order ideal if and only if both
+\begin{itemize}
+\item[(a)] for each $\x \in \lambda$, $Q \cap (\{\x\} \times [m])$ is an order ideal (that is, each column of $Q$ is an order ideal) and;
+\item[(b)] $(i,j) \geq (i',j')$ implies that $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$.
+\end{itemize}
+\end{lemma}
+\begin{proof} 
+The ``only if'' direction is clear. 
+
+Conversely, assume $Q$ satisfies $(a)$ and $(b)$. Consider $(i,j,k) \in Q$ and $(i',j',k') \in \lambda \times [m]$ with $(i',j',k') \leq (i,j,k)$. We must show $(i',j',k') \in Q$. 
+
+Certainly, $(i',j') \leq (i,j)$. By condition (b), $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Therefore, by condition (a), there is a $k'' \geq k$ with $(i',j',k'') \in Q$. But since $k' \leq k \leq k''$, condition (a) then implies $(i',j',k') \in Q$. 
+\end{proof}
+
+\begin{proposition}\label{prop:equivariant}
+Let $\lambda$ be a justified convex shape. Then $\Omega$ intertwines $\mot_{\text{id},(1,1,-1)}$ and $\pro$. That is, for $P \in J(\lambda \times [m])$, we have $\Omega \circ \mot_{\text{id},(1,1,-1)}(P) = \pro \circ \Omega(P)$.
+\end{proposition}
+\begin{proof}
+Let $a = a_1(\lambda)$ and let $b = a_2(\lambda)$, that is, $(a,b) = \aaa_{\lambda}$.  Fix $P \in J(\lambda \times [m])$. 
+
+Recall that for $T \in \inc^{a+b+m+1}(\lambda)$, we have by definition that
+\begin{equation*}
+\pro(T) = \rho_{a+b+m} \circ  ... \circ \rho_1(T).
+\end{equation*}
+Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times [m]$, we have
+\begin{equation*}
+\mot_{\text{id},(1,1,-1)}(P) = \tau^{a+b-(a+b+m-1)}_{\text{id},(1,1,-1)} \circ ... \circ \tau^{a+b}_{\text{id},(1,1,-1)}(P).
+\end{equation*}
+Therefore, it suffices to show 
+\begin{equation*}
+\Omega \left(\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}(P) \right) = \rho_\ell \left(\Omega(P)\right)
+\end{equation*}
+for all $\ell$. 
+
+Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq P \cap ( \y \times [m] )$ be the column of $\y$ in $P$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ to $P$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(P)$. 
+
+Define the function $H : \lambda \to [m]$ by $H(\x) = \text{ht}(\x,P)$ for $\x \in \lambda$.
+By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
+There are now four cases to consider depending on the value of $H(\y)$.
+
+\medskip
+\noindent
+{\sf Case 1: $H(\y) > i+j-(a+b-(\ell-1))+1$:} 
+
+Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, so $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ either removes this element from $Y$ or leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))+1) \in Y$, removing $(\y,i+j-(a+b-(\ell-1)))$ from $P$ does not yield an order ideal. Therefore the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) > \ell + 1$, so $\rho_{\ell}$ does not affect this entry of the increasing tableau $\Omega(P)$. 
+
+\medskip
+\noindent
+{\sf Case 2: $H(\y) = i+j-(a+b-(\ell-1))+1$:} 
+
+Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, while $(\y,i+j-(a+b-(\ell-1))+1) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ removes $(\y,i+j-(a+b-(\ell-1)))$ from $P$ exactly if $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all $d \in \lbrace 1,2 \rbrace$ with $\y+\e_d \in \lambda$. 
+
+For, on the one hand, if $\y+\e_d \in \lambda$ and $H(\y+\e_d) > i+j-(a+b-(\ell-1))$, then by Lemma~\ref{lem:whos_an_ideal?}, removing $(\y,i+j-(a+b-(\ell-1)))$ from $P$ would not leave an order ideal. 
+On the other hand, say that $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all such $d$. To verify that removing $(\y,i+j-(a+b-(\ell-1)))$ from $P$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' > \y$.  By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that 
+$H(\y') \leq i+j-(a+b-(\ell-1)).$
+Now, by Lemma~\ref{lem:convex_chain}, since $\y' > \y$, there is a chain from $\y$ to $\y'$. Clearly, this chain contains an element of the form $\y+\e_{d} \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \leq i+j-(a+b-(\ell-1))$, as desired.
+
+On the tableaux side, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is clearly equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
+
+\medskip
+\noindent
+{\sf Case 3: $H(\y) = i+j-(a+b-(\ell-1))$:}
+
+Here, $(\y,i+j-(a+b-(\ell-1))-1) \in Y$ but $(\y,i+j-(a+b-(\ell-1))) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ adds $(\y,i+j-(a+b-(\ell-1)))$ to $P$ exactly when $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all $d \in \lbrace 1,2 \rbrace$ with $\y-\e_d \in \lambda$. 
+
+For, on the one hand, if $\y-\e_d \in \lambda$ and $H(\y-\e_d) < i+j-(a+b-(\ell-1))+1$, then by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ does not yield an order ideal. 
+On the other hand, say that $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all such $d$. To verify that adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' < \y$. By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that $H(\y') \geq i+j-(a+b-(\ell-1))+1$. 
+Now, by Lemma~\ref{lem:convex_chain}, since $\y' < \y$, there is a chain from $\y'$ to $\y$. Clearly, this chain contains an element of the form $\y-\e_d \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y) \geq i+j-(a+b-(\ell-1))+1$ as desired.
+
+On the tableaux side, this case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is clearly equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
+
+\medskip
+\noindent
+{\sf Case 4: $H(\y) < i+j-(a+b-(\ell-1))$:} 
+
+Here, $(\y,i+j-(a+b-(\ell-1))) \notin Y$, so $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ either adds this element to $Y$ or else leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))-1) \notin P$, by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) < \ell$, so $\rho_\ell$ does not affect this entry of $\Omega(P)$. 
+
+\medskip
+This completes the proof of Proposition~\ref{prop:equivariant}
+\end{proof}
+
+\begin{corollary}
+Let $\lambda$ be a justified convex shape.
+Then the multiset of orbit cardinalities of $\Psi$ on $J(\lambda \times [m])$ and the multiset of orbit cardinalities of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
+\end{corollary}
+\begin{proof}
+By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times [m])$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\text{id},(1,1,-1)}$ on $J(\lambda \times [m])$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times [m])$ is the same as the action of $\mot_{\text{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\text{id},(1,1,1)}$ and $\mot_{\text{id},(1,1,-1)}$ induce the same orbit structure on $J(\lambda \times [m])$.
+\end{proof}
+
+\section{The arithmetic computations}\label{sec:arithmetic}
+%
+%Let $\binom{[q]}{k}$ be the collection of binary vectors of length $q$ with $k$ ones.  In the previous section, we defined the map 
+%\[ \deflate\content: \inc^q(\lambda) \rightarrow \coprod_{1 \leq k \leq q} \incgl^k(\lambda) \times \binom{[s]}{r} \]
+%for fixed $q$. We now write $\deflate\content^q$ (and $\deflate^q$, $\content^q$) for this fixed choice of $q$. We also define \[ F^r: \coprod_{s \in \mathbb{Z}_{>0}} V_{r,s} \rightarrow \mathbb{Z}^r \]
+%where if $v$ has $r$ nonzero elements, then  $F(v) = F_v \in \mathbb{Z}^r$ is the map
+%\[  k \mapsto \min_{n \in [1,...,N]} \bigg( \sum_{\ell = 1}^n v(\ell) = k \bigg). \]
+
+We saw in Section~\ref{sec:Kpro_defs} that $\compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda) \times \binom{[q]}{k}$ is injective. Conversely, every $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ gives an element of $\inc^q(\lambda)$ in the following sense. Define the {\bf tableau inflation} map  \[ \tinflate^q: \coprod_{1 \leq k \leq q}  \incgl^k(\lambda) \times  \binom{[q]}{k}  \rightarrow  \inc^q(\lambda) \] such that if $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ then
+\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
+Note that
+\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. 
+
+Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  The above shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
+\-\ \\ \-\ \\ 
+\noindent {\bf Algorithm 1} \\ \noindent
+\textsf{Input}:  $L \in \mathbb{Z}_{>0}$ and the set $\coprod_k \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$. \\ \noindent
+\textsf{Output}: $x$, the number of $T \in \inc^q(\lambda)$ whose period divides $L$. \\  \-\ \\ 
+\textsf{Initialization}: Set $x = 0$. \\
+\textsf{Procedure}: Loop over gapless tableaux $T$ of height between $r+1$ and $s$.
+\begin{arrowlist}
+\item For each $T$, loop over divisors $d$ of $L$.
+\begin{enumerate}
+\item   Compute the number $i$ of content vectors with period exactly $L/d$. \item Compute the period $\pi(L/d,T)$ associated with $T$ and a content vector of period $L/d$, as described in Section~\ref{sec:period}. 
+\item If $\pi(L/d,T)$ divides $L$, add $i$ to $x$.
+\end{enumerate}
+\end{arrowlist} \-\ 
+
+This program can be simplified. First, since the numbered steps are identical for gapless tableaux from the same orbit, we can instead loop over {\it orbits} of gapless tableaux and replace $i$ with $(\text{orbit size}) \times i$ in Step (3).
+
+Second, we can determine in advance that only a subset of divisors of $L$ will yield a nonzero number of content vectors. For the number of ones in such a content vector is equal to the full-content height of the tableaux. Call this height $f$. If the content vector divides into $d$ identical segments, then $L-f$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $f$. While $L$ is arbitrary, $f$ is fixed for a given iteration of the loop and can take only finitely many values. 
+
+% (This can also be seen by observing that the Rush-Shi formula has $\lceil f/d \rceil$ numerator elements divisible by $d$ and $\lfloor f/d \rfloor$ denominator elements divisible by $d$.) %
+
+To execute Step (1), we use the Rush-Shi formula which has already been proven for a linear tableau (NOT CLEAR WHAT THIS MEANS) \cite[Theorem~1.1(b)]{Reiner.Stanton.White}. ! For a given $d$, this tells us the number of content vectors of length $L$ with $f$ ones whose period is a multiple of $L/d$. By the argument in the previous paragraph, this number will be zero for all but finitely many integers $d$. We can then recover the number of tableaux with period exactly $L/d$ by subtracting off those whose periods strictly divide $L/d$.
+\-\ \\ \-\ \\ 
+\noindent {\bf Algorithm 2} \\ \noindent
+\textsf{Input}: Integer $L$, decreasing list $W$ of all divisors of both $L$ and $f$. \\ \noindent
+\textsf{Output}: Array $V$, where $V[\ell]$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
+\textsf{Initialization}: Let $k = \texttt{length}(W)$. Create a vector $V$ of $k$ zeros. \\ 
+\textsf{Procedure}: Loop over $\ell = 1, \ldots, k$.
+\begin{arrowlist}
+\item Let $d_{\ell} = W[\ell]$.
+\item $V[\ell] += $ the number of content vectors of length $L$ and $f$ ones whose period divides $\ell$.
+\item For $m = 1,...,\ell-1$, if $d_m$ divides $d_\ell$ then $V[\ell] += - V[m]$.
+\end{arrowlist} \-\
+
+To summarize, we outline the code in \texttt{symbolic_cayley_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
+\-\ \\ \-\ \\ 
+\noindent {\bf Algorithm 3}: \texttt{symbolic_cayley_plane.py} \\ \noindent
+\textsf{Input}: Shape $\lambda$, full content tableaux for $\lambda$.  \\ \noindent
+\textsf{Output}: Array $V$, where $V[\ell]$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
+\textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 
+\textsf{Procedure}: 
+Loop over all combinations  $C$ of prime numbers (with multiplicity) that can divide a number between $\text{rk}(\lambda)+1$ to $B(\lambda)$ inclusive.
+\begin{enumerate} 
+\item Initialize empty array \texttt{dVals}. \texttt{For d $ \in [2,B(\lambda)]$}, determine whether \texttt{d} divides a $q$ value with the combination $C$ of divisors. If so, append to \texttt{dVals}.  
+\item Loop over the elements of \texttt{dVals} and compute the predicted period by the Rush-Shi formula. Save as \texttt{RushShiPeriods[L/d]}.
+\item Loop over full content orbit data. 
+\begin{enumerate}
+\item \texttt{For $d \in $ dVals, if $d$ divides fcHt}
+\begin{enumerate}
+\item Get exact number of vectors of length \texttt{q} with \texttt{fcHt} ones.
+\item Compute period
+\item number of tableaux to all periods divided by this one.
+\end{enumerate}
+\end{enumerate}
+\item Check if Rush-Shi and computed match.
+\end{enumerate}
+
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline
+$q$ & orbit size & number of orbits\\
+  \hline
+  11 & 1 & 1\\
+  \hline
+  12 & 3 & 1\\ \cline{2-3}
+   & 12 & 1 \\
+   \hline
+  13 & 13 & 6\\
+  \hline
+  14 & 7 & 2\\\cline{2-3}
+  & 14 & 12\\
+  \hline
+    15 & 15 & 13\\
+  \hline
+  16 & 2 & 1\\\cline{2-3}
+   & 4 & 1\\\cline{2-3}
+   & 8 & 1\\\cline{2-3}
+  & 16 & 4\\
+  \hline
+\end{tabular}
+\caption{The number of orbits of full-content increasing tableaux in $\inc^q(P)$ for each $q$ for the $E_6$ poset.}
+\label{tab:E6}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline
+$q$ & orbit size & number of orbits\\
+  \hline
+  17 & 1 & 1\\
+  \hline
+  18 & 2 & 1\\ \cline{2-3}
+   & 18 & 2 \\
+   \hline
+  19 & 19 & 30\\
+  \hline
+  20 & 20 & 228\\
+  \hline
+    21 & 7 & 3\\ \cline{2-3}
+    & 21 & 1044 \\
+  \hline
+  22 & 22 & 3053\\\cline{2-3}
+   & 66 & 2\\
+  \hline
+  23 & 23 & 5813\\ \cline{2-3}
+  & 69 & 13 \\
+   \hline
+  24 & 8 & 7\\\cline{2-3}
+   & 24 & 7195\\\cline{2-3}
+   & 48 & 4\\\cline{2-3}
+   & 72 & 26\\
+   \hline
+  25 & 25 & 5602\\ \cline{2-3}
+  & 50 & 8 \\ \cline{2-3}
+  & 75 & 21 \\
+   \hline
+  26 & 2 & 2\\ \cline{2-3}
+  & 26 & 2495 \\ \cline{2-3}
+  & 52 & 4 \\ \cline{2-3}
+  & 78 & 6 \\
+   \hline
+ 27 & 3 & 2\\ \cline{2-3}
+  & 9 & 4 \\ \cline{2-3}
+  & 27 & 484 \\
+  \hline
+\end{tabular}
+\caption{The number of orbits of full-content increasing tableaux in $\inc^q(P)$ for each $q$ for the $E_7$ poset.}
+\label{tab:E7}
+\end{table}
+
+\section*{Acknowledgements}
+The authors thank Julianna Tymoczko for introducing them to each other.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Bibliography
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\bibliographystyle{amsalpha} 
+\bibliography{exceptional.bib}
+
+
+
+\end{document}

@@ -1,0 +1,164 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{HPPW16}
+
+\bibitem[AST13]{Armstrong.Stump.Thomas}
+Drew Armstrong, Christian Stump, and Hugh Thomas, \emph{A uniform bijection
+  between nonnesting and noncrossing partitions}, Trans. Amer. Math. Soc.
+  \textbf{365} (2013), no.~8, 4121--4151.
+
+\bibitem[BL00]{Billey.Lakshmibai}
+Sara Billey and V.~Lakshmibai, \emph{Singular loci of {S}chubert varieties},
+  Progress in Mathematics, vol. 182, Birkh\"auser Boston, Inc., Boston, MA,
+  2000.
+
+\bibitem[BPS16]{BPS}
+Jonathan Bloom, Oliver Pechenik, and Dan Saracino, \emph{Proofs and
+  generalizations of a homomesy conjecture of {P}ropp and {R}oby}, Discrete
+  Math. \textbf{339} (2016), no.~1, 194--206.
+
+\bibitem[BR12]{Buch.Ravikumar}
+Anders~Skovsted Buch and Vijay Ravikumar, \emph{Pieri rules for the
+  {$K$}-theory of cominuscule {G}rassmannians}, J. Reine Angew. Math.
+  \textbf{668} (2012), 109--132.
+
+\bibitem[BS74]{Brouwer.Schrijver}
+A.~E. Brouwer and A.~Schrijver, \emph{On the period of an operator, defined on
+  antichains}, Mathematisch Centrum, Amsterdam, 1974, Mathematisch Centrum
+  Afdeling Zuivere Wiskunde ZW 24/74.
+
+\bibitem[BS16]{Buch.Samuel}
+Anders~Skovsted Buch and Matthew~J. Samuel, \emph{${K}$-theory of minuscule
+  varieties}, J. Reine Angew. Math. \textbf{719} (2016), 133--171.
+
+\bibitem[Buc02]{Buch}
+Anders~Skovsted Buch, \emph{A {L}ittlewood-{R}ichardson rule for the
+  {$K$}-theory of {G}rassmannians}, Acta Math. \textbf{189} (2002), no.~1,
+  37--78.
+
+\bibitem[CFDF95]{Cameron.Fonderflaass}
+P.~J. Cameron and D.~G. Fon-Der-Flaass, \emph{Orbits of antichains revisited},
+  European J. Combin. \textbf{16} (1995), no.~6, 545--554.
+
+\bibitem[CTY14]{Clifford.Thomas.Yong}
+Edward Clifford, Hugh Thomas, and Alexander Yong, \emph{{$K$}-theoretic
+  {S}chubert calculus for {${\rm OG}(n,2n+1)$} and jeu de taquin for shifted
+  increasing tableaux}, J. Reine Angew. Math. \textbf{690} (2014), 51--63.
+
+\bibitem[DPS17]{DPS}
+Kevin Dilks, Oliver Pechenik, and Jessica Striker, \emph{Resonance in orbits of
+  plane partitions and increasing tableaux}, J. Combin. Theory Ser. A
+  \textbf{148} (2017), 244--274.
+
+\bibitem[Duc74]{Duchet}
+P.~Duchet, \emph{Sur les hypergraphes invariantes}, Discrete Math. \textbf{8}
+  (1974), 269--280.
+
+\bibitem[EP14]{Einstein.Propp}
+David Einstein and James Propp, \emph{Piecewise-linear and birational
+  toggling}, 26th {I}nternational {C}onference on {F}ormal {P}ower {S}eries and
+  {A}lgebraic {C}ombinatorics ({FPSAC} 2014), Discrete Math. Theor. Comput.
+  Sci. Proc., AT, Assoc. Discrete Math. Theor. Comput. Sci., Nancy, 2014,
+  pp.~513--524.
+
+\bibitem[Ful97]{Fulton}
+William Fulton, \emph{Young tableaux}, London Mathematical Society Student
+  Texts, vol.~35, Cambridge University Press, Cambridge, 1997, With
+  applications to representation theory and geometry.
+
+\bibitem[GR15]{Grinberg.Roby:2}
+Darij Grinberg and Tom Roby, \emph{Iterative properties of birational rowmotion
+  {II}: rectangles and triangles}, Electron. J. Combin. \textbf{22} (2015),
+  no.~3, Paper 3.40, 49.
+
+\bibitem[GR16]{Grinberg.Roby:1}
+\bysame, \emph{Iterative properties of birational rowmotion {I}: generalities
+  and skeletal posets}, Electron. J. Combin. \textbf{23} (2016), no.~1, Paper
+  1.33, 40.
+
+\bibitem[HPPW16]{HPPW}
+Zachary Hamaker, Rebecca Patrias, Oliver Pechenik, and Nathan Williams,
+  \emph{Doppelg\"{a}ngers: Bijections of plane partitions}, preprint (2016),
+  {\sf arXiv:1602.05535}.
+
+\bibitem[Man01]{Manivel}
+Laurent Manivel, \emph{Symmetric functions, {S}chubert polynomials and
+  degeneracy loci}, SMF/AMS Texts and Monographs, vol.~6, American Mathematical
+  Society, Providence, RI; Soci\'et\'e Math\'ematique de France, Paris, 2001,
+  Translated from the 1998 French original by John R. Swallow, Cours
+  Sp\'ecialis\'es [Specialized Courses], 3.
+
+\bibitem[Pan09]{Panyushev}
+Dmitri~I. Panyushev, \emph{On orbits of antichains of positive roots}, European
+  J. Combin. \textbf{30} (2009), no.~2, 586--594.
+
+\bibitem[Pec14]{Pechenik}
+Oliver Pechenik, \emph{Cyclic sieving of increasing tableaux and small
+  {S}chr\"oder paths}, J. Combin. Theory Ser. A \textbf{125} (2014), 357--378.
+
+\bibitem[Pec17]{Pechenik:frames}
+\bysame, \emph{Promotion of increasing tableaux: frames and homomesies},
+  Electron. J. Combin. \textbf{24} (2017), no.~3, Paper 3.50, 1--14.
+
+\bibitem[PR15]{Propp.Roby}
+James Propp and Tom Roby, \emph{Homomesy in products of two chains}, Electron.
+  J. Combin. \textbf{22} (2015), no.~3, Paper 3.4, 1--29.
+
+\bibitem[Pro84]{Proctor}
+Robert~A. Proctor, \emph{Bruhat lattices, plane partition generating functions,
+  and minuscule representations}, European J. Combin. \textbf{5} (1984), no.~4,
+  331--350.
+
+\bibitem[PSV16]{Pressey.Stokke.Visentin}
+Timothy Pressey, Anna Stokke, and Terry Visentin, \emph{Increasing tableaux,
+  {N}arayana numbers and an instance of the cyclic sieving phenomenon}, Ann.
+  Comb. \textbf{20} (2016), no.~3, 609--621.
+
+\bibitem[PY17]{Pechenik.Yong:genomic}
+Oliver Pechenik and Alexander Yong, \emph{Genomic tableaux}, J. Algebraic
+  Combin. \textbf{45} (2017), no.~3, 649--685.
+
+\bibitem[Rho10]{Rhoades:thesis}
+Brendon Rhoades, \emph{Cyclic sieving, promotion, and representation theory},
+  J. Combin. Theory Ser. A \textbf{117} (2010), no.~1, 38--76.
+
+\bibitem[Rho17]{Rhoades:skein}
+\bysame, \emph{A skein action of the symmetric group on noncrossing
+  partitions}, J. Algebraic Combin. \textbf{45} (2017), no.~1, 81--127.
+
+\bibitem[RS11]{Rush.Shi:report}
+David~B. Rush and XiaoLin Shi, \emph{On orbits of order ideals of minuscule
+  posets}, unpublished manuscript, available at \\ {\tt
+  http://www-users.math.umn.edu/$\sim$reiner/REU/RushShi2011.pdf}, 2011.
+
+\bibitem[RS13]{Rush.Shi}
+\bysame, \emph{On orbits of order ideals of minuscule posets}, J. Algebraic
+  Combin. \textbf{37} (2013), no.~3, 545--569.
+
+\bibitem[RSW04]{Reiner.Stanton.White}
+V.~Reiner, D.~Stanton, and D.~White, \emph{The cyclic sieving phenomenon}, J.
+  Combin. Theory Ser. A \textbf{108} (2004), no.~1, 17--50.
+
+\bibitem[Sch72]{Schutzenberger}
+M.~P. Sch{\"u}tzenberger, \emph{Promotion des morphismes d'ensembles
+  ordonn\'es}, Discrete Math. \textbf{2} (1972), 73--94.
+
+\bibitem[SW12]{Striker.Williams}
+Jessica Striker and Nathan Williams, \emph{Promotion and rowmotion}, European
+  J. Combin. \textbf{33} (2012), no.~8, 1919--1942.
+
+\bibitem[TY09]{Thomas.Yong:K}
+Hugh Thomas and Alexander Yong, \emph{A jeu de taquin theory for increasing
+  tableaux, with applications to {$K$}-theoretic {S}chubert calculus}, Algebra
+  Number Theory \textbf{3} (2009), no.~2, 121--148.
+
+\bibitem[Vor17]{Vorland}
+Corey Vorland, \emph{Homomesy in products of three chains and multidimensional
+  recombination}, preprint (2017), {\sf arXiv:1705.02665}.
+
+\end{thebibliography}

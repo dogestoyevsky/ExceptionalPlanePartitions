@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: exceptionals3.aux
+The style file: amsalpha.bst
+Database file #1: exceptional.bib.bib
+Warning--missing pages in HPPW
+Warning--missing pages in Vorland
+You've used 33 entries,
+            2624 wiz_defined-function locations,
+            783 strings with 9375 characters,
+and the built_in function-call counts, 12758 in all, are:
+= -- 1228
+> -- 523
+< -- 15
++ -- 173
+- -- 168
+* -- 1148
+:= -- 2031
+add.period$ -- 33
+call.type$ -- 33
+change.case$ -- 194
+chr.to.int$ -- 33
+cite$ -- 35
+duplicate$ -- 491
+empty$ -- 1015
+format.name$ -- 213
+if$ -- 2563
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 69
+newline$ -- 109
+num.names$ -- 95
+pop$ -- 194
+preamble$ -- 1
+purify$ -- 227
+quote$ -- 0
+skip$ -- 347
+stack$ -- 0
+substring$ -- 957
+swap$ -- 49
+text.length$ -- 15
+text.prefix$ -- 12
+top$ -- 0
+type$ -- 248
+warning$ -- 2
+while$ -- 134
+width$ -- 36
+write$ -- 366
+(There were 2 warnings)
