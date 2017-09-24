@@ -418,13 +418,13 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 
 \begin{figure}[h]
 \begin{tikzpicture}
-\node (A) {\ytableaushort{1235,\none 45, \none \none 6} };
-\node[above right = 1 and 1 of A] (B) {\ytableaushort{1245, \none 35,\none \none 6}};
-\node[ right = 1 and 1 of A] (C) {\ytableaushort{1234, \none 45,\none \none 6}};
-\node[below right = 1 and 1 of A] (D) {\ytableaushort{1236, \none 45,\none \none 6}};
-\path (A) edge[pilpil,shorten >=-8mm] node[above]{$\rho_3$} (B);
+\node (A) {\ytableaushort{\none \none 6,\none 45,1235 } };
+\node[above right = 1 and 1 of A] (B) {\ytableaushort{\none \none 6, \none 35, 1245}};
+\node[ right = 1 and 1 of A] (C) {\ytableaushort{\none \none 6, \none 45,1234}};
+\node[below right = 1 and 1 of A] (D) {\ytableaushort{\none \none 6, \none 45,1236}};
+\path (A) edge[pilpil,shorten >=-0mm] node[above]{$\rho_3$} (B);
 \path (A) edge[pilpil] node[above]{$\rho_4$} (C);
-\path (A) edge[pilpil] node[above]{$\rho_5$} (D);
+\path (A) edge[pilpil,shorten >=-3mm] node[above]{$\rho_5$} (D);
 \end{tikzpicture}
 \caption{The three increasing tableaux in the right column are obtained from the increasing tableau at left by applying the indicated $K$-Bender-Knuth operators. The arrows point in both directions since each $K$-Bender-Knuth operator is involutive.}\label{fig:kbk}
 \end{figure}
