@@ -519,11 +519,11 @@ To establish this relation, we first need to introduce notation for the steps in
 \begin{figure}
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
 \begin{tikzpicture}
-\node (T) {$T = \ytableaushort{123,257}$};
-\node[right=1.5 of T] (D) {\ytableaushort{\bullet 23,257}};
-\node[right = 1.5 of D] (T2) {\ytableaushort{2 \bullet 3, \bullet 57}};
-\node[below right = 1.5 and 0 of T] (T3) {\ytableaushort{23 \bullet, \bullet 5 7}};
-\node[right = 1.5 of T3] (Tres3) {\ytableaushort{23,\none}};
+\node (T) {$T = \ytableaushort{257,123}$};
+\node[right=1.5 of T] (D) {\ytableaushort{257,\bullet 23}};
+\node[right = 1.5 of D] (T2) {\ytableaushort{\bullet 57,2 \bullet 3}};
+\node[below right = 1.5 and 0 of T] (T3) {\ytableaushort{\bullet 5 7,23 \bullet}};
+\node[right = 1.5 of T3] (Tres3) {\ytableaushort{\none,23}};
 \node[above left = -.2 and -0.7 of D] (fake1) {};
 \node[above left = -.2 and -2.0 of D] (fake2) {};
 \path (T) edge[pil] node[above]{$\rep_{1 \rightarrow \bullet}$} (D);
