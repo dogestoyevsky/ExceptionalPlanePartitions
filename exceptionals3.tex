@@ -487,7 +487,7 @@ For a positive integer $j \in \mathbb{Z}_{>0}$, write $[j]$ for the set $\{ 1, 2
 where $c_k = 1$ if $k \in \mathrm{range}(T)$ and $c_k = 0$ if $k \notin \mathrm{range}(T)$.
 
 \begin{example}\label{ex:deflate}
-If $T = \ytableaushort{125,456} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{124,345} \in \inc^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \{0,1\}^7$.
+If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{345,124} \in \inc^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \{0,1\}^7$.
 \end{example}
 
 Clearly, the product map \[\compress^q = (\deflate^q,\content^q) : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda) \times \binom{[q]}{k} \] is injective.
