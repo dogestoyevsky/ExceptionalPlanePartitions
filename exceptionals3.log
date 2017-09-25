@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1487,11 +1487,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 362.
 
-
-Underfull \vbox (badness 1997) has occurred while \output is active []
-
- [5]
-[6]
+[5] [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 397.
@@ -1510,11 +1506,7 @@ lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 1424) has occurred while \output is active []
-
- [8]
-[9]
+[8] [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 512.
@@ -1570,7 +1562,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1001.
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 5D49F5397C0D07AE99E298EC42EA8388;890.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
-(rerunfilecheck)             Checksum: B6B9A902C0B8BBE284556757059C6989;2197.
+(rerunfilecheck)             Checksum: 822732DD4BEBABCEDFA68728DB47E492;2197.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1580,7 +1572,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1001.
 Here is how much of TeX's memory you used:
  31079 strings out of 493014
  619112 string characters out of 6133351
- 688629 words of memory out of 5000000
+ 688624 words of memory out of 5000000
  33846 multiletter control sequences out of 15000+600000
  24860 words of font info for 98 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1614,10 +1606,10 @@ nts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (24 pages, 430568 bytes).
+Output written on exceptionals3.pdf (24 pages, 430538 bytes).
 PDF statistics:
- 572 PDF objects out of 1000 (max. 8388607)
- 509 compressed objects within 6 object streams
+ 571 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
  112 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
