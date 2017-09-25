@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1509,14 +1509,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [8] [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 512.
+(hyperref)                removing `math shift' on input line 514.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 512.
+(hyperref)                removing `math shift' on input line 514.
 
 [10] [11] [12]
-Overfull \hbox (22.26558pt too wide) in paragraph at lines 581--582
+Overfull \hbox (22.26558pt too wide) in paragraph at lines 583--584
 []\OT1/cmr/m/n/12 This shows that $\OML/cmm/m/it/12 ^^U [] \OT1/cmr/m/n/12 = \O
 ML/cmm/m/it/12 ^^U []$ \OT1/cmr/m/n/12 for all $\OML/cmm/m/it/12 k$\OT1/cmr/m/n
 /12 , and that more-over, if $[][](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )[](\OT1/c
@@ -1524,22 +1524,22 @@ mss/m/n/12 x\OT1/cmr/m/n/12 ) =
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 658--661
+Underfull \hbox (badness 10000) in paragraph at lines 660--663
 
  []
 
 [14] [15] [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 749.
+(hyperref)                removing `math shift' on input line 751.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Omega' on input line 749.
+(hyperref)                removing `\Omega' on input line 751.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 749.
+(hyperref)                removing `math shift' on input line 751.
 
 [17] [18] [19] [20] (./exceptionals3.bbl (./exceptionals3.brf)
 \tf@brf=\write5
@@ -1550,17 +1550,17 @@ Underfull \vbox (badness 2035) has occurred while \output is active []
 
  [22]
 [23])
-Underfull \hbox (badness 7030) in paragraph at lines 1001--1001
+Underfull \hbox (badness 7030) in paragraph at lines 1003--1003
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
 [24]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1001.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1001.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1003.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1003.
  (./exceptionals3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1001.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1001.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1003.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1003.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 5D49F5397C0D07AE99E298EC42EA8388;890.
@@ -1570,13 +1570,13 @@ Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1001.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1003.
  ) 
 Here is how much of TeX's memory you used:
- 31084 strings out of 493014
- 619271 string characters out of 6133351
+ 31085 strings out of 493014
+ 619303 string characters out of 6133351
  688671 words of memory out of 5000000
- 33850 multiletter control sequences out of 15000+600000
+ 33851 multiletter control sequences out of 15000+600000
  24860 words of font info for 98 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1070s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1609,7 +1609,7 @@ nts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (24 pages, 432292 bytes).
+Output written on exceptionals3.pdf (24 pages, 432425 bytes).
 PDF statistics:
  575 PDF objects out of 1000 (max. 8388607)
  512 compressed objects within 6 object streams
