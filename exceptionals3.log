@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1502,7 +1502,10 @@ Overfull \hbox (4.64925pt too wide) in paragraph at lines 403--404
 lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
  []
 
-[7]
+LaTeX Font Info:    Try loading font information for U+euf on input line 409.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [7]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1560,7 +1563,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1017.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1017.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
-(rerunfilecheck)             Checksum: 5D49F5397C0D07AE99E298EC42EA8388;890.
+(rerunfilecheck)             Checksum: A8F2CEB7ACC12C374A711E2388AF5502;889.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
 (rerunfilecheck)             Checksum: 59A05FF3BBA0389C322B1190AB3F2360;2217.
 
@@ -1570,11 +1573,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1017.
  ) 
 Here is how much of TeX's memory you used:
- 31086 strings out of 493014
- 619312 string characters out of 6133351
- 688678 words of memory out of 5000000
- 33852 multiletter control sequences out of 15000+600000
- 24860 words of font info for 98 fonts, out of 8000000 for 9000
+ 31102 strings out of 493014
+ 619596 string characters out of 6133351
+ 688683 words of memory out of 5000000
+ 33862 multiletter control sequences out of 15000+600000
+ 26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1070s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1602,14 +1605,15 @@ st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (24 pages, 432542 bytes).
+nts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on exceptionals3.pdf (24 pages, 435519 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 512 compressed objects within 6 object streams
+ 579 PDF objects out of 1000 (max. 8388607)
+ 515 compressed objects within 6 object streams
  113 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
