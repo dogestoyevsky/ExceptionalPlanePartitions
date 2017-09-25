@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 14:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 SEP 2017 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1502,10 +1502,6 @@ Overfull \hbox (4.64925pt too wide) in paragraph at lines 402--403
 lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
  []
 
-
-LaTeX Warning: Citation `Schutzenberger:promotion' on page 7 undefined on input
- line 408.
-
 [7]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1572,9 +1568,6 @@ Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
 (rerunfilecheck)             Checksum: 59A05FF3BBA0389C322B1190AB3F2360;2217.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1001.
@@ -1582,7 +1575,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1001.
 Here is how much of TeX's memory you used:
  31084 strings out of 493014
  619271 string characters out of 6133351
- 688621 words of memory out of 5000000
+ 688671 words of memory out of 5000000
  33850 multiletter control sequences out of 15000+600000
  24860 words of font info for 98 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1616,10 +1609,10 @@ nts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (24 pages, 432449 bytes).
+Output written on exceptionals3.pdf (24 pages, 432307 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 511 compressed objects within 6 object streams
+ 575 PDF objects out of 1000 (max. 8388607)
+ 512 compressed objects within 6 object streams
  113 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
