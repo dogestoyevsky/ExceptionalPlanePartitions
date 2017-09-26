@@ -573,7 +573,7 @@ To establish this relation, we first need to introduce notation for the steps in
 
 Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
-\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $[N]$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. The following lemma uses these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as its deflation, provided that the gappy tableau contains at least one $1$. 
+\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. The following lemma uses these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. 
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -596,9 +596,9 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
 
 %-- not obvious that $\lambda_{dksfhkds}$ is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then for all $\x \in \lambda$,
+Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then, for all $\x \in \lambda$, we have
  \begin{equation}\label{eq:gappy_promotion2}
-\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet
+\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet,
 \end{equation}
 for $1 \leq k \leq N_T$.
 \end{lemma}
