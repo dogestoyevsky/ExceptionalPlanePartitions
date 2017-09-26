@@ -619,12 +619,12 @@ Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-
 \begin{lemma} \label{lem:gappy_promotion}
 Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$.  Then, for $1 \leq k \leq N_T$, we have
 \begin{equation}\label{eq:gappy_promotion}
- \tinflate^q \big( \deflate^q(T)_k, \content^q(T) \big) = T_{i_k}. 
+ \tinflate^q \Big( \deflate^q(T)_k, \content^q(T) \Big) = T_{i_k}. 
 \end{equation}
  That is, the two functions are identical tableaux on the same domain. 
 \end{lemma}
 
-\begin{proof}  We proceed by induction on $k$. The base case is trivial for any $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$, since $\lambda(\deflate^q(T)^{(1)})$ and $\lambda(T^{(1)})$ are both the empty tableau.
+\begin{proof}  We proceed by induction on $k$. The base case $k=1$ is trivial for any tableau $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$, since $\lambda \left( \deflate^q(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are then both the empty order ideal.
 %To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
 
 Now, assume that the lemma holds for all increasing tableaux in the case $k < t$. We look first at the left side of Equation~(\ref{eq:gappy_promotion}). If $\x \in \lambda \left( \deflate^q(T)^{(t-1)} \right)$, then 
