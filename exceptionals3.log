@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 11:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1551,12 +1551,18 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 765.
 
-[17] [18] [19] [20] (./exceptionals3.bbl (./exceptionals3.brf)
+[17] [18] [19] [20]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./exceptionals3.bbl (./exceptionals3.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals3.brf'.
 
- [21] [22]
-[23])
+ [21] [22] [23])
 Underfull \hbox (badness 7030) in paragraph at lines 1017--1017
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
@@ -1571,14 +1577,9 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1017.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: A8F2CEB7ACC12C374A711E2388AF5502;889.
+Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
+(rerunfilecheck)             Checksum: 258A2766C10593A63D6C21CBF1DAFB82;2217.
 
-
-Package rerunfilecheck Warning: File `exceptionals3.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `exceptionals3.brf':
-(rerunfilecheck)             Before: 562D49E2E490F76B3785976012443287;2217
-(rerunfilecheck)             After:  258A2766C10593A63D6C21CBF1DAFB82;2217.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1622,7 +1623,7 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (24 pages, 435958 bytes).
+Output written on exceptionals3.pdf (24 pages, 435952 bytes).
 PDF statistics:
  581 PDF objects out of 1000 (max. 8388607)
  517 compressed objects within 6 object streams
