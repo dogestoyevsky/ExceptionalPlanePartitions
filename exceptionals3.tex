@@ -573,7 +573,7 @@ To establish this relation, we first need to introduce notation for the steps in
 
 Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
-\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. The following lemma uses these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. 
+\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. 
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -582,7 +582,8 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
 \node[right=1.5 of T] (D) {\ytableaushort{257,\bullet 23}};
 \node[right = 1.5 of D] (T2) {\ytableaushort{\bullet 57,2 \bullet 3}};
 \node[below right = 1.5 and -0.4 of T] (T3) {\ytableaushort{\bullet 5 7,23 \bullet}};
-\node[right = 1.9 of T3] (Tres3) {\ytableaushort{\none,23}};
+\node[left = 0 of T3] (mytag) {$T^{(3)}=$};
+\node[right = 1.9 of T3] (Tres3) {\ytableaushort{\none,23} $\; = T_3$};
 %\node[above left = -.2 and -0.7 of D] (fake1) {};
 %\node[above left = -.2 and -2.0 of D] (fake2) {};
 \path (T) edge[pil] node[above]{$\rep_{1 \rightarrow \bullet}$} (D);
@@ -591,7 +592,7 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
 \draw[->, thick] (T2.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T2) and ([yshift=3cm] T3) .. (T3.north);
 %\path (fake2) edge[pil, out=90, in=90, looseness=1.5] node[above]{$\swap_1$} (fake1);
 \end{tikzpicture}
-\caption{The tableau $T_3$ is obtained from $T$ by first applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_2$, and $\swap_3$, and then restricting to those boxes with labels less than or equal to $3$.}
+\caption{The tableau $T^{(3)}$ is obtained from $T$ by applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_2$, and $\swap_3$. We then obtain $T_3$ from $T^{(3)}$ by restricting to those boxes with labels less than or equal to $3$.}\label{fig:restricted_promotions}
 \end{figure}
 
 %-- not obvious that $\lambda_{dksfhkds}$ is a shape but don't think need this here -- 
@@ -602,7 +603,7 @@ Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots
 \end{equation}
 for $1 \leq k \leq N_T$.
 \end{lemma}
-\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$. In the base case $k = 1$,  $\rep_{1 \rightarrow \bullet}(T)_{1}$ has a $\bullet$ in each box $\x \in \lambda$ such that $T(\x) = 1$ and $\rep_{1 \rightarrow \bullet}(\deflate^q(T))_{1}$ has a $\bullet$ in each box $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $1 \in \mathrm{range}(T)$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
+\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$. In the base case $k = 1$,  $T^{(1)} = \rep_{1 \rightarrow \bullet}(T)_{1}$ has a $\bullet$ in each box $\x \in \lambda$ such that $T(\x) = 1$ and $\rep_{1 \rightarrow \bullet}(\deflate^q(T))_{1}$ has a $\bullet$ in each box $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $1 \in \mathrm{range}(T)$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
 Now, say the statement holds for all $T$ and for $k < t$. On the one hand, if $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$, then $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $x'$ adjacent to $x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labelled with values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x)$. This occurs if and only if $\deflate^q(T)(\x) = t$, in which case $\deflate^q(T)^{(t-1)}(\x) = t$. In addition, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)} = \bullet$. Therefore, these conditions are equivalent to $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
