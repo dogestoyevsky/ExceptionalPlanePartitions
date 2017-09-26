@@ -510,7 +510,10 @@ For a binary vector $v \in \{0,1\}^{q}$, let $N_v \coloneqq \langle v, (1,...,1)
 \tinflate^q : \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right) \to \inc^q(\lambda)
 \]
 given by 
-$(S,v) \mapsto \inflate^q_v \circ S$ is a left inverse for $\compress^q$. 
+\[
+\tinflate^q(S,v) \coloneqq \inflate^q_v \circ S
+\]
+ is a left inverse for $\compress^q$. 
 
 \begin{example}\label{ex:reinflate}
 Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5] \to [7]$ is given by 
@@ -525,10 +528,14 @@ Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v
 \end{example}
 
 \subsection{Interaction between $K$-promotion and deflation}
-By determining the relation between the maps $\compress^q$ and $\pro$, we will show that the behavior of $\pro$ is controlled by its action on the subset of gapless increasing tableaux. Much of the power of this observation comes from the fact that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$, and that therefore the action of $\pro$ on the set of all increasing tableaux of shape $\lambda$ is governed by finite data.
+By determining the relation between the maps $\compress^q$ and $\pro^q$, we will show that the behavior of $\pro^q$ is controlled by its action on the subset of gapless increasing tableaux. Much of the power of this observation comes from the fact that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$, and that therefore the action of $\pro^q$ on the set of all increasing tableaux of shape $\lambda$ is governed by finite data.
 
 
-To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^q(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow q+1}$ replace each instance of $\bullet$ with $q+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion: \[\pro = \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}.\] (This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}.)
+To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro^q$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^q(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow q+1}$ replace each instance of $\bullet$ with $q+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion: 
+\[
+\pro^q = \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}.
+\]
+ (This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}.)
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -549,7 +556,7 @@ To establish this relation, we first need to introduce notation for the steps in
 \caption{The tableau $T_3$ is obtained from $T$ by first applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_1$, $\swap_2$, and $\swap_3$, and then restricting to those boxes with labels less than or equal to $3$.}
 \end{figure}
 
-Using this characterization of $\pro$, we give names to the intermediate products of this process.
+Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 1, \dots, q, \bullet \rbrace$ by 
 \[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{1,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $[N]$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $1$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. The following lemma uses these intermediate products to show that $K$-promotion acts on a gappy tableau and its deflation in essentially the same way, provided that the gappy tableau contains at least one $1$. 
 
