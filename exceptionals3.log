@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1584,14 +1584,9 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1064.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 75B35601F4172E295F9A687700C1FD3B;890.
+Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
+(rerunfilecheck)             Checksum: AEED7306E8679BFE7E17BC4591477EA4;2217.
 
-
-Package rerunfilecheck Warning: File `exceptionals3.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `exceptionals3.brf':
-(rerunfilecheck)             Before: FF8A18F0AF40AC8B3CDC1D5566734134;2217
-(rerunfilecheck)             After:  AEED7306E8679BFE7E17BC4591477EA4;2217.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1600,7 +1595,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1064.
 Here is how much of TeX's memory you used:
  31123 strings out of 493014
  619900 string characters out of 6133351
- 689668 words of memory out of 5000000
+ 689659 words of memory out of 5000000
  33881 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1635,7 +1630,7 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (25 pages, 439050 bytes).
+Output written on exceptionals3.pdf (25 pages, 439095 bytes).
 PDF statistics:
  590 PDF objects out of 1000 (max. 8388607)
  525 compressed objects within 6 object streams
