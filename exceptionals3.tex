@@ -619,7 +619,7 @@ Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-
 \begin{lemma} \label{lem:gappy_promotion}
 Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$.  Then, for $1 \leq k \leq N_T$, we have
 \begin{equation}\label{eq:gappy_promotion}
- \inflate^q_{\content^q(T)} \circ (\deflate^q(T)_k) = T_{i_k}. 
+ \tinflate^q \big( \deflate^q(T)_k, \content^q(T) \big) = T_{i_k}. 
 \end{equation}
  That is, the two functions are identical tableaux on the same domain. 
 \end{lemma}
