@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1528,7 +1528,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12] [13]
+[11] [12]
 Overfull \hbox (22.26558pt too wide) in paragraph at lines 638--639
 []\OT1/cmr/m/n/12 This shows that $\OML/cmm/m/it/12 ^^U [] \OT1/cmr/m/n/12 = \O
 ML/cmm/m/it/12 ^^U []$ \OT1/cmr/m/n/12 for all $\OML/cmm/m/it/12 k$\OT1/cmr/m/n
@@ -1536,7 +1536,7 @@ ML/cmm/m/it/12 ^^U []$ \OT1/cmr/m/n/12 for all $\OML/cmm/m/it/12 k$\OT1/cmr/m/n
 mss/m/n/12 x\OT1/cmr/m/n/12 ) =
  []
 
-[14]
+[13] [14]
 Underfull \hbox (badness 10000) in paragraph at lines 715--718
 
  []
@@ -1593,10 +1593,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1058.
  ) 
 Here is how much of TeX's memory you used:
- 31119 strings out of 493014
- 619833 string characters out of 6133351
+ 31116 strings out of 493014
+ 619783 string characters out of 6133351
  689342 words of memory out of 5000000
- 33877 multiletter control sequences out of 15000+600000
+ 33874 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1070s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1630,7 +1630,7 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (25 pages, 438657 bytes).
+Output written on exceptionals3.pdf (25 pages, 438607 bytes).
 PDF statistics:
  589 PDF objects out of 1000 (max. 8388607)
  524 compressed objects within 6 object streams

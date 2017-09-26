@@ -583,15 +583,15 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
 \node[right = 1.5 of D] (T2) {\ytableaushort{\bullet 57,2 \bullet 3}};
 \node[below right = 1.5 and -0.4 of T] (T3) {\ytableaushort{\bullet 5 7,23 \bullet}};
 \node[right = 1.9 of T3] (Tres3) {\ytableaushort{\none,23}};
-\node[above left = -.2 and -0.7 of D] (fake1) {};
-\node[above left = -.2 and -2.0 of D] (fake2) {};
+%\node[above left = -.2 and -0.7 of D] (fake1) {};
+%\node[above left = -.2 and -2.0 of D] (fake2) {};
 \path (T) edge[pil] node[above]{$\rep_{1 \rightarrow \bullet}$} (D);
 \path (D) edge[pil] node[above]{$\swap_2$} (T2); 
 \path (T3) edge[pil] node[above]{restrict} (Tres3);
 \draw[->, thick] (T2.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T2) and ([yshift=3cm] T3) .. (T3.north);
-\path (fake2) edge[pil, out=90, in=90, looseness=1.5] node[above]{$\swap_1$} (fake1);
+%\path (fake2) edge[pil, out=90, in=90, looseness=1.5] node[above]{$\swap_1$} (fake1);
 \end{tikzpicture}
-\caption{The tableau $T_3$ is obtained from $T$ by first applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_1$, $\swap_2$, and $\swap_3$, and then restricting to those boxes with labels less than or equal to $3$.}
+\caption{The tableau $T_3$ is obtained from $T$ by first applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_2$, and $\swap_3$, and then restricting to those boxes with labels less than or equal to $3$.}
 \end{figure}
 
 %-- not obvious that $\lambda_{dksfhkds}$ is a shape but don't think need this here -- 
