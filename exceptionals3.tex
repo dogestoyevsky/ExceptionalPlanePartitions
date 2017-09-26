@@ -573,7 +573,7 @@ To establish this relation, we first need to introduce notation for the steps in
 
 Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
-\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda(T^{(N)}) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda(T^{(N)})}$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. 
+\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda \left( T^{(N)} \right) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. 
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -592,7 +592,12 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
 \draw[->, thick] (T2.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T2) and ([yshift=3cm] T3) .. (T3.north);
 %\path (fake2) edge[pil, out=90, in=90, looseness=1.5] node[above]{$\swap_1$} (fake1);
 \end{tikzpicture}
-\caption{The tableau $T^{(3)}$ is obtained from $T$ by applying in sequence the operations $\rep_{1 \rightarrow \bullet}$, $\swap_2$, and $\swap_3$. We then obtain $T_3$ from $T^{(3)}$ by restricting to those boxes with labels less than or equal to $3$.}\label{fig:restricted_promotions}
+\caption{The tableau $T^{(3)}$ is obtained from $T$ by applying in sequence the operations 
+$\rep_{1 \rightarrow \bullet}$, $\swap_2$, and $\swap_3$. 
+We then obtain $T_3$ from $T^{(3)}$ by restricting to 
+those boxes with labels less than or equal to $3$. The order ideal
+ $\lambda \left( T^{(3)} \right)$ is the 
+shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 \end{figure}
 
 %-- not obvious that $\lambda_{dksfhkds}$ is a shape but don't think need this here -- 
