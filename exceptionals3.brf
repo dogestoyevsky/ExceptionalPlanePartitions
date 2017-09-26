@@ -4,16 +4,16 @@
 \backcite {Reiner.Stanton.White}{{2}{1}{section.1}}
 \backcite {Rush.Shi}{{2}{1}{section.1}}
 \backcite {Rush.Shi}{{2}{1.1}{theorem.1.1}}
-\backcite {Rush.Shi}{{3}{1}{theorem.1.2}}
-\backcite {DPS}{{3}{1}{theorem.1.2}}
-\backcite {Pechenik}{{3}{1}{theorem.1.2}}
-\backcite {Thomas.Yong:K}{{3}{1}{theorem.1.2}}
-\backcite {Rush.Shi}{{3}{1}{theorem.1.3}}
-\backcite {Rush.Shi:report}{{3}{1}{theorem.1.3}}
+\backcite {Rush.Shi}{{2}{1}{theorem.1.2}}
+\backcite {DPS}{{2}{1}{theorem.1.2}}
+\backcite {Pechenik}{{2}{1}{theorem.1.2}}
+\backcite {Thomas.Yong:K}{{2}{1}{theorem.1.2}}
+\backcite {Rush.Shi}{{2}{1}{theorem.1.3}}
+\backcite {Rush.Shi:report}{{2}{1}{theorem.1.3}}
 \backcite {Reiner.Stanton.White, Rhoades:thesis}{{3}{1}{theorem.1.3}}
 \backcite {Rhoades:skein}{{3}{1}{theorem.1.3}}
-\backcite {DPS}{{3}{1}{theorem.1.3}}
-\backcite {Billey.Lakshmibai}{{4}{2}{figure.caption.2}}
+\backcite {DPS}{{4}{1}{theorem.1.3}}
+\backcite {Billey.Lakshmibai}{{5}{2}{figure.caption.2}}
 \backcite {Proctor}{{5}{2}{figure.caption.2}}
 \backcite {Brouwer.Schrijver,Duchet,Cameron.Fonderflaass}{{5}{3}{section.3}}
 \backcite {Striker.Williams}{{5}{3}{section.3}}
@@ -31,8 +31,8 @@
 \backcite {Schutzenberger:promotion}{{7}{4.1}{theorem.4.1}}
 \backcite {Pechenik}{{7}{4.1}{theorem.4.1}}
 \backcite {BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}{{7}{4.1}{theorem.4.1}}
-\backcite {Pechenik}{{7}{4.1}{theorem.4.1}}
-\backcite {DPS}{{7}{4.1}{theorem.4.1}}
+\backcite {Pechenik}{{8}{4.1}{theorem.4.1}}
+\backcite {DPS}{{8}{4.1}{theorem.4.1}}
 \backcite {DPS}{{11}{4.2}{subsection.4.2}}
 \backcite {Pechenik}{{11}{4.2}{subsection.4.2}}
 \backcite {DPS}{{13}{4.2}{theorem.4.7}}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 SEP 2017 11:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1434,7 +1434,10 @@ Overfull \hbox (46.1733pt too wide) in paragraph at lines 208--208
  [][] 
  []
 
-[2]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (1.49785pt too wide) in paragraph at lines 226--227
 []\OT1/cmr/m/n/12 Our ap-proach to prov-ing The-o-rem []1.2[] is to ex-tend the
  ideas of K. Dilks, O. Pechenik,
@@ -1453,7 +1456,7 @@ Overfull \hbox (3.9867pt too wide) in paragraph at lines 234--235
 proven us-ing representation-
  []
 
-[3]
+[2] [3]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1509,7 +1512,11 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9]
+
+Underfull \vbox (badness 1424) has occurred while \output is active []
+
+ [8]
+[9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 528.
@@ -1518,7 +1525,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 528.
 
-[10] [11] [12]
+[11] [12]
 Overfull \hbox (22.26558pt too wide) in paragraph at lines 597--598
 []\OT1/cmr/m/n/12 This shows that $\OML/cmm/m/it/12 ^^U [] \OT1/cmr/m/n/12 = \O
 ML/cmm/m/it/12 ^^U []$ \OT1/cmr/m/n/12 for all $\OML/cmm/m/it/12 k$\OT1/cmr/m/n
@@ -1564,9 +1571,14 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1017.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: A8F2CEB7ACC12C374A711E2388AF5502;889.
-Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
-(rerunfilecheck)             Checksum: 59A05FF3BBA0389C322B1190AB3F2360;2217.
 
+
+Package rerunfilecheck Warning: File `exceptionals3.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `exceptionals3.brf':
+(rerunfilecheck)             Before: 562D49E2E490F76B3785976012443287;2217
+(rerunfilecheck)             After:  258A2766C10593A63D6C21CBF1DAFB82;2217.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1575,7 +1587,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1017.
 Here is how much of TeX's memory you used:
  31104 strings out of 493014
  619630 string characters out of 6133351
- 688683 words of memory out of 5000000
+ 689184 words of memory out of 5000000
  33864 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1610,10 +1622,10 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (24 pages, 435520 bytes).
+Output written on exceptionals3.pdf (24 pages, 435958 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
+ 581 PDF objects out of 1000 (max. 8388607)
+ 517 compressed objects within 6 object streams
  113 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
