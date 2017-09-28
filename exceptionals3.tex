@@ -662,19 +662,20 @@ We need to show that
  & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
 \end{align*}
 
-Say $\x \not \in \lambda(T^{(q)})$, that is,  $T^{(q)}(\x) = \bullet$.  Then 
+First consider $\x \in \lambda$ with $\x \not \in \lambda(T^{(q)})$. Then,  $T^{(q)}(\x) = \bullet$ and so 
 \[
-[\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = q.
+\pro^q(T)(\x) =  [\decr \circ \rep_{\bullet \rightarrow q+1} (T^{(q)})](\x) = q.
 \]
 Now by \cite[Lemma~2.1]{DPS}, the content vector of  
-\[
-\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = \pro(T)
-\]
- is a rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector, and clearly $q$ is the greatest, so 
+$
+\pro^q(T)
+$
+ is a cyclic rotation of the content vector of $T$. This implies that both content vectors contain the same number of $1$s. Since $q$ is the greatest element of $\mathrm{range}(\pro^q(T))$, we then have
  \[
- \deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = q_T.
+ \deflate^q \circ \pro^q (T)(\x) = N_T.
  \]
-  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate(T)^{(N_T)})$, we have
+ 
+  By Lemma~\ref{lem:bullet_placement}, we observe on the other hand that $\x \not \in \lambda(\deflate(T)^{(N_T)})$. Thus,
   \[
   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
   \] 
