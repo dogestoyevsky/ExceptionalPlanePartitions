@@ -122,6 +122,8 @@
 \newcommand{\tinflate}{\ensuremath{\mathsf{Infl}}}
 \newcommand{\content}{\ensuremath{\mathsf{Con}}}
 \newcommand{\compress}{\ensuremath{\mathsf{DeflCon}}}
+\newcommand{\defpro}{\ensuremath{\mathfrak{pro}_{*}}}
+\newcommand{\shift}{\ensuremath{\mathsf{sh}}}
 
 \newcommand{\uu}{\mathcal{I}}
 
@@ -711,16 +713,27 @@ Thus, we must have
   \left(T^{(q)} \right)$.
 \end{proof}
 
-\subsection{Computation of period}\label{sec:period}
-  (A little more elaboration, like the fact that $K$-pro does nothing if no $1$). The above shows that if we define $K: --$
-\begin{dmath*}
-K(\deflate(T),\content(T)) =
-\begin{cases}
-    (\pro(\deflate(T)),\Sigma(\content(T)),  & \text{if } \content(T)\langle 1 \rangle = 1; \\        
-   (\deflate(T),\Sigma(\content(T)), & \text{otherwise;}
+\Oliver{Need an easy lemma about promotion when there is no $1$ in $T$.}
+
+\subsection{Computation of periods}\label{sec:period}
+
+Define a {\bf cyclic shift} map $\shift : \{0,1\}^q \to \{0,1\}^q$ on binary vectors by 
+\[ 
+\shift(v)_i  = \begin{cases}
+v_{i+1}, & \text{for } i \neq q;\\
+v_1, & \text{for } i=q.
 \end{cases}
-\end{dmath*}
-then $\compress \circ \pro^n(T) = K^n \circ \compress(T)$. Now, since $\compress$ is an injection, $\pro^n(T) = T$ exactly when $\compress \circ \pro^n(T) = \compress \circ T$. So we are reduced to looking at what powers $n$ of $K$ stabilize $\compress(T)$. 
+\]
+
+Define $\defpro^q : \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)$ by
+\[
+\defpro^q ( T,v ) =
+\begin{cases}
+    \Big( \pro^k(T),\shift(v) \Big),  & \text{if } 1 \in {\rm range}(T); \\        
+   \Big( \deflate(T),\shift(v) \Big), & \text{otherwise.}
+\end{cases}
+\]
+Then, $\compress^q \circ (\pro^q)^{\circ n}(T) = \defpro^{\circ n} \circ \compress^q(T)$. Now, since $\compress$ is an injection, $\pro^n(T) = T$ exactly when $\compress \circ \pro^n(T) = \compress \circ T$. So we are reduced to looking at what powers $n$ of $K$ stabilize $\compress(T)$. 
 Clearly we must have $\Sigma^n(\content(T)) = \content(T)$.  In addition, we must have that $\pro^{n'}(\deflate(T))$, where $n'$ is $n$ minus the number of times that $K^\ell(W(T))$ does not have $1$ in its content vector for $\ell \in 1,...,n$. 
 Now say that the period of $\content(T)$ is $\ell$ and say there are $r$ $0$'s in the first $\ell$ entries of $\content(T)$ which then repeat $q/\ell$ times. Then if $n = \ell$, $n' = \ell - r$. Now say we know that the period of $\deflate(T)$ is $\tau$. This reasoning shows that $K^n (\compress(T)) = \compress(T)$ if and only if $n = e \ell$ for some positive integer $e$ and $n = s \tau + e  r$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $e \ell$ and $s \tau + e r$ for the same $e$. But $e \ell = s\tau + er$ implies that $e(\ell-r) = s\tau$. Since $\ell > r \geq 0$ the minimum of $e \ell$ is clearly achieved when $e$ is minimal, which occurs when $e(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
 \begin{equation*}

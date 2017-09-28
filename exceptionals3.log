@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 SEP 2017 14:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 SEP 2017 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1332,42 +1332,42 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 (./exceptionals3.aux)
 \openout1 = `exceptionals3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Try loading font information for U+msa on input line 137.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Try loading font information for U+msa on input line 139.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 137.
+LaTeX Font Info:    Try loading font information for U+msb on input line 139.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+shuffle on input line 13
-7.
+9.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/shuffle/Ushuffle.fd
 File: Ushuffle.fd 
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 137.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 139.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 137.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 139.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
@@ -1390,7 +1390,7 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks51
 )
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 137.
+Package hyperref Info: Link coloring OFF on input line 139.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1399,9 +1399,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count191
 )
-LaTeX Info: Redefining \ref on input line 137.
-LaTeX Info: Redefining \pageref on input line 137.
-LaTeX Info: Redefining \nameref on input line 137.
+LaTeX Info: Redefining \ref on input line 139.
+LaTeX Info: Redefining \pageref on input line 139.
+LaTeX Info: Redefining \nameref on input line 139.
 
 (./exceptionals3.out) (./exceptionals3.out)
 \@outlinefile=\write4
@@ -1425,12 +1425,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (28.07857pt too wide) in paragraph at lines 203--203
+Overfull \hbox (28.07857pt too wide) in paragraph at lines 205--205
  [][] 
  []
 
 
-Overfull \hbox (46.1733pt too wide) in paragraph at lines 208--208
+Overfull \hbox (46.1733pt too wide) in paragraph at lines 210--210
  [][] 
  []
 
@@ -1438,20 +1438,20 @@ Overfull \hbox (46.1733pt too wide) in paragraph at lines 208--208
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (1.49785pt too wide) in paragraph at lines 226--227
+Overfull \hbox (1.49785pt too wide) in paragraph at lines 228--229
 []\OT1/cmr/m/n/12 Our ap-proach to prov-ing The-o-rem []1.2[] is to ex-tend the
  ideas of K. Dilks, O. Pechenik,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 232.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 234.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 232.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 234.
 
-Overfull \hbox (3.9867pt too wide) in paragraph at lines 234--235
+Overfull \hbox (3.9867pt too wide) in paragraph at lines 236--237
 []\OT1/cmr/m/n/12 Often in-stances of the cyclic siev-ing phe-nom-e-non can be 
 proven us-ing representation-
  []
@@ -1471,7 +1471,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [4]
-Overfull \hbox (28.07857pt too wide) in paragraph at lines 358--358
+Overfull \hbox (28.07857pt too wide) in paragraph at lines 360--360
  [][] 
  []
 
@@ -1480,32 +1480,32 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 363.
+(hyperref)                removing `math shift' on input line 365.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Psi' on input line 363.
+(hyperref)                removing `\Psi' on input line 365.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 363.
+(hyperref)                removing `math shift' on input line 365.
 
 [5] [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 398.
+(hyperref)                removing `math shift' on input line 400.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 398.
+(hyperref)                removing `math shift' on input line 400.
 
 
-Overfull \hbox (4.64925pt too wide) in paragraph at lines 403--404
+Overfull \hbox (4.64925pt too wide) in paragraph at lines 405--406
 []\OT1/cmr/m/n/12 The first $\OML/cmm/m/it/12 K$\OT1/cmr/m/n/12 -theoretic Litt
 lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
  []
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 409.
+LaTeX Font Info:    Try loading font information for U+euf on input line 411.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [7]
@@ -1519,32 +1519,35 @@ Underfull \vbox (badness 1424) has occurred while \output is active []
 [9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 533.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 531.
+(hyperref)                removing `math shift' on input line 533.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 737--740
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 716.
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 750--753
 
  []
 
-[15] [16] [17]
+[16] [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 828.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Omega' on input line 828.
+(hyperref)                removing `math shift' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 828.
+(hyperref)                removing `\Omega' on input line 841.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 841.
 
 [18] [19] [20] [21]
 
@@ -1553,45 +1556,47 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 1065.
 
-Overfull \hbox (117.76212pt too wide) in paragraph at lines 1065--1065
+Overfull \hbox (117.76212pt too wide) in paragraph at lines 1078--1078
 [][] 
  []
 
-(./exceptionals3.bbl (./exceptionals3.brf)
+[22] (./exceptionals3.bbl (./exceptionals3.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals3.brf'.
 
- [22] [23] [24])
-Underfull \hbox (badness 7030) in paragraph at lines 1084--1084
+ [23] [24])
+Underfull \hbox (badness 7030) in paragraph at lines 1097--1097
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
-[25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1084.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1084.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+[26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1097.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1097.
  (./exceptionals3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1084.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1084.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1097.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1097.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
-(rerunfilecheck)             Checksum: 8CE06D77E4EE8895C787149D62D9585E;890.
+(rerunfilecheck)             Checksum: 98A469EFC180B5E534B818FC770AF3BC;891.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
 (rerunfilecheck)             Checksum: 3331969AEEE9157B9B83677911709984;2259.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1084.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1097.
  ) 
 Here is how much of TeX's memory you used:
- 31135 strings out of 493014
- 620173 string characters out of 6133351
- 689735 words of memory out of 5000000
- 33891 multiletter control sequences out of 15000+600000
+ 31140 strings out of 493014
+ 620240 string characters out of 6133351
+ 689813 words of memory out of 5000000
+ 33894 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1070s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1625,10 +1630,10 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2016/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2016/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (25 pages, 445927 bytes).
+Output written on exceptionals3.pdf (26 pages, 447290 bytes).
 PDF statistics:
- 598 PDF objects out of 1000 (max. 8388607)
- 533 compressed objects within 6 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
+ 119 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
