@@ -713,7 +713,19 @@ Thus, we must have
   \left(T^{(q)} \right)$.
 \end{proof}
 
-\Oliver{Need an easy lemma about promotion when there is no $1$ in $T$.}
+\begin{lemma}\label{lem:no_one}
+Let $T \in \inc^q(\lambda)$ with $1 \notin \mathrm{range}(T)$. Let $1 < i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then
+\begin{equation}\label{eq:no_one}
+ \deflate^q \circ \pro^q(T) = \deflate^q(T). 
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $1 \notin \mathrm{range}(T)$, $\rep_{1 \to \bullet}(T)$. Hence, for all $\ell$, $\swap_\ell$ acts trivially on $\rep_{1 \to \bullet}(T)$. Thus,
+\[
+\pro^q(T) = \decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \swap_2 \circ \rep_{1 \to \bullet}(T) = \decr(T).
+\] 
+The lemma follows.
+\end{proof}
 
 \subsection{Computation of periods}\label{sec:period}
 
