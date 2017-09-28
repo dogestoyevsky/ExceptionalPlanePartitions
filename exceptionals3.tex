@@ -651,9 +651,9 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ 
 
 \begin{lemma}\label{lem:deflation_commutation}
 Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then
-\[
+\begin{equation}\label{eq:deflation_commutation}
  \deflate^q \circ \pro^q(T) = \pro^{N_T} \circ \deflate^q(T). 
-\]
+\end{equation}
 \end{lemma}
 \begin{proof}
 We need to show that 
@@ -675,12 +675,13 @@ $
  \deflate^q \circ \pro^q (T)(\x) = N_T.
  \]
  
-  By Lemma~\ref{lem:bullet_placement}, we observe on the other hand that $\x \not \in \lambda(\deflate(T)^{(N_T)})$. Thus,
+  By Lemma~\ref{lem:bullet_placement}, we observe on the other hand that $\x \not \in \lambda \left( \deflate^q(T)^{(N_T)} \right)$. Hence, $\deflate^q(T)^{(N_T)}(\x) = \bullet$, and thus,
   \[
-  [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
+  [\pro^{N_T} \circ \deflate^q(T)](\x) = \Big[ \decr \circ \rep_{\bullet \to N_T + 1} \left( \deflate^q(T)^{(N_T)} \right) \Big](\x)=  N_T.
   \] 
+  Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) agree at such a box $\x$.
 
-Now say $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
+Now consider $\x \in \lambda$ with $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
 \[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
 Therefore it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
 \[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate(T)_{N_T}). \]
