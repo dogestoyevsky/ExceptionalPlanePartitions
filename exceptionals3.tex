@@ -650,13 +650,18 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ 
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
-Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. In the notation above, 
-\begin{align*}
- \deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
- & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
-\end{align*}
+Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then
+\[
+ \deflate^q \circ \pro^q(T) = \pro^{N_T} \circ \deflate^q(T). 
+\]
 \end{lemma}
 \begin{proof}
+We need to show that 
+\begin{align*}
+\deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_2\circ \rep_{1 \rightarrow \bullet} (T) = \\
+ & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
+\end{align*}
+
 Say $\x \not \in \lambda(T^{(q)})$, that is,  $T^{(q)}(\x) = \bullet$.  Then 
 \[
 [\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = q.
