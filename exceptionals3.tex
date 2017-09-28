@@ -682,16 +682,13 @@ $
   Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) agree at such a box $\x \notin \lambda 
   \left(T^{(q)} \right)$.
 
-Now, consider $\x \in \lambda$ with $\x \in \lambda \left(T^{(q)} \right)$. We observe that since $\swap_\ell$ acts trivially on $T^{(i_{N_T})}$ for $\ell > i_{N_T}$, we have $T_q = T_{i_{N_T}}.$
-By Lemma~\ref{lem:gappy_promotion} with $k = N_T$, 
-\[ T_{i_{N_T}} = \tinflate^q \Big( \deflate^q(T)_{N_T}, \content^q(T) \Big) \]
-
-Now, since $\x \in \lambda(T^{(q)})$, we have $T^{(q)}(\x) = \ell$ for some $2 \leq \ell \leq q$. Indeed, $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
+Now, consider $\x \in \lambda$ with $\x \in \lambda \left(T^{(q)} \right)$. 
+We have $T^{(q)}(\x) = \ell$ for some $2 \leq \ell \leq q$. Indeed, $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
 \[
 \pro^q(T)(\x) = 
 \Big[ \decr \circ \rep_{\bullet \to q+1}  \left( T^{(q)} \right) \Big] (\x) = i_k-1.
 \]
-Because by \cite[Lemma~2.1]{DPS}, the content vector of  
+Because, by \cite[Lemma~2.1]{DPS}, the content vector of  
 $
 \pro^q(T)
 $
@@ -699,13 +696,17 @@ $
  \[
  [\deflate^q \circ \pro^q (T)](\x) = k-1.
  \]
-  On the other hand, 
+ 
+   On the other hand, observe that since $\swap_\ell$ acts trivially on $T^{(i_{N_T})}$ for $\ell > i_{N_T}$, we have $T_{i_{N_T}} = T_q.$ Hence, $T_{i_{N_T}}(\x) = T_q(\x) = i_k$.
+By Lemma~\ref{lem:gappy_promotion} with $k = N_T$, 
+\[ T_{i_{N_T}} = \tinflate^q \Big( \deflate^q(T)_{N_T}, \content^q(T) \Big). \]
+Thus, we must have
   \[
-  [ \deflate^q(T)_q](\x) = k,
+  [ \deflate^q(T)_{N_T}](\x) = k,
   \]
    and so 
    \[
-   [\pro^{N_T} \circ  \deflate^q(T)](\x) = k-1.\]
+   [\pro^{N_T} \circ  \deflate^q(T)](\x) = [ \decr \circ \rep_{\bullet \to N_T+1} (\deflate^q(T)_{N_T})](\x)  =k-1.\]
    Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) also agree at such boxes $\x \in \lambda 
   \left(T^{(q)} \right)$.
 \end{proof}
