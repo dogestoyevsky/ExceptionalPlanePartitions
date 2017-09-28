@@ -662,7 +662,7 @@ We need to show that
  & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
 \end{align*}
 
-First consider $\x \in \lambda$ with $\x \not \in \lambda(T^{(q)})$. Then,  $T^{(q)}(\x) = \bullet$ and so 
+First consider $\x \in \lambda$ with $\x \notin \lambda \left(T^{(q)} \right)$. Then,  $T^{(q)}(\x) = \bullet$ and so 
 \[
 \pro^q(T)(\x) =  [\decr \circ \rep_{\bullet \rightarrow q+1} (T^{(q)})](\x) = q.
 \]
@@ -679,20 +679,19 @@ $
   \[
   [\pro^{N_T} \circ \deflate^q(T)](\x) = \Big[ \decr \circ \rep_{\bullet \to N_T + 1} \left( \deflate^q(T)^{(N_T)} \right) \Big](\x)=  N_T.
   \] 
-  Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) agree at such a box $\x$.
+  Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) agree at such a box $\x \notin \lambda(T^{(q)})$.
 
-Now consider $\x \in \lambda$ with $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
-\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
-Therefore it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
-\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate(T)_{N_T}). \]
+Now, consider $\x \in \lambda$ with $\x \in \lambda \left(T^{(q)} \right)$. We observe that since $\swap_\ell$ acts trivially on $T^{(i_{N_T})}$ for $\ell > i_{N_T}$, we have $T_{i_{N_T}} = T_q.$
+By Lemma~\ref{lem:gappy_promotion} with $k = N_T$, 
+\[ T_{i_{N_T}} = \tinflate^q \Big( \deflate^q(T)_{N_T}, \content^q(T) \Big) \]
 
-Now, since $x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = n_k$ for some $2 \leq k \leq q_T$. Then, 
+Now, since $\x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = n_k$ for some $2 \leq k \leq N_T$. Then, 
 \[
-\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = n_k-1.
+\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_2 (T)(\x) = n_k-1.
 \]
 Because the content vector shifts cyclically, this implies that 
  \[
- [\deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = k-1.
+ [\deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_2 (T)](\x) = k-1.
  \]
   On the other hand, 
   \[
@@ -700,7 +699,7 @@ Because the content vector shifts cyclically, this implies that
   \]
    so 
    \[
-   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate(T)](\x) = k-1.\]
+   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ  \deflate(T)](\x) = k-1.\]
 \end{proof}
 
 \subsection{Computation of period}\label{sec:period}
