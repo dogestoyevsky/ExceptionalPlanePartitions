@@ -746,6 +746,8 @@ Let $T \in \inc^q(\lambda)$ and suppose $\deflate^q(T) \in \incgl^k(\lambda)$. L
 \]
 \end{theorem}
 \begin{proof}
+Fix $T\in \inc^q(\lambda)$ with $\deflate^q(T) \in \incgl^k(\lambda)$. We need to determine the least positive $n$ such that $(\pro^q)^{\circ n}(T) = T$.
+
 Define $\defpro^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)$ by
 \[
 \defpro^q ( T) =
@@ -758,22 +760,26 @@ Then by Lemmas~\ref{lem:deflation_commutation} and~\ref{lem:no_one}, $\compress^
 \[
 \compress^q : \inc^q(\lambda) \hookrightarrow \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
 \]
- is injective, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q ( T)$. So we are reduced to looking at what powers $n$ of $\defpro^q$ stabilize $\compress^q (T)$. 
-Clearly we must have $\shift^n(\content(T)) = \content(T)$.  In addition, we must have that $\pro^{n'}(\deflate(T))$, where $n'$ is $n$ minus the number of times that $K^\ell(W(T))$ does not have $1$ in its content vector for $\ell \in 1,...,n$. 
+ is injective, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q ( T)$. Thus, our task is equivalent to determining the least positive $n$ such that 
+\begin{equation}\label{eq:prostar_stabilizer}
+ (\defpro^q)^{\circ n} \circ \compress^q (T) = \compress^q (T).
+\end{equation}
+ 
+Clearly, if Equation~(\ref{eq:prostar_stabilizer}) holds, then we must have 
+\[
+\shift^{\circ n}(\content^q(T)) = \content^q(T).\]  In addition, we must have that 
+\[
+(\pro^{N_T})^{\circ n'}(\deflate^q(T)) = \deflate^q(T),
+\]
+ where 
+ \[
+ n' = n - |\{ 1 \leq \ell \leq n : 1 \notin \mathrm{range}((\pro^q)^{\circ \ell}(T)) \}|
+ \] 
+  the number of times that $K^\ell(W(T))$ does not have $1$ in its content vector for $\ell \in 1,...,n$. 
 Now say there are $r$ $0$'s in the first $\ell$ entries of $\content(T)$ which then repeat $q/\ell$ times. Then if $n = \ell$, $n' = \ell - r$. Now say we know that the period of $\deflate(T)$ is $\tau$. This reasoning shows that $K^n (\compress(T)) = \compress(T)$ if and only if $n = e \ell$ for some positive integer $e$ and $n = s \tau + e  r$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $e \ell$ and $s \tau + e r$ for the same $e$. But $e \ell = s\tau + er$ implies that $e(\ell-r) = s\tau$. Since $\ell > r \geq 0$ the minimum of $e \ell$ is clearly achieved when $e$ is minimal, which occurs when $e(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
 \begin{equation*}
 n = e \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
 \end{equation*}
-
-
-\textbf{This paragraph probably goes away}
-Let $\lambda$ be a shape of maximum rank $N$. We establish an injection, which we call $W(T) = (W_1(T),W_2(T))$, from increasing tableaux of height $q > N$ to pairs of increasing tableaux of height less than or equal to $N+1$ and binary vectors of length $q$. In addition, let $\Sigma$ be a function that permutes vectors of length $n$ by moving entry $n$ to entry $n-1$ modulo $n$, We then show that for $T \in \inc^q(\lambda)$
-\begin{enumerate}
-\item if $T(0,0) =1$, then $\pro(T) = W^{-1}(\pro(W_1(T)),\Sigma(W_2(T))$
-\item if $T(0,0) > 1$, then $\pro(T) = W^{-1}(W_1(T),\Sigma(W_2(T))$.
-\end{enumerate} 
-We then use this description to compute the period of an inflated orbit. The basic idea is that K-Promotion acts in two separate ways on a tableau: it changes the relative order of certain boxes and permutes the content vector. These two actions are independent, unless $1$ is not an entry in the tableau, in which case only the content vector permutation occurs. 
-\textbf{End this paragraph probably goes away}
 \end{proof}
 \section{The equivariant bijection}\label{sec:equivariant}
 \subsection{Bijection between plane partitions and increasing tableaux.} 
