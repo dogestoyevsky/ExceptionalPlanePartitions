@@ -630,7 +630,7 @@ Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots
 Now, assume that the lemma holds for all increasing tableaux $T$ in the case $k < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). If $\x \in \lambda\left( \deflate^q(T)^{(t-1)} \right)$, then 
 $[\deflate^q(T)^{(t-1)}](\x) \leq t-1$ and hence
 \[
-[\swap_{t}(T^{(t-1)})](\x) = T^{(t-1)}(\x).
+\left[ \swap_{t}(\deflate^q(T)^{(t-1)}\right](\x) = \deflate^q(T)^{(t-1)}(\x).
 \]
  If instead
  \[\x \in \lambda\left(\deflate^q(T)^{(t)}\right) \setminus \lambda\left(\deflate^q(T)^{(t-1)}\right),\]
@@ -640,7 +640,7 @@ Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). If $\x \i
 \[
 \left[ \swap_{\ell+1} \left(T^{(\ell)} \right) \right](\x) = T^{(\ell)}(\x)
 \]
- for all $i_{t-1} \leq \ell$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T_{i_{t}}(\x) \leq i_t$. Thus, we must have that $T_{i_{t}}(\x) = i_{t}$, since swaps do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. By Lemma~\ref{lem:bullet_placement}, this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$.
+ for all $i_{t-1} \leq \ell$. Therefore, by the previous paragraph and the inductive hypothesis, this shows that Equation~(\ref{eq:gappy_promotion}) holds at all such $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T_{i_{t}}(\x) \leq i_t$. Thus, we must have that $T_{i_{t}}(\x) = i_{t}$, since swaps do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $1 \in \mathrm{range}(T)$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. This proves that Equation~(\ref{eq:gappy_promotion}) holds for the remaining boxes.
 
 This shows that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^q(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
 \end{proof}
