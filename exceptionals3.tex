@@ -750,13 +750,13 @@ Define $\defpro^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^
 \[
 \defpro^q ( T) =
 \begin{cases}
-    \Big( \pro^k \circ \deflate^q(T),\shift \circ \content^q(T) \Big),  & \text{if } 1 \in {\rm range}(T); \\        
+    \Big( \pro^{N_T} \circ \deflate^q(T),\shift \circ \content^q(T) \Big),  & \text{if } 1 \in {\rm range}(T); \\        
    \Big( \deflate^q(T),\shift \circ \content^q(T) \Big), & \text{otherwise.}
 \end{cases}
 \]
-Then, $\compress^q \circ (\pro^q)^{\circ n}(T) = (\defpro^q)^{\circ n} \circ \compress^q(T)$ \oliver{call some lemmas here!}. Now, since 
+Then by Lemmas~\ref{lem:deflation_commutation} and~\ref{lem:no_one}, $\compress^q \circ (\pro^q)^{\circ n}(T) = (\defpro^q)^{\circ n} \circ \compress^q(T)$. Now, since 
 \[
-\compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
+\compress^q : \inc^q(\lambda) \hookrightarrow \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
 \]
  is injective, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q ( T)$. So we are reduced to looking at what powers $n$ of $\defpro^q$ stabilize $\compress^q (T)$. 
 Clearly we must have $\shift^n(\content(T)) = \content(T)$.  In addition, we must have that $\pro^{n'}(\deflate(T))$, where $n'$ is $n$ minus the number of times that $K^\ell(W(T))$ does not have $1$ in its content vector for $\ell \in 1,...,n$. 
