@@ -773,9 +773,8 @@ Clearly, if Equation~(\ref{eq:prostar_stabilizer}) holds, then we must have
 \]
  where 
  \[
- n' = n - |\{ 1 \leq \ell \leq n : 1 \notin \mathrm{range}((\pro^q)^{\circ \ell}(T)) \}|
- \] 
-  the number of times that $K^\ell(W(T))$ does not have $1$ in its content vector for $\ell \in 1,...,n$. 
+ n' = \Big| \{ 1 \leq \ell \leq n : 1 \in \mathrm{range}((\pro^q)^{\circ \ell}(T)) \} \Big|.
+ \]  
 Now say there are $r$ $0$'s in the first $\ell$ entries of $\content(T)$ which then repeat $q/\ell$ times. Then if $n = \ell$, $n' = \ell - r$. Now say we know that the period of $\deflate(T)$ is $\tau$. This reasoning shows that $K^n (\compress(T)) = \compress(T)$ if and only if $n = e \ell$ for some positive integer $e$ and $n = s \tau + e  r$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $e \ell$ and $s \tau + e r$ for the same $e$. But $e \ell = s\tau + er$ implies that $e(\ell-r) = s\tau$. Since $\ell > r \geq 0$ the minimum of $e \ell$ is clearly achieved when $e$ is minimal, which occurs when $e(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
 \begin{equation*}
 n = e \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
