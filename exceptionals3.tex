@@ -122,8 +122,6 @@
 \newcommand{\tinflate}{\ensuremath{\mathsf{Infl}}}
 \newcommand{\content}{\ensuremath{\mathsf{Con}}}
 \newcommand{\compress}{\ensuremath{\mathsf{DeflCon}}}
-\newcommand{\defpro}{\ensuremath{\mathfrak{pro}_{*}}}
-\newcommand{\shift}{\ensuremath{\mathsf{sh}}}
 
 \newcommand{\uu}{\mathcal{I}}
 
@@ -642,9 +640,9 @@ Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). If $\x \i
 \[
 \left[ \swap_{\ell+1} \left(T^{(\ell)} \right) \right](\x) = T^{(\ell)}(\x)
 \]
- for all $i_{t-1} \leq \ell$. Therefore, by the previous paragraph and the inductive hypothesis, this shows that Equation~(\ref{eq:gappy_promotion}) holds at all such $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T_{i_{t}}(\x) \leq i_t$. Thus, we must have that $T_{i_{t}}(\x) = i_{t}$, since swaps do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $1 \in \mathrm{range}(T)$, Lemma~\ref{lem:bullet_placement} applies, implying that this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. This proves that Equation~(\ref{eq:gappy_promotion}) holds for the remaining boxes.
+ for all $i_{t-1} \leq \ell$. Therefore, by the previous paragraph and the inductive hypothesis, this shows that Equation~(\ref{eq:gappy_promotion}) holds at all such $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T_{i_{t}}(\x) \leq i_t$. Thus, we must have that $T_{i_{t}}(\x) = i_{t}$, since swaps do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $1 \in \mathrm{range}(T)$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. This proves that Equation~(\ref{eq:gappy_promotion}) holds for the remaining boxes.
 
-This shows that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $h = \deflate^q(T)_{k}(\x)$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
+This shows that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^q(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
 \end{proof}
 
 \begin{remark}
@@ -652,134 +650,73 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ 
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
-Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then
-\begin{equation}\label{eq:deflation_commutation}
- \deflate^q \circ \pro^q(T) = \pro^{N_T} \circ \deflate^q(T). 
-\end{equation}
+Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. In the notation above, 
+\begin{align*}
+ \deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
+ & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
+\end{align*}
 \end{lemma}
 \begin{proof}
-%We need to show that 
-%\begin{align*}
-%\deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_2\circ \rep_{1 \rightarrow \bullet} (T) = \\
-% & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
-%\end{align*}
-
-First, consider $\x \in \lambda$ with $\x \notin \lambda \left(T^{(q)} \right)$. Then,  $T^{(q)}(\x) = \bullet$ and so 
+Say $\x \not \in \lambda(T^{(q)})$, that is,  $T^{(q)}(\x) = \bullet$.  Then 
 \[
-\pro^q(T)(\x) =  [\decr \circ \rep_{\bullet \rightarrow q+1} (T^{(q)})](\x) = q.
+[\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = q.
 \]
 Now by \cite[Lemma~2.1]{DPS}, the content vector of  
-$
-\pro^q(T)
-$
- is a cyclic rotation of the content vector of $T$. This implies that both content vectors contain the same number of $1$s. Since $q$ is the greatest element of $\mathrm{range}(\pro^q(T))$, we then have
+\[
+\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = \pro(T)
+\]
+ is a rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector, and clearly $q$ is the greatest, so 
  \[
- \deflate^q \circ \pro^q (T)(\x) = N_T.
+ \deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = q_T.
  \]
- 
-  By Lemma~\ref{lem:bullet_placement}, we observe on the other hand that $\x \not \in \lambda \left( \deflate^q(T)^{(N_T)} \right)$. Hence, $\deflate^q(T)^{(N_T)}(\x) = \bullet$, and thus,
+  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate(T)^{(N_T)})$, we have
   \[
-  [\pro^{N_T} \circ \deflate^q(T)](\x) = \Big[ \decr \circ \rep_{\bullet \to N_T + 1} \left( \deflate^q(T)^{(N_T)} \right) \Big](\x)=  N_T.
+  [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
   \] 
-  Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) agree at such a box $\x \notin \lambda 
-  \left(T^{(q)} \right)$.
 
-Now, consider $\x \in \lambda$ with $\x \in \lambda \left(T^{(q)} \right)$. 
-We have $T^{(q)}(\x) = \ell$ for some $2 \leq \ell \leq q$. Indeed, $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
+Now say $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
+\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
+Therefore it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
+\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate(T)_{N_T}). \]
+
+Now, since $x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = n_k$ for some $2 \leq k \leq q_T$. Then, 
 \[
-\pro^q(T)(\x) = 
-\Big[ \decr \circ \rep_{\bullet \to q+1}  \left( T^{(q)} \right) \Big] (\x) = i_k-1.
+\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = n_k-1.
 \]
-Because, by \cite[Lemma~2.1]{DPS}, the content vector of  
-$
-\pro^q(T)
-$
- is a cyclic rotation of the content vector of $T$, this implies that 
+Because the content vector shifts cyclically, this implies that 
  \[
- [\deflate^q \circ \pro^q (T)](\x) = k-1.
+ [\deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = k-1.
  \]
- 
-   On the other hand, observe that since $\swap_\ell$ acts trivially on $T^{(i_{N_T})}$ for $\ell > i_{N_T}$, we have $T_{i_{N_T}} = T_q.$ Hence, $T_{i_{N_T}}(\x) = T_q(\x) = i_k$.
-By Lemma~\ref{lem:gappy_promotion} with $k = N_T$, 
-\[ T_{i_{N_T}} = \tinflate^q \Big( \deflate^q(T)_{N_T}, \content^q(T) \Big). \]
-Thus, we must have
+  On the other hand, 
   \[
-  [ \deflate^q(T)_{N_T}](\x) = k,
+  [\swap_q \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = k,
   \]
-   and so 
+   so 
    \[
-   [\pro^{N_T} \circ  \deflate^q(T)](\x) = [ \decr \circ \rep_{\bullet \to N_T+1} (\deflate^q(T)_{N_T})](\x)  =k-1.\]
-   Thus, the two sides of Equation~(\ref{eq:deflation_commutation}) also agree at such boxes $\x \in \lambda 
-  \left(T^{(q)} \right)$.
+   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate(T)](\x) = k-1.\]
 \end{proof}
 
-\begin{lemma}\label{lem:no_one}
-Let $T \in \inc^q(\lambda)$ with $1 \notin \mathrm{range}(T)$. Then
-\begin{equation}\label{eq:no_one}
- \deflate^q \circ \pro^q(T) = \deflate^q(T). 
-\end{equation}
-\end{lemma}
-\begin{proof}
-Since $1 \notin \mathrm{range}(T)$, $\rep_{1 \to \bullet}(T)$. Hence, for all $\ell$, $\swap_\ell$ acts trivially on $\rep_{1 \to \bullet}(T)$. Thus,
-\[
-\pro^q(T) = \decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \swap_2 \circ \rep_{1 \to \bullet}(T) = \decr(T).
-\] 
-The lemma follows.
-\end{proof}
-
-\subsection{Computation of periods}\label{sec:period}
-
-Define a {\bf cyclic shift} map $\shift : \{0,1\}^q \to \{0,1\}^q$ on binary vectors by 
-\[ 
-\shift(v)_i  = \begin{cases}
-v_{i+1}, & \text{for } i \neq q;\\
-v_1, & \text{for } i=q.
-\end{cases}
-\]
-
-The following theorem determines the order of $K$-promotion on an increasing tableau from the order of $K$-promotion on its deflation together with the order of $\shift$ on its content vector.
-
-\begin{theorem}
-Let $T \in \inc^q(\lambda)$ and suppose $\deflate^q(T) \in \incgl^k(\lambda)$. Let $\ell$ be the cardinality of the $\shift$-orbit of $\content^q(T)$ and let $\tau$ be the cardinality of the $\pro^k$-orbit of $\deflate^q(T)$. The the $\pro^q$-orbit of $T$ has cardinality 
-\[
-\frac{\ell \tau}{\mathrm{gcd}(k / \ell,\tau)}.
-\]
-\end{theorem}
-\begin{proof}
-Fix $T\in \inc^q(\lambda)$ with $\deflate^q(T) \in \incgl^k(\lambda)$. We need to determine the least positive $n$ such that $(\pro^q)^{\circ n}(T) = T$.
-
-Define $\defpro^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)$ by
-\[
-\defpro^q ( T) =
+\subsection{Computation of period}\label{sec:period} We use the results of the previous section to relate the period of $T \in \inc^q(\lambda)$ under $\pro^q$ to data about $\deflate^q(T)$. Let $\Sigma^q: \lbrace 0,1\rbrace^q \rightarrow \lbrace 0,1\rbrace^q$ be the cyclic rotation so that for $(v_1,...,v_q) \in \lbrace 0,1 \rbrace^q$, $\Sigma^q(v_1,...,v_q) = (v_2,...,v_q,v_1)$. The above shows that if we define $K^q: \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q \rightarrow \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q$:
+\begin{dmath*}
+K^q(\deflate^q(T),\content^q(T)) =
 \begin{cases}
-    \Big( \pro^{N_T} \circ \deflate^q(T),\shift \circ \content^q(T) \Big),  & \text{if } 1 \in {\rm range}(T); \\        
-   \Big( \deflate^q(T),\shift \circ \content^q(T) \Big), & \text{otherwise.}
+    (\pro(\deflate(T)),\Sigma^q(\content(T)),  & \text{if } \content(T)(1) = 1; \\        
+   (\deflate(T),\Sigma^q(\content(T)), & \text{otherwise;}
 \end{cases}
-\]
-Then by Lemmas~\ref{lem:deflation_commutation} and~\ref{lem:no_one}, $\compress^q \circ (\pro^q)^{\circ n}(T) = (\defpro^q)^{\circ n} \circ \compress^q(T)$. Now, since 
-\[
-\compress^q : \inc^q(\lambda) \hookrightarrow \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
-\]
- is injective, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q ( T)$. Thus, our task is equivalent to determining the least positive $n$ such that 
-\begin{equation}\label{eq:prostar_stabilizer}
- (\defpro^q)^{\circ n} \circ \compress^q (T) = \compress^q (T).
-\end{equation}
+\end{dmath*}
+then $\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)$. Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
  
-Clearly, if Equation~(\ref{eq:prostar_stabilizer}) holds, then we must have 
-\[
-\shift^{\circ n}(\content^q(T)) = \content^q(T).\]  In addition, we must have that 
-\[
-(\pro^{N_T})^{\circ n'}(\deflate^q(T)) = \deflate^q(T),
-\]
- where 
- \[
- n' = \Big| \{ 1 \leq \ell \leq n : 1 \in \mathrm{range}((\pro^q)^{\circ \ell}(T)) \} \Big|.
- \]  
-Now say there are $r$ $0$'s in the first $\ell$ entries of $\content(T)$ which then repeat $q/\ell$ times. Then if $n = \ell$, $n' = \ell - r$. Now say we know that the period of $\deflate(T)$ is $\tau$. This reasoning shows that $K^n (\compress(T)) = \compress(T)$ if and only if $n = e \ell$ for some positive integer $e$ and $n = s \tau + e  r$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $e \ell$ and $s \tau + e r$ for the same $e$. But $e \ell = s\tau + er$ implies that $e(\ell-r) = s\tau$. Since $\ell > r \geq 0$ the minimum of $e \ell$ is clearly achieved when $e$ is minimal, which occurs when $e(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
-\begin{equation*}
-n = e \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
-\end{equation*}
-\end{proof}
+Say $n$ satisfies this relation. Clearly we must have $(\Sigma^q)^{\circ n}(\content^q(T)) = \content^q(T)$, so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^q(T)$ under $\Sigma^q$.  In addition, we must have that $\pro^{n'}(\deflate^q(T)) = \deflate^q(T)$, where $n'$ is $n$ minus the number of times that \[ \content^q((K^q)^{\circ j}(\deflate^q(T),\content^q(T)))(1) = 0\] for $j \in 0,...,n-1$. If there are $r \cdot (q/\ell)$ zeros in $\content^q(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. 
+
+This reasoning shows that $(K^q)^{\circ n} (\compress^q(T)) = \compress^q(T)$ if and only if $n = t \ell = s \tau + t  r$ for positive integers $s$ and $t$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $t \ell$ and $s \tau + t r$ for the same $t$. But $t \ell = s\tau + tr$ implies that $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the minimum of $t \ell$ is clearly achieved when $t$ is minimal, which occurs when $t(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
+\begin{equation}\label{eq:period}
+n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
+\end{equation}
+This proves the main theorem of this section.
+\begin{theorem}\label{thm:periodthm}
+Take $T \in \inc^q(\lambda)$. If the period of $\deflate^q(T)$ under $\pro^q$ is $\tau$, the period of $\content^q(T)$ under $\Sigma^q$ is $\ell$, and $\content^q(T)$ has $r \cdot (q/\ell)$ zeros, then the period of $T$ under $\pro^q$ is given by Equation~(\ref{eq:period}).
+\end{theorem}
+
 \section{The equivariant bijection}\label{sec:equivariant}
 \subsection{Bijection between plane partitions and increasing tableaux.} 
 
@@ -1102,10 +1039,6 @@ $q$ & orbit size & number of orbits\\
 \caption{The number of orbits of full-content increasing tableaux in $\inc^q(P)$ for each $q$ for the $E_7$ poset.}
 \label{tab:E7}
 \end{table}
-
-\begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
-\Oliver{This should be probably very brief, given all the work done above. Mostly one just wants to call all the lemmas and chain them together. Not sure if we can prove the propeller theorem in the same proof environment, or whether it wants its own separate one.}
-\end{proof}
 
 \section*{Acknowledgements}
 The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation.
