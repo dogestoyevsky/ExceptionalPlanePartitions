@@ -705,10 +705,10 @@ Because the content vector shifts cyclically, this implies that
   for $(v_1,...,v_q) \in \lbrace 0,1 \rbrace^q$. 
   
 \begin{theorem}\label{thm:periodthm}
-Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^q$ on $\deflate^q(T)$ and $\ell$ be the period of $\Sigma^q$ on $\content^q(T)$. If the number of $0$'s in $\content^q(T)$ is $\frac{rq}{\ell}$, then the period of $\pro^q$ on $T$ is given by Equation~(\ref{eq:period}).
+Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^q$ on $\deflate^q(T)$ and $\ell$ be the period of $\Sigma^q$ on $\content^q(T)$. If the number of $0$'s in $\content^q(T)$ is $\frac{rq}{\ell}$, then the period of $\pro^q$ on $T$ is \[\frac{\ell \tau}{\mathrm{gcd}(\ell-r,\tau)}.\]
 \end{theorem} 
     
-  
+  \begin{proof}
   The above shows that if we define 
   \[
   K^q: \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q \rightarrow \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q
@@ -730,8 +730,7 @@ This reasoning shows that $(K^q)^{\circ n} (\compress^q(T)) = \compress^q(T)$ if
 \begin{equation}\label{eq:period}
 n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
 \end{equation}
-This proves the main theorem of this section.
-
+\end{proof}
 
 \section{The equivariant bijection}\label{sec:equivariant}
 \subsection{Bijection between plane partitions and increasing tableaux.} 
