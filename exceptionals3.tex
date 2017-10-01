@@ -696,7 +696,15 @@ Because the content vector shifts cyclically, this implies that
    [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate(T)](\x) = k-1.\]
 \end{proof}
 
-\subsection{Computation of period}\label{sec:period} We use the results of the previous section to relate the period of $T \in \inc^q(\lambda)$ under $\pro^q$ to data about $\deflate^q(T)$. Let $\Sigma^q: \lbrace 0,1\rbrace^q \rightarrow \lbrace 0,1\rbrace^q$ be the cyclic rotation so that for $(v_1,...,v_q) \in \lbrace 0,1 \rbrace^q$, $\Sigma^q(v_1,...,v_q) = (v_2,...,v_q,v_1)$. The above shows that if we define $K^q: \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q \rightarrow \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q$:
+\subsection{Computation of period}\label{sec:period} We use the results of the previous section to relate the period of $T \in \inc^q(\lambda)$ under $\pro^q$ to data about $\deflate^q(T)$. Let 
+\[\Sigma^q: \lbrace 0,1\rbrace^q \rightarrow \lbrace 0,1\rbrace^q\]
+ be the cyclic rotation defined by 
+ \[
+ \Sigma^q(v_1,...,v_q) = (v_2,...,v_q,v_1)
+ \]
+  for $(v_1,...,v_q) \in \lbrace 0,1 \rbrace^q$. The above shows that if we define $K^q: \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q \rightarrow \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q$:
+
+
 \begin{dmath*}
 K^q(\deflate^q(T),\content^q(T)) =
 \begin{cases}
@@ -706,6 +714,11 @@ K^q(\deflate^q(T),\content^q(T)) =
 \end{dmath*}
 then $\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)$. Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
  
+\begin{theorem}\label{thm:periodthm}
+Take $T \in \inc^q(\lambda)$. If the period of $\deflate^q(T)$ under $\pro^q$ is $\tau$, the period of $\content^q(T)$ under $\Sigma^q$ is $\ell$, and $\content^q(T)$ has $r \cdot (q/\ell)$ zeros, then the period of $T$ under $\pro^q$ is given by Equation~(\ref{eq:period}).
+\end{theorem} 
+  
+ 
 Say $n$ satisfies this relation. Clearly we must have $(\Sigma^q)^{\circ n}(\content^q(T)) = \content^q(T)$, so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^q(T)$ under $\Sigma^q$.  In addition, we must have that $\pro^{n'}(\deflate^q(T)) = \deflate^q(T)$, where $n'$ is $n$ minus the number of times that \[ \content^q((K^q)^{\circ j}(\deflate^q(T),\content^q(T)))(1) = 0\] for $j \in 0,...,n-1$. If there are $r \cdot (q/\ell)$ zeros in $\content^q(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. 
 
 This reasoning shows that $(K^q)^{\circ n} (\compress^q(T)) = \compress^q(T)$ if and only if $n = t \ell = s \tau + t  r$ for positive integers $s$ and $t$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $t \ell$ and $s \tau + t r$ for the same $t$. But $t \ell = s\tau + tr$ implies that $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the minimum of $t \ell$ is clearly achieved when $t$ is minimal, which occurs when $t(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
@@ -713,9 +726,7 @@ This reasoning shows that $(K^q)^{\circ n} (\compress^q(T)) = \compress^q(T)$ if
 n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
 \end{equation}
 This proves the main theorem of this section.
-\begin{theorem}\label{thm:periodthm}
-Take $T \in \inc^q(\lambda)$. If the period of $\deflate^q(T)$ under $\pro^q$ is $\tau$, the period of $\content^q(T)$ under $\Sigma^q$ is $\ell$, and $\content^q(T)$ has $r \cdot (q/\ell)$ zeros, then the period of $T$ under $\pro^q$ is given by Equation~(\ref{eq:period}).
-\end{theorem}
+
 
 \section{The equivariant bijection}\label{sec:equivariant}
 \subsection{Bijection between plane partitions and increasing tableaux.} 
