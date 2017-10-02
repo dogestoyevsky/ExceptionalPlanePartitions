@@ -380,7 +380,7 @@ That is, $\tau_{\pi,v}^i$ is the composition of the toggles $t_x$ for all $x$ wi
 \[
 \mot_{\pi, v} \coloneqq \prod_{i \in \mathbb{Z}} \tau_{\pi,v}^i,
 \]
-where the factors are taken in reverse of the natural order. Note that in this product, only finitely-many factors act nontrivially, since $\pi(P)$ intersects only a finite number of the affine planes defined by $\langle v, \cdot \rangle = i$. We recall the following pair of results, which are fundamental to our further analysis of rowmotion on minuscule plane partitions.
+where the factors are taken in reverse of the natural order. Note that in this product, only finitely many factors act nontrivially, since $\pi(P)$ intersects only a finite number of the affine planes defined by $\langle v, \cdot \rangle = i$. We recall the following pair of results, which are fundamental to our further analysis of rowmotion on minuscule plane partitions.
 
 \begin{proposition}[{\cite[Lemma~1]{Cameron.Fonderflaass}}; {\cite[Proposition~3.18]{DPS}}]
 \label{prop:psi_is_toggle}
@@ -403,7 +403,7 @@ A classical approach to the cohomological Schubert calculus of complex type $A$ 
 The first $K$-theoretic Littlewood-Richardson rule was discovered by A.~Buch \cite{Buch}; this rule, however, was not based on jeu de taquin. H.~Thomas and A.~Yong \cite{Thomas.Yong:K} later found a different Littlewood-Richardson rule for the same structure coefficients by directly extending M.-P.~Sch\"utzenberger's jeu de taquin. This latter rule was conjectured in \cite{Thomas.Yong:K} to extend to the $K$-theoretic Schubert structure coefficients of all minuscule varieties, as was proven by a combination of \cite{Buch.Ravikumar,Clifford.Thomas.Yong,Buch.Samuel}. In this Thomas-Yong theory, the role of standard Young tableaux is filled by \emph{increasing tableaux}.
 
 \begin{definition}
-Let $\lambda$ be a order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of positive integers to the boxes of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^q(\lambda)$ denote the set of all increasing tableaux of shape $\lambda$ with all entries at most $q$. We identify $\inc^q(\lambda)$ with the set of all strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{q}$ of size $q$.
+Let $\lambda$ be an order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of positive integers to the boxes of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^q(\lambda)$ denote the set of all increasing tableaux of shape $\lambda$ with all entries at most $q$. We identify $\inc^q(\lambda)$ with the set of all strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{q}$ of size $q$.
 \end{definition}
 
 Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro^q$ on $\inc^q(\lambda)$, directly extending M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. Since studying the action of $\pro^q$ will be fundamental to our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}, we must recall the definition of $\pro^q$. 
@@ -496,28 +496,27 @@ where $c_k = 1$ if $k \in \mathrm{range}(T)$ and $c_k = 0$ if $k \notin \mathrm{
 \begin{example}\label{ex:deflate}
 If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{345,124} \in \incgl^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \binom{[7]}{5} \subset \{0,1\}^7$.
 \end{example}
-
-\begin{theorem}\label{thm:compressbijective} The product map
+Note that if $\deflate^q(T) \in \incgl^k(\lambda)$, then $\content^q(T) \in \binom{[q]}{k}$. We denote by $\compress^q$ the product
 \[
-\compress^q = (\deflate^q,\content^q) : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
+(\deflate^q,\content^q) : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right).
 \] 
-is bijective.
+\begin{theorem}\label{thm:compressbijective} $\compress^q$ is bijective.
 \end{theorem}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
 A two-sided inverse for $\compress^q$ is given as follows. 
-For a binary vector $v \in \{0,1\}^{q}$, let $N_v \coloneqq \langle v, (1,...,1) \rangle$ be the number of $1$s in $v$, and define a {\bf vector inflation} map \[\inflate^q_v : [N_v] \to [q]\] by
-\[ \inflate^q_v(k) = \min_{n \in [q]} \left( \sum_{\ell = 1}^n v(\ell) = k \right).\] Then, $\inflate^q_{\content^q(T)} \circ \deflate^q(T) = T$. Now define the {\bf tableau inflation} map 
+For a binary vector $v \in \{0,1\}^{q}$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^q_v : [N_v] \to [q]\] by
+\[ \inflate^q_v(k) = \min_{n \in [q]} \left( \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \right).\] (We use curly braces throughout to denote vector entries.) An integer $j \in [q]$ is in the range of $\inflate^q_v$ if and only if $v\lbrace j \rbrace = 1$. From this fact and the definitions it follows that $\inflate^q_{\content^q(T)} \circ \deflate^q(T) = T$. Now define the {\bf tableau inflation} map 
 \[
 \tinflate^q : \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right) \to \inc^q(\lambda)
 \]
 given by 
 \[
-\tinflate^q(S,v) \coloneqq \inflate^q_v \circ S.
+\tinflate^q(S,v) = \inflate^q_v \circ S.
 \]
-Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. It is clear that for $\compress^q \circ \tinflate^q(S,v) = v$, since $S$ surjects onto $[k]$.  Also,
+Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. Since $S$ is surjective and $\tinflate^q(S,v)$ maps onto the nonzero elements of $v$, $\content^q \circ \tinflate^q(S,v) = v$.  Also,
 \begin{align*}
- (\deflate^q(\inflate^q_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^q_v \circ S)): h \leq \inflate^q_v \circ S)(\x) \} \\  
+ (\deflate^q(\inflate^q_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^q_v \circ S)): h \leq (\inflate^q_v \circ S)(\x) \} \\  
  &= \# \{ h: v(h) \neq 0 \text{ and } \sum_{\ell = 1}^h v(\ell) \leq S(\x)  \} \\
  &= S(\x).
 \end{align*}
