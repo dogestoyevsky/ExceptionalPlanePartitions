@@ -497,24 +497,32 @@ where $c_k = 1$ if $k \in \mathrm{range}(T)$ and $c_k = 0$ if $k \notin \mathrm{
 If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{345,124} \in \incgl^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \binom{[7]}{5} \subset \{0,1\}^7$.
 \end{example}
 
-Clearly, the product map 
+\begin{theorem}\label{thm:compressbijective} The product map
 \[
 \compress^q = (\deflate^q,\content^q) : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
 \] 
-is injective.
+is bijective.
+\end{theorem}
+\begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
-Indeed, a left inverse for $\compress^q$ is given as follows. 
+A two-sided inverse for $\compress^q$ is given as follows. 
 For a binary vector $v \in \{0,1\}^{q}$, let $N_v \coloneqq \langle v, (1,...,1) \rangle$ be the number of $1$s in $v$, and define a {\bf vector inflation} map \[\inflate^q_v : [N_v] \to [q]\] by
-\[ \inflate^q_v(k) = \min_{n \in [q]} \left( \sum_{\ell = 1}^n v_\ell = k \right).\] Then, $\inflate^q_{\content^q(T)} \circ \deflate^q(T) = T$. Therefore, the {\bf tableau inflation} map 
+\[ \inflate^q_v(k) = \min_{n \in [q]} \left( \sum_{\ell = 1}^n v(\ell) = k \right).\] Then, $\inflate^q_{\content^q(T)} \circ \deflate^q(T) = T$. Now define the {\bf tableau inflation} map 
 \[
 \tinflate^q : \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right) \to \inc^q(\lambda)
 \]
 given by 
 \[
-\tinflate^q(S,v) \coloneqq \inflate^q_v \circ S
+\tinflate^q(S,v) \coloneqq \inflate^q_v \circ S.
 \]
- is a left inverse for $\compress^q$. 
-
+Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. It is clear that for $\compress^q \circ \tinflate^q(S,v) = v$, since $S$ surjects onto $[k]$.  Also,
+\begin{align*}
+ (\deflate^q(\inflate^q_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^q_v \circ S)): h \leq \inflate^q_v \circ S)(\x) \} \\  
+ &= \# \{ h: v(h) \neq 0 \text{ and } \sum_{\ell = 1}^h v(\ell) \leq S(\x)  \} \\
+ &= S(\x).
+\end{align*}
+Therefore $\inflate^q$ is a two-sided inverse for $\compress^q$.
+\end{proof} 
 \begin{example}\label{ex:reinflate}
 Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5] \to [7]$ is given by 
 \begin{align*}
@@ -711,13 +719,13 @@ Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^q$ on $\defla
   \begin{proof}
   The above shows that if we define 
   \[
-  K^q: \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q \rightarrow \coprod_{s \leq q} \incgl^q(\lambda) \times \lbrace 0,1\rbrace^q
+  K^q: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k}
   \] by
 \[
-K^q(\deflate^q(T),\content^q(T)) =
+K^q(S,v) =
 \begin{cases}
-    (\pro(\deflate(T)),\Sigma^q(\content(T)),  & \text{if } \content(T)(1) = 1; \\        
-   (\deflate(T),\Sigma^q(\content(T)), & \text{otherwise;}
+    (\pro(S),\Sigma^q(v)),  & \text{if } v(1) = 1; \\        
+   (S,\Sigma^q(v)), & \text{otherwise;}
 \end{cases}
 \]
 then $\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)$. Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
@@ -920,12 +928,12 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %where if $v$ has $r$ nonzero elements, then  $F(v) = F_v \in \mathbb{Z}^r$ is the map
 %\[  k \mapsto \min_{n \in [1,...,N]} \bigg( \sum_{\ell = 1}^n v(\ell) = k \bigg). \]
 
-We saw in Section~\ref{sec:Kpro_defs} that $\compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda) \times \binom{[q]}{k}$ is injective. Conversely, every $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ gives an element of $\inc^q(\lambda)$ in the following sense. Define the {\bf tableau inflation} map  \[ \tinflate^q: \coprod_{1 \leq k \leq q}  \incgl^k(\lambda) \times  \binom{[q]}{k}  \rightarrow  \inc^q(\lambda) \] such that if $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ then
-\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
-Note that
-\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. 
+%We saw in Section~\ref{sec:Kpro_defs} that $\compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda) \times \binom{[q]}{k}$ is injective. Conversely, every $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ gives an element of $\inc^q(\lambda)$ in the following sense. Define the {\bf tableau inflation} map  \[ \tinflate^q: \coprod_{1 \leq k \leq q}  \incgl^k(\lambda) \times  \binom{[q]}{k}  \rightarrow  \inc^q(\lambda) \] such that if $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ then
+%\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
+%Note that
+%\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
 
-Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  The above shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
+Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 1} \\ \noindent
 \textsf{Input}:  $L \in \mathbb{Z}_{>0}$ and the set $\coprod_k \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$. \\ \noindent
