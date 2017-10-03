@@ -628,13 +628,13 @@ Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then, for
 \begin{equation}\label{eq:gappy_promotion}
  \tinflate^q \Big( \deflate^q(T)_k, \content^q(T) \Big) = T_{i_k}. 
 \end{equation}
- That is, the two functions are identical tableaux on the same domain. 
+ That is, the two sides are identical functions on the same domain. 
 \end{lemma}
 
 \begin{proof}  We proceed by induction on $k$. The base case $k=1$ is trivial, since if $T \in \inc^q(\lambda)$ is any tableau, then $\lambda \left( \deflate^q(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
 %To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
 
-Now, assume that the lemma holds for all increasing tableaux $T$ in the case $k < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). If $\x \in \lambda\left( \deflate^q(T)^{(t-1)} \right)$, then 
+Now, assume that the lemma holds for all increasing tableaux $T$ in the case $k < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^q(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^q(T)^{(t-1)} \right)$, then 
 $[\deflate^q(T)^{(t-1)}](\x) \leq t-1$ and hence
 \[
 \left[ \swap_{t}(\deflate^q(T)^{(t-1)})\right](\x) = \deflate^q(T)^{(t-1)}(\x).
