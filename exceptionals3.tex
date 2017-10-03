@@ -539,9 +539,9 @@ By determining the relation between the maps $\compress^q$ and $\pro^q$, we will
 
 
 To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro^q$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^q(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow q+1}$ replace each instance of $\bullet$ with $q+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion: 
-\[
+\begin{equation}\label{eq:kprodef2}
 \pro^q = \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
-\]
+\end{equation}
  (This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}.) An example of computing $K$-promotion via this alternative process is shown in Figure~\ref{fig:promotion_via_swaps}.
  
  \begin{figure}[h]
@@ -580,7 +580,7 @@ To establish this relation, we first need to introduce notation for the steps in
 
 Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
-\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the order ideal $\lambda \left( T^{(N)} \right) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. 
+\[T^{(N)} = \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the associated order ideal $\lambda \left( T^{(N)} \right) = \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Finally, define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. We can see from Equation~\ref{eq:kprodef2} why this last condition is necessary: $\bullet$'s are only inserted in boxes labelled with $1$'s.
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}

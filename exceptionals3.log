@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 OCT 2017 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 OCT 2017 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1592,7 +1592,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1081.
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 75B35601F4172E295F9A687700C1FD3B;890.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
-(rerunfilecheck)             Checksum: 2DCE6FA3EC6C02047E0EEA0217C1D870;2217.
+(rerunfilecheck)             Checksum: 2C87D04D6BDF8EEDE60D8BB85ECD6208;2215.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1600,10 +1600,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1081.
  ) 
 Here is how much of TeX's memory you used:
- 29393 strings out of 493117
- 585494 string characters out of 6135433
- 670579 words of memory out of 5000000
- 32074 multiletter control sequences out of 15000+600000
+ 29395 strings out of 493117
+ 585519 string characters out of 6135433
+ 670655 words of memory out of 5000000
+ 32075 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1079s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1637,10 +1637,10 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2014/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (25 pages, 440368 bytes).
+Output written on exceptionals3.pdf (25 pages, 440550 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 528 compressed objects within 6 object streams
- 116 named destinations out of 1000 (max. 500000)
+ 595 PDF objects out of 1000 (max. 8388607)
+ 530 compressed objects within 6 object streams
+ 117 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
