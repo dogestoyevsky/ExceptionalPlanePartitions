@@ -520,7 +520,7 @@ Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. Since $S$ is surjective
  &= \# \{ h: v(h) \neq 0 \text{ and } \sum_{\ell = 1}^h v(\ell) \leq S(\x)  \} \\
  &= S(\x).
 \end{align*}
-Therefore $\inflate^q$ is a two-sided inverse for $\compress^q$.
+Therefore $\tinflate^q$ is a two-sided inverse for $\compress^q$.
 \end{proof} 
 \begin{example}\label{ex:reinflate}
 Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5] \to [7]$ is given by 
@@ -580,7 +580,7 @@ To establish this relation, we first need to introduce notation for the steps in
 
 Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
-\[T^{(N)} = \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] and define the associated order ideal $\lambda \left( T^{(N)} \right) = \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Finally, define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. We can see from Equation~\ref{eq:kprodef2} why this last condition is necessary: $\bullet$'s are only inserted in boxes labelled with $1$'s.
+\[T^{(N)} = \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $N > 1$ and $T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal $\lambda \left( T^{(N)} \right) = \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Finally, define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. We can see from Equation~\ref{eq:kprodef2} why this last condition is necessary: $\bullet$'s are only inserted in boxes labelled with $1$'s.
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -607,24 +607,24 @@ those boxes with labels less than or equal to $3$. The order ideal
 shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 \end{figure}
 
-%-- not obvious that $\lambda_{dksfhkds}$ is a shape but don't think need this here -- 
+%-- not obvious that $\lambda$  is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. Then, for all $\x \in \lambda$, we have
+Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$, we have
  \begin{equation}\label{eq:gappy_promotion2}
 \deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet,
 \end{equation}
 for $1 \leq k \leq N_T$.
 \end{lemma}
-\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $1 \in \mathrm{range}(T)$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^q(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^q(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $1 \in \mathrm{range}(T)$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
+\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $\content^q(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^q(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^q(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $\content^q(T) \lbrace 1 \rbrace = 1$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all tableaux $T$ for $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. Then, $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with values less than or equal to $i_{t-1}$, having $T^{(i_{t-1})}(\x) = i_t$ is equivalent to having $T^{(i_{t-1})}(\x) = T(\x)$. This is, in turn, equivalent to $\deflate^q(T)(\x) = t$ and to $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to requiring $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
+Now, say the lemma holds for all tableaux $T$ for $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent to $\deflate^q(T)(\x) = t$ (Theorem~\ref{thm:compressbijective}), which implies that $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
 
-Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. Here, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, these conditions are equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^q(T)(\x') = \deflate^q(T)^{(t-1)}(\x') = t$. Since $\deflate^q(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to requiring that $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) = \bullet$.
+Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^q(T)(\x') = \deflate^q(T)^{(t-1)}(\x') = t$. Since $\deflate^q(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) = \bullet$.
 \end{proof}
 
 \begin{lemma} \label{lem:gappy_promotion}
-Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$.  Then, for $1 \leq k \leq N_T$, we have
+Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then, for $1 \leq k \leq N_T$, we have
 \begin{equation}\label{eq:gappy_promotion}
  \tinflate^q \Big( \deflate^q(T)_k, \content^q(T) \Big) = T_{i_k}. 
 \end{equation}
