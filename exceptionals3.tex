@@ -624,7 +624,7 @@ Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-
 \end{proof}
 
 \begin{lemma} \label{lem:gappy_promotion}
-Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for $1 \leq k \leq N_T$, we have
+Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq k \leq N_T$, 
 \begin{equation}\label{eq:gappy_promotion}
  \tinflate^q \Big( \deflate^q(T)_k, \content^q(T) \Big) = T_{i_k}. 
 \end{equation}
@@ -658,7 +658,7 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ 
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
-Let $T \in \inc^q(\lambda)$ with $1 \in \mathrm{range}(T)$. Let $1 = i_1 < \dots < i_{N_T}$ be the ordered list of indices such that $\content^q(T)(i_\ell) = 1$. In the notation above, 
+Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. In the notation above, 
 \begin{align*}
  \deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
  & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
@@ -673,11 +673,11 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
 \[
 \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = \pro(T)
 \]
- is a rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector, and clearly $q$ is the greatest, so 
+ is a rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro(T)$, namely $N_T$, and since $q$ is included it must be the greatest, so 
  \[
- \deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = q_T.
+ [\deflate^q \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = N_T.
  \]
-  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate(T)^{(N_T)})$, we have
+  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate^q(T)^{(N_T)})$, we have
   \[
   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
   \] 
@@ -685,15 +685,15 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
 Now say $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
 \[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
 Therefore it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
-\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate(T)_{N_T}). \]
+\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate^q_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate^q(T)_{N_T}). \]
 
-Now, since $x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = n_k$ for some $2 \leq k \leq q_T$. Then, 
+Now, since $x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
 \[
-\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = n_k-1.
+\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = i_k-1.
 \]
 Because the content vector shifts cyclically, this implies that 
  \[
- [\deflate \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = k-1.
+ [\deflate^q \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = k-1.
  \]
   On the other hand, 
   \[
