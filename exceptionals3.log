@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  3 OCT 2017 22:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  4 OCT 2017 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1552,27 +1552,59 @@ r/m/n/12 2\OML/cmm/m/it/12 ; [] ; N\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12] [13]
-Overfull \hbox (22.26558pt too wide) in paragraph at lines 653--654
+Overfull \hbox (22.26558pt too wide) in paragraph at lines 660--661
 []\OT1/cmr/m/n/12 This shows that $\OML/cmm/m/it/12 ^^U [] \OT1/cmr/m/n/12 = \O
 ML/cmm/m/it/12 ^^U []$ \OT1/cmr/m/n/12 for all $\OML/cmm/m/it/12 k$\OT1/cmr/m/n
 /12 , and that more-over, if $[][](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )[](\OT1/c
 mss/m/n/12 x\OT1/cmr/m/n/12 ) =
  []
 
-[14] [15] [16] [17]
+[14] [15]
+Overfull \hbox (73.43102pt too wide) in paragraph at lines 751--751
+[] 
+ []
+
+
+Overfull \hbox (8.07866pt too wide) in paragraph at lines 758--758
+[] 
+ []
+
+
+Overfull \hbox (18.66185pt too wide) in paragraph at lines 758--760
+\OT1/cmr/m/n/12 Now, since $[][]$ is an in-jec-tion, $([][])[](\OML/cmm/m/it/12
+ T\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 T$ \OT1/cmr/m/n/12 ex-actly when $[][] \
+OMS/cmsy/m/n/12 ^^N \OT1/cmr/m/n/12 ([][])[](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 
+) =
+ []
+
+
+Overfull \hbox (5.2753pt too wide) in paragraph at lines 758--760
+[][] \OMS/cmsy/m/n/12 ^^N \OML/cmm/m/it/12 T$\OT1/cmr/m/n/12 . So we are re-duc
+ed to look-ing at what pow-ers $\OML/cmm/m/it/12 n$ \OT1/cmr/m/n/12 of $\OML/cm
+m/m/it/12 K[]$ \OT1/cmr/m/n/12 sta-bi-lize $[][](\OML/cmm/m/it/12 T\OT1/cmr/m/n
+/12 )$. 
+ []
+
+[16] [17] [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 830.
+(hyperref)                removing `math shift' on input line 858.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Omega' on input line 830.
+(hyperref)                removing `\Omega' on input line 858.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 830.
+(hyperref)                removing `math shift' on input line 858.
 
-[18] [19] [20] [21] [22]
+[19] [20] [21]
+Underfull \vbox (badness 5331) has occurred while \output is active []
+
+ [22]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1580,38 +1612,38 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \tf@brf=\write5
 \openout5 = `exceptionals3.brf'.
 
- [23] [24])
-Underfull \hbox (badness 7030) in paragraph at lines 1082--1082
+ [23]
+Underfull \vbox (badness 2035) has occurred while \output is active []
+
+ [24]
+[25])
+Underfull \hbox (badness 7030) in paragraph at lines 1110--1110
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
 [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1082.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1082.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1110.
  (./exceptionals3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1082.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1082.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1110.
 
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 75B35601F4172E295F9A687700C1FD3B;890.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
-(rerunfilecheck)             Checksum: 939E4E9149BFCBF6A79218593C569395;2215.
+(rerunfilecheck)             Checksum: 3316FA9B160C21123B70CB55330746F6;2216.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1082.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1110.
  ) 
 Here is how much of TeX's memory you used:
- 29396 strings out of 493117
- 585526 string characters out of 6135433
- 670655 words of memory out of 5000000
- 32075 multiletter control sequences out of 15000+600000
+ 29400 strings out of 493117
+ 585589 string characters out of 6135433
+ 670714 words of memory out of 5000000
+ 32077 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1079s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1645,10 +1677,10 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2014/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2014/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (26 pages, 440958 bytes).
+Output written on exceptionals3.pdf (26 pages, 444297 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 535 compressed objects within 6 object streams
- 118 named destinations out of 1000 (max. 500000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 542 compressed objects within 6 object streams
+ 120 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

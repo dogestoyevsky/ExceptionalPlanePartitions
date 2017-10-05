@@ -580,7 +580,14 @@ To establish this relation, we first need to introduce notation for the steps in
 
 Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
 For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
-\[T^{(N)} = \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $N > 1$ and $T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal $\lambda \left( T^{(N)} \right) = \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Finally, define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. We can see from Equation~\ref{eq:kprodef2} why this last condition is necessary: $\bullet$'s are only inserted in boxes labelled with $1$'s.
+\[T^{(N)} = \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $N > 1$ and $T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal $\lambda \left( T^{(N)} \right) = \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})$ to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Finally, define $T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }$. Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$'s, while $T_N$ is the restriction of $T^{(N)}$ to these boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. The following simple result shows why this condition is necessary.
+
+\begin{lemma}\label{lem:no_ones}
+If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\pro^q(T) = \decr(T)$. 
+\end{lemma} 
+\begin{proof}
+If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, because there are no nontrivial short ribbons containing any one integer. Also, $\rep_{\bullet \rightarrow 1}(T) = T$ since $T$ is not labelled with any bullets. Therefore $\decr$ is the only operator in Equation~\ref{eq:kprodef2} that acts nontrivially on $T$. 
+\end{proof}
 
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -628,7 +635,7 @@ Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for 
 \begin{equation}\label{eq:gappy_promotion}
  \tinflate^q \Big( \deflate^q(T)_k, \content^q(T) \Big) = T_{i_k}. 
 \end{equation}
- That is, the two sides are identical functions on the same domain. 
+That is, the two sides are identical functions on the same domain. 
 \end{lemma}
 
 \begin{proof}  We proceed by induction on $k$. The base case $k=1$ is trivial, since if $T \in \inc^q(\lambda)$ is any tableau, then $\lambda \left( \deflate^q(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
@@ -658,13 +665,18 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ 
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
-Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. In the notation above, 
-\begin{align*}
- \deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
- & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
-\end{align*}
+Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then
+\begin{equation}\label{eq:deflation_commutation}
+\deflate^q \circ \pro^q(T) = \pro^{N_T} \circ \deflate^q(T).
+\end{equation}
+
 \end{lemma}
 \begin{proof}
+By Equation~\ref{eq:kprodef2}, it is sufficient to show that
+\begin{align*}
+\deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
+ & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
+\end{align*}
 Say $\x \not \in \lambda(T^{(q)})$, that is,  $T^{(q)}(\x) = \bullet$.  Then 
 \[
 [\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = q.
@@ -713,11 +725,11 @@ Because the content vector shifts cyclically, this implies that
   for $(v_1,...,v_q) \in \lbrace 0,1 \rbrace^q$. 
   
 \begin{theorem}\label{thm:periodthm}
-Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^q$ on $\deflate^q(T)$ and $\ell$ be the period of $\Sigma^q$ on $\content^q(T)$. If the number of $0$'s in $\content^q(T)$ is $\frac{rq}{\ell}$, then the period of $\pro^q$ on $T$ is \[\frac{\ell \tau}{\mathrm{gcd}(\ell-r,\tau)}.\]
+Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^q$ on $\deflate^q(T)$ and $\ell$ be the period of $\Sigma^q$ on $\content^q(T)$. If $q-N_T$ (the number of $0$'s in $\content^q(T)$) is $r \cdot \frac{q}{\ell}$, then the period of $\pro^q$ on $T$ is \[\frac{\ell \tau}{\mathrm{gcd}(\ell-r,\tau)}.\]
 \end{theorem} 
     
   \begin{proof}
-  The above shows that if we define 
+Define
   \[
   K^q: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k}
   \] by
@@ -726,9 +738,25 @@ K^q(S,v) =
 \begin{cases}
     (\pro(S),\Sigma^q(v)),  & \text{if } v(1) = 1; \\        
    (S,\Sigma^q(v)), & \text{otherwise;}
-\end{cases}
+\end{cases}.
 \]
-then $\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)$. Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
+We show by induction that $\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)$. HAVE TO SHOW FOR CONTENT VECTOR FIRST. SHOULD IMPACT BOTH CASES. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let $w = \content^q((\pro^q)^{\circ (n-1)}(T))$. Let $\pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda)$ be the projection onto the first factor. By Theorem~\ref{thm:compressbijective}, we can write
+\[ (\pro^q)^{\circ (n-1)}(T) = \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T).\] 
+If $\content^q((\pro^q)^{\circ (n-1)}(T)) \lbrace 1 \rbrace = 1$, then
+\begin{align*}
+\pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T)) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
+&= \pro^{N_T} \circ \deflate^q \circ \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  &\text{by Lemma~\ref{lem:deflation_commutation},}\\
+&= (\pro^q)^{\circ (n)} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Theorem~\ref{thm:compressbijective}} \\ 
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T),
+\end{align*}
+where the last equality holds because $\content^q (\compress^q(T))\lbrace 1 \rbrace = 1$. On the other hand, if $\content^q((\pro^q)^{\circ (n-1)}(T)) \lbrace 1 \rbrace = 0$, then 
+\begin{align*}
+\pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T)) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
+&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{by Lemma~\ref{lem:no_ones}} \\
+&= \pi_1  \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by inductive hypothesis} \\
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T)
+\end{align*}
+ Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
  
 
  
