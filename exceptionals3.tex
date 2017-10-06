@@ -496,11 +496,16 @@ where $c_k = 1$ if $k \in \mathrm{range}(T)$ and $c_k = 0$ if $k \notin \mathrm{
 \begin{example}\label{ex:deflate}
 If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{345,124} \in \incgl^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \binom{[7]}{5} \subset \{0,1\}^7$.
 \end{example}
-Note that if $\deflate^q(T) \in \incgl^k(\lambda)$, then $\content^q(T) \in \binom{[q]}{k}$. We denote by $\compress^q$ the product
+Note that if $\deflate^q(T) \in \incgl^k(\lambda)$, then $\content^q(T) \in \binom{[q]}{k}$. We denote by $\compress^q$ the product map
 \[
-(\deflate^q,\content^q) : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right).
+\compress^q \coloneqq (\deflate^q,\content^q).
+%: \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right).
 \] 
-\begin{theorem}\label{thm:compressbijective} $\compress^q$ is bijective.
+\begin{theorem}\label{thm:compressbijective} The map 
+\[
+\compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
+\]
+ is bijective.
 \end{theorem}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
