@@ -501,12 +501,12 @@ Note that if $\deflate^q(T) \in \incgl^k(\lambda)$, then $\content^q(T) \in \bin
 \compress^q \coloneqq (\deflate^q,\content^q).
 %: \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right).
 \] 
-\begin{theorem}\label{thm:compressbijective} The map 
+\begin{proposition}\label{prop:compressbijective} The map 
 \[
 \compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
 \]
  is bijective.
-\end{theorem}
+\end{proposition}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
 A two-sided inverse for $\compress^q$ is given as follows. 
@@ -630,7 +630,7 @@ for $1 \leq k \leq N_T$.
 \begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $\content^q(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^q(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^q(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $\content^q(T) \lbrace 1 \rbrace = 1$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all tableaux $T$ for $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent to $\deflate^q(T)(\x) = t$ (Theorem~\ref{thm:compressbijective}), which implies that $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
+Now, say the lemma holds for all tableaux $T$ for $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent to $\deflate^q(T)(\x) = t$ (Proposition~\ref{prop:compressbijective}), which implies that $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
 
 Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^q(T)(\x') = \deflate^q(T)^{(t-1)}(\x') = t$. Since $\deflate^q(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) = \bullet$.
 \end{proof}
@@ -752,14 +752,14 @@ We show that
 Let \[ \pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda) \] be the projection onto the first factor and similarly for $\pi_2$. It is immediate from the definitions that \[ \pi_2 \circ (K^q)^{\circ n} \circ \compress^q(T) = (\Sigma^q)^{\circ n} \circ \content^q(T)\] for all $n$. But
 \[  (\Sigma^q)^{\circ n} \circ \content^q(T) = \content^q \circ (\pro^q)^{\circ n} (T) \] by  \cite[Lemma~2.1]{DPS}. This shows that the two sides of Equation~\ref{eq:k_commutes} are equal in the second factor.  
 
-To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed by induction. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let \[ w = \content^q((\pro^q)^{\circ (n-1)}(T)) = \content^q((K^q)^{\circ (n-1)} \circ \compress^q(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
+To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed by induction. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let \[ w = \content^q((\pro^q)^{\circ (n-1)}(T)) = \content^q((K^q)^{\circ (n-1)} \circ \compress^q(T)). \]  By Proposition~\ref{prop:compressbijective}, we can write
 \[ (\pro^q)^{\circ (n-1)}(T) = \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T).\] 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
 \pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
 &= \pro^{N_T} \circ \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
 &= \pro^{N_T} \circ \deflate^q \circ \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
-&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Theorem~\ref{thm:compressbijective}} \\ 
+&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Proposition~\ref{prop:compressbijective}} \\ 
 &= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 1$.}
 \end{align*}
 On the other hand, if $w \lbrace 0 \rbrace = 0$, then 
@@ -976,7 +976,7 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
 
-Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
+Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Proposition~\ref{prop:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 1} \\ \noindent
 \textsf{Input}:  $L \in \mathbb{Z}_{>0}$ and the set $\coprod_k \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$. \\ \noindent
