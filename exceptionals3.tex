@@ -745,27 +745,37 @@ K^q(S,v) =
    (S,\Sigma^q(v)), & \text{otherwise;}
 \end{cases}.
 \]
-We show by induction that $\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)$. HAVE TO SHOW FOR CONTENT VECTOR FIRST. SHOULD IMPACT BOTH CASES. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let $w = \content^q((\pro^q)^{\circ (n-1)}(T))$. Let $\pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda)$ be the projection onto the first factor. By Theorem~\ref{thm:compressbijective}, we can write
+We show that 
+\begin{equation}\label{eq:k_commutes}
+\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)
+\end{equation}
+Let \[ \pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda) \] be the projection onto the first factor and similarly for $\pi_2$. It is immediate from the definitions that \[ \pi_2 \circ (K^q)^{\circ n} \circ \compress^q(T) = (\Sigma^q)^{\circ n} \circ \content^q(T)\] for all $n$. But
+\[  (\Sigma^q)^{\circ n} \circ \content^q(T) = \content^q \circ (\pro^q)^{\circ n} (T) \] by  \cite[Lemma~2.1]{DPS}. This shows that the two sides of Equation~\ref{eq:k_commutes} are equal in the second factor.  
+
+To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed by induction. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let \[ w = \content^q((\pro^q)^{\circ (n-1)}(T)) = \content^q((K^q)^{\circ (n-1)} \circ \compress^q(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
 \[ (\pro^q)^{\circ (n-1)}(T) = \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T).\] 
-If $\content^q((\pro^q)^{\circ (n-1)}(T)) \lbrace 1 \rbrace = 1$, then
+If $w\lbrace 1 \rbrace = 1 $, then
+\begin{align*}
+\pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
+&= \pro^{N_T} \circ \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
+&= \pro^{N_T} \circ \deflate^q \circ \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
+&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Theorem~\ref{thm:compressbijective}} \\ 
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 1$.}
+\end{align*}
+On the other hand, if $w \lbrace 0 \rbrace = 0$, then 
 \begin{align*}
 \pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T)) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
-&= \pro^{N_T} \circ \deflate^q \circ \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  &\text{by Lemma~\ref{lem:deflation_commutation},}\\
-&= (\pro^q)^{\circ (n)} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Theorem~\ref{thm:compressbijective}} \\ 
-&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T),
+&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{by Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$} \\
+&= \pi_1  \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 0$.}
 \end{align*}
-where the last equality holds because $\content^q (\compress^q(T))\lbrace 1 \rbrace = 1$. On the other hand, if $\content^q((\pro^q)^{\circ (n-1)}(T)) \lbrace 1 \rbrace = 0$, then 
-\begin{align*}
-\pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T)) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
-&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{by Lemma~\ref{lem:no_ones}} \\
-&= \pi_1  \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by inductive hypothesis} \\
-&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T)
-\end{align*}
- Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
+This completes the proof of Equation~\ref{eq:k_commutes}.
+
+Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly when $\compress^q \circ (\pro^q)^{\circ n}(T) = \compress^q \circ T$. So we are reduced to looking at what powers $n$ of $K^q$ stabilize $\compress^q(T)$.
  
 
  
-Say $n$ satisfies this relation. Clearly we must have $(\Sigma^q)^{\circ n}(\content^q(T)) = \content^q(T)$, so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^q(T)$ under $\Sigma^q$.  In addition, we must have that $\pro^{n'}(\deflate^q(T)) = \deflate^q(T)$, where $n'$ is $n$ minus the number of times that \[ \content^q((K^q)^{\circ j}(\deflate^q(T),\content^q(T)))(1) = 0\] for $j \in 0,...,n-1$. If there are $r \cdot (q/\ell)$ zeros in $\content^q(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. 
+Say $n$ satisfies this relation. Clearly we must have $(\Sigma^q)^{\circ n}(\content^q(T)) = \content^q(T)$, so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^q(T)$ under $\Sigma^q$.  In addition, we must have that $\pro^{n'}(\deflate^q(T)) = \deflate^q(T)$, where $n'$ is $n$ minus the number of times that \[ \content^q((K^q)^{\circ j}(\compress(T))) \lbrace 1 \rbrace = 0\] for $j \in 0,...,n-1$. If there are $r \cdot (q/\ell)$ zeros in $\content^q(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. 
 
 This reasoning shows that $(K^q)^{\circ n} (\compress^q(T)) = \compress^q(T)$ if and only if $n = t \ell = s \tau + t  r$ for positive integers $s$ and $t$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $t \ell$ and $s \tau + t r$ for the same $t$. But $t \ell = s\tau + tr$ implies that $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the minimum of $t \ell$ is clearly achieved when $t$ is minimal, which occurs when $t(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
 \begin{equation}\label{eq:period}
