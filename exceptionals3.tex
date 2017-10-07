@@ -621,11 +621,10 @@ shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$, we have
+Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$ and $1 \leq k \leq N_T$, we have
  \begin{equation}\label{eq:gappy_promotion2}
-\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet,
+\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet.
 \end{equation}
-for $1 \leq k \leq N_T$.
 \end{lemma}
 \begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $\content^q(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^q(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^q(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $\content^q(T) \lbrace 1 \rbrace = 1$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
