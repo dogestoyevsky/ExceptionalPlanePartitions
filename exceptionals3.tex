@@ -166,7 +166,7 @@
 
 \begin{abstract}
 For each minuscule flag variety $X$, there is a corresponding minuscule poset, describing its Schubert decomposition. We study an action on plane partitions over such posets, introduced by P.~Cameron and D.~Fon-der-Flaass (1995).
-For plane partitions of height at most $2$, D.~Rush and X.~Shi (2013) proved an instance of the cyclic sieving phenomenon, completely describing the orbit structure of this action. They noted their result generally does not extend to greater heights; however, when $X$ is one of the two minuscule flag varieties of Lie type $E$, they conjectured explicit instances of cyclic sieving for all heights.
+For plane partitions of height at most $2$, D.~Rush and X.~Shi (2013) proved an instance of the cyclic sieving phenomenon, completely describing the orbit structure of this action. They noted their result does not extend to greater heights in general; however, when $X$ is one of the two minuscule flag varieties of Lie type $E$, they conjectured explicit instances of cyclic sieving for all heights.
 
 We prove their conjecture in the case that $X$ is the Cayley plane of type $E_6$. For the other exceptional minuscule flag variety, the Freudenthal variety of type $E_7$, we establish their conjecture for heights at most $4$, but show that it fails generally. We further give a new proof of a unpublished cyclic sieving of D.~Rush and X.~Shi (2011) for plane partitions of any height in the case $X$ is an even-dimensional quadric hypersurface. 
 Our argument uses ideas of K.~Dilks, O.~Pechenik, and J.~Striker (2017) to relate the action on plane partitions to combinatorics derived from $K$-theoretic Schubert calculus. 
@@ -483,7 +483,7 @@ For $T \in \inc^q(\lambda)$, let $N_T \coloneqq |\mathrm{range}(T)|$ be the numb
 \]
 for $T \in \inc^q(\lambda)$ and $\x \in \lambda$. Note that $\deflate^q(T) \in \incgl^{N_T}(\lambda)$ and that $N_T \leq q$.
 
-For a positive integer $j \in \mathbb{Z}_{>0}$, write $[j]$ for the set $\{ 1, 2, \dots, j\}$. Let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
+For positive integers $k \leq j$, let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
 \[
  \content^q : \inc^q(\lambda) \to \{ 0, 1\}^q = \coprod_{0 \leq  k \leq q} \binom{[q]}{k}
  \] 
@@ -501,12 +501,12 @@ Note that if $\deflate^q(T) \in \incgl^k(\lambda)$, then $\content^q(T) \in \bin
 \compress^q \coloneqq (\deflate^q,\content^q).
 %: \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right).
 \] 
-\begin{proposition}\label{prop:compressbijective} The map 
+\begin{theorem}\label{thm:compressbijective} The map 
 \[
 \compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right)
 \]
  is bijective.
-\end{proposition}
+\end{theorem}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
 A two-sided inverse for $\compress^q$ is given as follows. 
@@ -519,7 +519,7 @@ given by
 \[
 \tinflate^q(S,v) = \inflate^q_v \circ S.
 \]
-Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. Since $S$ is surjective onto $\mathbf{k}$ and $\tinflate^q(S,v)$ maps onto the nonzero elements of $v$, $\content^q \circ \tinflate^q(S,v) = v$.  Also,
+Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. Since $S$ is surjective and $\tinflate^q(S,v)$ maps onto the nonzero elements of $v$, $\content^q \circ \tinflate^q(S,v) = v$.  Also,
 \begin{align*}
  (\deflate^q(\inflate^q_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^q_v \circ S)): h \leq (\inflate^q_v \circ S)(\x) \} \\  
  &= \# \{ h: v(h) \neq 0 \text{ and } \sum_{\ell = 1}^h v(\ell) \leq S(\x)  \} \\
@@ -534,7 +534,7 @@ Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5]
 \inflate^7_v(2) &= 2, \\
 \inflate_v^7(3) &= 4, \\
 \inflate_v^7(4) &= 5, \\
-\inflate_v^7(5) &= 6. 
+\inflate_v^7(5) &= 6. \\
 \end{align*}
 Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v \circ S = \ytableaushort{456,125}$. Note that this process has recovered the tableau $T$ of Example~\ref{ex:deflate} from $S=\deflate^7(T)$ and $v=\content^7(T)$.
 \end{example}
@@ -591,7 +591,7 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
 If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\pro^q(T) = \decr(T)$. 
 \end{lemma} 
 \begin{proof}
-If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, because there are no nontrivial short ribbons containing any single integer. Also, $\rep_{\bullet \rightarrow 1}(T) = T$ since $T$ contains no $\bullet$. Therefore $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
+If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, because there are no nontrivial short ribbons containing any one integer. Also, $\rep_{\bullet \rightarrow 1}(T) = T$ since $T$ is not labelled with any bullets. Therefore $\decr$ is the only operator in Equation~\ref{eq:kprodef2} that acts nontrivially on $T$. 
 \end{proof}
 
 \begin{figure}[h]
@@ -621,15 +621,16 @@ shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$ and $1 \leq k \leq N_T$, we have
+Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$, we have
  \begin{equation}\label{eq:gappy_promotion2}
-\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet.
+\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet,
 \end{equation}
+for $1 \leq k \leq N_T$.
 \end{lemma}
 \begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $\content^q(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^q(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^q(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $\content^q(T) \lbrace 1 \rbrace = 1$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all tableaux $T$ for $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent to $\deflate^q(T)(\x) = t$ (Proposition~\ref{prop:compressbijective}), which implies that $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
+Now, say the lemma holds for all tableaux $T$ for $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent to $\deflate^q(T)(\x) = t$ (Theorem~\ref{thm:compressbijective}), which implies that $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$. 
 
 Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^q(T)(\x') = \deflate^q(T)^{(t-1)}(\x') = t$. Since $\deflate^q(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) = \bullet$.
 \end{proof}
@@ -661,11 +662,11 @@ Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). Take $\x 
  for all $i_{t-1} \leq \ell$. Therefore by the previous paragraph and the inductive hypothesis,
  \[ T^{(i_t)}(\x) = T^{(i_{t-1})}(\x) = \inflate^q_{\content^q(T)} \circ \deflate^q(T)^{(t-1)}(\x) =  \inflate^q_{\content^q(T)} \circ \deflate^q(T)^{(t)}(\x). \] This shows that Equation~(\ref{eq:gappy_promotion}) holds at $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T^{(i_{t})}(\x) \leq i_t$. Thus, we must have that $T^{(i_{t})}(\x) = i_{t}$, since $\swap$'s do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $\content^q(T) \lbrace 1 \rbrace = 1$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. Therefore each of these conditions is equivalent to the corresponding condition from the previous paragraph. 
  
-This shows that we have $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^q(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
+This shows that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^q(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
 \end{proof}
 
 \begin{remark}
-As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ is, in fact, an element of $\inc^q \left(\lambda \left( T^{(k)} \right) \right)$. However, we do not need this observation here.
+As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ is, in fact, in $\inc^q \left(\lambda \left( T^{(k)} \right) \right)$. However, we do not need this observation here.
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
@@ -689,7 +690,7 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
 \[
 \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = \pro(T)
 \]
- is a cyclic rotation of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro(T)$, namely $N_T$. Since $q$ is included, it must be the greatest such label, and so 
+ is a rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro(T)$, namely $N_T$, and since $q$ is included it must be the greatest, so 
  \[
  [\deflate^q \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = N_T.
  \]
@@ -703,7 +704,7 @@ Now say $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not a
 Therefore it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
 \[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate^q_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate^q(T)_{N_T}). \]
 
-Now, since $\x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for some $\ell \in [2,...,q]$. This implies that $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
+Now, since $x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in [2,...,q]$. This implies that $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
 \[
 \decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = i_k-1.
 \]
@@ -741,8 +742,8 @@ Define
 K^q(S,v) =
 \begin{cases}
     (\pro(S),\Sigma^q(v)),  & \text{if } v(1) = 1; \\        
-   (S,\Sigma^q(v)), & \text{otherwise.}
-\end{cases}
+   (S,\Sigma^q(v)), & \text{otherwise;}
+\end{cases}.
 \]
 We show that 
 \begin{equation}\label{eq:k_commutes}
@@ -751,22 +752,22 @@ We show that
 Let \[ \pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda) \] be the projection onto the first factor and similarly for $\pi_2$. It is immediate from the definitions that \[ \pi_2 \circ (K^q)^{\circ n} \circ \compress^q(T) = (\Sigma^q)^{\circ n} \circ \content^q(T)\] for all $n$. But
 \[  (\Sigma^q)^{\circ n} \circ \content^q(T) = \content^q \circ (\pro^q)^{\circ n} (T) \] by  \cite[Lemma~2.1]{DPS}. This shows that the two sides of Equation~\ref{eq:k_commutes} are equal in the second factor.  
 
-To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed by induction. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let \[ w = \content^q((\pro^q)^{\circ (n-1)}(T)) = \content^q((K^q)^{\circ (n-1)} \circ \compress^q(T)). \]  By Proposition~\ref{prop:compressbijective}, we can write
+To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed by induction. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let \[ w = \content^q((\pro^q)^{\circ (n-1)}(T)) = \content^q((K^q)^{\circ (n-1)} \circ \compress^q(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
 \[ (\pro^q)^{\circ (n-1)}(T) = \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T).\] 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
 \pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
-&= \pro^{N_T} \circ \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &[\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$}] \\
+&= \pro^{N_T} \circ \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
 &= \pro^{N_T} \circ \deflate^q \circ \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
-&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &[\text{Proposition~\ref{prop:compressbijective}}] \\ 
-&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &[\text{$w\lbrace 1 \rbrace = 1$].}
+&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Theorem~\ref{thm:compressbijective}} \\ 
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 1$.}
 \end{align*}
 On the other hand, if $w \lbrace 0 \rbrace = 0$, then 
 \begin{align*}
 \pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T)) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
-&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &[\text{Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$]} \\
+&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{by Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$} \\
 &= \pi_1  \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
-&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &[\text{since $w\lbrace 1 \rbrace = 0$].}
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 0$.}
 \end{align*}
 This completes the proof of Equation~\ref{eq:k_commutes}.
 
@@ -785,8 +786,8 @@ n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\
 \section{The equivariant bijection}\label{sec:equivariant}
 \subsection{Bijection between plane partitions and increasing tableaux.} 
 
-Let $\e_i$ be the $i$th standard basis vector in $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the $i$th coordinate projection map. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1,...,d_r \in \{1, 2 \}$, and signs $n_1,...,n_r \in \{ \pm 1 \}$ such that 
-\[\left\{ \x + \sum_{k=1}^\ell n_k \e_{d_k} :  1\leq j \leq r \right\} \subseteq \lambda\]
+Let $\e_i$ be the $i$th standard basis vector in $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the $i$th coordinate projection map for $i = 1,2$. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1,...,d_r \in \{1, 2 \}$, and signs $n_1,...,n_r \in \{ \pm 1 \}$ such that 
+\[\left\{ \x + \sum_{k=1}^j n_k \e_{d_k} :  1\leq j \leq r \right\} \subseteq \lambda\]
  and $\x + \sum_{k=1}^r n_k \e_{d_k} = \x'$. Given these data, define $\x_0 = \x$ and $\x_\ell = \x + \sum_{k=1}^\ell n_k \e_{d_k}$ for $1 \leq \ell \leq r$. Then the sequence $\left( \x_\ell  \right)_{0 \leq \ell \leq r}$ is called a {\bf path of length} $r$. If $n_k = 1$ for all $k$, then the path is called a {\bf chain}. We call a finite nonempty connected subset of $\mathbb{Z}_{\geq 0}^2$ a {\bf shape}.  Shapes inherit a partial order from the natural componentwise partial order on $\mathbb{Z}^2$. A shape poset is ranked by the rank function $\text{rk}(x_1,x_2) = x_1 + x_2$.
 
 We say that the shape $\lambda$ is {\bf convex} if $\x\in \lambda$ and $\x + k  \e_d \in \lambda $ for some $d \in \{1, 2\}$ and $k \in \mathbb{Z}_{> 0}$ together imply  that $\{\x + j \e_d : 1 \leq j \leq k-1 \} \subseteq \lambda.$
@@ -843,7 +844,7 @@ Fix a justified convex shape $\lambda$ and $m \in \mathbb{Z}_{> 0}$. Now, we def
 \lambda \times [m] \coloneqq \{ (\x, y) \in \mathbb{Z}^3: \x \in \lambda, 0 \leq y \leq  m-1 \},
 \] with the partial order given by restricting the natural partial order on $\mathbb{Z}^3$, that is
 \[{\sf p} \geq {\sf q} \text{ if and only if } {\sf p}  - {\sf q} \in \mathbb{Z}_{\geq 0}^3.\]
-Recall that for any poset $P$, we write $J(P)$ for the collection of all order ideals of $P$.  Note that $J(\lambda \times [m])$ is exactly the set of all plane partitions of height at most $m$ over the poset $\lambda$.
+Recall that for any poset $P$, we write $J(P)$ for the collection of all order ideals of $P$.  
 
  Define the map $\Omega : J(\lambda \times [m]) \rightarrow \inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ as follows. 
 % We write $2^A$ for the power set of a set $A$. 
@@ -852,7 +853,7 @@ Recall that for any poset $P$, we write $J(P)$ for the collection of all order i
  \mathrm{ht}: \mathbb{Z}_{\geq 0}^2 \times 2^{(\mathbb{Z}_{\geq 0}^3)} \rightarrow \mathbb{Z}_{\geq 0},
  \] where $2^{(\mathbb{Z}_{\geq 0}^3)}$ denotes the power set of $\mathbb{Z}_{\geq 0}^3$ by 
  \[ \mathrm{ht}(\x,S) \coloneqq  \# \{ y \in \mathbb{Z}_{\geq 0} : (\x,y) \in S \}.  \]  
-Intuitively, if an order ideal is viewed as a pile of blocks, then $\mathrm{ht}$ gives the number of blocks in a given column. Next, for $I \in J(\lambda \times [m])$, define $\Omega(I) \coloneqq T,$
+Intuitively, if an order ideal is viewed as a pile of blocks, then $\mathrm{ht}$ gives the number of blocks in a given column. In this notation, that $J(\lambda \times [m])$ is exactly the set of all plane partitions of $\mathrm{ht}$ at most $m$ over the poset $\lambda$. Next, for $I \in J(\lambda \times [m])$, define $\Omega(I) \coloneqq T,$
 where the increasing tableau \[T : \lambda^\star \to [\rank(\lambda) + m + 1 ] \] is given by 
 \[ T( \x )= \mathrm{ht}(\aaa_\lambda - \x,I) + \rank(\x)+1.\] 
 
@@ -975,7 +976,7 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
 
-Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Proposition~\ref{prop:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
+Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 1} \\ \noindent
 \textsf{Input}:  $L \in \mathbb{Z}_{>0}$ and the set $\coprod_k \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$. \\ \noindent
