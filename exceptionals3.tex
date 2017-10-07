@@ -756,17 +756,17 @@ To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
 \pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
-&= \pro^{N_T} \circ \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
+&= \pro^{N_T} \circ \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &[\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$}] \\
 &= \pro^{N_T} \circ \deflate^q \circ \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
-&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &\text{by Proposition~\ref{prop:compressbijective}} \\ 
-&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 1$.}
+&= \pro^{N_T} \circ \pi_1 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T) &[\text{Proposition~\ref{prop:compressbijective}}] \\ 
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &[\text{$w\lbrace 1 \rbrace = 1$].}
 \end{align*}
 On the other hand, if $w \lbrace 0 \rbrace = 0$, then 
 \begin{align*}
 \pi_1 \circ \compress^q \circ (\pro^q)^{\circ (n)}(T)) &= \deflate^q \circ (\pro^q)^{\circ (n)}(T) \\
-&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &\text{by Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$} \\
+&= \deflate^q \circ (\pro^q)^{\circ (n-1)}(T) &[\text{Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$]} \\
 &= \pi_1  \circ (K^q)^{\circ (n-1)} \circ \compress^q(T)  \\
-&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &\text{because $w\lbrace 1 \rbrace = 0$.}
+&= \pi_1 \circ (K^q)^{\circ (n)} \circ \compress^q(T) &[\text{since $w\lbrace 1 \rbrace = 0$].}
 \end{align*}
 This completes the proof of Equation~\ref{eq:k_commutes}.
 

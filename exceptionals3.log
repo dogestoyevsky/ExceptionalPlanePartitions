@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 OCT 2017 13:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 OCT 2017 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1552,12 +1552,12 @@ r/m/n/12 2\OML/cmm/m/it/12 ; [] ; N\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12] [13] [14] [15]
-Overfull \hbox (100.32808pt too wide) in paragraph at lines 763--763
+Overfull \hbox (106.85579pt too wide) in paragraph at lines 763--763
 [] 
  []
 
 
-Overfull \hbox (15.58842pt too wide) in paragraph at lines 770--770
+Overfull \hbox (5.79686pt too wide) in paragraph at lines 770--770
 [] 
  []
 
@@ -1647,7 +1647,7 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (27 pages, 444901 bytes).
+Output written on exceptionals3.pdf (27 pages, 444886 bytes).
 PDF statistics:
  622 PDF objects out of 1000 (max. 8388607)
  552 compressed objects within 6 object streams
