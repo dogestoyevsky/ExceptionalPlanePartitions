@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1551,7 +1551,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 867.
 
-[20] [21] [22] [23]
+[20] [21] [22]
+Underfull \vbox (badness 5331) has occurred while \output is active []
+
+ [23]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1559,10 +1565,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \tf@brf=\write5
 \openout5 = `exceptionals3.brf'.
 
- [24] [25]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [24]
+Underfull \vbox (badness 2035) has occurred while \output is active []
 
- [26])
+ [25]
+[26])
 Underfull \hbox (badness 7030) in paragraph at lines 1119--1119
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
@@ -1623,10 +1630,10 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (27 pages, 449377 bytes).
+Output written on exceptionals3.pdf (27 pages, 450836 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
+ 637 PDF objects out of 1000 (max. 8388607)
+ 567 compressed objects within 6 object streams
  123 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
