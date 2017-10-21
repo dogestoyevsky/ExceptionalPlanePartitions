@@ -373,9 +373,9 @@ t_x(\uu) = \left\{ \begin{array}{ll}
         \end{array} \right.
 \]
 Following the terminology of \cite{DPS}, a {\bf $3$-dimensional lattice projection} of a finite ranked poset P is an order- and rank-preserving map $\pi : P \to \mathbb{Z}^3$, where the partial order on $\mathbb{Z}^3$ is given by componentwise comparison and $\mathbb{Z}^3$ is ranked by the sum of the coordinates. Considering the classification of minuscule posets in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}, observe that for every minuscule $P$ and any $k > 0$, the poset $P \times {\bf k}$ has an injective $3$-dimensional lattice projection induced from the obvious embeddings of those pictures in the planar lattice. For $v = \{\pm 1 \}^3$ and $i \in \mathbb{Z}$, let 
-\[
+\begin{equation}\label{eq:taudef}
 \tau_{\pi,v}^i = \prod_{\langle v, \pi(x) \rangle = i} t_x.
-\]
+\end{equation}
 That is, $\tau_{\pi,v}^i$ is the composition of the toggles $t_x$ for all $x$ with $\pi(x)$ lying on the affine plane defined by $\langle v, \cdot \rangle = i$. Since the toggles $t_{x_1}$ and $t_{x_2}$ clearly commute whenever neither $x_1$ nor $x_2$ covers the other, this composition is well-defined. Then {\bf  $(\pi, v)$-motion} on $P$ is the operator
 \[
 \mot_{\pi, v} \coloneqq \prod_{i \in \mathbb{Z}} \tau_{\pi,v}^i,
@@ -903,7 +903,7 @@ Therefore, it suffices to show
 \end{equation*}
 for all $\ell$. 
 
-Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq P \cap ( \y \times [m] )$ be the column of $\y$ in $P$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ to $P$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(P)$. 
+Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq P \cap ( \y \times [m] )$ be the column of $\y$ in $P$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ to $P$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(P)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
 
 Define the function $H : \lambda \to [m]$ by $H(\x) = \text{ht}(\x,P)$ for $\x \in \lambda$.
 By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
@@ -926,7 +926,7 @@ On the other hand, say that $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all such $d
 $H(\y') \leq i+j-(a+b-(\ell-1)).$
 Now, by Lemma~\ref{lem:convex_chain}, since $\y' > \y$, there is a chain from $\y$ to $\y'$. Clearly, this chain contains an element of the form $\y+\e_{d} \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \leq i+j-(a+b-(\ell-1))$, as desired.
 
-On the tableaux side, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is clearly equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
+On the tableaux side, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
 
 \medskip
 \noindent
@@ -936,9 +936,9 @@ Here, $(\y,i+j-(a+b-(\ell-1))-1) \in Y$ but $(\y,i+j-(a+b-(\ell-1))) \notin Y$. 
 
 For, on the one hand, if $\y-\e_d \in \lambda$ and $H(\y-\e_d) < i+j-(a+b-(\ell-1))+1$, then by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ does not yield an order ideal. 
 On the other hand, say that $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all such $d$. To verify that adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' < \y$. By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that $H(\y') \geq i+j-(a+b-(\ell-1))+1$. 
-Now, by Lemma~\ref{lem:convex_chain}, since $\y' < \y$, there is a chain from $\y'$ to $\y$. Clearly, this chain contains an element of the form $\y-\e_d \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y) \geq i+j-(a+b-(\ell-1))+1$ as desired.
+Now, by Lemma~\ref{lem:convex_chain}, since $\y' < \y$, there is a chain from $\y'$ to $\y$. Clearly, this chain contains an element of the form $\y-\e_d \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \geq i+j-(a+b-(\ell-1))+1$ as desired.
 
-On the tableaux side, this case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is clearly equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
+On the tableaux side, this case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
 
 \medskip
 \noindent
@@ -1102,7 +1102,7 @@ $q$ & orbit size & number of orbits\\
 \end{table}
 
 \section*{Acknowledgements}
-The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation.
+The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was supported by the Graduate Research Fellowship from the National Science Foundation. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
