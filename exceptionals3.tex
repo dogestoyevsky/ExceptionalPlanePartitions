@@ -398,20 +398,20 @@ For any finite ranked poset $P$ with a $3$-dimensional lattice projection $\pi$ 
 \section{$K$-promotion of increasing tableaux}\label{sec:Kpromotion}
 
 \subsection{Definitions}\label{sec:Kpro_defs}
-A classical approach to the cohomological Schubert calculus of complex type $A$ Grassmannians is to use the jeu de taquin on standard Young tableaux introduced by M.-P.~Sch\"utzenberger \cite{Schutzenberger:jdt}. (See \cite{Fulton, Manivel} for modern expositions of the classical jeu de taquin theory.) A theme of modern Schubert calculus has been extending such theories into richer generalized cohomology theories and in particular into the $K$-theory ring of algebraic vector bundles. For a partial survey of recent work related to $K$-theoretic Schubert calculus, see \cite{Pechenik.Yong:genomic}.
+A classical approach to the cohomological Schubert calculus of complex type $A$ Grassmannians is to use the jeu de taquin on standard Young tableaux introduced by M.-P.~Sch\"utzenberger \cite{Schutzenberger:jdt}. (See \cite{Fulton, Manivel} for modern expositions of the classical jeu de taquin theory.) A theme of modern Schubert calculus has been extending such theories to richer generalized cohomologies and in particular into the $K$-theory ring of algebraic vector bundles. For a partial survey of recent work related to $K$-theoretic Schubert calculus and the associated combinatorics, see \cite{Pechenik.Yong:genomic}.
 
 The first $K$-theoretic Littlewood-Richardson rule was discovered by A.~Buch \cite{Buch}; this rule, however, was not based on jeu de taquin. H.~Thomas and A.~Yong \cite{Thomas.Yong:K} later found a different Littlewood-Richardson rule for the same structure coefficients by directly extending M.-P.~Sch\"utzenberger's jeu de taquin. This latter rule was conjectured in \cite{Thomas.Yong:K} to extend to the $K$-theoretic Schubert structure coefficients of all minuscule varieties, as was proven by a combination of \cite{Buch.Ravikumar,Clifford.Thomas.Yong,Buch.Samuel}. In this Thomas-Yong theory, the role of standard Young tableaux is filled by \emph{increasing tableaux}.
 
 \begin{definition}
-Let $\lambda$ be an order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of positive integers to the boxes of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^q(\lambda)$ denote the set of all increasing tableaux of shape $\lambda$ with all entries at most $q$. We identify $\inc^q(\lambda)$ with the set of all strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{q}$ of size $q$.
+Let $\lambda$ be an order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of a positive integer to each box of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^q(\lambda)$ denote the set of all increasing tableaux of shape $\lambda$ with all entries at most $q$. We identify $\inc^q(\lambda)$ with the set of all strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{q}$ of size $q$. For examples of increasing tableaux, see Figures~\ref{fig:kbk} and ~\ref{fig:promotion}.
 \end{definition}
 
 Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro^q$ on $\inc^q(\lambda)$, directly extending M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. Since studying the action of $\pro^q$ will be fundamental to our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}, we must recall the definition of $\pro^q$. 
 We will indeed use both the original formulation from \cite{Pechenik}, as well as an equivalent formulation from \cite[Proposition~2.4]{DPS}.
 
 Let $T \in \inc^q(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps the labels $i$ and $i+1$ in each component that is a single box, and acts trivially on each non-trivial connected component. 
-Note that each $\rho_i$ is an involution.
-{\bf $K$-promotion} may then be defined by
+Notice that each $\rho_i$ is an involution.
+Using the characterization of \cite[Proposition~2.4]{DPS}, {\bf $K$-promotion} may then be defined by
 \[
 \pro^q(T) \coloneqq \rho_{q-1} \circ \dots \circ \rho_1(T).
 \]
@@ -431,13 +431,15 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 \end{figure}
 
 \begin{figure}[h]
+\begin{center}
 \begin{tikzpicture}
-\node (T) {$T= \!\!\!\!\!\!\!$\hspace{-3mm}\ytableaushort{ \none \none \none 89{11}{12}{13},\none \none \none 78{10},\none \none 567, 12345}};
+\node (T) {$T= \!\!\!\!\!\!\!$\hspace{-4mm}\ytableaushort{ \none \none \none 89{11}{12}{13},\none \none \none 78{10},\none \none 567, 12345}};
 \node[right  = 1.35 of T] (T4) {\ytableaushort{ \none \none \none 89{11}{12}{13}, \none \none \none 78{10}, \none \none 467, 12345}};
 \node[below  = 1.35 of T] (T5) {\ytableaushort{   \none \none \none 89{11}{12}{13}, \none \none \none 78{10},\none \none 457,12346}};
 \node[right  = 1.35 of T5] (T6) {\ytableaushort{   \none \none \none 89{11}{12}{13}, \none \none \none 68{10},\none \none 457, 12346 }};
 \node[below  = 1.35 of T5] (T7) {\ytableaushort{   \none \none \none 79{11}{12}{13},\none \none \none 68{10},\none \none 457, 12346 }};
-\node[right  = 1.35 of T7] (T9) {\ytableaushort{  \none \none \none 7{10}{11}{12}{13},\none \none \none 689, \none \none 457, 12346 }\hspace{2mm}$=\pro^{13}(T)$};
+\node[right  = 1.35 of T7] (T9) {\ytableaushort{  \none \none \none 7{10}{11}{12}{13},\none \none \none 689, \none \none 457, 12346 }};
+\node[right = -1 of T9] (finishlabel) {$=\pro^{13}(T)$};
 \node[below left = -.3 and -0.7 of T9] (fake1) {};
 \node[below left = -.3 and -1.2 of T9] (fake2) {};
 \node[below left = -.3 and -1.7 of T9] (fake3) {};
@@ -455,9 +457,7 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 \path (T) edge[pil]  node[above]{$\rho_4$} (T4);
 \path (T4) edge[pil] node[above]{$\rho_5$} (T5);
 \draw[->, thick] (T5.south) .. node[above]{$\rho_6$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
-%\path (T5) edge[pil] node[above]{$\rho_6$} (T6);
 \path (T6) edge[pil] node[above]{$\rho_7$} (T7);
-%\draw (3) to [out=330,in=300,looseness=8] (3);
 \path (fake14) edge[pil,out=270,in=270,looseness=3] node[below]{$\rho_8$} (fake13);
 \path (T7) edge[pil] node[above]{$\rho_9$} (T9);
 \path (fake2) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{10}$} (fake1);
@@ -466,12 +466,9 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 \path (fake8) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{1}$} (fake7);
 \path (fake10) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{2}$} (fake9);
 \path (fake12) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{3}$} (fake11);
-%\path (T9) edge[pil,out=290,in=280,looseness=6] node[below]{$\rho_{10}$} (T9);
-%\path (T9) edge[pil,out=310,in=300,looseness=4] node[below]{$\rho_{11}$} (T9);
-%\path (T9) edge[pil,out=330,in=320,looseness=2] node[below]{$\rho_{11}$} (T9);
-%\path (T9) edge[pil,out=7,in=90,looseness=2] node[below]{$\rho_{12}$} (T9);
 \end{tikzpicture}
-\caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of a sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
+\end{center}
+\caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of the sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
 \end{figure}
 
 Suppose $T \in \inc^q(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf q}$. We say that $T$ is {\bf gapless} if this map is surjective; otherwise, $T$ is {\bf gappy}. We write $\incgl^q(\lambda)$ for the set of all gapless tableaux in $\inc^q(\lambda)$.
