@@ -835,16 +835,17 @@ Let $\lambda$ be a convex justified shape. Then every maximal chain has length $
 Since for all $\x \in \lambda$ we have $(0,0) \leq \x$ and $\x \leq (a_1(\lambda),a_2(\lambda))$, all maximal chains must start at $(0,0)$ and end at $(a_1(\lambda),a_2(\lambda))$ by Lemma~\ref{lem:convex_chain}. But clearly any chain between these two elements has the desired length.
 \end{proof} 
 
-For a shape $\lambda$, an increasing tableau on the poset $\lambda$ is equivalent to a map $T: \lambda \rightarrow \mathbb{Z}_{>0}$ such that whenever $\x \in \lambda$ and $\x+\e_i \in \lambda$ for $i \in \lbrace 1,2 \rbrace$, then $T(\x) < T(\x+\e_i)$. The {\bf height} of an increasing tableau $T$ is the maximum value in its range. Recall that $\inc^q(\lambda)$ is the set of all increasing tableaux of height at most $q$ and base $\lambda$. 
+For a convex shape $\lambda$, an increasing tableau on the poset $\lambda$ is equivalent to a map $T: \lambda \rightarrow \mathbb{Z}_{>0}$ such that whenever $\x \in \lambda$ and $\x+\e_i \in \lambda$ for $i \in \lbrace 1,2 \rbrace$, then $T(\x) < T(\x+\e_i)$. The {\bf height} of an increasing tableau $T$ is the maximum value in its range. Recall that $\inc^q(\lambda)$ is the set of all increasing tableaux of height at most $q$ and base $\lambda$. 
 
-Fix a justified convex shape $\lambda$ and $m \in \mathbb{Z}_{> 0}$. Now, we define a poset
+Fix a convex justified shape $\lambda$ and $m \in \mathbb{Z}_{> 0}$. Now, we define a poset
 \[
-\lambda \times [m] \coloneqq \{ (\x, y) \in \mathbb{Z}^3: \x \in \lambda, 0 \leq y \leq  m-1 \},
+\lambda \times \mathbf{m} \coloneqq \{ (\x, y) \in \mathbb{Z}^3: \x \in \lambda, 0 \leq y \leq  m-1 \},
 \] with the partial order given by restricting the natural partial order on $\mathbb{Z}^3$, that is
-\[{\sf p} \geq {\sf q} \text{ if and only if } {\sf p}  - {\sf q} \in \mathbb{Z}_{\geq 0}^3.\]
-Recall that for any poset $P$, we write $J(P)$ for the collection of all order ideals of $P$.  
+\[{\sf p} \geq {\sf q} \text{ if and only if } {\sf p}  - {\sf q} \in \mathbb{Z}_{\geq 0}^3.\] Note that, as a abstract poset, $\lambda \times \mathbf{m}$ is, in fact, isomorphic to the product of the posets $\lambda$ and $\mathbf{m}$; it is useful to us, however, to consider $\lambda \times \mathbf{m}$ as embedded inside $\mathbb{Z}^3$ in this particular fashion.
 
- Define the map $\Omega : J(\lambda \times [m]) \rightarrow \inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ as follows. 
+
+Recall that for any poset $P$, we write $J(P)$ for the collection of all order ideals of $P$.  
+ Define the map $\Omega : J(\lambda \times \mathbf{m}) \rightarrow \inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ as follows. 
 % We write $2^A$ for the power set of a set $A$. 
  First, define the function 
  \[
