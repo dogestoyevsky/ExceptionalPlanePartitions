@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1610,7 +1610,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1121.
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 75B35601F4172E295F9A687700C1FD3B;890.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
-(rerunfilecheck)             Checksum: 3E8B980AD1AAB6E1456D3B1DBB27BB56;2257.
+(rerunfilecheck)             Checksum: 1946CD0FB69BB85DB2B227229B3B81DE;2257.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1655,7 +1655,7 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (27 pages, 444895 bytes).
+Output written on exceptionals3.pdf (27 pages, 444952 bytes).
 PDF statistics:
  623 PDF objects out of 1000 (max. 8388607)
  553 compressed objects within 6 object streams
