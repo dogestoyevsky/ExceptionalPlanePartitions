@@ -727,7 +727,7 @@ Because the content vector shifts cyclically, this implies that
   for $(v_1,...,v_q) \in \lbrace 0,1 \rbrace^q$. 
   
 \begin{theorem}\label{thm:periodthm}
-Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^q$ on $\deflate^q(T)$ and $\ell$ be the period of $\Sigma^q$ on $\content^q(T)$. If $q-N_T$ (the number of $0$'s in $\content^q(T)$) is $r \cdot \frac{q}{\ell}$, then the period of $\pro^q$ on $T$ is \[\frac{\ell \tau}{\mathrm{gcd}(\ell-r,\tau)}.\]
+Fix $T \in \inc^q(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\deflate^q(T)$ and $\ell$ be the period of $\Sigma^q$ on $\content^q(T)$. If $q-N_T$ (the number of $0$'s in $\content^q(T)$) is $r \cdot \frac{q}{\ell}$, then the period of $\pro^q$ on $T$ is \[\frac{\ell \tau}{\mathrm{gcd}(\ell-r,\tau)}.\]
 \end{theorem} 
     
   \begin{proof}
@@ -738,18 +738,18 @@ Define
 \[
 K^q(S,v) =
 \begin{cases}
-    (\pro(S),\Sigma^q(v)),  & \text{if } v(1) = 1; \\        
-   (S,\Sigma^q(v)), & \text{otherwise;}
-\end{cases}.
+    \big( \pro^{N_S}(S),\Sigma^q(v) \big),  & \text{if } v\{1\} = 1; \\        
+   \big( S,\Sigma^q(v) \big), & \text{otherwise.}
+\end{cases}
 \]
-We show that 
+We show that, for $T \in \inc^q(\lambda)$,
 \begin{equation}\label{eq:k_commutes}
-\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T)
+\compress^q \circ (\pro^q)^{\circ n}(T) = (K^q)^{\circ n} \circ \compress^q(T).
 \end{equation}
-Let \[ \pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda) \] be the projection onto the first factor and similarly for $\pi_2$. It is immediate from the definitions that \[ \pi_2 \circ (K^q)^{\circ n} \circ \compress^q(T) = (\Sigma^q)^{\circ n} \circ \content^q(T)\] for all $n$. But
-\[  (\Sigma^q)^{\circ n} \circ \content^q(T) = \content^q \circ (\pro^q)^{\circ n} (T) \] by  \cite[Lemma~2.1]{DPS}. This shows that the two sides of Equation~\ref{eq:k_commutes} are equal in the second factor.  
+Let \[ \pi_1: \coprod_{k \leq q}\incgl^k(\lambda) \times \binom{[q]}{k} \rightarrow \coprod_{k \leq q} \incgl^k(\lambda) \] be the projection onto the first factor and define $\pi_2$ similarly. It is immediate from the definitions that \[ \pi_2 \circ (K^q)^{\circ n} \circ \compress^q(T) = (\Sigma^q)^{\circ n} \circ \content^q(T)\] for all $n$. But by \cite[Lemma~2.1]{DPS},
+\[  (\Sigma^q)^{\circ n} \circ \content^q(T) = \content^q \circ (\pro^q)^{\circ n} (T).\] This shows that the two sides of Equation~(\ref{eq:k_commutes}) are equal in the second factor.  
 
-To show that Equation~\ref{eq:k_commutes} holds in the first factor, we proceed by induction. The base case $n = 0$ is immediate. Assume that the result holds for $n-1$ and let \[ w = \content^q((\pro^q)^{\circ (n-1)}(T)) = \content^q((K^q)^{\circ (n-1)} \circ \compress^q(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
+To show that Equation~(\ref{eq:k_commutes}) holds in the first factor, we proceed by induction on $n$. The base case $n = 0$ is tautological. Assume that Equation~(\ref{eq:k_commutes}) holds for $n-1$ and let \[ w \coloneqq \content^q \circ (\pro^q)^{\circ (n-1)}(T) = \pi_2 \circ (K^q)^{\circ (n-1)} \circ \compress^q(T). \]  By Theorem~\ref{thm:compressbijective}, we can write
 \[ (\pro^q)^{\circ (n-1)}(T) = \inflate^q_{w} \circ (K^q)^{\circ (n-1)} \circ \compress^q(T).\] 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
@@ -772,12 +772,13 @@ Now, since $\compress^q$ is an injection, $(\pro^q)^{\circ n}(T) = T$ exactly wh
  
 
  
-Say $n$ satisfies this relation. Projecting onto the second factor, we must have that \[ (\Sigma^q)^{\circ n}(\content^q(T)) = \content^q(T), \] so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^q(T)$ under $\Sigma^q$.  Projecting onto the first factor, we must have that  \[ \pro^{n'}(\deflate^q(T)) = \deflate^q(T), \] where $n'$ is $n$ minus the number of times that $\content^q((K^q)^{\circ j}(\compress(T))) \lbrace 1 \rbrace = 0$ for $j \in 0,...,n-1$. If there are $r \cdot (q/\ell)$ zeros in $\content^q(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. By our assumption on $n$, if $\tau$ is the period of $\deflate^q(T)$ under $\pro^q$, then $s \tau = n' = t(\ell - r)$ for some $s$.
+Say $n$ satisfies this property. Projecting onto the second factor, we must have that \[ (\Sigma^q)^{\circ n}(\content^q(T)) = \content^q(T), \] so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^q(T)$ under $\Sigma^q$.  Projecting onto the first factor, we must have that  \[ \pro^{n'}(\deflate^q(T)) = \deflate^q(T), \] where $n'$ is $n$ minus the number of times that $\content^q \circ (K^q)^{\circ j} \circ \compress(T) \lbrace 1 \rbrace = 0$ for $j \in \{ 0, \dots, n-1 \}$. If there are $r \cdot (q/\ell)$ zeros in $\content^q(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. By our assumption on $n$, if $\tau$ is the order of $\pro^{N_T}$ on $\deflate^q(T)$, then $s \tau = n' = t(\ell - r)$ for some $s$.
 
-Therefore $(K^q)^{\circ n} (\compress^q(T)) = \compress^q(T)$ if and only if $n = t \ell = s \tau + t  r$ for positive integers $s$ and $t$. Therefore the period of $T$ is equal to the minimum integer that can be written of the form $t \ell$ and $s \tau + t r$ for the same $t$. But $t \ell = s\tau + tr$ implies that $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the minimum of $t \ell$ is clearly achieved when $t$ is minimal, which occurs when $t(\ell-r)$ is minimal, which is the least common multiple of $\ell-r$ and $\tau$. Thus the minimal $n$ can be expressed as 
+Therefore, $(K^q)^{\circ n}  \circ \compress^q(T) = \compress^q(T)$ if and only if $n = t \ell = s \tau + t  r$ for positive integers $s$ and $t$. Hence, the order of $\pro^q$ on $T$ is equal to the least positive integer that can be simultaneously written in the forms $t \ell$ and $s \tau + t r$ for the same value of $t$. But $t \ell = s\tau + tr$ implies that $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the least such $t \ell$ is clearly achieved when $t$ is minimal, which occurs when $t(\ell-r)$ is minimal, namely the least common multiple of $\ell-r$ and $\tau$. Thus, the least such $n$ can be expressed as 
 \begin{equation}\label{eq:period}
-n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}. 
+n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)},
 \end{equation}
+as desired.
 \end{proof}
 
 \section{The equivariant bijection}\label{sec:equivariant}
