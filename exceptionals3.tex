@@ -849,38 +849,38 @@ Recall that for any poset $P$, we write $J(P)$ for the collection of all order i
 % We write $2^A$ for the power set of a set $A$. 
  First, define the function 
  \[
- \mathrm{ht}: \mathbb{Z}_{\geq 0}^2 \times 2^{(\mathbb{Z}_{\geq 0}^3)} \rightarrow \mathbb{Z}_{\geq 0},
- \] where $2^{(\mathbb{Z}_{\geq 0}^3)}$ denotes the power set of $\mathbb{Z}_{\geq 0}^3$ by 
+ \mathrm{ht}: \mathbb{Z}_{\geq 0}^2 \times 2^{(\mathbb{Z}_{\geq 0}^3)} \rightarrow \mathbb{Z}_{\geq 0}
+ \] (where $2^{(\mathbb{Z}_{\geq 0}^3)}$ denotes the power set of $\mathbb{Z}_{\geq 0}^3$) by 
  \[ \mathrm{ht}(\x,S) \coloneqq  \# \{ y \in \mathbb{Z}_{\geq 0} : (\x,y) \in S \}.  \]  
-Intuitively, if an order ideal is viewed as a pile of blocks, then $\mathrm{ht}$ gives the number of blocks in a given column. In this notation, $J(\lambda \times [m])$ is exactly the set of all plane partitions of $\mathrm{ht}$ at most $m$ over the poset $\lambda$. Next, define $\Omega: J(\lambda \times [m]) \rightarrow \inc^{\rank(\lambda) + m + 1}(\lambda^{\ast})$ such that 
+Intuitively, if an order ideal $I$ of $\lambda \times \mathbf{m}$ is viewed as a pile of blocks stacked on $\lambda \subset \mathbb{Z}^2$, then $\mathrm{ht}(\x,I)$ counts the number of blocks stacked in the column over $\x \in \lambda$. In this notation, $J(\lambda \times \mathbf{m})$ is exactly the set of all plane partitions with $\mathrm{ht}$ at most $m$ over the shape poset $\lambda$. Next, define $\Omega: J(\lambda \times \mathbf{m}) \rightarrow \inc^{\rank(\lambda) + m + 1}(\lambda^{\star})$ such that 
 \[ [\Omega(I)]( \x )= \mathrm{ht}(\aaa_\lambda - \x,I) + \rank(\x)+1.\] 
 
 \begin{proposition}\label{prop:bijection}
-If $\lambda$ is a justified convex shape, then  $\Omega$ is a bijection.
+If $\lambda$ is a convex justified shape, then  $\Omega$ is a bijection.
 \end{proposition}
 \begin{proof}
-Since $\lambda$ is justified and convex, $\lambda^{\star}$ has an element of rank $0$ and all maximal chains in $\lambda^\star$ have equal length (Lemma~\ref{lem:max_chain_same}). Hence the function $\Omega$ coincides with the map from \cite[Proposition~8.2]{HPPW}, and so by \cite[Proposition~8.2]{HPPW} we have that $\Omega$ is a bijection between plane partitions over $\lambda$ and increasing tableaux over $\lambda^\star$.
+Since $\lambda$ is justified and convex, $\lambda^\star$ has an element of rank $0$ and, by Lemma~\ref{lem:max_chain_same}, all maximal chains in $\lambda^\star$ have equal length. Hence the function $\Omega$ coincides with the map from \cite[Proposition~8.2]{HPPW}, and so by \cite[Proposition~8.2]{HPPW} we have that $\Omega$ is a bijection between plane partitions over $\lambda$ and increasing tableaux over $\lambda^\star$.
 \end{proof}
 
-Note, in particular, that Proposition~\ref{prop:bijection} applies to all of the minuscule posets, realized as justified convex shapes as in Figures~\ref{fig:min_poset_E} and~\ref{fig:min_poset}.
+Note, in particular, that Proposition~\ref{prop:bijection} applies to all of the minuscule posets, realized as convex justified shapes as in Figures~\ref{fig:min_poset_E} and~\ref{fig:min_poset}.
 
 \subsection{Equivariance of $\Omega$.} 
-In this section we prove Proposition~\ref{prop:equivariant}, our key to proving Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Proposition~\ref{prop:equivariant} is a mild extension of \cite[Lemma~4.2]{DPS} and our proof follow the same outline. We however still give a somewhat detailed proof, as there are a few extra subtleties in our case.
+In this section we prove Proposition~\ref{prop:equivariant}, our key to proving Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Proposition~\ref{prop:equivariant} is a mild extension of \cite[Lemma~4.2]{DPS} and our proof follows the same outline. We, however, still give significant details of the proof, as there are a few extra subtleties in our case.
 
-The following gives an easy and useful way to determine whether a subset of $\lambda \times [m]$ is an order ideal. 
+The following gives an easy and useful way to determine whether a subset of $\lambda \times \mathbf{m}$ is an order ideal. 
 \begin{lemma}\label{lem:whos_an_ideal?}
-The subset $Q \subseteq \lambda \times [m]$ is an order ideal if and only if both
+The subset $Q \subseteq \lambda \times \mathbf{m}$ is an order ideal if and only if both
 \begin{itemize}
-\item[(a)] $(i,j,k) \in Q$ implies that $(i,j,k') \in Q$ for $0 \leq k' \leq k$;
+\item[(a)] $(i,j,k) \in Q$ implies that $(i,j,k') \in Q$, for $0 \leq k' \leq k$; and
 \item[(b)] $(i,j) \geq (i',j')$ implies that $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$.
 \end{itemize}
 \end{lemma}
 \begin{proof} 
 The ``only if'' direction is clear. 
 
-Conversely, assume $Q$ satisfies $(a)$ and $(b)$. Consider $(i,j,k) \in Q$ and $(i',j',k') \in \lambda \times [m]$ with $(i',j',k') \leq (i,j,k)$. We must show $(i',j',k') \in Q$. 
+Conversely, assume $Q$ satisfies $(a)$ and $(b)$. Consider $(i,j,k) \in Q$ and $(i',j',k') \in \lambda \times \mathbf{m}$ with $(i',j',k') \leq (i,j,k)$. We must show $(i',j',k') \in Q$. 
 
-Certainly, $(i',j') \leq (i,j)$. By condition (b), $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now condition (a) implies that \[ \mathrm{ht}((i'',j''),Q) = \text{max}(\{ k'' \in \mathbb{Z}_{\geq 0} : (i'',j'',k'') \in Q \})+1. \]  Therefore there is a $k'' \geq k$ with $(i',j',k'') \in Q$. But since $k' \leq k \leq k''$, condition (a) then implies $(i',j',k') \in Q$. 
+By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now, condition $(a)$ implies that \[ \mathrm{ht}((i'',j''),Q) = 1 + \max(\{ k'' \in \mathbb{Z}_{\geq 0} : (i'',j'',k'') \in Q \}). \]  Therefore there is a $k'' \geq k$ with $(i',j',k'') \in Q$. But since $k' \leq k \leq k''$, condition $(a)$ then implies $(i',j',k') \in Q$. 
 \end{proof}
 
 \begin{proposition}\label{prop:equivariant}
