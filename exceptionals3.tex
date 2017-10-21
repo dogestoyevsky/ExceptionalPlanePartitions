@@ -168,7 +168,7 @@
 For each minuscule flag variety $X$, there is a corresponding minuscule poset, describing its Schubert decomposition. We study an action on plane partitions over such posets, introduced by P.~Cameron and D.~Fon-der-Flaass (1995).
 For plane partitions of height at most $2$, D.~Rush and X.~Shi (2013) proved an instance of the cyclic sieving phenomenon, completely describing the orbit structure of this action. They noted their result does not extend to greater heights in general; however, when $X$ is one of the two minuscule flag varieties of exceptional Lie type $E$, they conjectured explicit instances of cyclic sieving for all heights.
 
-We prove their conjecture in the case that $X$ is the Cayley plane of type $E_6$. For the other exceptional minuscule flag variety, the Freudenthal variety of type $E_7$, we establish their conjecture for heights at most $4$, but show that it fails generally. We further give a new proof of a unpublished cyclic sieving of D.~Rush and X.~Shi (2011) for plane partitions of any height in the case $X$ is an even-dimensional quadric hypersurface. 
+We prove their conjecture in the case that $X$ is the Cayley-Moufang plane of type $E_6$. For the other exceptional minuscule flag variety, the Freudenthal variety of type $E_7$, we establish their conjecture for heights at most $4$, but show that it fails generally. We further give a new proof of a unpublished cyclic sieving of D.~Rush and X.~Shi (2011) for plane partitions of any height in the case $X$ is an even-dimensional quadric hypersurface. 
 Our argument uses ideas of K.~Dilks, O.~Pechenik, and J.~Striker (2017) to relate the action on plane partitions to combinatorics derived from $K$-theoretic Schubert calculus. 
 \end{abstract}
 
@@ -197,18 +197,18 @@ Let $P$ be one of the two minuscule posets associated to an exceptional Lie alge
 \end{conjecture}
 
 \begin{figure}[h]
-	\begin{subfigure}[b]{0.27\textwidth}
+	\begin{subfigure}[b]{0.35\textwidth}
 		\centering
 		\ydiagram{3+5,3+3,2+3,5}
-		\caption{Cayley poset}
+		\caption{Cayley-Moufang poset}
 	\end{subfigure} \\ \vspace{4mm}
-	\begin{subfigure}[b]{0.27\textwidth}
+	\begin{subfigure}[b]{0.35\textwidth}
 		\centering
 		\ydiagram{8+1,8+1,8+1,7+2,4+5,4+5,4+3,3+3,6}
 		\caption{Freudenthal poset}
 	\end{subfigure}
 \caption{The two minuscule posets associated to exceptional Lie algebras of type $E$. Here, we have drawn the posets to resemble Young diagrams in Cartesian orientation; the boxes are the elements of the poset and each box covers the box immediately below it and the box immediately to its left (if such boxes exist). Hence the minimal element of each poset is the box at the far left of the bottom row.
- The Cayley poset is associated to $E_6$, while the Freudenthal poset is associated to $E_7$. (There is no minuscule poset associated to $E_8$.)}
+ The Cayley-Moufang poset is associated to $E_6$, while the Freudenthal poset is associated to $E_7$. (There is no minuscule poset associated to $E_8$.)}
 \label{fig:min_poset_E}
 \end{figure}
 
@@ -330,7 +330,7 @@ For each minuscule simple root $\delta$, there is an associated {\bf minuscule p
 
 Alternatively, one may obtain the minuscule posets via the geometry of certain generalized flag varieties. If ${\sf P}_\delta \supset {\sf B_+}$ denotes the maximal parabolic subgroup of ${\sf G}$ associated to the minuscule simple root $\delta$, then the space $X = {\sf G} / {\sf P}_\delta$ is called a {\bf minuscule variety}. The minuscule varieties are smooth projective varieties with various nice geometric properties (cf.,~e.g.,~\cite{Billey.Lakshmibai} for details). The natural action of the Borel subgroup ${\sf B}_+$ on $X$ has finitely-many orbits, whose Zariski closures are the {\bf Schubert varieties}. Given two Schubert varieties in $X$, it is known that they are either disjoint or else one is a subset of the other. Indeed the poset $Y_X$ of Schubert varieties of $X$ with respect to inclusion is a distributive lattice and its corresponding poset of join irreducibles is isomorphic to the minuscule poset $P_\delta$ for the minuscule simple root $\delta$, as constructed above.
 
-The minuscule posets are completely classified. We illustrate them here in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. Our focus will be on the {\bf propellers}, the {\bf Cayley poset}, and the {\bf Freudenthal poset} as shown in Figures~\ref{fig:min_poset}C, \ref{fig:min_poset_E}A, and \ref{fig:min_poset_E}B, respectively. The propeller with $k$ elements ($k \geq 6$) is associated to the minuscule node that is not adjacent to the trivalent node in the $D_{\frac{k+2}{2}}$ Dynkin diagram, the Cayley poset is associated to the unique minuscule simple root for $E_6$, and the Freudenthal poset is associated to the unique minuscule simple root for $E_7$ (cf.\ Figure~\ref{fig:minuscule}). The corresponding minuscule varieties are, respectively, even-dimensional quadric hypersurfaces, the octonionic projective plane (or Cayley plane), and the Freudenthal variety. The remaining minuscule roots yield minuscule posets that are \emph{rectangles} or \emph{shifted staircases} (illustrated in Figure~\ref{fig:min_poset}A and B). These correspond respectively to type $A$ Grassmannians and to maximal orthogonal Grassmannians; we will not consider them further in this paper.
+The minuscule posets are completely classified. We illustrate them here in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. Our focus will be on the {\bf propellers}, the {\bf Cayley-Moufang poset}, and the {\bf Freudenthal poset} as shown in Figures~\ref{fig:min_poset}C, \ref{fig:min_poset_E}A, and \ref{fig:min_poset_E}B, respectively. The propeller with $k$ elements ($k \geq 6$) is associated to the minuscule node that is not adjacent to the trivalent node in the $D_{\frac{k+2}{2}}$ Dynkin diagram, the Cayley-Moufang poset is associated to the unique minuscule simple root for $E_6$, and the Freudenthal poset is associated to the unique minuscule simple root for $E_7$ (cf.\ Figure~\ref{fig:minuscule}). The corresponding minuscule varieties are, respectively, even-dimensional quadric hypersurfaces, the octonionic projective plane (or Cayley-Moufang plane), and the Freudenthal variety. The remaining minuscule roots yield minuscule posets that are \emph{rectangles} or \emph{shifted staircases} (illustrated in Figure~\ref{fig:min_poset}A and B). These correspond respectively to type $A$ Grassmannians and to maximal orthogonal Grassmannians; we will not consider them further in this paper.
 
 A poset that is linearly ordered is called a {\bf chain}; we denote the chain of size $k$ by $\mathbf{k}$. By a {\bf plane partition} of height at most $k$ over a poset $P$, we mean an order ideal of the product poset $P \times \mathbf{k}$.  Clearly, a such a plane partition may be identified with a weakly order-reversing map $P \to \mathbf{k}$. The poset $P$ is called {\bf Gaussian} if the generating function $f_P^k$ enumerating plane partitions of height at most $k$ over $P$ according to cardinality may be expressed in the form
 \[
@@ -357,7 +357,7 @@ R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed,
 		\ydiagram{3+5,5}
 		\caption{Propeller}
 	\end{subfigure}
-\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. Propellers consist of two rows of arbitrary but equal length, overlapping by two boxes in the center. The Cayley and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
+\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. Propellers consist of two rows of arbitrary but equal length, overlapping by two boxes in the center. The Cayley-Moufang and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
 \end{figure}
 
 \section{The rowmotion operator $\Psi$}\label{sec:rowmotion}
@@ -471,7 +471,7 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 %\path (T9) edge[pil,out=330,in=320,looseness=2] node[below]{$\rho_{11}$} (T9);
 %\path (T9) edge[pil,out=7,in=90,looseness=2] node[below]{$\rho_{12}$} (T9);
 \end{tikzpicture}
-\caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley poset) through the action of a sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
+\caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of a sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
 \end{figure}
 
 Suppose $T \in \inc^q(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf q}$. We say that $T$ is {\bf gapless} if this map is surjective; otherwise, $T$ is {\bf gappy}. We write $\incgl^q(\lambda)$ for the set of all gapless tableaux in $\inc^q(\lambda)$.
@@ -1006,9 +1006,9 @@ To execute Step (1), we use the Rush-Shi formula which has already been proven f
 \item For $m = 1,...,\ell-1$, if $d_m$ divides $d_\ell$ then $V[\ell] += - V[m]$.
 \end{arrowlist} \-\
 
-To summarize, we outline the code in \texttt{symbolic_cayley_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
+To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
 \-\ \\ \-\ \\ 
-\noindent {\bf Algorithm 3}: \texttt{symbolic_cayley_plane.py} \\ \noindent
+\noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
 \textsf{Input}: Shape $\lambda$, full content tableaux for $\lambda$.  \\ \noindent
 \textsf{Output}: Array $V$, where $V[\ell]$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
 \textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 

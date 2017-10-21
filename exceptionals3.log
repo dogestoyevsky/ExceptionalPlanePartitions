@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 12:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 12:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1424,12 +1424,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (28.07857pt too wide) in paragraph at lines 203--203
- [][] 
- []
-
-
-Overfull \hbox (46.1733pt too wide) in paragraph at lines 208--208
+Overfull \hbox (11.4829pt too wide) in paragraph at lines 208--208
  [][] 
  []
 
@@ -1524,11 +1519,7 @@ Missing character: There is no t in font nullfont!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \vbox (badness 1424) has occurred while \output is active []
-
- [8]
-[9] [10]
+[8] [9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 543.
@@ -1610,7 +1601,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1121.
 Package rerunfilecheck Info: File `exceptionals3.out' has not changed.
 (rerunfilecheck)             Checksum: 75B35601F4172E295F9A687700C1FD3B;890.
 Package rerunfilecheck Info: File `exceptionals3.brf' has not changed.
-(rerunfilecheck)             Checksum: 1946CD0FB69BB85DB2B227229B3B81DE;2257.
+(rerunfilecheck)             Checksum: 8BF34FA192C8CC00FC1A1B8E0001C1F9;2257.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1620,7 +1611,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1121.
 Here is how much of TeX's memory you used:
  30049 strings out of 493089
  599103 string characters out of 6134842
- 676594 words of memory out of 5000000
+ 676618 words of memory out of 5000000
  32743 multiletter control sequences out of 15000+600000
  26276 words of font info for 104 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1655,7 +1646,7 @@ fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (27 pages, 445153 bytes).
+Output written on exceptionals3.pdf (27 pages, 446025 bytes).
 PDF statistics:
  623 PDF objects out of 1000 (max. 8388607)
  553 compressed objects within 6 object streams
