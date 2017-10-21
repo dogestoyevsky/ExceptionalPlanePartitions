@@ -1,6 +1,6 @@
 \documentclass[12pt]{amsart}
 
-\usepackage{amsmath,amsfonts,amssymb,mathabx,shuffle,latexsym,breqn,stmaryrd,mathtools}
+\usepackage{amsmath,amsfonts,amssymb,mathabx,shuffle,latexsym,breqn,stmaryrd,mathtools,mathrsfs}
 \usepackage{enumitem}
 \usepackage{subcaption}
 \usepackage[usenames, dvipsnames]{xcolor}
@@ -790,40 +790,40 @@ Let $\{ \e_1, \e_2 \}$ be the standard basis for $\mathbb{Z}^{2}$ and let $\pi_i
 
 We say that the shape $\lambda$ is {\bf convex} if $\x\in \lambda$ and $\x + k  \e_d \in \lambda $ for some $d \in \{1, 2\}$ and $k \in \mathbb{Z}_{> 0}$ together imply  that $\{\x + j \e_d : 1 \leq j \leq k-1 \} \subseteq \lambda.$
 
-For any shape $\lambda$, let \[a_i(\lambda) = \max \{ \pi_i(\x) \colon \x \in \lambda\}\] and \[\aaa_\lambda = \big(a_1(\lambda),a_{2}(\lambda)\big) \in \mathbb{Z}^2.\] We say the shape $\lambda$ is {\bf justified} if $(0,0) \in \lambda$ and $\aaa_{\lambda} \in \lambda$. Define 
+For any shape $\lambda$, let \[a_i(\lambda) = \max \{ \pi_i(\x) \colon \x \in \lambda\}\] and \[\aaa_\lambda = \big(a_1(\lambda),a_{2}(\lambda)\big) \in \mathbb{Z}^2.\] We say the shape $\lambda$ is {\bf justified} if $(0,0) \in \lambda$ and $\aaa_{\lambda} \in \lambda$. Note that the minuscule posets are convex and justified, when considered as shapes as above. For any shape $\lambda$, define 
 \[
 \lambda^\star \coloneqq \lbrace \aaa_\lambda - \x: \x \in \lambda \rbrace.
-\] It is clear that $\lambda^{\star}$ is a shape and that if $\lambda$ is convex (resp.\ justified), then $\lambda^\star$ is convex (resp.\ justified).  Define the {\bf rank} of $\lambda$ 
+\] It is clear that $\lambda^{\star}$ is a shape and that if $\lambda$ is convex (resp.\ justified), then $\lambda^\star$ is convex (resp.\ justified).  Define the {\bf rank} of $\lambda$ to be
 \[ 
-\rank(\lambda) = \max_{\x \in \lambda} \rank(\x).
+\rank(\lambda) \coloneqq \max_{\x \in \lambda} \rank(\x).
 \]
 
 The following elementary lemmas determine useful characteristics of the shapes considered in this paper. 
 
 \begin{lemma} \label{lem:convex_chain}
-Let $\lambda$ be a convex shape and let $\x,\x' \in \lambda$ be distinct. If $\x \leq \x'$, then $\lambda$ contains a chain from $\x$ to $\x'$. 
+Let $\lambda$ be a convex shape and let $\x,\x' \in \lambda$ be distinct. If $\x < \x'$, then $\lambda$ contains a chain from $\x$ to $\x'$. 
 \end{lemma}
 
 \begin{proof} 
-Let $\x = (i,j)$ and $\x' = (i',j')$. Because $\x \leq \x'$, we have $i \leq i'$ and $j \leq j'$. Since $\lambda$ is a shape, there is at least one path from $\x$ to $\x'$. Take such a path $P = (\x_{\ell})_{0\leq \ell \leq r}$ of minimal length, characterized by directions $d_1,...,d_r \in \{ 1,2 \}$ and signs $n_1,...,n_r \in \{ \pm 1\}$.  We claim that $P$ is a chain. 
+Let $\x = (i,j)$ and $\x' = (i',j')$. Because $\x < \x'$, we have $i \leq i'$ and $j \leq j'$. Since $\lambda$ is a shape, there is at least one path from $\x$ to $\x'$. Take such a path $\mathscr{P} = (\x_{\ell})_{0\leq \ell \leq r}$ of minimal length, characterized by directions $d_1,...,d_r \in \{ 1,2 \}$ and signs $n_1,...,n_r \in \{ \pm 1\}$.  We claim that $\mathscr{P}$ is a chain. 
 
 If not, then $n_t  = -1$ for some $1 \leq t \leq r$. Let $t$ be the least such index. For  $0 \leq \ell \leq r$, define $(i_\ell, j_\ell) = \x_\ell$, so that in particular $(i_0, j_0) = (i,j)$ and $(i_r, j_r) = (i',j')$.
 
 
 Since $n_t = -1$, either $i_t = i_{t-1} -1$ or $j_t = j_{t-1} -1$.  Without loss of generality, we may assume $i_t = i_{t-1} -1$. 
 
-Suppose there is no $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_t = i_0 - 1$. Furthermore, since $i' = i_r \geq i_0$, there must be a least $k > t$ such that $i_k = i_0 = i_{t-1}$. Let $q = j_k - j_{t-1} $. Then clearly the subpath $(\x_{\ell})_{t-1\leq \ell \leq k}$ of $P$ has length at least $|q| + 2$.
+Suppose there is no $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_t = i_0 - 1$. Furthermore, since $i' = i_r \geq i_0$, there must be a least $k > t$ such that $i_k = i_0 = i_{t-1}$. Let $q = j_k - j_{t-1} $. Then clearly the subpath $(\x_{\ell})_{t-1\leq \ell \leq k}$ of $\mathscr{P}$ has length at least $|q| + 2$.
 However by convexity, the path 
 \[
 \bigg( (i_{t-1}, j_{t-1}),   (i_{t-1}, j_{t-1} + \frac{q}{|q|}), (i_{t-1}, j_{t-1} + 2\frac{q}{|q|}), \dots , (i_{t-1}, j_{t-1} + |q|\frac{q}{|q|}) \bigg)
 \]
-of length $|q|$ from $(i_{t-1}, j_{t-1})$ to $(i_k, j_k)$ lies entirely inside $\lambda$, contradicting the minimality of $P$.
+of length $|q|$ from $(i_{t-1}, j_{t-1})$ to $(i_k, j_k)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
 
-Otherwise, consider the greatest $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_{h-1} = i_t$. By minimality of $t$, we have $j_t \geq j_{h-1}$. Let $q = j_t - j_{h-1}$. Now the subpath $(\x_{\ell})_{h-1\leq \ell \leq t}$ of $P$ has length $q + 2$. However by convexity, the path 
+Otherwise, consider the greatest $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_{h-1} = i_t$. By minimality of $t$, we have $j_t \geq j_{h-1}$. Let $q = j_t - j_{h-1}$. Now the subpath $(\x_{\ell})_{h-1\leq \ell \leq t}$ of $\mathscr{P}$ has length $q + 2$. However by convexity, the path 
 \[
 \big( (i_{h-1}, j_{h-1}),   (i_{h-1}, j_{h-1} + 1), (i_{h-1}, j_{h-1} + 2), \dots , (i_{h-1}, j_{h-1} + q) \big)
 \]
-of length $q$ from $(i_{h-1}, j_{h-1})$ to $(i_t, j_t)$ lies entirely inside $\lambda$, contradicting the minimality of $P$.
+of length $q$ from $(i_{h-1}, j_{h-1})$ to $(i_t, j_t)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
 %If $i_t \geq i'$, then certainly $i_t \geq i = i_0$, so $t \geq 2$ and $i_t = i_{t-k}$ for some $k > 0$. If instead $i_t < i'$, then there must be some  $t < s \leq r$ with  $i_s = i_{t-1}$. Thus in both cases there are $u,v$ with $0 \leq u \leq r$ and $0 \leq v \leq r$ such that $i_u = i_v$ and $n_w  = -1$ for $u < w \leq v$. 
 %But by convexity, all elements $(i_u,x)$ for $x \in (j_u,j_v)$ (or $(j_v,j_u)$) are contained in $\lambda$. Now the direct path along these elements has $\vert j_v-j_u \vert$ steps, while the path $(i_u,j_u),(i_{u+1},j_{u+1}),...,(i_v,j_v)$ must have at least $\vert j_v-j_u \vert + 2$ steps, since it has at least $\vert j_v - j_u \vert$ steps along the second dimension and at least two steps along the first dimension, one in the negative direction and one to cancel it out. This contradicts the minimality of this path, so no such $t$ exists and the path is a chain.  
 \end{proof}

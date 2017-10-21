@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 OCT 2017 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,6 +679,10 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen176
 \l_MT_above_shortintertext_sep=\dimen177
 \l_MT_below_shortintertext_sep=\dimen178
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup12
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
@@ -1370,6 +1374,11 @@ LaTeX Font Info:    Try loading font information for U+stmry on input line 137.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 137.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1593,11 +1602,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1119.
  ) 
 Here is how much of TeX's memory you used:
- 30057 strings out of 493089
- 599259 string characters out of 6134842
- 677822 words of memory out of 5000000
- 32750 multiletter control sequences out of 15000+600000
- 26276 words of font info for 104 fonts, out of 8000000 for 9000
+ 30084 strings out of 493089
+ 599853 string characters out of 6134842
+ 677964 words of memory out of 5000000
+ 32767 multiletter control sequences out of 15000+600000
+ 27265 words of font info for 110 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1098s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1629,11 +1638,12 @@ nts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals3.pdf (27 pages, 450836 bytes).
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on exceptionals3.pdf (27 pages, 453760 bytes).
 PDF statistics:
- 637 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
+ 641 PDF objects out of 1000 (max. 8388607)
+ 570 compressed objects within 6 object streams
  123 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
