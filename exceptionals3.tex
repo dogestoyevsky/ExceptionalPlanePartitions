@@ -880,7 +880,7 @@ The ``only if'' direction is clear.
 
 Conversely, assume $Q$ satisfies $(a)$ and $(b)$. Consider $(i,j,k) \in Q$ and $(i',j',k') \in \lambda \times \mathbf{m}$ with $(i',j',k') \leq (i,j,k)$. We must show $(i',j',k') \in Q$. 
 
-By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now, condition $(a)$ implies that \[ \mathrm{ht}((i'',j''),Q) = 1 + \max(\{ k'' \in \mathbb{Z}_{\geq 0} : (i'',j'',k'') \in Q \}). \]  Therefore there is a $k'' \geq k$ with $(i',j',k'') \in Q$. But since $k' \leq k \leq k''$, condition $(a)$ then implies $(i',j',k') \in Q$. 
+By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now, condition $(a)$ implies that, for all $\x \in \lambda$, we have \[ \mathrm{ht}(\x,Q) = 1 + \max \{ k'' \in \mathbb{Z}_{\geq 0} : (\x,k'') \in Q \}. \]  Applying this equality for $\x = (i,j)$ and $\x = (i'j')$, we conclude there is a $\hat{k} \geq k$ with $(i',j',\hat{k}) \in Q$. But since $k' \leq k \leq \hat{k}$, condition $(a)$ then implies $(i',j',k') \in Q$. 
 \end{proof}
 
 \begin{proposition}\label{prop:equivariant}
