@@ -884,7 +884,7 @@ By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,
 \end{proof}
 
 \begin{proposition}\label{prop:equivariant}
-Let $\lambda$ be a justified convex shape. Then $\Omega$ intertwines $\mot_{\mathrm{id},(1,1,-1)}$ and $\pro^{\rank(\lambda)+m+1}$. That is, for $I \in J(\lambda \times \mathbf{m})$, we have \[
+Let $\lambda$ be a convex justified shape. Then $\Omega$ intertwines $\mot_{\mathrm{id},(1,1,-1)}$ and $\pro^{\rank(\lambda)+m+1}$. That is, for $I \in J(\lambda \times \mathbf{m})$, we have \[
 \Omega \circ \mot_{\mathrm{id},(1,1,-1)}(I) = \pro^{\rank(\lambda)+m+1} \circ \Omega(I).
 \]
 \end{proposition}
@@ -903,9 +903,9 @@ Therefore, it suffices to show
 \begin{equation*}
 \Omega \left(\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}(I) \right) = \rho_\ell \left(\Omega(I)\right)
 \end{equation*}
-for all $\ell$. 
+for all $\ell \in \{1, 2, \dots, a+b+m\}$. 
 
-Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to $I$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
+Fix such an index $\ell$ and a box $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to $I$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
 
 Define the function $H : \lambda \to \mathbf{m}$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
 By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
