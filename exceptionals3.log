@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2017 13:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 OCT 2017 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1605,11 +1605,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1120.
  ) 
 Here is how much of TeX's memory you used:
- 30086 strings out of 493089
- 599876 string characters out of 6134842
+ 30084 strings out of 493089
+ 599857 string characters out of 6134842
  678018 words of memory out of 5000000
- 32768 multiletter control sequences out of 15000+600000
- 27265 words of font info for 110 fonts, out of 8000000 for 9000
+ 32767 multiletter control sequences out of 15000+600000
+ 26913 words of font info for 109 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1098s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1634,19 +1634,18 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals3.pdf (27 pages, 453919 bytes).
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on exceptionals3.pdf (27 pages, 446283 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 572 compressed objects within 6 object streams
+ 639 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
  124 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
