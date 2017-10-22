@@ -884,16 +884,16 @@ By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,
 \end{proof}
 
 \begin{proposition}\label{prop:equivariant}
-Let $\lambda$ be a justified convex shape. Then $\Omega$ intertwines $\mot_{\mathrm{id},(1,1,-1)}$ and $\pro$. That is, for $I \in J(\lambda \times [m])$, we have $\Omega \circ \mot_{\mathrm{id},(1,1,-1)}(I) = \pro^{\rank(\lambda)+m+1} \circ \Omega(I)$.
+Let $\lambda$ be a justified convex shape. Then $\Omega$ intertwines $\mot_{\mathrm{id},(1,1,-1)}$ and $\pro$. That is, for $I \in J(\lambda \times \mathbf{m})$, we have $\Omega \circ \mot_{\mathrm{id},(1,1,-1)}(I) = \pro^{\rank(\lambda)+m+1} \circ \Omega(I)$.
 \end{proposition}
 \begin{proof}
-Let $a = a_1(\lambda)$ and let $b = a_2(\lambda)$, that is, $(a,b) = \aaa_{\lambda}$. Since $\lambda$ is justified, $a+b = \rank(\lambda)$.  Fix $I \in J(\lambda \times [m])$. 
+Let $a = a_1(\lambda)$ and let $b = a_2(\lambda)$, that is, $(a,b) = \aaa_{\lambda}$. Since $\lambda$ is justified, $a+b = \rank(\lambda)$.  Fix $I \in J(\lambda \times \mathbf{m})$. 
 
 Recall that for $T \in \inc^{a+b+m+1}(\lambda)$, we have by definition that
 \begin{equation*}
 \pro^{a+b+m+1}(T) = \rho_{a+b+m} \circ  ... \circ \rho_1(T).
 \end{equation*}
-Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times [m]$, we have
+Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times \mathbf{m}$, we have
 \begin{equation*}
 \mot_{\mathrm{id},(1,1,-1)}(I) = \tau^{a+b-(a+b+m-1)}_{\mathrm{id},(1,1,-1)} \circ ... \circ \tau^{a+b}_{\mathrm{id},(1,1,-1)}(I).
 \end{equation*}
@@ -903,9 +903,9 @@ Therefore, it suffices to show
 \end{equation*}
 for all $\ell$. 
 
-Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times [m] )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to $I$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
+Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to $I$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
 
-Define the function $H : \lambda \to [m]$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
+Define the function $H : \lambda \to \mathbf{m}$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
 By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
 There are now four cases to consider depending on the value of $H(\y)$.
 
@@ -952,10 +952,10 @@ This completes the proof of Proposition~\ref{prop:equivariant}
 
 \begin{corollary}
 Let $\lambda$ be a justified convex shape.
-Then the multiset of orbit cardinalities of $\Psi$ on $J(\lambda \times [m])$ and the multiset of orbit cardinalities of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
+Then the multiset of orbit cardinalities of $\Psi$ on $J(\lambda \times \mathbf{m})$ and the multiset of orbit cardinalities of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
 \end{corollary}
 \begin{proof}
-By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times [m])$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times [m])$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times [m])$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same orbit structure on $J(\lambda \times [m])$.
+By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same orbit structure on $J(\lambda \times \mathbf{m})$.
 \end{proof}
 
 \section{Proving the main theorems}\label{sec:arithmetic}
