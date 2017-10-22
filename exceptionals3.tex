@@ -893,11 +893,11 @@ Let $a \coloneqq a_1(\lambda)$ and let $b \coloneqq a_2(\lambda)$; that is, let 
 
 Recall that for $T \in \inc^{a+b+m+1}(\lambda)$, we have by definition that
 \begin{equation*}
-\pro^{a+b+m+1}(T) = \rho_{a+b+m} \circ  ... \circ \rho_1(T).
+\pro^{a+b+m+1}(T) = \rho_{a+b+m} \circ  \cdots \circ \rho_1(T).
 \end{equation*}
 Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times \mathbf{m}$, we have
 \begin{equation*}
-\mot_{\mathrm{id},(1,1,-1)}(I) = \tau^{a+b-(a+b+m-1)}_{\mathrm{id},(1,1,-1)} \circ ... \circ \tau^{a+b}_{\mathrm{id},(1,1,-1)}(I).
+\mot_{\mathrm{id},(1,1,-1)}(I) = \tau^{a+b-(a+b+m-1)}_{\mathrm{id},(1,1,-1)} \circ \cdots \circ \tau^{a+b}_{\mathrm{id},(1,1,-1)}(I).
 \end{equation*}
 Therefore, it suffices to show 
 \begin{equation*}
@@ -905,9 +905,9 @@ Therefore, it suffices to show
 \end{equation*}
 for all $\ell \in \{1, 2, \dots, a+b+m\}$. 
 
-Fix such an index $\ell$ and a box $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to $I$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
+Fix such an index $\ell$ and a box $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to the order ideal $I \in J(\lambda \times \mathbf{m})$ and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I) \in \inc^{\rank(\lambda) + m + 1}(\lambda^{\star})$. Considering the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ from Equation~(\ref{eq:taudef}), note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in that definition that acts on an element of $Y$.
 
-Define the function $H : \lambda \to \mathbf{m}$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
+Define the function $H : \lambda \to [m+1]$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
 By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
 There are now four cases to consider depending on the value of $H(\y)$.
 
@@ -915,7 +915,7 @@ There are now four cases to consider depending on the value of $H(\y)$.
 \noindent
 {\sf Case 1: $H(\y) > i+j-(a+b-(\ell-1))+1$:} 
 
-Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, so $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ either removes this element from $Y$ or leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))+1) \in Y$, removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ does not yield an order ideal. Therefore the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) > \ell + 1$, so $\rho_{\ell}$ does not affect this entry of the increasing tableau $\Omega(I)$. 
+Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, so $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ either removes this element from $Y$ or leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))+1) \in Y$, removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) > \ell + 1$, so $\rho_{\ell}$ does not affect this entry of the increasing tableau $\Omega(I)$. 
 
 \medskip
 \noindent
@@ -928,7 +928,7 @@ On the other hand, say that $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all such $d
 $H(\y') \leq i+j-(a+b-(\ell-1)).$
 Now, by Lemma~\ref{lem:convex_chain}, since $\y' > \y$, there is a chain from $\y$ to $\y'$. Clearly, this chain contains an element of the form $\y+\e_{d} \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \leq i+j-(a+b-(\ell-1))$, as desired.
 
-On the tableaux side, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
+On the tableaux side, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is easily equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
 
 \medskip
 \noindent
@@ -940,7 +940,7 @@ For, on the one hand, if $\y-\e_d \in \lambda$ and $H(\y-\e_d) < i+j-(a+b-(\ell-
 On the other hand, say that $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all such $d$. To verify that adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' < \y$. By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that $H(\y') \geq i+j-(a+b-(\ell-1))+1$. 
 Now, by Lemma~\ref{lem:convex_chain}, since $\y' < \y$, there is a chain from $\y'$ to $\y$. Clearly, this chain contains an element of the form $\y-\e_d \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \geq i+j-(a+b-(\ell-1))+1$ as desired.
 
-On the tableaux side, this case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
+On the tableaux side, this case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is easily equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
 
 \medskip
 \noindent
