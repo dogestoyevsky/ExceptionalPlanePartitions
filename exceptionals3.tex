@@ -970,12 +970,86 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
-In this final section, we collect the above results into a proof of Theorem~\ref{thm:exceptionals}. Our strategy is as follows. By Proposition~\ref{prop:equivariant}, we can determine the orbit structure of plane partitions under $\Omega$ by studying increasing tableaux under $\pro$. By Theorem~\ref{thm:compressbijective}, increasing tableaux are characterized by the data of a full content tableau and a content vector. But $\incgl^k(\lambda)$ is a finite set for any fixed $\lambda$, so we can determine all its elements and then check their periods. These data are given in Table~\ref{tab:E6} for the $\lambda$ the Cayley-Moufang plane and Table \ref{tab:E7} for the $\lambda$ the Freudenthal poset. OLIVER ELABORATE ON HOW? In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$.
+In this final section, we collect the above results into a proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Our strategy is as follows. By Proposition~\ref{prop:equivariant}, we can determine the orbit structure of plane partitions under $\Psi$ by studying increasing tableaux under $\pro$. By Theorem~\ref{thm:compressbijective}, increasing tableaux are characterized by the data of a gapless increasing tableau and a content vector. But $\incgl^k(\lambda)$ is a finite set for any fixed $\lambda$, so we can determine all its elements and then check their periods. These data are given in Table~\ref{tab:E6} for the $\lambda$ the Cayley-Moufang plane and Table \ref{tab:E7} for the $\lambda$ the Freudenthal poset. OLIVER ELABORATE ON HOW? In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$.
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|}
+\hline
+$q$ & orbit size & number of orbits\\
+  \hline
+  11 & 1 & 1\\
+  \hline
+  12 & 3 & 1\\ \cline{2-3}
+   & 12 & 1 \\
+   \hline
+  13 & 13 & 6\\
+  \hline
+  14 & 7 & 2\\\cline{2-3}
+  & 14 & 12\\
+  \hline
+    15 & 15 & 13\\
+  \hline
+  16 & 2 & 1\\\cline{2-3}
+   & 4 & 1\\\cline{2-3}
+   & 8 & 1\\\cline{2-3}
+  & 16 & 4\\
+  \hline
+\end{tabular}
+\caption{The number of orbits of gapless increasing tableaux in $\incgl^q(P)$ for each $q$ for the $E_6$ poset.}
+\label{tab:E6}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|}
+\hline
+$q$ & orbit size & number of orbits\\
+  \hline
+  17 & 1 & 1\\
+  \hline
+  18 & 2 & 1\\ \cline{2-3}
+   & 18 & 2 \\
+   \hline
+  19 & 19 & 30\\
+  \hline
+  20 & 20 & 228\\
+  \hline
+    21 & 7 & 3\\ \cline{2-3}
+    & 21 & 1044 \\
+  \hline
+  22 & 22 & 3053\\\cline{2-3}
+   & 66 & 2\\
+  \hline
+  23 & 23 & 5813\\ \cline{2-3}
+  & 69 & 13 \\
+   \hline
+  24 & 8 & 7\\\cline{2-3}
+   & 24 & 7195\\\cline{2-3}
+   & 48 & 4\\\cline{2-3}
+   & 72 & 26\\
+   \hline
+  25 & 25 & 5602\\ \cline{2-3}
+  & 50 & 8 \\ \cline{2-3}
+  & 75 & 21 \\
+   \hline
+  26 & 2 & 2\\ \cline{2-3}
+  & 26 & 2495 \\ \cline{2-3}
+  & 52 & 4 \\ \cline{2-3}
+  & 78 & 6 \\
+   \hline
+ 27 & 3 & 2\\ \cline{2-3}
+  & 9 & 4 \\ \cline{2-3}
+  & 27 & 484 \\
+  \hline
+\end{tabular}
+\caption{The number of orbits of gapless increasing tableaux in $\incgl^q(P)$ for each $q$ for the $E_7$ poset.}
+\label{tab:E7}
+\end{table}
+
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 1} \\ \noindent
-\textsf{Input}:  $\lambda$ justified and convex shape, $L \in \mathbb{Z}_{>0}$ and the set $\coprod_{k} \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$ and their periods under the corresponding $\pro^k$. \\ \noindent
+\textsf{Input}:  $\lambda$ justified and convex shape, $L \in \mathbb{Z}_{>0}$ and the finite set $\coprod_{k} \incgl^k(\lambda)$ of all gapless tableaux associated to $\lambda$ and their periods under the corresponding $\pro^k$. \\ \noindent
 \textsf{Output}: $x$, the number of $T \in \inc^q(\lambda)$ whose period divides $L$. \\  \-\ \\ 
 \textsf{Initialization}: Set $x = 0$. \\
 \textsf{Procedure}: Loop over gapless tableaux.
@@ -1034,79 +1108,6 @@ Loop over all combinations  $C$ of prime numbers (with multiplicity) that can di
 \end{enumerate}
 \item Check if Rush-Shi and computed match.
 \end{enumerate}
-
-\begin{table}[h]
-\begin{tabular}{|c|c|c|}
-\hline
-$q$ & orbit size & number of orbits\\
-  \hline
-  11 & 1 & 1\\
-  \hline
-  12 & 3 & 1\\ \cline{2-3}
-   & 12 & 1 \\
-   \hline
-  13 & 13 & 6\\
-  \hline
-  14 & 7 & 2\\\cline{2-3}
-  & 14 & 12\\
-  \hline
-    15 & 15 & 13\\
-  \hline
-  16 & 2 & 1\\\cline{2-3}
-   & 4 & 1\\\cline{2-3}
-   & 8 & 1\\\cline{2-3}
-  & 16 & 4\\
-  \hline
-\end{tabular}
-\caption{The number of orbits of full-content increasing tableaux in $\inc^q(P)$ for each $q$ for the $E_6$ poset.}
-\label{tab:E6}
-\end{table}
-
-\begin{table}[h]
-\begin{tabular}{|c|c|c|}
-\hline
-$q$ & orbit size & number of orbits\\
-  \hline
-  17 & 1 & 1\\
-  \hline
-  18 & 2 & 1\\ \cline{2-3}
-   & 18 & 2 \\
-   \hline
-  19 & 19 & 30\\
-  \hline
-  20 & 20 & 228\\
-  \hline
-    21 & 7 & 3\\ \cline{2-3}
-    & 21 & 1044 \\
-  \hline
-  22 & 22 & 3053\\\cline{2-3}
-   & 66 & 2\\
-  \hline
-  23 & 23 & 5813\\ \cline{2-3}
-  & 69 & 13 \\
-   \hline
-  24 & 8 & 7\\\cline{2-3}
-   & 24 & 7195\\\cline{2-3}
-   & 48 & 4\\\cline{2-3}
-   & 72 & 26\\
-   \hline
-  25 & 25 & 5602\\ \cline{2-3}
-  & 50 & 8 \\ \cline{2-3}
-  & 75 & 21 \\
-   \hline
-  26 & 2 & 2\\ \cline{2-3}
-  & 26 & 2495 \\ \cline{2-3}
-  & 52 & 4 \\ \cline{2-3}
-  & 78 & 6 \\
-   \hline
- 27 & 3 & 2\\ \cline{2-3}
-  & 9 & 4 \\ \cline{2-3}
-  & 27 & 484 \\
-  \hline
-\end{tabular}
-\caption{The number of orbits of full-content increasing tableaux in $\inc^q(P)$ for each $q$ for the $E_7$ poset.}
-\label{tab:E7}
-\end{table}
 
 \section*{Acknowledgements}
 The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was supported by the Graduate Research Fellowship from the National Science Foundation. 
