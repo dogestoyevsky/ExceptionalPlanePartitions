@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: exceptionals4.aux
+The style file: amsalpha.bst
+Database file #1: exceptional.bib
+You've used 34 entries,
+            2624 wiz_defined-function locations,
+            792 strings with 9683 characters,
+and the built_in function-call counts, 13616 in all, are:
+= -- 1318
+> -- 528
+< -- 16
++ -- 174
+- -- 169
+* -- 1222
+:= -- 2135
+add.period$ -- 34
+call.type$ -- 34
+change.case$ -- 199
+chr.to.int$ -- 34
+cite$ -- 34
+duplicate$ -- 514
+empty$ -- 1110
+format.name$ -- 216
+if$ -- 2762
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 72
+newline$ -- 112
+num.names$ -- 97
+pop$ -- 203
+preamble$ -- 1
+purify$ -- 233
+quote$ -- 0
+skip$ -- 366
+stack$ -- 0
+substring$ -- 1141
+swap$ -- 54
+text.length$ -- 16
+text.prefix$ -- 13
+top$ -- 0
+type$ -- 252
+warning$ -- 0
+while$ -- 140
+width$ -- 37
+write$ -- 379
