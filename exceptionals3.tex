@@ -869,7 +869,7 @@ In this section we prove Proposition~\ref{prop:equivariant}, our key to proving 
 
 The following gives an easy and useful way to determine whether a subset of $\lambda \times \mathbf{m}$ is an order ideal. 
 \begin{lemma}\label{lem:whos_an_ideal?}
-Let $\lambda$ be any shape. The subset $Q \subseteq \lambda \times \mathbf{m}$ is an order ideal if and only if both
+The subset $Q \subseteq \lambda \times \mathbf{m}$ is an order ideal if and only if both
 \begin{itemize}
 \item[(a)] $(i,j,k) \in Q$ implies that $(i,j,k') \in Q$, for $0 \leq k' \leq k$; and
 \item[(b)] $(i,j) \geq (i',j')$ implies that $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$.
@@ -880,34 +880,32 @@ The ``only if'' direction is clear.
 
 Conversely, assume $Q$ satisfies $(a)$ and $(b)$. Consider $(i,j,k) \in Q$ and $(i',j',k') \in \lambda \times \mathbf{m}$ with $(i',j',k') \leq (i,j,k)$. We must show $(i',j',k') \in Q$. 
 
-By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now, condition $(a)$ implies that, for all $\x \in \lambda$, we have \[ \mathrm{ht}(\x,Q) = 1 + \max \{ k'' \in \mathbb{Z}_{\geq 0} : (\x,k'') \in Q \}. \]  Applying this equality for $\x = (i,j)$ and $\x = (i'j')$, we conclude there is a $\hat{k} \geq k$ with $(i',j',\hat{k}) \in Q$. But since $k' \leq k \leq \hat{k}$, condition $(a)$ then implies $(i',j',k') \in Q$. 
+By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now, condition $(a)$ implies that \[ \mathrm{ht}((i'',j''),Q) = 1 + \max(\{ k'' \in \mathbb{Z}_{\geq 0} : (i'',j'',k'') \in Q \}). \]  Therefore there is a $k'' \geq k$ with $(i',j',k'') \in Q$. But since $k' \leq k \leq k''$, condition $(a)$ then implies $(i',j',k') \in Q$. 
 \end{proof}
 
 \begin{proposition}\label{prop:equivariant}
-Let $\lambda$ be a convex justified shape. Then $\Omega$ intertwines $\mot_{\mathrm{id},(1,1,-1)}$ and $\pro^{\rank(\lambda)+m+1}$. That is, for $I \in J(\lambda \times \mathbf{m})$, we have \[
-\Omega \circ \mot_{\mathrm{id},(1,1,-1)}(I) = \pro^{\rank(\lambda)+m+1} \circ \Omega(I).
-\]
+Let $\lambda$ be a justified convex shape. Then $\Omega$ intertwines $\mot_{\text{id},(1,1,-1)}$ and $\pro$. That is, for $P \in J(\lambda \times [m])$, we have $\Omega \circ \mot_{\text{id},(1,1,-1)}(P) = \pro^{\rank(\lambda)+m+1} \circ \Omega(P)$.
 \end{proposition}
 \begin{proof}
-Let $a \coloneqq a_1(\lambda)$ and let $b \coloneqq a_2(\lambda)$; that is, let $(a,b) \coloneqq \aaa_{\lambda}$. Since $\lambda$ is justified, $a+b = \rank(\lambda)$.  Fix $I \in J(\lambda \times \mathbf{m})$. 
+Let $a = a_1(\lambda)$ and let $b = a_2(\lambda)$, that is, $(a,b) = \aaa_{\lambda}$. Since $\lambda$ is justified, $a+b = \rank(\lambda)$.  Fix $P \in J(\lambda \times [m])$. 
 
 Recall that for $T \in \inc^{a+b+m+1}(\lambda)$, we have by definition that
 \begin{equation*}
-\pro^{a+b+m+1}(T) = \rho_{a+b+m} \circ  \cdots \circ \rho_1(T).
+\pro^{a+b+m+1}(T) = \rho_{a+b+m} \circ  ... \circ \rho_1(T).
 \end{equation*}
-Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times \mathbf{m}$, we have
+Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times [m]$, we have
 \begin{equation*}
-\mot_{\mathrm{id},(1,1,-1)}(I) = \tau^{a+b-(a+b+m-1)}_{\mathrm{id},(1,1,-1)} \circ \cdots \circ \tau^{a+b}_{\mathrm{id},(1,1,-1)}(I).
+\mot_{\text{id},(1,1,-1)}(P) = \tau^{a+b-(a+b+m-1)}_{\text{id},(1,1,-1)} \circ ... \circ \tau^{a+b}_{\text{id},(1,1,-1)}(P).
 \end{equation*}
 Therefore, it suffices to show 
 \begin{equation*}
-\Omega \left(\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}(I) \right) = \rho_\ell \left(\Omega(I)\right)
+\Omega \left(\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}(P) \right) = \rho_\ell \left(\Omega(P)\right)
 \end{equation*}
-for all $\ell \in \{1, 2, \dots, a+b+m\}$. 
+for all $\ell$. 
 
-Fix such an index $\ell$ and a box $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to the order ideal $I \in J(\lambda \times \mathbf{m})$ and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I) \in \inc^{\rank(\lambda) + m + 1}(\lambda^{\star})$. Considering the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ from Equation~(\ref{eq:taudef}), note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in that definition that acts on an element of $Y$.
+Fix an index $\ell$ and an entry $\y = (i,j) \in \lambda$. Let $Y \coloneqq P \cap ( \y \times [m] )$ be the column of $\y$ in $P$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ to $P$  and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(P)$. Note that $t_{(i,j,i+j-(a+b-(\ell-1)))}$ is the unique toggle in the definition of $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ (Equation~\ref{eq:taudef}) that acts on an element of $Y$.
 
-Define the function $H : \lambda \to [m+1]$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
+Define the function $H : \lambda \to [m]$ by $H(\x) = \text{ht}(\x,P)$ for $\x \in \lambda$.
 By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
 There are now four cases to consider depending on the value of $H(\y)$.
 
@@ -915,49 +913,49 @@ There are now four cases to consider depending on the value of $H(\y)$.
 \noindent
 {\sf Case 1: $H(\y) > i+j-(a+b-(\ell-1))+1$:} 
 
-Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, so $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ either removes this element from $Y$ or leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))+1) \in Y$, removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) > \ell + 1$, so $\rho_{\ell}$ does not affect this entry of the increasing tableau $\Omega(I)$. 
+Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, so $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ either removes this element from $Y$ or leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))+1) \in Y$, removing $(\y,i+j-(a+b-(\ell-1)))$ from $P$ does not yield an order ideal. Therefore the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) > \ell + 1$, so $\rho_{\ell}$ does not affect this entry of the increasing tableau $\Omega(P)$. 
 
 \medskip
 \noindent
 {\sf Case 2: $H(\y) = i+j-(a+b-(\ell-1))+1$:} 
 
-Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, while $(\y,i+j-(a+b-(\ell-1))+1) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ removes $(\y,i+j-(a+b-(\ell-1)))$ from $I$ exactly if $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all $d \in \lbrace 1,2 \rbrace$ with $\y+\e_d \in \lambda$. 
+Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, while $(\y,i+j-(a+b-(\ell-1))+1) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ removes $(\y,i+j-(a+b-(\ell-1)))$ from $P$ exactly if $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all $d \in \lbrace 1,2 \rbrace$ with $\y+\e_d \in \lambda$. 
 
-For, on the one hand, if $\y+\e_d \in \lambda$ and $H(\y+\e_d) > i+j-(a+b-(\ell-1))$, then by Lemma~\ref{lem:whos_an_ideal?}, removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ would not leave an order ideal. 
-On the other hand, say that $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all such $d$. To verify that removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' > \y$.  By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that 
+For, on the one hand, if $\y+\e_d \in \lambda$ and $H(\y+\e_d) > i+j-(a+b-(\ell-1))$, then by Lemma~\ref{lem:whos_an_ideal?}, removing $(\y,i+j-(a+b-(\ell-1)))$ from $P$ would not leave an order ideal. 
+On the other hand, say that $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all such $d$. To verify that removing $(\y,i+j-(a+b-(\ell-1)))$ from $P$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' > \y$.  By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that 
 $H(\y') \leq i+j-(a+b-(\ell-1)).$
 Now, by Lemma~\ref{lem:convex_chain}, since $\y' > \y$, there is a chain from $\y$ to $\y'$. Clearly, this chain contains an element of the form $\y+\e_{d} \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \leq i+j-(a+b-(\ell-1))$, as desired.
 
-On the tableaux side, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is easily equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
+On the tableaux side, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
 
 \medskip
 \noindent
 {\sf Case 3: $H(\y) = i+j-(a+b-(\ell-1))$:}
 
-Here, $(\y,i+j-(a+b-(\ell-1))-1) \in Y$ but $(\y,i+j-(a+b-(\ell-1))) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ adds $(\y,i+j-(a+b-(\ell-1)))$ to $I$ exactly when $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all $d \in \lbrace 1,2 \rbrace$ with $\y-\e_d \in \lambda$. 
+Here, $(\y,i+j-(a+b-(\ell-1))-1) \in Y$ but $(\y,i+j-(a+b-(\ell-1))) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ adds $(\y,i+j-(a+b-(\ell-1)))$ to $P$ exactly when $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all $d \in \lbrace 1,2 \rbrace$ with $\y-\e_d \in \lambda$. 
 
-For, on the one hand, if $\y-\e_d \in \lambda$ and $H(\y-\e_d) < i+j-(a+b-(\ell-1))+1$, then by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ does not yield an order ideal. 
-On the other hand, say that $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all such $d$. To verify that adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' < \y$. By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that $H(\y') \geq i+j-(a+b-(\ell-1))+1$. 
+For, on the one hand, if $\y-\e_d \in \lambda$ and $H(\y-\e_d) < i+j-(a+b-(\ell-1))+1$, then by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ does not yield an order ideal. 
+On the other hand, say that $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all such $d$. To verify that adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' < \y$. By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that $H(\y') \geq i+j-(a+b-(\ell-1))+1$. 
 Now, by Lemma~\ref{lem:convex_chain}, since $\y' < \y$, there is a chain from $\y'$ to $\y$. Clearly, this chain contains an element of the form $\y-\e_d \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \geq i+j-(a+b-(\ell-1))+1$ as desired.
 
-On the tableaux side, this case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is easily equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
+On the tableaux side, this case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(P)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(P)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ acts nontrivially on $Y$.
 
 \medskip
 \noindent
 {\sf Case 4: $H(\y) < i+j-(a+b-(\ell-1))$:} 
 
-Here, $(\y,i+j-(a+b-(\ell-1))) \notin Y$, so $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ either adds this element to $Y$ or else leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))-1) \notin I$, by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) < \ell$, so $\rho_\ell$ does not affect this entry of $\Omega(I)$. 
+Here, $(\y,i+j-(a+b-(\ell-1))) \notin Y$, so $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$ either adds this element to $Y$ or else leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))-1) \notin P$, by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $P$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\text{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(P)](\aaa_\lambda - \y) < \ell$, so $\rho_\ell$ does not affect this entry of $\Omega(P)$. 
 
 \medskip
 This completes the proof of Proposition~\ref{prop:equivariant}
 \end{proof}
 
-\begin{corollary}
-Let $\lambda$ be a convex justified shape.
-Then the multiset of cardinalities of $\Psi$-orbits on $J(\lambda \times \mathbf{m})$ and the multiset of cardinalities of $\pro^{\rank(\lambda)+ m+1}$-orbits on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
+\begin{corollary}~\label{cor:multisets}
+Let $\lambda$ be a justified convex shape.
+Then the multiset of orbit cardinalities of $\Psi$ on $J(\lambda \times [m])$ and the multiset of orbit cardinalities of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
 \end{corollary}
 \begin{proof}
-By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
+By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times [m])$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\text{id},(1,1,-1)}$ on $J(\lambda \times [m])$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times [m])$ is the same as the action of $\mot_{\text{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\text{id},(1,1,1)}$ and $\mot_{\text{id},(1,1,-1)}$ induce the same orbit structure on $J(\lambda \times [m])$.
 \end{proof}
 
 \section{Proving the main theorems}\label{sec:arithmetic}
@@ -972,23 +970,30 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
-
-Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
+In this final section, we collect the above results into a proof of Theorem~\ref{thm:exceptionals}. Our strategy is as follows. By Proposition~\ref{prop:equivariant}, we can determine the orbit structure of plane partitions under $\Omega$ by studying increasing tableaux under $\pro$. By Theorem~\ref{thm:compressbijective}, increasing tableaux are characterized by the data of a full content tableau and a content vector. But $\incgl^k(\lambda)$ is a finite set for any fixed $\lambda$, so we can determine all its elements and then check their periods. These data are given in Table~\ref{tab:E6} for the $\lambda$ the Cayley-Moufang plane and Table \ref{tab:E7} for the $\lambda$ the Freudenthal poset. OLIVER ELABORATE ON HOW? In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$.
+%That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
+%Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 1} \\ \noindent
-\textsf{Input}:  $L \in \mathbb{Z}_{>0}$ and the set $\coprod_k \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$. \\ \noindent
+\textsf{Input}:  $\lambda$ justified and convex shape, $L \in \mathbb{Z}_{>0}$ and the set $\coprod_{k} \incgl^k(\lambda)$ of gapless tableaux associated to $\lambda$ and their periods under the corresponding $\pro^k$. \\ \noindent
 \textsf{Output}: $x$, the number of $T \in \inc^q(\lambda)$ whose period divides $L$. \\  \-\ \\ 
 \textsf{Initialization}: Set $x = 0$. \\
-\textsf{Procedure}: Loop over gapless tableaux $T$ of height between $r+1$ and $s$.
+\textsf{Procedure}: Loop over gapless tableaux.
 \begin{arrowlist}
-\item For each $T$, loop over divisors $d$ of $L$.
+\item For each gapless tableaux $T$, loop over divisors $d$ of $L$.
 \begin{enumerate}
-\item   Compute the number $i$ of content vectors with period exactly $L/d$. \item Compute the period $\pi(L/d,T)$ associated with $T$ and a content vector of period $L/d$, as described in Section~\ref{sec:period}. 
-\item If $\pi(L/d,T)$ divides $L$, add $i$ to $x$.
+\item   Compute the number $i$ of content vectors with period exactly $L/d$. \item Compute the period associated with $T$ and a content vector of period $L/d$, as in Theorem~\ref{thm:periodthm}. 
+\item If this period divides $L$, add $i$ to $x$.
 \end{enumerate}
 \end{arrowlist} \-\ 
 
-This program can be simplified. First, since the numbered steps are identical for gapless tableaux from the same orbit, we can instead loop over {\it orbits} of gapless tableaux and replace $i$ with $(\text{orbit size}) \times i$ in Step (3).
+\begin{theorem}~\label{thm:alg1}
+The output of Algorithm 1 is equal to the number of order ideals in $J(\lambda \times [m])$ whose order under $\Omega$ divides $L$. 
+\end{theorem}
+\begin{proof}
+By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda^{\ast}) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that $\pi(S,v)$ divides $L$. We do this by considering all such pairs: we fix a tableaux and then MORE HERE. For each pair we compute the corresponding period and add $1$ to the output variable $x$ is this period divides $L$.
+\end{proof}
+This program can be simplified. First, since the numbered steps are identical for gapless tableaux from the same orbit, we can instead loop over {\it orbits} of gapless tableaux and replace $i$ with $(\text{orbit size}) \times i$ in Step 3.
 
 Second, we can determine in advance that only a subset of divisors of $L$ will yield a nonzero number of content vectors. For the number of ones in such a content vector is equal to the full-content height of the tableaux. Call this height $f$. If the content vector divides into $d$ identical segments, then $L-f$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $f$. While $L$ is arbitrary, $f$ is fixed for a given iteration of the loop and can take only finitely many values. 
 
