@@ -972,9 +972,9 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
-In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Fix a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{m})$ equals the multiset of $\pro^{\rank(\lambda)+ m+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ m+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $k$ boxes by $\lambda_{k}$. 
+In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{m})$ equals the multiset of $\pro^{\rank(\lambda)+ m+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ m+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $2k$ boxes ($k \geq 3$) by $\lambda_{k}$. Note that for each of these shapes $\lambda$, we have $\lambda = \lambda^\star$.
 
-By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all 549 gapless increasing tableaux of Cayley-Moufang shape, as well as all 624493 gapless increasing tableaux of Freudenthal shape. For each such tableau, we then determined the size of its orbit under $\pro$ by direct calculation. These data are given in Table~\ref{tab:E6} for the $\lambda$ the Cayley-Moufang plane and Table \ref{tab:E7} for the $\lambda$ the Freudenthal poset. OLIVER ELABORATE ON HOW? In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$. fish
+By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $\lambda_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $\lambda_F$. For each such tableau $T \in \incgl^h(\lambda_{CM})$ or $\incgl^h(\lambda_F)$, we then determined the size of its orbit under $\pro^h$ by direct calculation. These data are given in Table~\ref{tab:E6} for $\lambda_{CM}$ and in Table \ref{tab:E7} for $\lambda_F$. 
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
@@ -999,7 +999,7 @@ $q$ & orbit size & number of orbits\\
   & 16 & 4\\
   \hline
 \end{tabular}
-\caption{The number of orbits of gapless increasing tableaux in $\incgl^q(P)$ for each $q$ for the $E_6$ poset.}
+\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_{CM})$ for each $q$.}
 \label{tab:E6}
 \end{table}
 
@@ -1045,9 +1045,13 @@ $q$ & orbit size & number of orbits\\
   & 27 & 484 \\
   \hline
 \end{tabular}
-\caption{The number of orbits of gapless increasing tableaux in $\incgl^q(P)$ for each $q$ for the $E_7$ poset.}
+\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_F)$ for each $q$.}
 \label{tab:E7}
 \end{table}
+
+It is essentially trivial to observe that $\incgl(\lambda_k)$ consists of exactly $3$ increasing tableaux for any $k$. 
+
+ In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$.
 
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
