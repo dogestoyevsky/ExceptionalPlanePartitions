@@ -1111,9 +1111,8 @@ The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J
 \begin{proof}
 By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda^{\ast}) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that $\pi(S,v)$ divides $L$. We do this by considering all such pairs: we fix a tableau and then MORE HERE. For each pair we compute the corresponding period and add $1$ to the output variable $x$ is this period divides $L$.
 \end{proof}
-This program can be simplified. First, since the numbered steps are identical for gapless tableaux from the same orbit, we can instead loop over {\it orbits} of gapless tableaux and replace $i$ with $(\text{orbit size}) \times i$ in Step 3.
-
-Second, we can determine in advance that only a subset of divisors of $L$ will yield a nonzero number of content vectors. For the number of ones in such a content vector is equal to the full-content height of the tableaux. Call this height $f$. If the content vector divides into $d$ identical segments, then $L-f$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $f$. While $L$ is arbitrary, $f$ is fixed for a given iteration of the loop and can take only finitely many values. 
+This program can be simplified. 
+We can determine in advance that only a subset of divisors of $L$ will yield a nonzero number of content vectors. For the number of ones in such a content vector is equal to the full-content height of the tableaux. Call this height $f$. If the content vector divides into $d$ identical segments, then $L-f$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $f$. While $L$ is arbitrary, $f$ is fixed for a given iteration of the loop and can take only finitely many values. 
 
 % (This can also be seen by observing that the Rush-Shi formula has $\lceil f/d \rceil$ numerator elements divisible by $d$ and $\lfloor f/d \rfloor$ denominator elements divisible by $d$.) %
 
