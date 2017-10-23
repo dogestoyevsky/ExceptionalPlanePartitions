@@ -1049,7 +1049,26 @@ $q$ & orbit size & number of orbits\\
 \label{tab:E7}
 \end{table}
 
-It is essentially trivial to observe that $\incgl(\lambda_k)$ consists of exactly $3$ increasing tableaux for any $k$. 
+It is essentially trivial to observe that $\incgl(\lambda_k)$ consists of exactly $3$ increasing tableaux for any $k$. There are two tableaux in $\incgl^{2k}(\lambda_k)$, forming a single $\pro^{2k}$-orbit, and a single tableau in $\incgl^{2k-1}(\lambda_k)$, which is necessarily fixed by $\pro^{2k-1}$. These tableaux and their orbits are illustrated in Figure~\ref{fig:propeller_orbits} in the completely generic case $k=4$. Table~\ref{tab:prop} records the observations of this paragraph in form analogous to Tables~\ref{tab:E6} and~\ref{tab:E7}.
+
+\begin{figure}[h]
+$T$
+\caption{The set $\incgl(\lambda_4)$ consists of the three illustrated gapless increasing tableaux. The unique element of $\incgl^7(\lambda_4)$ forms a singleton $\pro^7$-orbit, while $\pro^8$ switches the two elements of $\incgl^8(\lambda_4)$, as shown.}\label{fig:propeller_orbits}
+\end{figure}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|}
+\hline
+$q$ & orbit size & number of orbits\\
+  \hline
+  $2k-1$ & 1 & 1\\
+  \hline
+  $2k$ & 2 & 1\\ 
+  \hline
+\end{tabular}
+\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_{k})$ for each $q$.}
+\label{tab:prop}
+\end{table}
 
  In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$.
 
