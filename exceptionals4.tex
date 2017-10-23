@@ -47,7 +47,7 @@
 \newcommand{\e}{\ensuremath{\mathsf{e}}}
 \newcommand{\aaa}{\ensuremath{\mathsf{a}}}
 
-
+\newcommand{\gap}{\hspace{1in} \\ \vspace{-.2in}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,6 +67,7 @@
   {\pushQED{\qed}\renewcommand{\qedsymbol}{$\diamondsuit$}\examplex}
   {\popQED\endexamplex}
 \newtheorem{xca}[theorem]{Exercise}
+\newtheorem{algorithm}[theorem]{Algorithm}
 
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
@@ -1079,26 +1080,33 @@ $q$ & orbit size & number of orbits\\
 \label{tab:prop}
 \end{table}
 
- In addition, the number of elements of $\binom{[M]}{k}$ whose periods divide a given divisor of $M$ are predicted by NAME THIS THING (CITE THIS FACT). Therefore we can fully characterize increasing tableaux of a given height under $\pro$.
+ In addition, the number of elements of $\binom{[M]}{k}$ whose order under $\Sigma^M$ divides a given divisor of $M$ is predicted by NAME THIS THING (CITE THIS FACT). Therefore, we can use Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop} to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$.
 
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
-\-\ \\ \-\ \\ 
-\noindent {\bf Algorithm 1} \\ \noindent
-\textsf{Input}:  $\lambda$ justified and convex shape, $L \in \mathbb{Z}_{>0}$ and the finite set $\coprod_{k} \incgl^k(\lambda)$ of all gapless tableaux associated to $\lambda$ and their periods under the corresponding $\pro^k$. \\ \noindent
-\textsf{Output}: $x$, the number of $T \in \inc^q(\lambda)$ whose period divides $L$. \\  \-\ \\ 
+
+\begin{algorithm}\label{alg:1} 
+\hspace{1cm} \phantom{2} \\
+\textsf{Input}:  
+Convex justified shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, $L \in \mathbb{Z}_{>0}$, and the corresponding Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}. \\
+\textsf{Output}: $x = \# \{T \in \inc^q(\lambda) : (\pro^q)^{\circ L}(T) = T \} $, the number of tableaux whose period divides $L$. \\  \-\ \\ 
 \textsf{Initialization}: Set $x = 0$. \\
-\textsf{Procedure}: Loop over gapless tableaux.
-\begin{arrowlist}
-\item For each gapless tableaux $T$, loop over divisors $d$ of $L$.
+\textsf{Procedure}: Iterate over rows of the table. Say the current row is $(q, \tau, N)$, expressing that $\incgl^q(\lambda)$ has $N$ $\pro^q$-orbits of size $\tau$.
+\begin{itemize}
+\item For each row, iterate over the positive divisors $d$ of $L$.
 \begin{enumerate}
-\item   Compute the number $i$ of content vectors with period exactly $L/d$. \item Compute the period associated with $T$ and a content vector of period $L/d$, as in Theorem~\ref{thm:periodthm}. 
-\item If this period divides $L$, add $i$ to $x$.
+\item   Compute the number 
+\[i  \coloneqq \#\left\{ v \in \binom{[m]}{q} : \text{ the $\Sigma^m$-orbit of $v$ has size exactly $L/d$ } \right\}.\] 
+\item Compute 
+\[ p \coloneqq \frac{L/d \cdot \tau}{\mathrm{gcd}(L/d-r,\tau)},\]
+the period associated with $T$ and a content vector of period $L/d$, as in Theorem~\ref{thm:periodthm}. WHAT IS $r$, I'M SO CONFUSED. CAN WE DO EVERYTHING WITH $d$ INSTEAD OF $L/d$?
+\item If $p$ divides $L$, add $i \tau N$ to $x$.
 \end{enumerate}
-\end{arrowlist} \-\ 
+\end{itemize}
+\end{algorithm}
 
 \begin{theorem}~\label{thm:alg1}
-The output of Algorithm 1 is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$. 
+The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$. 
 \end{theorem}
 \begin{proof}
 By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda^{\ast}) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that $\pi(S,v)$ divides $L$. We do this by considering all such pairs: we fix a tableau and then MORE HERE. For each pair we compute the corresponding period and add $1$ to the output variable $x$ is this period divides $L$.
