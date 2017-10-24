@@ -1118,8 +1118,9 @@ By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs t
 If $i$ is given by Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required.
 \end{proof}
 We have assumed in Algorithm~\ref{alg:1} that we can execute Step 1. This is performed by the following algorithm. 
-\-\ \\ \-\ \\ 
-\noindent {\bf Algorithm 2} \\ \noindent
+
+\begin{algorithm}\label{alg:2}
+\hspace{1cm} \phantom{2} \\
 \textsf{Input}: Integer $L$, decreasing list $W$ of all divisors of both $L$ and $f$. \\ \noindent
 \textsf{Output}: Array $V$, where $V[\ell]$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
 \textsf{Initialization}: Let $k = \texttt{length}(W)$. Create a vector $V$ of $k$ zeros. \\ 
@@ -1129,6 +1130,7 @@ We have assumed in Algorithm~\ref{alg:1} that we can execute Step 1. This is per
 \item $V[\ell] += $ the number of content vectors of length $L$ and $f$ ones whose period divides $\ell$.
 \item For $m = 1,...,\ell-1$, if $d_m$ divides $d_\ell$ then $V[\ell] += - V[m]$.
 \end{arrowlist} \-\
+\end{algorithm}
 \begin{theorem}~\label{thm:alg2}
 Algorithm~\ref{alg:2} computes the number of vectors of length $T$ with $f$ ones and period exactly $T/d_{\ell}$ CHANGE THESE VARIABLEs.
 \end{theorem}
