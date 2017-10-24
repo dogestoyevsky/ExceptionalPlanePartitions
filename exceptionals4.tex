@@ -1108,7 +1108,7 @@ the period associated with a tableaux of period $\tau$, a content vector of peri
 \end{enumerate}
 \end{itemize}
 \end{algorithm}
-
+CHECK AGAINST ALGORITHM
 \begin{theorem}~\label{thm:alg1}
 The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
 \end{theorem}
@@ -1117,12 +1117,9 @@ By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs t
 
 If $i$ is given by Equation~\ref{eq:i}, then this row gives $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore the period associated to each of these tableaux is given by Equation~\ref{eq:p}.
 \end{proof}
-This program can be simplified. 
-We can determine in advance that only a subset of divisors of $L$ will yield a nonzero number of content vectors. For the number of ones in such a content vector is equal to the full-content height of the tableaux. Call this height $f$. If the content vector divides into $d$ identical segments, then $L-f$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $f$. While $L$ is arbitrary, $f$ is fixed for a given iteration of the loop and can take only finitely many values. 
+We briefly discuss the execution of Step 1. Only a subset of divisors of $L$ will yield a nonzero number of content vectors. Since the number of ones in such a content vector is equal to $q$, the full-content height of the tableau, if the content vector divides into $d$ identical segments, then $L-q$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $q$. While $L$ is arbitrary, $q$ takes only finitely many values. 
 
-% (This can also be seen by observing that the Rush-Shi formula has $\lceil f/d \rceil$ numerator elements divisible by $d$ and $\lfloor f/d \rfloor$ denominator elements divisible by $d$.) %
-
-To execute Step (1), we use the Rush-Shi formula which has already been proven for a linear tableau (NOT CLEAR WHAT THIS MEANS) \cite[Theorem~1.1(b)]{Reiner.Stanton.White}. ! For a given $d$, this tells us the number of content vectors of length $L$ with $f$ ones whose period is a multiple of $L/d$. By the argument in the previous paragraph, this number will be zero for all but finitely many integers $d$. We can then recover the number of tableaux with period exactly $L/d$ by subtracting off those whose periods strictly divide $L/d$.
+Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $L$ with $q$ ones whose period is a multiple of $L/d$. Since this number will be zero for all but finitely many integers $d$, we can then recover the number of tableaux with period exactly $L/d$ by subtracting off those whose periods strictly divide $L/d$. 
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 2} \\ \noindent
 \textsf{Input}: Integer $L$, decreasing list $W$ of all divisors of both $L$ and $f$. \\ \noindent
