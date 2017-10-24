@@ -1088,28 +1088,34 @@ $q$ & orbit size & number of orbits\\
 \begin{algorithm}\label{alg:1} 
 \hspace{1cm} \phantom{2} \\
 \textsf{Input}:  
-Convex justified shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, $L \in \mathbb{Z}_{>0}$, and the corresponding Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}. \\
-\textsf{Output}: $x = \# \{T \in \inc^q(\lambda) : (\pro^q)^{\circ L}(T) = T \} $, the number of tableaux whose period divides $L$. \\  \-\ \\ 
+Convex justified shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, $M, L \in \mathbb{Z}_{>0}$ such that $L$ divides $M$, and the corresponding Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}. \\
+\textsf{Output}: $x = \# \{T \in \inc^M(\lambda) : (\pro^M)^{\circ L}(T) = T \} $, the number of tableaux whose period divides $L$. \\  \-\ \\ 
 \textsf{Initialization}: Set $x = 0$. \\
 \textsf{Procedure}: Iterate over rows of the table. Say the current row is $(q, \tau, N)$, expressing that $\incgl^q(\lambda)$ has $N$ $\pro^q$-orbits of size $\tau$.
 \begin{itemize}
 \item For each row, iterate over the positive divisors $d$ of $L$.
 \begin{enumerate}
 \item   Compute the number 
-\[i  \coloneqq \#\left\{ v \in \binom{[m]}{q} : \text{ the $\Sigma^m$-orbit of $v$ has size exactly $L/d$ } \right\}.\] 
+\begin{equation}~\label{eq:i}
+i  \coloneqq \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^m$-orbit of $v$ has size exactly $L/d$ } \right\}.
+\end{equation}
 \item Compute 
-\[ p \coloneqq \frac{L/d \cdot \tau}{\mathrm{gcd}(L/d-r,\tau)},\]
-the period associated with $T$ and a content vector of period $L/d$, as in Theorem~\ref{thm:periodthm}. WHAT IS $r$, I'M SO CONFUSED. CAN WE DO EVERYTHING WITH $d$ INSTEAD OF $L/d$?
+\begin{equation}~\label{eq:p}
+ p \coloneqq \frac{L/d \cdot \tau}{\mathrm{gcd}(qL/(Md),\tau)},
+\end{equation}
+the period associated with a tableaux of period $\tau$, a content vector of period $L/d$ with $q$ ones. 
 \item If $p$ divides $L$, add $i \tau N$ to $x$.
 \end{enumerate}
 \end{itemize}
 \end{algorithm}
 
 \begin{theorem}~\label{thm:alg1}
-The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$. 
+The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
 \end{theorem}
 \begin{proof}
-By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda^{\ast}) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that $\pi(S,v)$ divides $L$. We do this by considering all such pairs: we fix a tableau and then MORE HERE. For each pair we compute the corresponding period and add $1$ to the output variable $x$ is this period divides $L$.
+By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the tableaux associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ full-content tableaux in $\incgl^q(\lambda)$. Conersely, by Theorem~\ref{thm:compressbijective}, each full-content tableaux $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
+
+If $i$ is given by Equation~\ref{eq:i}, then this row gives $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore the period associated to each of these tableaux is given by Equation~\ref{eq:p}.
 \end{proof}
 This program can be simplified. 
 We can determine in advance that only a subset of divisors of $L$ will yield a nonzero number of content vectors. For the number of ones in such a content vector is equal to the full-content height of the tableaux. Call this height $f$. If the content vector divides into $d$ identical segments, then $L-f$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $f$. While $L$ is arbitrary, $f$ is fixed for a given iteration of the loop and can take only finitely many values. 
