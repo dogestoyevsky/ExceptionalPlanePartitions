@@ -1117,9 +1117,7 @@ By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs t
 
 If $i$ is given by Equation~\ref{eq:i}, then this row gives $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore the period associated to each of these tableaux is given by Equation~\ref{eq:p}.
 \end{proof}
-We briefly discuss the execution of Step 1. Only a subset of divisors of $L$ will yield a nonzero number of content vectors. Since the number of ones in such a content vector is equal to $q$, the full-content height of the tableau, if the content vector divides into $d$ identical segments, then $L-q$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $q$. While $L$ is arbitrary, $q$ takes only finitely many values. 
-
-Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $L$ with $q$ ones whose period is a multiple of $L/d$. Since this number will be zero for all but finitely many integers $d$, we can then recover the number of tableaux with period exactly $L/d$ by subtracting off those whose periods strictly divide $L/d$. 
+We have assumed in Algorithm~\ref{alg:1} that we can execute Step 1. This is performed by the following algorithm. 
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 2} \\ \noindent
 \textsf{Input}: Integer $L$, decreasing list $W$ of all divisors of both $L$ and $f$. \\ \noindent
@@ -1131,7 +1129,14 @@ Now for a given $d$, the known generating function for straight tableaux \cite[T
 \item $V[\ell] += $ the number of content vectors of length $L$ and $f$ ones whose period divides $\ell$.
 \item For $m = 1,...,\ell-1$, if $d_m$ divides $d_\ell$ then $V[\ell] += - V[m]$.
 \end{arrowlist} \-\
+\begin{theorem}~\label{thm:alg2}
+Algorithm~\ref{alg:2} computes the number of vectors of length $T$ with $f$ ones and period exactly $T/d_{\ell}$ CHANGE THESE VARIABLEs.
+\end{theorem}
+\begin{proof}
+Only a subset of divisors of $L$ will yield a nonzero number of content vectors. Since the number of ones in such a content vector is equal to $q$, the full-content height of the tableau, if the content vector divides into $d$ identical segments, then $L-q$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $q$. While $L$ is arbitrary, $q$ takes only finitely many values. 
 
+Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $L$ with $q$ ones whose period is a multiple of $L/d$. Since this number will be zero for all but finitely many integers $d$, we can then recover the number of tableaux with period exactly $L/d$ by subtracting off those whose periods strictly divide $L/d$. 
+\end{proof}
 To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
