@@ -1131,7 +1131,7 @@ We have assumed in Algorithm~\ref{alg:1} that we can execute Step~1. This step i
 \item Let $d_{\ell} \coloneqq W\{\ell\}$.
 \item For $m \in \{1,2, \dots,\ell-1\}$:
 \begin{enumerate}
-\item if $d_m$ divides $d_\ell$, then subtract $V\{m\}$ from  $V\{\ell\}$.
+\item If $d_m$ divides $d_\ell$, then subtract $V\{m\}$ from  $V\{\ell\}$.
 \end{enumerate} 
 \end{enumerate} \-\
 \end{algorithm}
@@ -1147,7 +1147,7 @@ To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. 
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
 \textsf{Input}: Shape $\lambda$, full content tableaux for $\lambda$.  \\ \noindent
-\textsf{Output}: Array $V$, where $V[\ell]$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
+\textsf{Output}: Array $V$, where $V\{\ell\}$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
 \textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 
 \textsf{Procedure}: 
 Loop over all combinations  $C$ of prime numbers (with multiplicity) that can divide a number between $\text{rk}(\lambda)+1$ to $B(\lambda)$ inclusive.
