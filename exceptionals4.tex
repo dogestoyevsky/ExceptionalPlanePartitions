@@ -1121,28 +1121,30 @@ We have assumed in Algorithm~\ref{alg:1} that we can execute Step~1. This step i
 
 \begin{algorithm}\label{alg:2}
 \hspace{1cm} \phantom{2} \\
-\textsf{Input}: Positive integer $L \in \mathbb{Z}_{>0}$,  list $W$ of all divisors of both $L$ and $f$ (in decreasing order). \\ 
-\textsf{Output}: Array $V$, where $V[\ell]$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
-\textsf{Initialization}: Let $k = \texttt{length}(W)$. Create a vector $V$ of $k$ zeros. \\ 
+\textsf{Input}: $q, M \in \mathbb{Z}_{>0}$ with $q \leq M$. \\ 
+\textsf{Output}: Array $V$. If $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$, then $V[\ell]$ is the number of vectors of length $M$ with $q$ ones and with period exactly $M/d_\ell$ for $\ell = 1,...,k$. \\ \-\ \\
+\textsf{Initialization}: Create a list $W$ of all divisors of both $q$ and $M$ in decreasing order. Let $k = \texttt{length}(W)$. Create a vector $V$ of $k$ zeros.  \\ 
 \textsf{Procedure}: For $\ell \in  \{1, 2, \ldots, k\}$:
 \begin{enumerate}
-\item Let $e_\ell \coloneqq \#\left\{ v \in \binom{[L]}{f} : (\Sigma^L)^{\circ \ell}(v) = v \right\}$, the number of binary vectors whose $\Sigma^L$-period divides $\ell$.
+\item Let $e_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $\ell$: \[ e_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ \ell}(v) = v \right\}. \]
 \item Add $e_\ell$ to $V\{\ell\}$. 
 \item Let $d_{\ell} \coloneqq W\{\ell\}$.
 \item For $m \in \{1,2, \dots,\ell-1\}$:
 \begin{enumerate}
-\item If $d_m$ divides $d_\ell$, then subtract $V\{m\}$ from  $V\{\ell\}$.
+\item If $d_\ell$ divides $d_m$, then subtract $V\{m\}$ from  $V\{\ell\}$.
 \end{enumerate} 
 \end{enumerate} \-\
 \end{algorithm}
 \begin{theorem}~\label{thm:alg2}
-Algorithm~\ref{alg:2} computes the number of vectors of length $T$ with $f$ ones and period exactly $T/d_{\ell}$ CHANGE THESE VARIABLEs.
+Algorithm~\ref{alg:2} computes  \[ V[\ell] = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\}, \ell = 1,...,k, \]
+where $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$.  All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for $\ell \in \lbrace 1,...,k \rbrace$.
 \end{theorem}
 \begin{proof}
-Only a subset of divisors of $L$ will yield a nonzero number of content vectors. Since the number of ones in such a content vector is equal to $q$, the full-content height of the tableau, if the content vector divides into $d$ identical segments, then $L-q$ must be divisible by $d$. Therefore, $d$ must be a divisor of both $L$ and $q$. While $L$ is arbitrary, $q$ takes only finitely many values. 
+Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since rotation by $(\Sigma^M)^{\circ M}$ fixes any element of $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number indices $i$ such that $v \lbrace i \rbrace = 1$ is a multiple of $\pi$. 
 
-Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $L$ with $q$ ones whose period is a multiple of $L/d$. Since this number will be zero for all but finitely many integers $d$, we can then recover the number of tableaux with period exactly $L/d$ by subtracting off those whose periods strictly divide $L/d$. 
+Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. 
 \end{proof}
+COMMENT ABOUT SYMBOLIC EXPRESSION
 To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
