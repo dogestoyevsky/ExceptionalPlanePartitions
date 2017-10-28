@@ -1150,8 +1150,10 @@ If $i$ is given by Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableau
 
 COMMENT ABOUT SYMBOLIC EXPRESSION
 To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
-\-\ \\ \-\ \\ 
-\noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
+
+\begin{algorithm}\label{alg:3} 
+%\hspace{1cm} \phantom{2} \\
+ \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
 \textsf{Input}: Shape $\lambda$, full content tableaux for $\lambda$.  \\ \noindent
 \textsf{Output}: Array $V$, where $V\{\ell\}$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
 \textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 
@@ -1171,6 +1173,7 @@ Loop over all combinations  $C$ of prime numbers (with multiplicity) that can di
 \end{enumerate}
 \item Check if Rush-Shi and computed match.
 \end{enumerate}
+\end{algorithm}
 
 \section*{Acknowledgements}
 The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was supported by the Graduate Research Fellowship from the National Science Foundation. 
