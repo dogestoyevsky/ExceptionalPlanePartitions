@@ -1110,12 +1110,18 @@ the period associated with a tableaux of period $\tau$, a content vector of peri
 \end{algorithm}
 CHECK AGAINST ALGORITHM
 \begin{theorem}~\label{thm:alg1}
+\begin{enumerate}
+\item
 The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
+\item Assume that Equation~\ref{eq:i} depends only on $\gcd(M,q)$ and that $L$ divides $M$ and $M'$. Then if $\gcd(M,q) = \gcd(M',q)$ for all $q$ in the first column of the appropriate table (Table~\ref{tab:E6}, \ref{tab:E7} or \ref{tab:prop}), then the output of Algorithm~\ref{alg1} is the same for $M$ and $M'$. 
+\end{enumerate}
 \end{theorem}
 \begin{proof}
 By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ full-content tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each full-content tableaux $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
 
-If $i$ is given by Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required.
+If $i$ is given by Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. This proves statement (1). 
+
+To prove statement (2), CONTINUE 
 \end{proof}
 We have assumed in Algorithm~\ref{alg:1} that we can execute Step~1. This step is performed by the following algorithm. 
 
@@ -1152,7 +1158,7 @@ Now for a given $d$, the known generating function for straight tableaux \cite[T
 Finally, say $\gcd(M,q) = \gcd(M',q)$.  Then the vector $W$ in the initialization step of Algorithm~\ref{alg:2} is the same for $M,M'$, so all steps in the algorithm are identical, except possibly the value of $e_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $e_\ell$. This proves (3).
 \end{proof}
 
-One last observation completes our proof. While Algorithm~\ref{alg:1} takes as input arbitrary $L$ and $M$, Theorem~\ref{thm:alg2} implies that $L$ can only be nonzero if $L = M/d$ for some $d$ dividing both $M$ and $q$, where $q$ is the height of one of the full-content tableaux in the appropriate table (Tables \ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For fixed $\lambda$, the set of such $d$ is determined by the multiset of common divisors of $M$ and possible full-content heights of tableau on $\lambda$. For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). 
+One last observation completes our proof. While Algorithm~\ref{alg:1} takes as input arbitrary $L$ and $M$, Theorem~\ref{thm:alg2} implies that the output of  (Tables \ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For fixed $\lambda$, the set of such $d$ is determined by the multiset of common divisors of $M$ and possible full-content heights of tableau on $\lambda$. For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). 
 
 To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
 \-\ \\ \-\ \\ 
