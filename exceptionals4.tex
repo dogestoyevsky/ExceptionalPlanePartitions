@@ -1085,36 +1085,6 @@ $q$ & orbit size & number of orbits\\
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
 
-We will need to following algorithm.
-
-\begin{algorithm}\label{alg:2}
-\hspace{1cm} \phantom{2} \\
-\textsf{Input}: $q, M \in \mathbb{Z}_{>0}$ with $q \leq M$. \\ 
-\textsf{Output}: Vector $V$. If $d_1 > \dots > d_k$ is the decreasing list of all positive common divisors of $q$ and $M$, then for $\ell \in \{1, \ldots, k\}$, $V\{\ell\}$ records the number of $v \in \binom{[M]}{q}$ with $\Sigma^M$-period exactly $M/d_\ell$. \\ \-\ \\
-\textsf{Initialization}: Let $d_1 > \dots > d_k$ be the decreasing list of all positive common divisors of $q$ and $M$. Create a vector $V$ of $k$ zeros.  \\ 
-\textsf{Procedure}: For $\ell \in  \{1, 2, \ldots, k\}$:
-\begin{enumerate}
-\item Let $e_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $\ell$: \[ e_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ \ell}(v) = v \right\}. \]
-\item Add $e_\ell$ to $V\{\ell\}$. 
-\item Let $d_{\ell} \coloneqq W\{\ell\}$.
-\item For $m \in \{1,2, \dots,\ell-1\}$:
-\begin{enumerate}
-\item If $d_\ell$ divides $d_m$, then subtract $V\{m\}$ from  $V\{\ell\}$.
-\end{enumerate} 
-\end{enumerate} \-\
-\end{algorithm}
-\begin{theorem}~\label{thm:alg2}
-The vector $V$ computed by Algorithm~\ref{alg:2} satisfies \[ V\{\ell\} = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\},  \]
-for all $\ell \in \{1,\ldots,k \},$
-where $d_1> \dots > d_k$ is the list of all positive common divisors of $q$ and $M$.  All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for some $\ell \in \lbrace 1,\ldots,k \rbrace$.
-\end{theorem}
-\begin{proof}
-Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since $(\Sigma^M)^{\circ M}$ is the identity on $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number of indices $i$ such that $v \lbrace i \rbrace = 1$ (that is, $q$) is a multiple of $\pi$. 
-
-Now for a given $d$, \cite[Theorem~1.1(b)]{Reiner.Stanton.White} gives an explicit formula for the number of binary vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to iterate over common divisors of $q$ and $M$. 
-\end{proof}
-
-
 \begin{algorithm}\label{alg:1} 
 \hspace{1cm} \phantom{2} \\
 \textsf{Input}:  
@@ -1133,7 +1103,7 @@ i  \coloneqq \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$
 \begin{equation}~\label{eq:p}
  p \coloneqq \frac{L/d \cdot \tau}{\mathrm{gcd}(qL/(Md),\tau)},
 \end{equation}
-the period associated with a gapless tableau of period $\tau$ and a content vector of period $L/d$ with $q$ ones. 
+the period associated with a tableaux of period $\tau$, a content vector of period $L/d$ with $q$ ones. 
 \item If $p$ divides $L$, add $i \tau N$ to $x$.
 \end{enumerate}
 \end{itemize}
@@ -1143,17 +1113,43 @@ CHECK AGAINST ALGORITHM
 The output of Algorithm~\ref{alg:1} is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
 \end{theorem}
 \begin{proof}
-By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm~\ref{alg:1} outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ gapless tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each gapless tableau $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
+By Corollary~\ref{cor:multisets}, it suffices to show that Algorithm 1 outputs the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ full-content tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each full-content tableaux $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
 
 If $i$ is given by Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = L/d$, $\tau = \tau$, and \[ \ell - r = L/d - \frac{L(M-q)}{dM} = \frac{Lq}{dM}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required.
 \end{proof}
+We have assumed in Algorithm~\ref{alg:1} that we can execute Step~1. This step is performed by the following algorithm. 
 
-COMMENT ABOUT SYMBOLIC EXPRESSION
+\begin{algorithm}\label{alg:2}
+\hspace{1cm} \phantom{2} \\
+\textsf{Input}: $q, M \in \mathbb{Z}_{>0}$ with $q \leq M$. \\ 
+\textsf{Output}: Array $V$. If $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$, then $V[\ell]$ is the number of vectors of length $M$ with $q$ ones and with period exactly $M/d_\ell$ for $\ell = 1,...,k$. \\ \-\ \\
+\textsf{Initialization}: Create a list $W$ of all divisors of both $q$ and $M$ in decreasing order. Let $k = \texttt{length}(W)$. Create a vector $V$ of $k$ zeros.  \\ 
+\textsf{Procedure}: For $\ell \in  \{1, 2, \ldots, k\}$:
+\begin{enumerate}
+\item Let $e_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $\ell$: \[ e_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ \ell}(v) = v \right\}. \]
+\item Add $e_\ell$ to $V\{\ell\}$. 
+\item Let $d_{\ell} \coloneqq W\{\ell\}$.
+\item For $m \in \{1,2, \dots,\ell-1\}$:
+\begin{enumerate}
+\item If $d_\ell$ divides $d_m$, then subtract $V\{m\}$ from  $V\{\ell\}$.
+\end{enumerate} 
+\end{enumerate} \-\
+\end{algorithm}
+\begin{theorem}~\label{thm:alg2}
+Algorithm~\ref{alg:2} computes  \[ V[\ell] = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\}, \ell = 1,...,k, \]
+where $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$.  All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for $\ell \in \lbrace 1,...,k \rbrace$.
+\end{theorem}
+\begin{proof}
+Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since rotation by $(\Sigma^M)^{\circ M}$ fixes any element of $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number indices $i$ such that $v \lbrace i \rbrace = 1$ is a multiple of $\pi$. 
+
+Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. 
+\end{proof}
+
+One last observation completes our proof. While Algorithm~\ref{alg:1} takes as input arbitrary $L$ and $M$, Theorem~\ref{thm:alg2} implies that $L$ can only be nonzero if $L = M/d$ for some $d$ dividing both $M$ and $q$, where $q$ is the height of one of the full-content tableaux in the appropriate table (Tables \ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For fixed $\lambda$, the set of such $d$ is determined by the multiset of common divisors of $M$ and possible full-content heights of tableau on $\lambda$. For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). 
+
 To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
-
-\begin{algorithm}\label{alg:3} 
-%\hspace{1cm} \phantom{2} \\
- \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
+\-\ \\ \-\ \\ 
+\noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
 \textsf{Input}: Shape $\lambda$, full content tableaux for $\lambda$.  \\ \noindent
 \textsf{Output}: Array $V$, where $V\{\ell\}$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
 \textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 
@@ -1173,7 +1169,6 @@ Loop over all combinations  $C$ of prime numbers (with multiplicity) that can di
 \end{enumerate}
 \item Check if Rush-Shi and computed match.
 \end{enumerate}
-\end{algorithm}
 
 \section*{Acknowledgements}
 The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was supported by the Graduate Research Fellowship from the National Science Foundation. 
