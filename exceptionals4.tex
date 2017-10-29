@@ -1136,13 +1136,20 @@ We have assumed in Algorithm~\ref{alg:1} that we can execute Step~1. This step i
 \end{enumerate} \-\
 \end{algorithm}
 \begin{theorem}~\label{thm:alg2}
+\begin{enumerate}
+\item 
 Algorithm~\ref{alg:2} computes  \[ V[\ell] = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\}, \ell = 1,...,k, \]
-where $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$.  All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for $\ell \in \lbrace 1,...,k \rbrace$.
+where $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$. 
+\item All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for $\ell \in \lbrace 1,...,k \rbrace$.
+\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} is the same for $M$ and $M'$. 
+\end{enumerate}
 \end{theorem}
 \begin{proof}
-Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since rotation by $(\Sigma^M)^{\circ M}$ fixes any element of $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number indices $i$ such that $v \lbrace i \rbrace = 1$ is a multiple of $\pi$. 
+We prove (2) first. Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since rotation by $(\Sigma^M)^{\circ M}$ fixes any element of $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number indices $i$ such that $v \lbrace i \rbrace = 1$ is a multiple of $\pi$. 
 
-Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. 
+Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. This proves (1.)
+
+Finally, say $\gcd(M,q) = \gcd(M',q)$.  Then the vector $W$ in the initialization step of Algorithm~\ref{alg:2} is the same for $M,M'$, so all steps in the algorithm are identical, except possibly the value of $e_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $e_\ell$. This proves (3).
 \end{proof}
 
 One last observation completes our proof. While Algorithm~\ref{alg:1} takes as input arbitrary $L$ and $M$, Theorem~\ref{thm:alg2} implies that $L$ can only be nonzero if $L = M/d$ for some $d$ dividing both $M$ and $q$, where $q$ is the height of one of the full-content tableaux in the appropriate table (Tables \ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For fixed $\lambda$, the set of such $d$ is determined by the multiset of common divisors of $M$ and possible full-content heights of tableau on $\lambda$. For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). 
