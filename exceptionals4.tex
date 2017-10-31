@@ -1088,13 +1088,12 @@ $q$ & orbit size & number of orbits\\
 \begin{algorithm}\label{alg:2}
 \hspace{1cm} \phantom{2} \\
 \textsf{Input}: $q, M \in \mathbb{Z}_{>0}$ with $q \leq M$. \\ 
-\textsf{Output}: Array $V$. If $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$, then $V[\ell]$ is the number of vectors of length $M$ with $q$ ones and with period exactly $M/d_\ell$ for $\ell = 1,...,k$. \\ \-\ \\
-\textsf{Initialization}: Create a list $W$ of all divisors of both $q$ and $M$ in decreasing order. Let $k = \texttt{length}(W)$. Create a vector $V$ of $k$ zeros.  \\ 
+\textsf{Output}: Vector $V$. If $d_1 > \cdots > d_k$ is the decreasing list of all positive common divisors of $q$ and $M$, then for $\ell \in \{ 1, \dots, k\}$, $V\{\ell\}$ records the number of $v \in \binom{[M]}{q}$ with $\Sigma^m$-period exactly $M/d_\ell$. \\ \-\ \\
+\textsf{Initialization}: Let $d_1 > \cdots > d_k$ be the decreasing list of all positive common divisors of $q$ and $M$. Create a vector $V$ of $k$ zeros.  \\ 
 \textsf{Procedure}: For $\ell \in  \{1, 2, \ldots, k\}$:
 \begin{enumerate}
 \item Let $e_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $M/d_\ell$: \[ e_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ M/d_\ell}(v) = v \right\}. \]
 \item Add $e_\ell$ to $V\{\ell\}$. 
-\item Let $d_{\ell} \coloneqq W\{\ell\}$.
 \item For $m \in \{1,2, \dots,\ell-1\}$:
 \begin{enumerate}
 \item If $d_\ell$ divides $d_m$, then subtract $V\{m\}$ from  $V\{\ell\}$.
@@ -1104,18 +1103,22 @@ $q$ & orbit size & number of orbits\\
 \begin{theorem}~\label{thm:alg2}
 \begin{enumerate}
 \item 
-Algorithm~\ref{alg:2} computes  \[ V[\ell] = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\}, \ell = 1,...,k, \]
-where $d_1,...,d_k$ is the decreasing list of divisors of both $q$ and $M$. 
-\item All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for $\ell \in \lbrace 1,...,k \rbrace$.
-\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} is the same for $M$ and $M'$. 
+The vector $V$ computed by Algorithm~\ref{alg:2} satisfies  \[ V\{\ell\} = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\},\] for all $\ell \in \{1,\ldots ,k\},$
+where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and $M$. 
+\item All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for some $\ell \in \lbrace 1,...,k \rbrace$.
+\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} is the same for $(M,q)$ and $(M',q)$. 
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-We prove (2) first. Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since rotation by $(\Sigma^M)^{\circ M}$ fixes any element of $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number indices $i$ such that $v \lbrace i \rbrace = 1$ is a multiple of $\pi$. 
+(2): Take $v \in \binom{[M]}{q}$ and let $\pi$ be its period under $\Sigma^M$. Since $(\Sigma^M)^{\circ M}$ is the identity on $\binom{[M]}{q}$, $\pi$ divides $M$. On the other hand, if $v\lbrace k \rbrace= 1$ then $v \lbrace k + n \pi \rbrace = 1$ for all $n \in \mathbb{Z}$, where the index is taken modulo $M$. Since $\pi$ divides $M$, it follows that the number of indices $i$ such that $v \lbrace i \rbrace = 1$ (that is, $q$) is a multiple of $\pi$. 
 
-Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. This proves (1.)
+\medskip
+\noindent
+(1): Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. 
 
-Finally, say $\gcd(M,q) = \gcd(M',q)$.  Then the vector $W$ in the initialization step of Algorithm~\ref{alg:2} is the same for $M,M'$, so all steps in the algorithm are identical, except possibly the value of $e_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $e_\ell$. This proves (3).
+\medskip
+\noindent
+(3): Finally, say $\gcd(M,q) = \gcd(M',q)$.  Then the vector $W$ in the initialization step of Algorithm~\ref{alg:2} is the same for $M,M'$, so all steps in the algorithm are identical, except possibly the value of $e_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $e_\ell$. T
 \end{proof}
 
 
