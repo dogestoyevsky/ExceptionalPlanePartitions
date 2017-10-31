@@ -1155,28 +1155,27 @@ Finally, say $\gcd(M,q) = \gcd(M',q)$.  Then the vector $W$ in the initializatio
 
 One last observation completes our proof. Part (3) of Theorem~\ref{thm:alg2} states that Equation~\ref{eq:i} is only nonzero when $d$ divides $q$ and depends only on  $\gcd{(M,q)}$. For fixed $\lambda$, the set of such $d$ is determined by the set of common divisors of $M$ and possible full-content heights of tableau on $\lambda$ (Tables~\ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). Therefore, if $\gcd(M,q) = \gcd(M',q)$ for all such $q$, all steps of Algorithm~\ref{alg:1} will be identical, except the computation of $p$ (Equation~\ref{eq:p}). Therefore, if we define $M$ as a symbolic variable and specify $\gcd(M,q)$ for all $q$, the output of Algorithm~\ref{alg:1} is valid for all such $M$. Since there are only finitely many possible combinations of $\gcd(M,q)$, this allows us to check the predictions of the NAME THIS for arbitrary $M$. 
 
-To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $m = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
+To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. This description gives the sense of our algorithm and does not correspond to the exact details of our implementation, which is available on OP's website. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $\texttt{m} = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
 \-\ \\ \-\ \\ 
 \noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
-\textsf{Input}: Shape $\lambda$, full content tableaux for $\lambda$.  \\ \noindent
-\textsf{Output}: Array $V$, where $V\{\ell\}$ is the number of vectors of length $T$ with $f$ ones and with period exactly $T/d_{\ell}$ \\ \-\ \\
+\textsf{Input}: Convex justified shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, and the corresponding input table (Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}).  \\ \noindent
+\textsf{Output}: Array \texttt{true}. If $C_1,...,C_k$ is a list of all multisets of prime numbers which can divide a number in the first column of the input table, then
+\begin{itemize}
+\item  $\texttt{true}\lbrace i \rbrace = 1$ if for all periods $p$, the symbolic expression for the number of tableaux on $\lambda$ of height \texttt{m} and period dividing $p$ predicted by the generating function is equal to the symbolic expression predicted by Algorithm~\ref{alg:1}, assuming that $M$ corresponds to the divisors $C_i$;
+\item $\texttt{true}\lbrace i \rbrace = 0$ otherwise. 
+\end{itemize} \-\ \\
 \textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 
 \textsf{Procedure}: 
-Loop over all combinations  $C$ of prime numbers (with multiplicity) that can divide a number between $\text{rk}(\lambda)+1$ to $B(\lambda)$ inclusive.
+Loop over all multisets $C_i$ of prime numbers that can divide a number in the first column of the input table. 
 \begin{enumerate} 
 \item Initialize empty array \texttt{dVals}. \texttt{For d $ \in [2,B(\lambda)]$}, determine whether \texttt{d} divides a $q$ value with the combination $C$ of divisors. If so, append to \texttt{dVals}.  
-\item Loop over the elements of \texttt{dVals} and compute the predicted period by the Rush-Shi formula. Save as \texttt{RushShiPeriods[L/d]}.
-\item Loop over full content orbit data. 
-\begin{enumerate}
-\item \texttt{For $d \in $ dVals, if $d$ divides fcHt}
-\begin{enumerate}
-\item Get exact number of vectors of length \texttt{q} with \texttt{fcHt} ones.
-\item Compute period
-\item number of tableaux to all periods divided by this one.
+\item Loop over the elements of \texttt{dVals} and compute the predicted period by the generating function. Save as \texttt{GFPeriods[\texttt{m}/d]}.
+\item Evaluate Algorithm~\ref{alg:1} on the symbolic variable \texttt{m}, assuming that \texttt{m} corresponds to the divisors $C_i$. Save the output vector $V$. 
+\item Verify that the index sets of \texttt{GFPeriods} and \texttt{V} are identical. Loop over this index set and compute $\texttt{GFPeriods}\lbrace i \rbrace - \texttt{V}\lbrace i \rbrace$ for all $i$. If this expression is $0$ for all $i$, set $\texttt{true} \lbrace i \rbrace = 1$, otherwise set $\texttt{true} \lbrace i \rbrace = 0$. 
 \end{enumerate}
-\end{enumerate}
-\item Check if Rush-Shi and computed match.
-\end{enumerate}
+\-\ \\ 
+
+FINAL PARAGRAPH
 
 \section*{Acknowledgements}
 The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was supported by the Graduate Research Fellowship from the National Science Foundation. 
