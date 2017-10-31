@@ -1080,12 +1080,10 @@ $q$ & orbit size & number of orbits\\
 \label{tab:prop}
 \end{table}
 
- In addition, the number of elements of $\binom{[M]}{k}$ whose order under $\Sigma^M$ divides a given divisor of $M$ is given by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}. Therefore, we can use Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop} to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$.
+ Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}. Therefore, we can use Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop} to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. We will first need the following algorithm.
 
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
-
-We will need the following algorithm.
 
 \begin{algorithm}\label{alg:2}
 \hspace{1cm} \phantom{2} \\
