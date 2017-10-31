@@ -1126,7 +1126,8 @@ where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and
 \hspace{1cm} \phantom{2} \\
 \textsf{Input}:  
 $M \in \mathbb{Z}_{>0}$, convex justified shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, and the corresponding Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}. \\
-\textsf{Output}: Array $V$, where \[ V \lbrace L \rbrace = \# \{T \in \inc^M(\lambda) : (\pro^M)^{\circ L}(T) = T \}. \] \\  \-\ \\ 
+\textsf{Output}: Vector $V$, where \[ V \lbrace L \rbrace = \# \{T \in \inc^M(\lambda) : (\pro^M)^{\circ L}(T) = T \}, \] the number of tableaux whose
+period divides $L$. \\  \-\ \\ 
 \textsf{Initialization}: Set $x = 0$. \\
 \textsf{Procedure}: Iterate over rows of the table. Say the current row is $(q, \tau, N)$, expressing that $\incgl^q(\lambda)$ has $N$ $\pro^q$-orbits of size $\tau$.
 \begin{itemize}
@@ -1141,7 +1142,7 @@ i  \coloneqq \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$
  p \coloneqq \frac{M/d \cdot \tau}{\mathrm{gcd}(q/d,\tau)},
 \end{equation}
 the period associated with a tableaux of period $\tau$, a content vector of period $M/d$ with $q$ ones. 
-\item If $p$ divides $L$, add $i \tau N$ to $V\lbrace L \rbrace$.
+\item If $p \divides L$ and $L \divides M$, add $i \tau N$ to $V\lbrace L \rbrace$.
 \end{enumerate}
 \end{itemize}
 \end{algorithm}
@@ -1151,9 +1152,9 @@ the period associated with a tableaux of period $\tau$, a content vector of peri
 In the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
 \end{theorem}
 \begin{proof}
-By Corollary~\ref{cor:multisets}, it suffices to show that in the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ full-content tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each full-content tableaux $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
+By Corollary~\ref{cor:multisets}, it suffices to show that in the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ gapless tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each gapless tableau $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
 
-If $i$ is given by Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = M/d$, $\tau = \tau$, and \[ \ell - r = \frac{M}{d} - \frac{M-q}{d} = \frac{q}{d}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. 
+If $i$ is as in Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = M/d$, $\tau = \tau$, and \[ \ell - r = \frac{M}{d} - \frac{M-q}{d} = \frac{q}{d}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. 
 \end{proof}
 We have assumed in Algorithm~\ref{alg:1} that we can execute Step~1. This step is performed by the following algorithm. 
 
