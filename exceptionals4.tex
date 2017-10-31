@@ -1092,8 +1092,8 @@ $q$ & orbit size & number of orbits\\
 \textsf{Initialization}: Let $d_1 > \cdots > d_k$ be the decreasing list of all positive common divisors of $q$ and $M$. Create a vector $V$ of $k$ zeros.  \\ 
 \textsf{Procedure}: For $\ell \in  \{1, 2, \ldots, k\}$:
 \begin{enumerate}
-\item Let $e_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $M/d_\ell$: \[ e_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ M/d_\ell}(v) = v \right\}. \]
-\item Add $e_\ell$ to $V\{\ell\}$. 
+\item Let $f_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $M/d_\ell$: \[ f_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ M/d_\ell}(v) = v \right\}. \]
+\item Add $f_\ell$ to $V\{\ell\}$. 
 \item For $m \in \{1,2, \dots,\ell-1\}$:
 \begin{enumerate}
 \item If $d_\ell$ divides $d_m$, then subtract $V\{m\}$ from  $V\{\ell\}$.
@@ -1114,11 +1114,11 @@ where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and
 
 \medskip
 \noindent
-(1): Now for a given $d$, the known generating function for straight tableaux \cite[Theorem~1.1(b)]{Reiner.Stanton.White} tells us the number of content vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of tableaux with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By the previous paragraph, it is sufficient to loop over divisors of both $q$ and $M$. 
+(1): Now for a given $d$, \cite[Theorem~1.1(b)]{Reiner.Stanton.White} gives an explicit formula for the number of binary vectors of length $M$ with $q$ ones whose period is a multiple of $M/d$. We can then recover the number of such vectors with period exactly $M/d$ by subtracting off those whose periods strictly divide $M/d$. By (2), it is sufficient to iterate over common divisors of $q$ and $M$. 
 
 \medskip
 \noindent
-(3): Finally, say $\gcd(M,q) = \gcd(M',q)$.  Then the vector $W$ in the initialization step of Algorithm~\ref{alg:2} is the same for $M,M'$, so all steps in the algorithm are identical, except possibly the value of $e_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $e_\ell$. T
+(3): Say $\gcd(M,q) = \gcd(M',q)$.  Then, the list $d_1 > \cdots > d_k$ of divisors in the initialization step of Algorithm~\ref{alg:2} is the same for $(M',q)$ as for $(M,q)$. Thus, all steps in the algorithm are identical, except possibly the value of $f_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $f_\ell$. 
 \end{proof}
 
 
