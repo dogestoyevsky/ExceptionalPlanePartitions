@@ -1080,7 +1080,12 @@ $q$ & orbit size & number of orbits\\
 \label{tab:prop}
 \end{table}
 
- Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}. Therefore, we can use Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop} to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. We will first need the following algorithm.
+ Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
+\begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
+Let \[f_{M,k}(q) \coloneqq \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q},\] where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j = 0}^{i-1} q^j$ are the standard $q$-analogues. Then 
+\[\#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ k}(v) = v \right\} = f_{M,k}(\zeta^k),\] where $\zeta$ is any primitive $M$th root of unity. \qed
+\end{theorem} 
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. We will first need the following elementary algorithm.
 
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
@@ -1092,7 +1097,7 @@ $q$ & orbit size & number of orbits\\
 \textsf{Initialization}: Let $d_1 > \cdots > d_k$ be the decreasing list of all positive common divisors of $q$ and $M$. Create a vector $V$ of $k$ zeros.  \\ 
 \textsf{Procedure}: For $\ell \in  \{1, 2, \ldots, k\}$:
 \begin{enumerate}
-\item Let $f_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $M/d_\ell$: \[ f_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ M/d_\ell}(v) = v \right\}. \]
+\item Using Theorem~\ref{thm:rsw}, let $f_\ell$ be  the number of binary vectors whose $\Sigma^M$-period divides $M/d_\ell$: \[ f_\ell \coloneqq \#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ M/d_\ell}(v) = v \right\}. \]
 \item Add $f_\ell$ to $V\{\ell\}$. 
 \item For $m \in \{1,2, \dots,\ell-1\}$:
 \begin{enumerate}
