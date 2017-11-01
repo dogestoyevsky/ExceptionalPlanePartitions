@@ -1142,11 +1142,13 @@ i  \coloneqq \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$
  p \coloneqq \frac{M/d \cdot \tau}{\mathrm{gcd}(q/d,\tau)},
 \end{equation}
 the $\pro^M$-period associated to a gapless tableau of $\pro^q$-period $\tau$ together with a binary vector with $q$ ones and $\Sigma^M$-period $M/d$ . 
-\item If $p \divides L$ and $L \divides M$, add $i \tau N$ to $V\lbrace L \rbrace$.
+\item If $p \divides L$, add $i \tau N$ to $V\lbrace L \rbrace$.
 \end{enumerate}
 \end{itemize}
 \end{algorithm}
 \-\ 
+
+WE NEED SOME BOUND ON L IN THE ABOVE ALGORITHM, SO THAT THE VECTOR V ISN'T SUPPORTED ON AN INFINITE SET.
 
 \begin{theorem}~\label{thm:alg1}
 In the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
