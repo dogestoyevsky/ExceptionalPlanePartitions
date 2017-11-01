@@ -1164,27 +1164,28 @@ By Corollary~\ref{cor:multisets}, it suffices to show that in the output of Algo
 If $i$ is as in Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = M/d$, $\tau = \tau$, and \[ \ell - r = \frac{M}{d} - \frac{M-q}{d} = \frac{q}{d}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. 
 \end{proof}
 
-One last observation completes our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Part (3) of Theorem~\ref{thm:alg2} states that Equation~\ref{eq:i} is only nonzero when $d$ divides $q$ and depends only on  $\gcd{(M,q)}$. For fixed $\lambda$, the set of such $d$ is determined by the set of common divisors of $M$ and possible full-content heights of tableau on $\lambda$ (Tables~\ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). Therefore, if $\gcd(M,q) = \gcd(M',q)$ for all such $q$, all steps of Algorithm~\ref{alg:1} will be identical, except the computation of $p$ (Equation~\ref{eq:p}). Therefore, if we define $M$ as a symbolic variable and specify $\gcd(M,q)$ for all $q$, the output of Algorithm~\ref{alg:1} is valid for all such $M$. Since there are only finitely many possible combinations of $\gcd(M,q)$, this allows us to check the predictions of the NAME THIS for arbitrary $M$. 
+One last observation completes our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. By Theorem~\ref{thm:alg2}, the number $i$ of Equation~(\ref{eq:i}) is only nonzero when $d$ divides $q$; and moreover, $i$ depends only on  $\gcd{(M,q)}$. For fixed $\lambda$, the set of such $d$ is determined by the set of common divisors of $M$ and possible full-content heights of tableau on $\lambda$ (Tables~\ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). Therefore, if $\gcd(M,q) = \gcd(M',q)$ for all such $q$, all steps of Algorithm~\ref{alg:1} will be identical, except the computation of $p$ in Equation~(\ref{eq:p}). Therefore, if we define $M$ as a symbolic variable and specify $\gcd(M,q)$ for all $q$, the output of Algorithm~\ref{alg:1} is valid for all such $M$. Since there are only finitely many possible combinations of $\gcd(M,q)$, this allows us to check the predictions of the NAME THIS for arbitrary $M$. 
 
-To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. This description gives the sense of our algorithm and does not correspond to the exact details of our implementation, which is available on OP's website. We fix a tableaux $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $\texttt{m} = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the number of boxes in $\lambda$. 
+To summarize, we outline the code in \texttt{symbolic_Cayley-Moufang_plane.py}. This description gives the sense of our algorithm and does not correspond to the exact details of our implementation, which is available on the second author's website. We fix a tableau $\lambda$ and define a symbolic integer variable \texttt{m}. The predicted number of tableaux in $\inc^q(\lambda)$ will be a function of \texttt{m} which is interpreted as $\texttt{m} = q-(\text{rk}(\lambda)+1)$. Let $B(\lambda)$ be the cardinality of the poset $\lambda$. 
 \-\ \\ \-\ \\ 
-\noindent {\bf Algorithm 3}: \texttt{symbolic_Cayley-Moufang_plane.py} \\ \noindent
-\textsf{Input}: Convex justified shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, and the corresponding input table (Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}).  \\ \noindent
-\textsf{Output}: Array \texttt{true}. If $C_1,...,C_k$ is a list of all multisets of prime numbers which can divide a number in the first column of the input table, then
+\begin{algorithm}[\texttt{symbolic_Cayley-Moufang_plane.py}] 
+\hspace{1cm} \phantom{2} \\
+\textsf{Input}: Shape $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$, and the corresponding Table~\ref{tab:E6},~\ref{tab:E7}, or~\ref{tab:prop}.  \\ \noindent
+\textsf{Output}: Array \texttt{true}. If $C_1,\ldots,C_k$ is a list of all multisets of prime numbers which can divide a number in the first column of the input table, then
 \begin{itemize}
 \item  $\texttt{true}\lbrace i \rbrace = 1$ if for all periods $p$, the symbolic expression for the number of tableaux on $\lambda$ of height \texttt{m} and period dividing $p$ predicted by the generating function is equal to the symbolic expression predicted by Algorithm~\ref{alg:1}, assuming that $M$ corresponds to the divisors $C_i$;
 \item $\texttt{true}\lbrace i \rbrace = 0$ otherwise. 
 \end{itemize} \-\ \\
 \textsf{Initialization}: Let \texttt{m} be a symbolic variable. \\ 
 \textsf{Procedure}: 
-Loop over all multisets $C_i$ of prime numbers that can divide a number in the first column of the input table. 
+Iterate over all multisets $C_i$ of prime numbers that can divide a number in the first column of the input table. 
 \begin{enumerate} 
 \item Initialize empty array \texttt{dVals}. \texttt{For d $ \in [2,B(\lambda)]$}, determine whether \texttt{d} divides a $q$ value with the combination $C$ of divisors. If so, append to \texttt{dVals}.  
-\item Loop over the elements of \texttt{dVals} and compute the predicted period by the generating function. Save as \texttt{GFPeriods[\texttt{m}/d]}.
+\item Iterate over the elements of \texttt{dVals} and compute the predicted period by the generating function. Save as \texttt{GFPeriods[\texttt{m}/d]}.
 \item Evaluate Algorithm~\ref{alg:1} on the symbolic variable \texttt{m}, assuming that \texttt{m} corresponds to the divisors $C_i$. Save the output vector $V$. 
 \item Verify that the index sets of \texttt{GFPeriods} and \texttt{V} are identical. Loop over this index set and compute $\texttt{GFPeriods}\lbrace i \rbrace - \texttt{V}\lbrace i \rbrace$ for all $i$. If this expression is $0$ for all $i$, set $\texttt{true} \lbrace i \rbrace = 1$, otherwise set $\texttt{true} \lbrace i \rbrace = 0$. 
 \end{enumerate}
-\-\ \\ 
+\end{algorithm}
 
 FINAL PARAGRAPH
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 NOV 2017 14:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 NOV 2017 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1580,12 +1580,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24] [25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1187--1188
+[23] [24] [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1169--1171
 
  []
 
-(./exceptionals4.bbl (./exceptionals4.brf)
+[27] (./exceptionals4.bbl (./exceptionals4.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals4.brf'.
 
@@ -1593,17 +1593,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 1187--1188
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29])
-Underfull \hbox (badness 7030) in paragraph at lines 1207--1207
+Underfull \hbox (badness 7030) in paragraph at lines 1208--1208
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
 [30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1207.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1207.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1208.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1208.
  (./exceptionals4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1207.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1207.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1208.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1208.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: 69DFD94F9406E6BED5A9F6B67A70080A;972.
@@ -1613,11 +1613,11 @@ Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1207.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1208.
  ) 
 Here is how much of TeX's memory you used:
- 30141 strings out of 493089
- 600633 string characters out of 6134842
+ 30142 strings out of 493089
+ 600644 string characters out of 6134842
  678746 words of memory out of 5000000
  32809 multiletter control sequences out of 15000+600000
  26913 words of font info for 109 fonts, out of 8000000 for 9000
@@ -1653,10 +1653,10 @@ ist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals4.pdf (30 pages, 461779 bytes).
+Output written on exceptionals4.pdf (30 pages, 461858 bytes).
 PDF statistics:
- 721 PDF objects out of 1000 (max. 8388607)
- 647 compressed objects within 7 object streams
- 139 named destinations out of 1000 (max. 500000)
+ 722 PDF objects out of 1000 (max. 8388607)
+ 648 compressed objects within 7 object streams
+ 140 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
