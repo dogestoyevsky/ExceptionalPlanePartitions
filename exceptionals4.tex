@@ -1133,7 +1133,7 @@ period divides $L$. \\  \-\ \\
 \begin{itemize}
 \item For each row, iterate over the positive divisors $d$ of $M$.
 \begin{enumerate}
-\item   Compute the number 
+\item   Using Algorithm~\ref{alg:2}, compute the number 
 \begin{equation}~\label{eq:i}
 i  \coloneqq \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d$ } \right\}.
 \end{equation}
@@ -1141,7 +1141,7 @@ i  \coloneqq \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$
 \begin{equation}~\label{eq:p}
  p \coloneqq \frac{M/d \cdot \tau}{\mathrm{gcd}(q/d,\tau)},
 \end{equation}
-the period associated with a tableaux of period $\tau$, a content vector of period $M/d$ with $q$ ones. 
+the $\pro^M$-period associated to a gapless tableau of $\pro^q$-period $\tau$ together with a binary vector with $q$ ones and $\Sigma^M$-period $M/d$ . 
 \item If $p \divides L$ and $L \divides M$, add $i \tau N$ to $V\lbrace L \rbrace$.
 \end{enumerate}
 \end{itemize}
