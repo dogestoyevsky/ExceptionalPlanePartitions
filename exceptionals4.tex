@@ -1099,7 +1099,7 @@ $q$ & orbit size & number of orbits\\
  Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
 \begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
 Let \[f_{M,k}(q) \coloneqq \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q},\] where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j = 0}^{i-1} q^j$ are the standard $q$-analogues. Then 
-\[\#\left\{ v \in \binom{[M]}{q} : (\Sigma^M)^{\circ k}(v) = v \right\} = f_{M,k}(\zeta^k),\] where $\zeta$ is any primitive $M$th root of unity. \qed
+\[\#\left\{ v \in \binom{[M]}{k} : (\Sigma^M)^{\circ s}(v) = v \right\} = f_{M,k}(\zeta^s),\] where $\zeta$ is any primitive $M$th root of unity. \qed
 \end{theorem} 
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give a bound on the period of $\pro^M$.
 \\
@@ -1114,7 +1114,7 @@ Similarly, inspecting Table~\ref{tab:E7} shows that the period of all full-conte
 \end{proof}
 
 
-We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. 
+We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
@@ -1140,7 +1140,7 @@ We will also need the following elementary algorithm. We say that a quantity $F$
 The vector $V$ computed by Algorithm~\ref{alg:2} satisfies  \[ V\{\ell\} = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\},\] for all $\ell \in \{1,\ldots ,k\},$
 where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and $M$. 
 \item All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for some $\ell \in \lbrace 1,...,k \rbrace$.
-\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} has the same dependence on $M$ and $M'$. 
+\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} has the same dependence on $M$ and $M'$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -1153,6 +1153,8 @@ where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and
 \medskip
 \noindent
 (3): Say $\gcd(M,q) = \gcd(M',q)$.  Then, the list $d_1 > \cdots > d_k$ of divisors in the initialization step of Algorithm~\ref{alg:2} is the same for $(M',q)$ as for $(M,q)$. Thus, all steps in the algorithm are identical, except possibly the value of $f_\ell$. 
+
+Fix $M$ and $q$. By Theorem~\ref{thm:rsw}, $f_{\ell} = f_{M,q}(\zeta^{M/d_{\ell}})$. 
 
 
 \end{proof}
