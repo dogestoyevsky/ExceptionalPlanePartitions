@@ -1114,7 +1114,7 @@ Similarly, inspecting Table~\ref{tab:E7} shows that the period of all full-conte
 \end{proof}
 
 
-We will also need the following elementary algorithm.
+We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. 
 
 %That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
 %Fix a shape $\lambda$ with maximum rank $r$ and $s$ boxes.  A gapless tableau on $\lambda$ must have its maximum label between $r+1$ and $s$.  Theorem~\ref{thm:compressbijective} shows that each tableaux of height $q$ corresponds uniquely to an element of $\incgl^k(\lambda) \times \binom{[q]}{k}$ for some $k \leq q$. Further, each element of $\binom{[q]}{k}$ has a period (under cyclic permutation) which is a divisor of $q$. ! Therefore to determine the number of tableaux $S \in \inc^q(\lambda)$ whose period divides a given positive integer $L$, we can execute the following algorithm.
@@ -1140,7 +1140,7 @@ We will also need the following elementary algorithm.
 The vector $V$ computed by Algorithm~\ref{alg:2} satisfies  \[ V\{\ell\} = \#\left\{ v \in \binom{[M]}{q} : \text{ the $\Sigma^M$-orbit of $v$ has size exactly $M/d_\ell$ } \right\},\] for all $\ell \in \{1,\ldots ,k\},$
 where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and $M$. 
 \item All elements of $\binom{[M]}{q}$ have period $M/d_\ell$ for some $\ell \in \lbrace 1,...,k \rbrace$.
-\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} is the same for $(M,q)$ and $(M',q)$. 
+\item If $\gcd(M,q) = \gcd(M',q)$, then the output of Algorithm~\ref{alg:2} has the same dependence on $M$ and $M'$. 
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -1152,7 +1152,9 @@ where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and
 
 \medskip
 \noindent
-(3): Say $\gcd(M,q) = \gcd(M',q)$.  Then, the list $d_1 > \cdots > d_k$ of divisors in the initialization step of Algorithm~\ref{alg:2} is the same for $(M',q)$ as for $(M,q)$. Thus, all steps in the algorithm are identical, except possibly the value of $f_\ell$. DISCUSSION OF METHOD USED TO COMPUTE $f_\ell$. 
+(3): Say $\gcd(M,q) = \gcd(M',q)$.  Then, the list $d_1 > \cdots > d_k$ of divisors in the initialization step of Algorithm~\ref{alg:2} is the same for $(M',q)$ as for $(M,q)$. Thus, all steps in the algorithm are identical, except possibly the value of $f_\ell$. 
+
+
 \end{proof}
 
 
