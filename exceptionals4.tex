@@ -1154,8 +1154,10 @@ where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and
 \noindent
 (3): Say $\gcd(M,q) = \gcd(M',q)$.  Then, the list $d_1 > \cdots > d_k$ of divisors in the initialization step of Algorithm~\ref{alg:2} is the same for $(M',q)$ as for $(M,q)$. Thus, all steps in the algorithm are identical, except possibly the value of $f_\ell$. 
 
-Fix $q$. By Theorem~\ref{thm:rsw}, for a given $M$ we have that FIX Q NOTATION ISSUES \[ f_{\ell} = f_{M,q}(\zeta^{M/d_{\ell}}) = \frac{[M-q+1]_{M/d_{\ell}} \cdot ... \cdot [M]_{M/d_{\ell}}}{[1]_{M/d_{\ell}} \cdot ... \cdot [q]_{M/d_{\ell}}}.\]
-We can convert this to a polynomial function by applying the following elementary identity (CITE):
+Fix $q$. By Theorem~\ref{thm:rsw}, for a given $M$ we have that FIX Q NOTATION ISSUES \begin{equation}~\label{eq:rsformula}
+ f_{\ell} = f_{M,q}(\zeta^{M/d_{\ell}}) = \frac{[M-q+1]_{M/d_{\ell}} \cdot ... \cdot [M]_{M/d_{\ell}}}{[1]_{M/d_{\ell}} \cdot ... \cdot [q]_{M/d_{\ell}}}.
+\end{equation}
+We can convert this to a polynomial function by applying the following elementary identity \cite{Reiner.Stanton.White}:
 Let $\zeta$ be a primitive $n$th root of unity. Then
 \begin{equation}~\label{eq:evalq}
 \lim \limits_{q \rightarrow \zeta^{N/d}} \frac{[n_1]_q}{[n_2]_q} = 
@@ -1164,8 +1166,9 @@ Let $\zeta$ be a primitive $n$th root of unity. Then
 1 &\text{if } n_1 \equiv n_2 \neq 0 \mod d
 \end{cases}
 \end{equation}
-Now by the assumption on $M$ and $M'$, $M \equiv M' \mod d_i$ for $i = 1,...,k$.  
-
+Since $d_\ell$ divides $M$ and $q$, if $q = r_\ell d_\ell$, then applying Equation~\ref{eq:evalq} allows us to rewrite Equation~\ref{eq:rsformula} as a polynomial: 
+ \[ f_{M,q}(\zeta^{M/d_{\ell}}) = \frac{M-(r_\ell-1)d_\ell}{d_\ell} \cdot \frac{M-(r_\ell-2)d_\ell}{2d_\ell} \cdot ... \cdot  \frac{M-d_\ell}{q-d_\ell} \cdot \frac{M}{q}.\]
+Since we have only used the fact that $d_\ell$ divides $M$, this formula holds for $M'$ as well. 
 
 \end{proof}
 
