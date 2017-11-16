@@ -1168,7 +1168,7 @@ Let $\zeta$ be a primitive $n$th root of unity. Then
 \end{equation}
 Since $d_\ell$ divides $M$ and $q$, if $q = r_\ell d_\ell$, then applying Equation~\ref{eq:evalq} allows us to rewrite Equation~\ref{eq:rsformula} as a polynomial: 
  \[ f_{M,q}(\zeta^{M/d_{\ell}}) = \frac{M-(r_\ell-1)d_\ell}{d_\ell} \cdot \frac{M-(r_\ell-2)d_\ell}{2d_\ell} \cdot ... \cdot  \frac{M-d_\ell}{q-d_\ell} \cdot \frac{M}{q}.\]
-Since we have only used the fact that $d_\ell$ divides $M$, this formula holds for $M'$ as well. 
+Since the only property of $M$ we have used is that $d_\ell$ divides $M$, this formula holds for $M'$ as well. 
 
 \end{proof}
 
@@ -1199,15 +1199,20 @@ the $\pro^M$-period associated to a gapless tableau of $\pro^q$-period $\tau$ to
 \end{algorithm}
 \-\ 
 
-WE NEED SOME BOUND ON L IN THE ABOVE ALGORITHM, SO THAT THE VECTOR V ISN'T SUPPORTED ON AN INFINITE SET.
 
 \begin{theorem}~\label{thm:alg1}
-In the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. 
+Fix $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$ and $M \geq \rank(\lambda)+1$. 
+\begin{enumerate} 
+\item In the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of order ideals in $J(\lambda \times \mathbf{m})$ whose order under $\Psi$ divides $L$, where $m = M -  \rank(\lambda) - 1$. RIGHT LOWER BOUND?
+\item Say $\gcd(M,q) = \gcd(M',q)$ for all $q$ in the first column of the table corresponding to $\lambda$. Then the output of Algorithm~\ref{alg:1} has the same dependence on $M$ and $M'$.
+\end{enumerate}
 \end{theorem}
 \begin{proof}
 By Corollary~\ref{cor:multisets}, it suffices to show that in the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ gapless tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each gapless tableau $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
 
-If $i$ is as in Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $\ell = M/d$, $\tau = \tau$, and \[ \ell - r = \frac{M}{d} - \frac{M-q}{d} = \frac{q}{d}.\] Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. 
+If $i$ is as in Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $M = q$ and  $q = N_T$. FIX THIS. Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. This proves the first assertion.
+
+To prove the second assertion, say $\gcd(M,q) = \gcd(M,q')$ for all $q$ in the first column of the table corresponding to $\lambda$. 
 \end{proof}
 
 One last observation completes our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. By Theorem~\ref{thm:alg2}, the number $i$ of Equation~(\ref{eq:i}) is only nonzero when $d$ divides $q$; and moreover, $i$ depends only on  $\gcd{(M,q)}$. For fixed $\lambda$, the set of such $d$ is determined by the set of common divisors of $M$ and possible full-content heights of tableau on $\lambda$ (Tables~\ref{tab:E6}, \ref{tab:E7}, and \ref{tab:prop}). For instance, if $\lambda = \lambda_{CM}$, then the set of such $d$ is determined by the common divisors of $M$ and integers from 11 to 16 (Table~\ref{tab:E6}). Therefore, if $\gcd(M,q) = \gcd(M',q)$ for all such $q$, all steps of Algorithm~\ref{alg:1} will be identical, except the computation of $p$ in Equation~(\ref{eq:p}). Therefore, if we define $M$ as a symbolic variable and specify $\gcd(M,q)$ for all $q$, the output of Algorithm~\ref{alg:1} is valid for all such $M$. Since there are only finitely many possible combinations of $\gcd(M,q)$, this allows us to check the predictions of the NAME THIS for arbitrary $M$. 
