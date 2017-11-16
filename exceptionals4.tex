@@ -1154,7 +1154,17 @@ where $d_1> \ldots > d_k$ is the list of all positive common divisors of $q$ and
 \noindent
 (3): Say $\gcd(M,q) = \gcd(M',q)$.  Then, the list $d_1 > \cdots > d_k$ of divisors in the initialization step of Algorithm~\ref{alg:2} is the same for $(M',q)$ as for $(M,q)$. Thus, all steps in the algorithm are identical, except possibly the value of $f_\ell$. 
 
-Fix $M$ and $q$. By Theorem~\ref{thm:rsw}, $f_{\ell} = f_{M,q}(\zeta^{M/d_{\ell}})$. 
+Fix $q$. By Theorem~\ref{thm:rsw}, for a given $M$ we have that FIX Q NOTATION ISSUES \[ f_{\ell} = f_{M,q}(\zeta^{M/d_{\ell}}) = \frac{[M-q+1]_{M/d_{\ell}} \cdot ... \cdot [M]_{M/d_{\ell}}}{[1]_{M/d_{\ell}} \cdot ... \cdot [q]_{M/d_{\ell}}}.\]
+We can convert this to a polynomial function by applying the following elementary identity (CITE):
+Let $\zeta$ be a primitive $n$th root of unity. Then
+\begin{equation}~\label{eq:evalq}
+\lim \limits_{q \rightarrow \zeta^{N/d}} \frac{[n_1]_q}{[n_2]_q} = 
+\begin{cases}
+\frac{n_1}{n_2} &\text{if }  n_1 \equiv n_2 \equiv 0 \mod d \\
+1 &\text{if } n_1 \equiv n_2 \neq 0 \mod d
+\end{cases}
+\end{equation}
+Now by the assumption on $M$ and $M'$, $M \equiv M' \mod d_i$ for $i = 1,...,k$.  
 
 
 \end{proof}
