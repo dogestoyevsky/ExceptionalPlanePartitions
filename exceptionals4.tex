@@ -1124,13 +1124,24 @@ Fix $\lambda \in \lbrace \lambda_{F}, \lambda_k, \lambda_{CM} \rbrace$, $M \geq 
 Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of full-content tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the full-content tableau. The table corresponding to $\lambda$ gives all possible full-content tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
 
 For each $i$, let $\ell[i] = N_T[i]/\tau[i]$. By Theorem~\ref{thm:periodthm}, a full-content tableaux of height $N_T[i]$ and a content vector with period $q[i]/\tilde{d}$ give a tableau of period \[ \frac{\frac{q[i]}{\tilde{d}} \frac{N_T[i]}{\ell[i]}}{\gcd(\frac{N_T[i]}{\tilde{d}},\frac{N_T[i]}{\ell[i]})} = \frac{\frac{q[i]}{\tilde{d}} \frac{N_T[i]}{\ell[i]}}{\frac{N_T \, \gcd(\ell[i],\tilde{d})}{\tilde{d} \ell[i]}} = \frac{q[i]}{\gcd(\ell[i],\tilde{d})}. \] 
-Therefore the tableau has period dividing $q[i]/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell[i]$. But $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q[i]/d$. Now the number of content vectors of length $q[i]$ with $N_T[i]$ ones and with period dividing $q[i]/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
+Therefore the tableau has period dividing $q[i]/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell[i]$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q[i]/d$. But the number of content vectors of length $q[i]$ with $N_T[i]$ ones and with period dividing $q[i]/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
 \end{proof}
 
-In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. 
+In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. An elementary identity \cite{Reiner.Stanton.White} allows us to work with integers rather than $q$-factorial functions. Let $\zeta$ be a primitive $n$th root of unity. Then
+\begin{equation}~\label{eq:evalq}
+\lim \limits_{q \rightarrow \zeta^{N/d}} \frac{[n_1]_q}{[n_2]_q} = 
+\begin{cases}
+\frac{n_1}{n_2} &\text{if }  n_1 \equiv n_2 \equiv 0 \mod d \\
+1 &\text{if } n_1 \equiv n_2 \neq 0 \mod d
+\end{cases}
+\end{equation}
 \-\ \\ \-\ 
-\begin{proof} (Theorem~\ref{thm:propeller}) Fix $k$, $q$, and $d$ dividing $q$. If $d = 1$, then by Equation~\ref{eq:mainresulteq}, 
-\[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k}(1) + 2 \, f_{q,2k-1}(1) = \binom{q}{2k} + 2 \binom{q}{2k-1} = ? \]
+\begin{proof} (Theorem~\ref{thm:propeller}) Fix $k$, $q$, and $d$ dividing $q$. We have that \[ f_k(\zeta) = \frac{[q]!_q [q-(k-1)]_q}{[2k-1]!_q [q-(2k-1)]!_q [k]_q }.\]  If $d = 1$, then by Equation~\ref{eq:mainresulteq}, 
+\[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k-1}(1) + 2 \, f_{q,2k}(1) = \binom{q}{2k-1} + 2 \binom{q}{2k} = \frac{(2q-2k+1)q!}{(2k)!(q-2k+1)!} = f_k(1). \]
+Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, write $2k = \ell d$, and then 
+\[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
+MORE JUSTIFICATION? If $d$ divides $2k-1$, then
+\[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}).\]
 \end{proof} 
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
