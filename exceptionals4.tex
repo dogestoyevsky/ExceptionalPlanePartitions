@@ -1127,7 +1127,7 @@ For each $i$, let $\ell[i] = N_T[i]/\tau[i]$. By Theorem~\ref{thm:periodthm}, a 
 Therefore the tableau has period dividing $q[i]/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell[i]$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q[i]/d$. But the number of content vectors of length $q[i]$ with $N_T[i]$ ones and with period dividing $q[i]/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
 \end{proof}
 
-In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. An elementary identity \cite{Reiner.Stanton.White} allows us to work with integers rather than $q$-factorial functions. Let $\zeta$ be a primitive $n$th root of unity. Then
+In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. An elementary identity \cite{Reiner.Stanton.White} allows us to work with integers rather than $q$-factorial functions. Let $\zeta$ be a primitive $n$th root of unity. Then $[n]_{\zeta^{N/d}} = 0$ if $n \equiv 0 \mod d$, and
 \begin{equation}~\label{eq:evalq}
 \lim \limits_{q \rightarrow \zeta^{N/d}} \frac{[n_1]_q}{[n_2]_q} = 
 \begin{cases}
@@ -1140,8 +1140,9 @@ In the case $\lambda = \lambda_k$, the resulting formula is simple enough to che
 \[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k-1}(1) + 2 \, f_{q,2k}(1) = \binom{q}{2k-1} + 2 \binom{q}{2k} = \frac{(2q-2k+1)q!}{(2k)!(q-2k+1)!} = f_k(1). \]
 Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, write $2k = \ell d$, and then 
 \[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
-MORE JUSTIFICATION? If $d$ divides $2k-1$, then
-\[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}).\]
+If $d$ divides $2k-1$, write $2k-1 = \ell d$, and then
+\[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
+If $d$ does not divide either $k$ or $2k-1$, then on the one hand Equation~\ref{eq:mainresulteq} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
 \end{proof} 
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
