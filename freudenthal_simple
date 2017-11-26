@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 17 14:25:17 2017
+
+@author: hollymandel
+"""
+
+from sympy import *
+import numpy as np
+np.set_printoptions(threshold=1000000000)
+import math as math
+from IPython import embed
+import symbolic_poset_functions
+
+tableauIn = [1,1,1,1,2,2,2,2,3,2,2,2,2,1,1,1,1]
+maxRank = len(tableauIn)-1
+fullContentOrbits = [
+        [17,1,1],
+        [18,2,1],
+        [18,18,2],
+        [19,19,30],
+        [20,20,228]]
+
+dList = [1]
+tabPredictions = np.zeros(len(dList))
+rsPredictions = np.zeros(len(dList))
+
+
+numOrbits = len(fullContentOrbits)
+orbRatios = np.zeros(numOrbits)
+for k in range(0,numOrbits):
+    orbRatios[k] = fullContentOrbits[k][1]/fullContentOrbits[k][0]
+truePeriodRatio = int(max(orbRatios))            
+m = Symbol('m',int=True)
+M = 20
+truePeriod = M * truePeriodRatio
+
+for j in range(0,len(dList)):
+    d = dList[j]
+    for k in range(0,numOrbits):
+        getNt = fullContentOrbits[k][0]
+        getTau = fullContentOrbits[k][1]
+        getN = fullContentOrbits[k][2]
+        if truePeriod/getTau % d == 0:
+            tabPredictions += getTau * getN * int(binomial(M/d,getNt/d))
+    print(tabPredictions[j])
+    [a,b,getRushShiPeriod] = symbolic_poset_functions.rushShiSymbolic(d,tableauIn)
+    rsPeriod = sympify(getRushShiPeriod)
+    rsPeriod = rsPeriod.subs(m,M)
+    print(rsPeriod)
+    rsPredictions[j] = rsPeriod
+    
+
