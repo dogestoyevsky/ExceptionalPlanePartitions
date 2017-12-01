@@ -1118,17 +1118,22 @@ An analogous period calculation shows that cyclic sieving fails for the Freudent
 \end{proof}
 For a given $\lambda$, we denote by $N_T[i]$, $\tau[i]$, and $N[i]$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 \-\ \\ \-\
+NEED TO UPDATE THE PERIOD THEOREM FOR LOWER
 \begin{theorem}~\label{thm:mainresult}
-Fix $\lambda \in \lbrace \lambda_{F}, \lambda_k, \lambda_{CM} \rbrace$, $M \geq \rank(\lambda)$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux of height $q$ whose period under $\pro^q$ divides $q/d$. Then 
+\begin{enumerate} 
+\item Take $\lambda \in \lbrace  \lambda_k, \lambda_{CM}, \lambda_F \rbrace$, $M \geq \rank(\lambda)$ and  $q \geq 2k-1$, $q \geq 11$, or $q \leq 21$, respectively. Take $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux of height $q$ whose period under $\pro^q$ divides $q/d$. Then 
 \begin{equation}~\label{eq:mainresulteq} \mathcal{R}(\lambda,q,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T[i]}{\tau[i]}} \tau[i] \, N[i] \, f_{q,N_T}(\zeta^{q/d}).
 \end{equation}
+\item Take $\lambda = \lambda_{CM}$, $q \geq 22$, and $d$ dividing $3q$. 
 \end{theorem}
 \begin{proof}
 Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of full-content tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the full-content tableau. The table corresponding to $\lambda$ gives all possible full-content tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
 
-For each $i$, let $\ell[i] = N_T[i]/\tau[i]$. By Theorem~\ref{thm:periodthm}, a full-content tableaux of height $N_T[i]$ and a content vector with period $q[i]/\tilde{d}$ give a tableau of period \[ \frac{\frac{q[i]}{\tilde{d}} \frac{N_T[i]}{\ell[i]}}{\gcd(\frac{N_T[i]}{\tilde{d}},\frac{N_T[i]}{\ell[i]})} = \frac{\frac{q[i]}{\tilde{d}} \frac{N_T[i]}{\ell[i]}}{\frac{N_T \, \gcd(\ell[i],\tilde{d})}{\tilde{d} \ell[i]}} = \frac{q[i]}{\gcd(\ell[i],\tilde{d})}. \] 
+For each $i$, let $\ell[i] = N_T[i]/\tau[i]$. Inspecting the associated table shows that $\ell[i]$ is an integer for $\lambda \in \lambda_k, \lambda_{CM}$. by By Theorem~\ref{thm:periodthm}, a full-content tableaux of height $N_T[i]$ and a content vector with period $q[i]/\tilde{d}$ give a tableau of period \[ \frac{\frac{q[i]}{\tilde{d}} \frac{N_T[i]}{\ell[i]}}{\gcd(\frac{N_T[i]}{\tilde{d}},\frac{N_T[i]}{\ell[i]})} = \frac{\frac{q[i]}{\tilde{d}} \frac{N_T[i]}{\ell[i]}}{\frac{N_T \, \gcd(\ell[i],\tilde{d})}{\tilde{d} \ell[i]}} = \frac{q[i]}{\gcd(\ell[i],\tilde{d})}. \] 
 Therefore the tableau has period dividing $q[i]/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell[i]$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q[i]/d$. But the number of content vectors of length $q[i]$ with $N_T[i]$ ones and with period dividing $q[i]/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
 \end{proof}
+
+The situation is only slightly more complicated for $\lam
 
 In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. An elementary identity \cite{Reiner.Stanton.White} allows us to work with integers rather than $q$-factorial functions. Let $\zeta$ be a primitive $n$th root of unity. Then $[n]_{\zeta^{N/d}} = 0$ if $n \equiv 0 \mod d$, and
 \begin{equation}~\label{eq:evalq}
