@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  29 NOV 2017 16:40
+||||||| merged common ancestors
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 NOV 2017 21:42
+=======
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  29 NOV 2017 11:49
+>>>>>>> 9b9ce5578ae81f48c9f42f1115b13b36ec96fa18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1672,8 +1678,16 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
+<<<<<<< HEAD
+014/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on exceptionals4.pdf (29 pages, 453051 bytes).
+||||||| merged common ancestors
+014/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on exceptionals4.pdf (29 pages, 452898 bytes).
+=======
 015/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
 Output written on exceptionals4.pdf (29 pages, 453896 bytes).
+>>>>>>> 9b9ce5578ae81f48c9f42f1115b13b36ec96fa18
 PDF statistics:
  677 PDF objects out of 1000 (max. 8388607)
  605 compressed objects within 7 object streams
