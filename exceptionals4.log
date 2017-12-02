@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 DEC 2017 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 DEC 2017 23:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1596,35 +1596,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1104--1106
-
- []
-
-[26]
-Overfull \hbox (3.82904pt too wide) detected at line 1145
+[24] [25] [26]
+Overfull \hbox (3.82904pt too wide) detected at line 1147
 \OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^U[]; q; d\OT1/cmr/m/n/12 
 ) = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/
 n/12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it
 /12 :
  []
 
-[27] (./exceptionals4.bbl (./exceptionals4.brf)
+[27]
+Overfull \hbox (37.4011pt too wide) in paragraph at lines 1163--1163
+[] 
+ []
+
+[28] (./exceptionals4.bbl (./exceptionals4.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals4.brf'.
 
- [28])
-Underfull \hbox (badness 7030) in paragraph at lines 1294--1294
+ [29])
+Underfull \hbox (badness 7030) in paragraph at lines 1335--1335
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
-[29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1294.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1294.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+[31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1335.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1335.
  (./exceptionals4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1294.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1294.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1335.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1335.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: 69DFD94F9406E6BED5A9F6B67A70080A;972.
@@ -1634,11 +1638,11 @@ Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1294.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1335.
  ) 
 Here is how much of TeX's memory you used:
- 29472 strings out of 493117
- 586989 string characters out of 6135433
+ 29474 strings out of 493117
+ 587003 string characters out of 6135433
  672857 words of memory out of 5000000
  32137 multiletter control sequences out of 15000+600000
  26744 words of font info for 108 fonts, out of 8000000 for 9000
@@ -1673,10 +1677,10 @@ dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals4.pdf (29 pages, 453891 bytes).
+Output written on exceptionals4.pdf (31 pages, 457368 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 605 compressed objects within 7 object streams
- 124 named destinations out of 1000 (max. 500000)
+ 691 PDF objects out of 1000 (max. 8388607)
+ 617 compressed objects within 7 object streams
+ 126 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

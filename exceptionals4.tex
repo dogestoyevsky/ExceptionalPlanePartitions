@@ -1103,6 +1103,8 @@ Let \[f_{M,k}(q) \coloneqq \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q},\] where $[\ell]!
 \end{theorem} 
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give a bound on the period of $\pro^M$.
 \\
+NEED LOWER TOO
+
 \begin{theorem}~\label{thm:actualpdbound}
 The period of $\pro^M$ on $\inc^M(\lambda)$ is $M$ for $\lambda = \lambda_k$ when $M > 2k$, $M$ for $\lambda = \lambda_{CM}$ when $M > 16$, and $3M$ for $\lambda = \lambda_{F}$ when $M > 27$.
 \end{theorem}
@@ -1128,7 +1130,7 @@ Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \geq \rank(\lambd
 \begin{proof}
 Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of full-content tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the full-content tableau. The table corresponding to $\lambda$ gives all possible full-content tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
 
-For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a full-content tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
+For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell[i]$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a full-content tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
 Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
 \end{proof}
 
@@ -1148,7 +1150,46 @@ Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$
 If $d$ divides $2k-1$, write $2k-1 = \ell d$, and then
 \[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
 If $d$ does not divide either $k$ or $2k-1$, then on the one hand Equation~\ref{eq:mainresulteq} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
-\end{proof} 
+\end{proof}
+The verification for $\lambda = \lambda_{CM}$ is equally straightforward. 
+\begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
+Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell[i] = N_T[i]/\tau[i]$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},q,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^q_{CM}$, and that $f^q_{CM}$ predicts $\mathcal{R}(\lambda_{CM},q,d) = 0$ for all $d$ not dividing any of these integers.
+\begin{itemize}
+\item If $d$ divides $1$, then Theorem~\ref{thm:mainresult} predicts 
+\begin{align*}
+\mathcal{R}(\lambda_{CM},q,1) &= 1 \cdot 1 \cdot \binom{q}{11} + (3 \cdot 1  + 12 \cdot 1)  \cdot \binom{q}{12} + 13 \cdot 6 \cdot \binom{q}{13} + (7\cdot 2 + 14 \cdot 12) \binom{q}{14}  \\ &\ \ \ \ \ \ + 15 \cdot 13 \cdot \binom{q}{15} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1 + 16 \cdot 4) \binom{q}{16} \\
+&= \frac{(q-10)(q-9)(q-8)(q-7)^2(q-6)^2(q-5)^2(q-4)^2(q-3)^2(q-2)(q-1)q}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
+&= f_{CM}^q(1).
+\end{align*}
+\item If $d$ divides $11$ but not $1$, our theorem predicts
+\begin{align*}
+\mathcal{R}(\lambda_{CM},q,11) &= 1 \cdot 1 \cdot \binom{q/11}{11/11} \\
+&= q/11 \\ 
+&= f_{CM}^q(\zeta^{N/11}).
+\end{align*}
+\item If $d$ divides $8$ but not $4$, our theorem predicts
+\begin{align*}
+\mathcal{R}(\lambda_{CM},q,8) &= 2 \cdot 1 \cdot \binom{q/8}{16/8} \\
+&= \frac{(q)(q-8)}{8^2} \\
+&= f_{CM}^q(\zeta^{N/8}).
+\end{align*}
+\item If $d$ divides $4$ but not $2$, our theorem predicts
+\begin{align*}
+\mathcal{R}(\lambda_{CM},q,4) &= 3 \cdot 1 \cdot \binom{q/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{q/4}{16/4}  \\
+&= \frac{(q-8)(q-4)^2q}{4^2 \cdot 8^2} \\
+&= f_{CM}^q(\zeta^{N/4}).
+\end{align*}
+\item If $d$ divides $2$ but not $4$, our theorem predicts
+\begin{align*}
+\mathcal{R}(\lambda_{CM},q,2) &= 3 \cdot 1 \cdot \binom{q/2}{12/2} + 7 \cdot 2 \cdot \binom{q/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{q/2}{16/2} \\
+&= \frac{(q-10)(q-8)(q-6)^2(q-4)^2(q-2)q}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
+&= f_{CM}^q(\zeta^{N/2}).
+\end{align*}
+\end{itemize}
+This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^q(\zeta^{N/d}) = 0$ if $d > 11$. For in this case the identity preceding Equation~\ref{eq:evalq} implies that one of the numerator terms (namely, $[q]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
+
+Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
+\end{proof}
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
 %%That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
