@@ -1124,13 +1124,19 @@ Similarly, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period
 Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
 
-An analogous period calculation shows that the conjectured cyclic sieving fails for the Freudenthal poset.
+\begin{theorem}
+Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
+\end{theorem}
+\begin{proof}
+That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is an easy calculation using Table~\ref{tab:E7} and Theorem~\ref{thm:actualpdbound}. 
 
-\begin{proof}[Proof of Theorem~\ref{thm:exceptionals}] Let $M = 22$. Since there is a full-content tableau of height $22$ and period $66$, $\pro^{22}$ has order $66$ on $\lambda_F$. 
+It remains to show that the conjecture fails for $k > 4$. Let $M = 22$. By Theorem~\ref{thm:actualpdbound}, $\pro^{22}$ has order $66$ on $\inc^{22}(\lambda_F)$. 
 
-Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableau fixed by $\pro^{22}$. For by Equation~\ref{eq:period}, the period of the content vector of such a tableau ($q/d$) would have to be $1$, so $d=22$. Since $d$ must divide the full-content height of the tableau ($N_T$), this implies that $N_T = 22$, and therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$.
+Suppose $T \in \inc^{22}(\lambda_F)$ were fixed by $\pro^{22}$.  By Equation~\ref{eq:period}, the $\Sigma^{22}$-period of $\content^{22}(T)$ is $1$. Hence $d \coloneqq \frac{M}{1} = 22$. Since $d$ must divide $N_T$, the height of $\deflate(T)$, we have also $N_T = 22$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{22}(\lambda_F)$ is fixed by $\pro^{22}$, so such a $T$ does not exist.
 
-On the other hand, $f_{\lambda_F}(\zeta)$ cannot equal $0$ when $\zeta$ is a primitive $66$th root of unity. For this would imply that the cyclotomic polynomial $\Phi_{66}$ divides the numerator of $f_{\lambda_F}$. But this numerator is the product of functions of the form $1-x^N$ where $N < 66$. Therefore $f_{\lambda_F} \neq 0$, so cyclic sieving fails in this case. 
+%Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
+
+Now let $\zeta$ be a primitive $66$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for otherwise the cyclotomic polynomial $\Phi_{66}$ would divide the numerator of $f_{\lambda_F}$, which is the product of functions of the form $1-x^N$ where $N < 66$. Thus, cyclic sieving fails in these cases. 
 \end{proof}
 For a given $\lambda$, we denote by $N_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 \-\ \\ \-\
