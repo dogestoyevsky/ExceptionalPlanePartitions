@@ -799,6 +799,9 @@ Now say $\tau = s \tau'$ for some $s \in \mathbb{N}$. For any integer $n$, $\tau
 
 \end{proof}
 \section{The equivariant bijection}\label{sec:equivariant}
+
+A more general approach to the ideas in this section was developed independently in \cite{Dilks.Striker.Vorland}. We give a complete development here, as the ideas are simpler in our more restrictive setting.
+
 \subsection{Bijection between plane partitions and increasing tableaux.} 
 
 Let $\{ \e_1, \e_2 \}$ be the standard basis for $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the projection map onto the $i$th coordinate. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1,...,d_r \in \{1, 2 \}$, and signs $n_1,...,n_r \in \{ \pm 1 \}$ such that 
@@ -1124,7 +1127,7 @@ Similarly, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period
 Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{thm:F_bad}
 Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
 \end{theorem}
 \begin{proof}
@@ -1172,9 +1175,13 @@ If $d$ divides $2k-1$, write $2k-1 = \ell d$, and then
 \[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
 If $d$ does not divide either $k$ or $2k-1$, then on the one hand Equation~\ref{eq:mainresulteq} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
 \end{proof}
+
 The verification for $\lambda = \lambda_{CM}$ is equally straightforward. 
+
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
-Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell[i] = N_T[i]/\tau[i]$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},q,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^q_{CM}$, and that $f^q_{CM}$ predicts $\mathcal{R}(\lambda_{CM},q,d) = 0$ for all $d$ not dividing any of these integers.
+Theorem~\ref{thm:F_bad} proves the $\lambda_F$ cases. Hence, it remains to consider $\lambda = \lambda_{CM}$.
+
+Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},q,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^q_{CM}$, and that $f^q_{CM}$ predicts $\mathcal{R}(\lambda_{CM},q,d) = 0$ for all $d$ not dividing any of these integers.
 \begin{itemize}
 \item If $d$ divides $1$, then Theorem~\ref{thm:mainresult} predicts 
 \begin{align*}
@@ -1182,25 +1189,25 @@ Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell[i] = N_T
 &= \frac{(q-10)(q-9)(q-8)(q-7)^2(q-6)^2(q-5)^2(q-4)^2(q-3)^2(q-2)(q-1)q}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
 &= f_{CM}^q(1).
 \end{align*}
-\item If $d$ divides $11$ but not $1$, our theorem predicts
+\item If $d$ divides $11$ but not $1$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(\lambda_{CM},q,11) &= 1 \cdot 1 \cdot \binom{q/11}{11/11} \\
 &= q/11 \\ 
 &= f_{CM}^q(\zeta^{N/11}).
 \end{align*}
-\item If $d$ divides $8$ but not $4$, our theorem predicts
+\item If $d$ divides $8$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(\lambda_{CM},q,8) &= 2 \cdot 1 \cdot \binom{q/8}{16/8} \\
 &= \frac{(q)(q-8)}{8^2} \\
 &= f_{CM}^q(\zeta^{N/8}).
 \end{align*}
-\item If $d$ divides $4$ but not $2$, our theorem predicts
+\item If $d$ divides $4$ but not $2$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(\lambda_{CM},q,4) &= 3 \cdot 1 \cdot \binom{q/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{q/4}{16/4}  \\
 &= \frac{(q-8)(q-4)^2q}{4^2 \cdot 8^2} \\
 &= f_{CM}^q(\zeta^{N/4}).
 \end{align*}
-\item If $d$ divides $2$ but not $4$, our theorem predicts
+\item If $d$ divides $2$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(\lambda_{CM},q,2) &= 3 \cdot 1 \cdot \binom{q/2}{12/2} + 7 \cdot 2 \cdot \binom{q/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{q/2}{16/2} \\
 &= \frac{(q-10)(q-8)(q-6)^2(q-4)^2(q-2)q}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
