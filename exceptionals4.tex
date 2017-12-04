@@ -1112,14 +1112,16 @@ For $M \gg 0$, the period of $\pro^M$ on $\inc^M(\lambda)$ is
 \item $M$ for $\lambda = \lambda_{CM}$, and 
 \item $3M$ for $\lambda = \lambda_{F}$. 
 \end{itemize}
-(Here $M \gg 0$ means $M > 2k$ for $\lambda = \lambda_k$, $M > 16$ for $\lambda = \lambda_{CM}$, and $M > 27$ for $\lambda = \lambda_{F}$.)
+(Here `$M \gg 0$' means $M \geq 2k +1$ for $\lambda = \lambda_k$, $M \geq 12$ for $\lambda = \lambda_{CM}$, and $M \geq 22$ for $\lambda = \lambda_{F}$.)
 \end{theorem}
 \begin{proof}
-Inspecting Tables~\ref{tab:E6} and \ref{tab:prop} shows that, for $\lambda_k$ and $\lambda_{CM}$, the period of each gapless tableaux (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $M$, the $\pro^M$-period of each tableau divides $M$.
-Whenever $M$ is at least the maximum $N_T$ in column 1 of the corresponding table (i.e.\ $2k$ for $\lambda_k$ and $16$ for $\lambda_{CM}$),  
-it is always possible to find a tableau attaining this period $M$ by taking a gapless tableau with period $2k$ or $16$ and then inflating according to a content vector with period $M$.
+Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each gapless tableaux (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $M$, the $\pro^M$-period of each tableau divides $M$.
+Whenever $M$ is at least $12$,  
+it is always possible to find a tableau attaining period $M$ by taking a gapless tableau with period $12$ and then inflating according to a content vector with period $M$.
 
-Similarly, inspecting Table~\ref{tab:E7} shows that the period of all gapless tableaux of height $N_T$ divides $3N_T$ for each $N_T$. Therefore Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. This period is attained, since any gapless tableau of height $N_T$ and period $3N_T$ may be inflated according to a content vector of period $M$ to a height $M$ tableau of period $3M$. 
+Similarly, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $N_T$ divides $3N_T$ for each $N_T$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau of height $22$ and period $66$ may be inflated according to a content vector of period $M$ to a height $M$ tableau of period $3M$. 
+
+Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
 
 An analogous period calculation shows that the conjectured cyclic sieving fails for the Freudenthal poset.
@@ -1129,8 +1131,6 @@ An analogous period calculation shows that the conjectured cyclic sieving fails 
 Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableau fixed by $\pro^{22}$. For by Equation~\ref{eq:period}, the period of the content vector of such a tableau ($q/d$) would have to be $1$, so $d=22$. Since $d$ must divide the full-content height of the tableau ($N_T$), this implies that $N_T = 22$, and therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$.
 
 On the other hand, $f_{\lambda_F}(\zeta)$ cannot equal $0$ when $\zeta$ is a primitive $66$th root of unity. For this would imply that the cyclotomic polynomial $\Phi_{66}$ divides the numerator of $f_{\lambda_F}$. But this numerator is the product of functions of the form $1-x^N$ where $N < 66$. Therefore $f_{\lambda_F} \neq 0$, so cyclic sieving fails in this case. 
-
-%However, evaluating $f_{\lambda_F}$ at a $66$th root of unity does not even yield an integer (?). 
 \end{proof}
 For a given $\lambda$, we denote by $N_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 \-\ \\ \-\
