@@ -1121,7 +1121,7 @@ Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each
 Whenever $M$ is at least $12$,  
 it is always possible to find a tableau attaining period $M$ by taking a gapless tableau $T \in \incgl^{12}(\lambda_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^M$-period $M$.
 
-Similarly, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $N_T$ divides $3N_T$ for each $N_T$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
+Similarly, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
 
 Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
@@ -1145,35 +1145,41 @@ For specified $\lambda \in \{\lambda_k, \lambda_{CM}, \lambda_F\}$, we denote by
 \-\ \\ \-\
 
 \begin{theorem}~\label{thm:mainresult}
-Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \geq \rank(\lambda)$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux of height $q$ whose period under $\pro^q$ divides $q/d$. Then 
-\begin{equation}~\label{eq:mainresulteq} 
+Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \geq \rank(\lambda)$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
+\begin{equation}\label{eq:mainresulteq} 
 \mathcal{R}(\lambda,q,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{q,N_T}(\zeta^{q/d}).
 \end{equation}
 \end{theorem}
 \begin{proof}
 NOTE ABOUT LOWER Q CASES
-Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of full-content tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the full-content tableau. The table corresponding to $\lambda$ gives all possible full-content tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
+Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of gapless tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
 
-For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell[i]$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a full-content tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
+For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
 Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
 \end{proof}
 
-In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. An elementary identity \cite{Reiner.Stanton.White} allows us to work with integers rather than $q$-factorial functions. Let $\zeta$ be a primitive $N$th root of unity. Then $[n]_{\zeta^{N/d}} = 0$ if and only if $n \equiv 0 \mod d$, and
-\begin{equation}~\label{eq:evalq}
+In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
+
+
+\begin{lemma}\label{lem:evalq}
+Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]_{\zeta^{N/d}} = 0$ if and only if $n \equiv 0 \mod d$. Moreover, if $n_1 \equiv n_2 \mod d$, then 
+\begin{equation}\label{eq:evalq}
+\pushQED{\qed}
 \lim \limits_{q \rightarrow \zeta^{N/d}} \frac{[n_1]_q}{[n_2]_q} = 
 \begin{cases}
-\frac{n_1}{n_2} &\text{if }  n_1 \equiv n_2 \equiv 0 \mod d \\
-1 &\text{if } n_1 \equiv n_2 \neq 0 \mod d
-\end{cases}
+\frac{n_1}{n_2}, &\text{if }  n_1 \equiv n_2 \equiv 0 \mod d; \\
+1, &\text{if } n_1 \equiv n_2 \neq 0 \mod d.
+\end{cases} \qedhere \popQED
 \end{equation}
+\end{lemma}
 \-\ \\ \-\ 
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix $k$, $q$, and $d$ dividing $q$. We have that \[ f_k(\zeta) = \frac{[q]!_q [q-(k-1)]_q}{[2k-1]!_q [q-(2k-1)]!_q [k]_q }.\]  If $d = 1$, then by Equation~\ref{eq:mainresulteq}, 
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $k$, $q$, and $d$ dividing $q$. We have that \[ f_k(\zeta) = \frac{[q]!_q [q-(k-1)]_q}{[2k-1]!_q [q-(2k-1)]!_q [k]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k-1}(1) + 2 \, f_{q,2k}(1) = \binom{q}{2k-1} + 2 \binom{q}{2k} = \frac{(2q-2k+1)q!}{(2k)!(q-2k+1)!} = f_k(1). \]
 Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, write $2k = \ell d$, and then 
 \[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
 If $d$ divides $2k-1$, write $2k-1 = \ell d$, and then
 \[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
-If $d$ does not divide either $k$ or $2k-1$, then on the one hand Equation~\ref{eq:mainresulteq} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
+If $d$ does not divide either $k$ or $2k-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
 \end{proof}
 
 The verification for $\lambda = \lambda_{CM}$ is equally straightforward. 
@@ -1214,7 +1220,7 @@ Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N
 &= f_{CM}^q(\zeta^{N/2}).
 \end{align*}
 \end{itemize}
-This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^q(\zeta^{N/d}) = 0$ if $d > 11$. For in this case the identity preceding Equation~\ref{eq:evalq} implies that one of the numerator terms (namely, $[q]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
+This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^q(\zeta^{N/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[q]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
