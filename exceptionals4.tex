@@ -1130,15 +1130,15 @@ Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspecti
 Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
 \end{theorem}
 \begin{proof}
-That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is an easy calculation using Table~\ref{tab:E7} and Theorem~\ref{thm:actualpdbound}. 
+That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is a straightforward calculation using Table~\ref{tab:E7}, Theorem~\ref{thm:periodthm}, and Theorem~\ref{thm:actualpdbound}. 
 
-It remains to show that the conjecture fails for $k > 4$. Let $M = 22$. By Theorem~\ref{thm:actualpdbound}, $\pro^{22}$ has order $66$ on $\inc^{22}(\lambda_F)$. 
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $M \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^{M}$ has order $3M$ on $\inc^{M}(\lambda_F)$. 
 
-Suppose $T \in \inc^{22}(\lambda_F)$ were fixed by $\pro^{22}$.  By Equation~\ref{eq:period}, the $\Sigma^{22}$-period of $\content^{22}(T)$ is $1$. Hence $d \coloneqq \frac{M}{1} = 22$. Since $d$ must divide $N_T$, the height of $\deflate(T)$, we have also $N_T = 22$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{22}(\lambda_F)$ is fixed by $\pro^{22}$, so such a $T$ does not exist.
+Suppose $T \in \inc^{M}(\lambda_F)$ were fixed by $\pro^{M}$.  By Equation~\ref{eq:period}, the $\Sigma^{M}$-period of $\content^{M}(T)$ is $1$. Since $\content^M(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = M$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{M}(\lambda_F)$ is fixed by $\pro^{M}$, for any $M \geq 22$, so such a $T$ does not exist.
 
 %Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
 
-Now let $\zeta$ be a primitive $66$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for otherwise the cyclotomic polynomial $\Phi_{66}$ would divide the numerator of $f_{\lambda_F}$, which is the product of functions of the form $1-x^N$ where $N < 66$. Thus, cyclic sieving fails in these cases. 
+Now let $\zeta$ be a primitive $(3M)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for otherwise the cyclotomic polynomial $\Phi_{3M}$ would divide the numerator of $f_{\lambda_F}$, which is the product of functions of the form $1-x^m$ where $m < 3M$. Thus, cyclic sieving fails in these cases. 
 \end{proof}
 For a given $\lambda$, we denote by $N_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 \-\ \\ \-\
