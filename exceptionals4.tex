@@ -1101,7 +1101,15 @@ $q$ & orbit size & number of orbits\\
 
  Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
 \begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
-Let \[f_{M,k}(q) \coloneqq \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q},\] where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j = 0}^{i-1} q^j$ are the standard $q$-analogues. Then, 
+Let 
+\begin{equation*}
+f_{M,k}(q) \coloneqq 
+\begin{cases}
+ \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q} & \text{if } M \geq k \\
+ 0 & \text{if } M < k 
+\end{cases}
+\end{equation*}
+where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j = 0}^{i-1} q^j$ are the standard $q$-analogues. Then, 
 \[\#\left\{ v \in \binom{[M]}{k} : (\Sigma^M)^{\circ s}(v) = v \right\} = f_{M,k}(\zeta^s),\] where $\zeta$ is any primitive $M$th root of unity. \qed
 \end{theorem} 
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^M$.
@@ -1145,17 +1153,16 @@ For specified $\lambda \in \{\lambda_k, \lambda_{CM}, \lambda_F\}$, we denote by
 \-\ \\ \-\
 
 \begin{theorem}~\label{thm:mainresult}
-Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \geq \rank(\lambda)$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
+Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \gg 0$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
 \begin{equation}\label{eq:mainresulteq} 
 \mathcal{R}(\lambda,q,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{q,N_T}(\zeta^{q/d}).
 \end{equation}
 \end{theorem}
 \begin{proof}
-NOTE ABOUT LOWER Q CASES
 Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of gapless tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
 
 For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
-Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}). 
+Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
 In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
@@ -1224,8 +1231,8 @@ This exhausts all possible $d$ dividing one of the above integers. To see that t
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
+NOTE ABOUT LOWER CASES, OR MAYBE INCORPORATE THIS INTO CALLING THE LEMMA
 
-Because the period associated to $\lambda_F$ may be greater than $q$, we need to modify Theorem~\ref{thm:mainresult} in this case. 
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
 %%That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
