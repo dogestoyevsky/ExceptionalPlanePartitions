@@ -1113,41 +1113,28 @@ where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j 
 \[\#\left\{ v \in \binom{[M]}{k} : (\Sigma^M)^{\circ s}(v) = v \right\} = f_{M,k}(\zeta^s),\] where $\zeta$ is any primitive $M$th root of unity. \qed
 \end{theorem} 
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^M$.
-%NEED LOWER TOO
+
+\-\
 
 \begin{theorem}~\label{thm:actualpdbound}
-For $M \gg 0$, the period of $\pro^M$ on $\inc^M(\lambda)$ is 
+$M \gg 0$, the period of $\pro^M$ on $\inc^M(\lambda)$ is 
 \begin{itemize}
 \item $M$ for $\lambda = \lambda_k$, 
 \item $M$ for $\lambda = \lambda_{CM}$, and 
 \item $3M$ for $\lambda = \lambda_{F}$. 
 \end{itemize}
-(Here `$M \gg 0$' means $M \geq 2k$ for $\lambda = \lambda_k$, $M \geq 12$ for $\lambda = \lambda_{CM}$, and $M \geq 22$ for $\lambda = \lambda_{F}$.)
+(Here `$M \gg 0$' means $M \geq 2k$ for $\lambda = \lambda_k$, $M \geq 12$ for $\lambda = \lambda_{CM}$, and $M \geq 22$ for $\lambda = \lambda_{F}$.) For $M \in \lbrace 18,19,20 \rbrace$, the period of $\pro^M$ on $inc^M(\lambda_F)$ is $M$.
 \end{theorem}
 \begin{proof}
 Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each gapless tableau (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $M$, the $\pro^M$-period of each tableau divides $M$.
 Whenever $M$ is at least $12$,  
 it is always possible to find a tableau attaining period $M$ by taking a gapless tableau $T \in \incgl^{12}(\lambda_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^M$-period $M$.
 
-Similarly, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
+The argument is identical for $\lambda = \lambda_F$ when $M \in \lbrace 18,19,20 \rbrace$, but when $M \geq 21$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
 
 Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
 
-\begin{theorem}\label{thm:F_bad}
-Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
-\end{theorem}
-\begin{proof}
-That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is a straightforward calculation using Table~\ref{tab:E7}, Theorem~\ref{thm:periodthm}, and Theorem~\ref{thm:actualpdbound}. SHOULD SAY INSTEAD THAT IT'S MODELLED ON THE COMPUTATIONS BELOW, OR PROVE A VERSION FOR.  
-
-It remains to show that the conjecture fails for $k \geq 5$. Hence, let $M \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^{M}$ has order $3M$ on $\inc^{M}(\lambda_F)$. 
-
-Suppose $T \in \inc^{M}(\lambda_F)$ were fixed by $\pro^{M}$.  By Equation~\ref{eq:period}, the $\Sigma^{M}$-period of $\content^{M}(T)$ is $1$. Since $\content^M(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = M$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{M}(\lambda_F)$ is fixed by $\pro^{M}$, for any $M \geq 22$, so such a $T$ does not exist.
-
-%Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
-
-Now let $\zeta$ be a primitive $(3M)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3M}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-x^m$ where $m < 3M$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
-\end{proof}
 
 For specified $\lambda \in \{\lambda_k, \lambda_{CM}, \lambda_F\}$, we denote by $N_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 \-\ \\ \-\
@@ -1247,6 +1234,20 @@ This exhausts all possible $d$ dividing one of the above integers. To see that t
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
 
+\begin{theorem}\label{thm:F_bad}
+Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
+\end{theorem}
+\begin{proof}
+That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is a calculation using Table~\ref{tab:E7}, Theorem~\ref{thm:periodthm}, and Theorem~\ref{thm:actualpdbound}, as demonstrated in the cases $\lambda = \lambda_k$ and $\lambda = \lambda_{CM}$.  
+
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $M \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^{M}$ has order $3M$ on $\inc^{M}(\lambda_F)$. 
+
+Suppose $T \in \inc^{M}(\lambda_F)$ were fixed by $\pro^{M}$.  By Equation~\ref{eq:period}, the $\Sigma^{M}$-period of $\content^{M}(T)$ is $1$. Since $\content^M(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = M$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{M}(\lambda_F)$ is fixed by $\pro^{M}$, for any $M \geq 22$, so such a $T$ does not exist.
+
+%Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
+
+Now let $\zeta$ be a primitive $(3M)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3M}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-x^m$ where $m < 3M$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+\end{proof}
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
 %%That is, we must show that the number of tableaux fixed by $\pro^d$ is equal to $f_{\lambda}^m(\zeta^d)$ for $\zeta$ an $M$th root of unity. Now
