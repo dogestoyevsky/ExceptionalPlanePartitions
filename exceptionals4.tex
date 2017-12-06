@@ -1165,7 +1165,7 @@ For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integ
 Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
-In the case $\lambda = \lambda_k$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
+In the cases $\lambda = \lambda_k$ and $\lambda = \lambda_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
 
 
 \begin{lemma}\label{lem:evalq}
@@ -1179,13 +1179,28 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{cases} \qedhere \popQED
 \end{equation}
 \end{lemma}
-\-\ \\ \-\ 
+
+For example, we evaluate $f_k(\zeta^{q/d})$ for some $d$ dividing both $q$ and $k$. By definition,
+\[ f_k(\zeta^{q/d}) = \frac{[q-(2k-2)]_{\zeta^{q/d}}[q-(2k-2)+1]_{\zeta^{q/d}}...[q-(k-1)]_{\zeta^{q/d}}^2...[q-1]_{\zeta^{q/d}}[q]_{\zeta^{q/d}}}{[1]_{\zeta^{q/d}}[2]_{\zeta^{q/d}}...[k]_{\zeta^{q/d}}^2...[2k-2]_{\zeta^{q/d}}[2k-1]_{\zeta^{q/d}}}.\]
+Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that each term in the numerator has a corresponding term in the denominator. All ratios evaluate to $1$ except those divisible by $d$. Collecting these, we have
+\[ f_k(\zeta^{q/d}) = \frac{(q-(2k-d)) ...  (q)}{(d) ...  (2k-d) k} = \frac{2k}{k}  \binom{q/d}{2k/d} = 2 \binom{q/d}{2k/d}\]    
+as desired. 
+
+An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $M, k \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $M$th root of unity and $d$ divides $\gcd(M,k)$, then
+\begin{equation}~\label{eq:evalstraightshape}
+f_{M,k}(\zeta^{M/d}) = \binom{M/d}{k/d} = \frac{(M-(k-d))(M-(k-2d)) ...  (M-d)(M)}{(d)  (2d)  ...  (k-d) (k)}. 
+\end{equation}
+This equation holds even when $k > M$ because in this case, one of the numerator terms will be $0$. 
+
+
+
 \begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $k$, $q$, and $d$ dividing $q$. We have that \[ f_k(\zeta) = \frac{[q]!_q [q-(k-1)]_q}{[2k-1]!_q [q-(2k-1)]!_q [k]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k-1}(1) + 2 \, f_{q,2k}(1) = \binom{q}{2k-1} + 2 \binom{q}{2k} = \frac{(2q-2k+1)q!}{(2k)!(q-2k+1)!} = f_k(1). \]
-Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, write $2k = \ell d$, and then 
-\[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
-If $d$ divides $2k-1$, write $2k-1 = \ell d$, and then
-\[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{\ell} = f_k(\zeta^{q/d}).\]
+Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, then by Equation~\ref{eq:evalstraightshape},
+\[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{2k/d} = f_k(\zeta^{q/d}).\]
+
+If $d$ divides $2k-1$,  then
+\[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{(2k-1)/d} = f_k(\zeta^{q/d}).\]
 If $d$ does not divide either $k$ or $2k-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
 \end{proof}
 
@@ -1231,7 +1246,6 @@ This exhausts all possible $d$ dividing one of the above integers. To see that t
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
-NOTE ABOUT LOWER CASES, OR MAYBE INCORPORATE THIS INTO CALLING THE LEMMA
 
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
