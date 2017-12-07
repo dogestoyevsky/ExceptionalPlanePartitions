@@ -1140,7 +1140,7 @@ For specified $\lambda \in \{\lambda_p, \lambda_{CM}, \lambda_F\}$, we denote by
 \-\ \\ \-\
 
 \begin{theorem}~\label{thm:mainresult}
-Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \gg 0$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
+Fix $\lambda \in \lbrace  \lambda_p, \lambda_{CM} \rbrace$, $M \gg 0$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
 \begin{equation}\label{eq:mainresulteq} 
 \mathcal{R}(\lambda,q,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{q,N_T}(\zeta^{q/d}).
 \end{equation}
@@ -1152,7 +1152,7 @@ For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integ
 Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
-In the cases $\lambda = \lambda_k$ and $\lambda = \lambda_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
+In the cases $\lambda = \lambda_p$ and $\lambda = \lambda_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
 
 
 \begin{lemma}\label{lem:evalq}
@@ -1181,14 +1181,14 @@ This equation holds even when $k > M$ because in this case, one of the numerator
 
 
 
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $k$, $q$, and $d$ dividing $q$. We have that \[ f_k(\zeta) = \frac{[q]!_q [q-(k-1)]_q}{[2k-1]!_q [q-(2k-1)]!_q [k]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
-\[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k-1}(1) + 2 \, f_{q,2k}(1) = \binom{q}{2k-1} + 2 \binom{q}{2k} = \frac{(2q-2k+1)q!}{(2k)!(q-2k+1)!} = f_k(1). \]
-Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, then by Equation~\ref{eq:evalstraightshape},
-\[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{2k/d} = f_k(\zeta^{q/d}).\]
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $q$, and suppose $d \divides q$. We have that \[ f_p(\zeta) = \frac{[q]!_q [q-(p-1)]_q}{[2p-1]!_q [q-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\[ \mathcal{R}(\lambda_p,q,d) = f_{q,2p-1}(1) + 2 \, f_{q,2p}(1) = \binom{q}{2p-1} + 2 \binom{q}{2p} = \frac{(2q-2p+1)q!}{(2p)!(q-2p+1)!} = f_p(1). \]
+Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
+\[ \mathcal{R}(\lambda_p,q,d) = 2 \, f_{q,2p}(\zeta^{q/d}) = 2\binom{q/d}{2p/d} = f_p(\zeta^{q/d}).\]
 
-If $d$ divides $2k-1$,  then
-\[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{(2k-1)/d} = f_k(\zeta^{q/d}).\]
-If $d$ does not divide either $k$ or $2k-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
+If $d$ divides $2p-1$,  then
+\[ \mathcal{R}(\lambda_p,q,d) =  f_{q,2p-1}(\zeta^{q/d}) = \binom{q/d}{(2p-1)/d} = f_p(\zeta^{q/d}).\]
+If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_p(\zeta^{q/d})$ and $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_p(\zeta^{q/d}) = 0$. 
 \end{proof}
 
 The verification for $\lambda = \lambda_{CM}$ is equally straightforward. 
