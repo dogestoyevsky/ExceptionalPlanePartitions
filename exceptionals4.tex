@@ -512,23 +512,23 @@ Note that if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \bin
 \end{theorem}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
-A two-sided inverse for $\compress^q$ is given as follows. Let $[j]$ denote the set $\{1, 2, \dots, j\}$.
-For a binary vector $v \in \{0,1\}^{q}$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^q_v : [N_v] \to [q]\] by
-\[ \inflate^q_v(k) = \min_{n \in [q]} \left( \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \right).\] (We use curly braces $``\{\}"$ throughout to denote vector components.) An integer $j \in [q]$ is in the range of $\inflate^q_v$ if and only if $v\lbrace j \rbrace = 1$. From this fact and the definitions, it follows that $\inflate^q_{\content^q(T)} \circ \deflate^q(T) = T$. Now define the {\bf tableau inflation} map 
+A two-sided inverse for $\compress^m$ is given as follows. Let $[j]$ denote the set $\{1, 2, \dots, j\}$.
+For a binary vector $v \in \{0,1\}^m$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^m_v : [N_v] \to [m]\] by
+\[ \inflate^m_v(k) = \min_{n \in [m]} \left( \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \right).\] (We use curly braces $``\{\}"$ throughout to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. From this fact and the definitions, it follows that $\inflate^m_{\content^m(T)} \circ \deflate^m(T) = T$. Now define the {\bf tableau inflation} map 
 \[
-\tinflate^q : \coprod_{0 \leq k \leq q} \left( \incgl^k(\lambda) \times \binom{[q]}{k} \right) \to \inc^q(\lambda)
+\tinflate^m : \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right) \to \inc^m(\lambda)
 \] 
 by 
 \[
-\tinflate^q(S,v) = \inflate^q_v \circ S.
+\tinflate^m(S,v) = \inflate^m_v \circ S.
 \]
-Say $(S,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$. Since $S$ is surjective and $\tinflate^q(S,v)$ maps onto the indices of nonzero components in $v$, $\content^q \circ \tinflate^q(S,v) = v$.  Also,
+Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective and $\tinflate^m(S,v)$ maps onto the indices of nonzero components in $v$, $\content^m \circ \tinflate^m(S,v) = v$.  Also,
 \begin{align*}
- (\deflate^q(\inflate^q_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^q_v \circ S)): h \leq (\inflate^q_v \circ S)(\x) \} \\  
+ (\deflate^m(\inflate^m_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^m_v \circ S)): h \leq (\inflate^m_v \circ S)(\x) \} \\  
  &= \# \{ h: v\{h\} \neq 0 \text{ and } \sum_{\ell = 1}^h v\{\ell\} \leq S(\x)  \} \\
  &= S(\x).
 \end{align*}
-Therefore, $\tinflate^q$ is a two-sided inverse for $\compress^q$.
+Therefore, $\tinflate^m$ is a two-sided inverse for $\compress^m$.
 \end{proof} 
 \begin{example}\label{ex:reinflate}
 Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5] \to [7]$ is given by 
