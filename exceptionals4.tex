@@ -543,12 +543,12 @@ Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v
 \end{example}
 
 \subsection{Interaction between $K$-promotion and deflation}
-By determining the relation between the maps $\compress^q$ and $\pro^q$, we will show that the behavior of $\pro^q$ is controlled by its action on the subset of gapless increasing tableaux. Much of the power of this observation comes from the fact that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$, and that therefore the action of $\pro^q$ on the set of all increasing tableaux of shape $\lambda$ is governed by a finite amount of data.
+By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that the behavior of $\pro^m$ is controlled by its action on the subset of gapless increasing tableaux. Much of the power of this observation comes from the fact that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$, and that therefore the action of $\pro^m$ on the set of all increasing tableaux of shape $\lambda$ is governed by a finite amount of data.
 
 
-To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro^q$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^q(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow q+1}$ replace each instance of $\bullet$ with $q+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion on $\inc^q(\lambda)$: 
+To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
 \begin{equation}\label{eq:kprodef2}
-\pro^q = \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
+\pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
 \end{equation}
  (This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}.) An example of computing $K$-promotion via this alternative but equivalent process is shown in Figure~\ref{fig:promotion_via_swaps}.
  
@@ -572,8 +572,8 @@ To establish this relation, we first need to introduce notation for the steps in
 \caption{The calculation of the $K$-promotion $\pro^{5}(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
  \end{figure}
 
-Using this characterization of $\pro^q$, we give names to the intermediate products of this process.
-For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, q, \bullet \rbrace$ by 
+Using this characterization of $\pro^m$, we give names to the intermediate products of this process.
+For $T \in \inc^m(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
 \[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $N > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
 \[
 \lambda \left( T^{(N)} \right) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})
@@ -587,10 +587,10 @@ For $T \in \inc^q(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow
   The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. The following simple, but important, result shows why this condition on content is necessary.
 
 \begin{lemma}\label{lem:no_ones}
-If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\pro^q(T) = \decr(T)$. 
+If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\pro^m(T) = \decr(T)$. 
 \end{lemma} 
 \begin{proof}
-If $\compress^q(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is not $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
+If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is not $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
 \end{proof}
 
 \begin{figure}[h]
@@ -620,103 +620,103 @@ shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^q(\lambda)$ with $\content^q(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^q_{\content^q(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$ and $1 \leq k \leq N_T$, we have
+Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^m_{\content^m(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$ and $1 \leq k \leq N_T$, we have
  \begin{equation}\label{eq:gappy_promotion2}
-\deflate^q(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet.
+\deflate^m(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet.
 \end{equation}
 \end{lemma}
-\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^q(\lambda)$  with $\content^q(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^q(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^q(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^q(T)(\x) = 1$. But since $\content^q(T) \lbrace 1 \rbrace = 1$, $\deflate^q(T)(\x) = 1$ if and only if $T(\x) = 1$. 
+\begin{proof} We proceed by induction on $k$. Fix $T \in \inc^m(\lambda)$  with $\content^m(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^m(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^m(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^m(T)(\x) = 1$. But since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all tableaux $T$ in the case $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent by Theorem~\ref{thm:compressbijective} to the statement $\deflate^q(T)(\x) = t$, implying that $\deflate^q(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^q(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
+Now, say the lemma holds for all tableaux $T$ in the case $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent by Theorem~\ref{thm:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
 
-Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This scenario is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^q(T)(\x') = \deflate^q(T)^{(t-1)}(\x') = t$. Since $\deflate^q(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^q(T)^{(t)}(\x) = \bullet$ and $\deflate^q(T)^{(t-1)}(\x) = \bullet$, and we are done.
+Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This scenario is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^m(T)(\x') = \deflate^m(T)^{(t-1)}(\x') = t$. Since $\deflate^m(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) = \bullet$, and we are done.
 \end{proof}
 
 \begin{lemma} \label{lem:gappy_promotion}
 Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq k \leq N_T$, 
 \begin{equation}\label{eq:gappy_promotion}
- \tinflate^q \Big( \deflate^q(T)_k, \content^q(T) \Big) = T_{i_k}. 
+ \tinflate^m \Big( \deflate^m(T)_k, \content^m(T) \Big) = T_{i_k}. 
 \end{equation}
 That is, the two sides are identical functions on the same domain. 
 \end{lemma}
 
-\begin{proof}  We proceed again by induction on $k$. The base case $k=1$ is trivial, since if $T \in \inc^q(\lambda)$ is any tableau, then $\lambda \left( \deflate^q(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
+\begin{proof}  We proceed again by induction on $k$. The base case $k=1$ is trivial, since if $T \in \inc^m(\lambda)$ is any tableau, then $\lambda \left( \deflate^m(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
 %To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
 
-Now, assume that the lemma holds for all increasing tableaux $T$ in the case $k < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^q(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^q(T)^{(t-1)} \right)$, then 
-$[\deflate^q(T)^{(t-1)}](\x) \leq t-1$ and hence
+Now, assume that the lemma holds for all increasing tableaux $T$ in the case $k < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^m(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^m(T)^{(t-1)} \right)$, then 
+$[\deflate^m(T)^{(t-1)}](\x) \leq t-1$ and hence
 \[
-\left[ \swap_{t}(\deflate^q(T)^{(t-1)})\right](\x) = \deflate^q(T)^{(t-1)}(\x).
+\left[ \swap_{t}(\deflate^m(T)^{(t-1)})\right](\x) = \deflate^m(T)^{(t-1)}(\x).
 \]
  If instead
- \[\x \in \lambda\left(\deflate^q(T)^{(t)}\right) \setminus \lambda\left(\deflate^q(T)^{(t-1)}\right),\]
-  then either $[\deflate^q(T)^{(t-1)}](\x) = \bullet$ or $[\deflate^q(T)^{(t-1)}](\x) = t$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $[\deflate^q(T)^{(t-1)}](\x') = t$. In the latter case, we must have that for all boxes $\x'$ adjacent to $\x$, $[\deflate^q(T)^{(t-1)}](\x') \neq \bullet$. 
+ \[\x \in \lambda\left(\deflate^m(T)^{(t)}\right) \setminus \lambda\left(\deflate^m(T)^{(t-1)}\right),\]
+  then either $[\deflate^m(T)^{(t-1)}](\x) = \bullet$ or $[\deflate^m(T)^{(t-1)}](\x) = t$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $[\deflate^m(T)^{(t-1)}](\x') = t$. In the latter case, we must have that for all boxes $\x'$ adjacent to $\x$, $[\deflate^m(T)^{(t-1)}](\x') \neq \bullet$. 
 
-Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( T^{(i_t)} \right)$.   If $\x \in \lambda \left(T^{(i_{t-1})} \right)$, then $\x \in \lambda(\deflate^q(T)^{(t-1)}) \subseteq \lambda(\deflate^q(T)^{(t)})$ by the inductive hypothesis. Further, this implies that $T^{(i_{t-1})}(\x) \leq i_{t-1}$,  and so we have
+Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( T^{(i_t)} \right)$.   If $\x \in \lambda \left(T^{(i_{t-1})} \right)$, then $\x \in \lambda(\deflate^m(T)^{(t-1)}) \subseteq \lambda(\deflate^m(T)^{(t)})$ by the inductive hypothesis. Further, this implies that $T^{(i_{t-1})}(\x) \leq i_{t-1}$,  and so we have
 \[
 \left[ \swap_{\ell+1} \left(T^{(\ell)} \right) \right](\x) = T^{(\ell)}(\x)
 \]
  for all $i_{t-1} \leq \ell$. Therefore by the previous paragraph and the inductive hypothesis,
- \[ T^{(i_t)}(\x) = T^{(i_{t-1})}(\x) = \inflate^q_{\content^q(T)} \circ \deflate^q(T)^{(t-1)}(\x) =  \inflate^q_{\content^q(T)} \circ \deflate^q(T)^{(t)}(\x). \] This shows that Equation~(\ref{eq:gappy_promotion}) holds at $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T^{(i_{t})}(\x) \leq i_t$. Thus, we must have that $T^{(i_{t})}(\x) = i_{t}$, since the $\swap$ operators do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^q(T)^{(t-1)}(\x') = \deflate^q(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $\content^q(T) \lbrace 1 \rbrace = 1$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^q(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. Therefore each of these conditions is equivalent to the corresponding condition from the previous paragraph. 
+ \[ T^{(i_t)}(\x) = T^{(i_{t-1})}(\x) = \inflate^m_{\content^m(T)} \circ \deflate^m(T)^{(t-1)}(\x) =  \inflate^m_{\content^m(T)} \circ \deflate^m(T)^{(t)}(\x). \] This shows that Equation~(\ref{eq:gappy_promotion}) holds at $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T^{(i_{t})}(\x) \leq i_t$. Thus, we must have that $T^{(i_{t})}(\x) = i_{t}$, since the $\swap$ operators do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^m(T)^{(t-1)}(\x') = \deflate^m(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $\content^m(T) \lbrace 1 \rbrace = 1$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^m(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. Therefore each of these conditions is equivalent to the corresponding condition from the previous paragraph. 
  
-Putting these facts together, we have shown that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^q(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^q(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^q_{\content^q(T)}(h)$. 
+Putting these facts together, we have shown that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^m(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^m(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^m_{\content^m(T)}(h)$. 
 \end{proof}
 
 \begin{remark}
-As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ is, in fact, in $\inc^q \left(\lambda \left( T^{(k)} \right) \right)$. However, we do not need this observation here.
+As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ is, in fact, in $\inc^m \left(\lambda \left( T^{(k)} \right) \right)$. However, we do not need this observation here.
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
 Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then
 \begin{equation}\label{eq:deflation_commutation}
-\deflate^q \circ \pro^q(T) = \pro^{N_T} \circ \deflate^q(T).
+\deflate^m \circ \pro^m(T) = \pro^{N_T} \circ \deflate^m(T).
 \end{equation}
 
 \end{lemma}
 \begin{proof}
 By Equation~(\ref{eq:kprodef2}), it is sufficient to show that
 \begin{align*}
-\deflate^q \circ &\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
- & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^q (T). 
+\deflate^m \circ &\decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1\circ \rep_{1 \rightarrow \bullet} (T) = \\
+ & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m (T). 
 \end{align*}
-Say $\x \not \in \lambda(T^{(q)})$; that is,  $T^{(q)}(\x) = \bullet$.  Then,
+Say $\x \not \in \lambda(T^{(m)})$; that is,  $T^{(m)}(\x) = \bullet$.  Then,
 \[
-[\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = q.
+[\decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)](\x) = m.
 \]
 Now by \cite[Lemma~2.1]{DPS}, the content vector of  
 \[
-\decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T) = \pro^q(T)
+\decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T) = \pro^m(T)
 \]
- is a cyclic rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro^q(T)$, namely $N_T$, and, since $q$ is included, it must be the greatest such label, so 
+ is a cyclic rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro^m(T)$, namely $N_T$, and, since $m$ is included, it must be the greatest such label, so 
  \[
- [\deflate^q \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = N_T.
+ [\deflate^m \circ \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)](\x) = N_T.
  \]
-  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate^q(T)^{(N_T)})$, we have
+  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate^m(T)^{(N_T)})$, we have
   \[
   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
   \] 
 
-Now say $\x \in \lambda(T^{(q)})$. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
-\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
+Now say $\x \in \lambda(T^{(m)})$. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
+\[ (\swap_m \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_m = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
 Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
-\[ (\swap_q \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_q = \inflate^q_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate^q(T)_{N_T}). \]
+\[ (\swap_m \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_m = \inflate^m_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)_{N_T}). \]
 
-Now, since $\x \in \lambda(T^{(q)})$, we have that $T^{(q)}(\x) = \ell$ for $\ell \in \{2,3,\dots,q\}$. This implies that $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
+Now, since $\x \in \lambda(T^{(m)})$, we have that $T^{(m)}(\x) = \ell$ for $\ell \in \{2,3,\dots,m\}$. This implies that $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
 \[
-\decr \circ \rep_{\bullet \to q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)(\x) = i_k-1.
+\decr \circ \rep_{\bullet \to m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)(\x) = i_k-1.
 \]
 Because the content vector shifts cyclically, this implies that 
  \[
- [\deflate^q \circ \decr \circ \rep_{\bullet \rightarrow q+1} \circ \swap_q \circ \cdots \circ \swap_1 (T)](\x) = k-1.
+ [\deflate^m \circ \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)](\x) = k-1.
  \]
   On the other hand, 
   \[
-  [\swap_q \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = k,
+  [\swap_m \circ \cdots \circ \swap_1 \circ \deflate^m(T)](\x) = k,
   \]
    so 
    \[
-   [ \pushQED{\qed} \decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate(T)](\x) = k-1. \qedhere \popQED \] \let\qed\relax
+   [ \pushQED{\qed} \decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate^m(T)](\x) = k-1. \qedhere \popQED \] \let\qed\relax
 \end{proof}
 
 \subsection{Computation of period}\label{sec:period} We use the results of the previous subsection to relate the period of $T \in \inc^q(\lambda)$ under $\pro^q$ to data concerning $\deflate^q(T)$. Let 
