@@ -991,14 +991,14 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
-In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. The remaining ingredients that we need to add are essentially calculations. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{m})$ equals the multiset of $\pro^{\rank(\lambda)+ m+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ m+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $\lambda_{p}$. Note that for each of these shapes $\lambda$, we have $\lambda = \lambda^\star$.
+In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. The remaining ingredients that we need to add are essentially calculations. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{k})$ equals the multiset of $\pro^{\rank(\lambda)+ k+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ k+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $\lambda_p$. Note that for each of these shapes $\lambda$, we have $\lambda = \lambda^\star$.
 
-By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $\lambda_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $\lambda_F$. For each such tableau $T \in \incgl^q(\lambda_{CM})$ or $\incgl^q(\lambda_F)$, we then determined the size of its orbit under $\pro^q$ by direct calculation. These data are given in Table~\ref{tab:E6} for $\lambda_{CM}$ and in Table \ref{tab:E7} for $\lambda_F$. 
+By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $\lambda_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $\lambda_F$. For each such tableau $T \in \incgl^m(\lambda_{CM})$ or $\incgl^m(\lambda_F)$, we then determined the size of its orbit under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $\lambda_{CM}$ and in Table \ref{tab:E7} for $\lambda_F$. 
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$q$ & orbit size & number of orbits\\
+$m$ & orbit size & number of orbits\\
   \hline
   11 & 1 & 1\\
   \hline
@@ -1018,14 +1018,14 @@ $q$ & orbit size & number of orbits\\
   & 16 & 4\\
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_{CM})$ for each $q$.}
+\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(\lambda_{CM})$ for each $m$.}
 \label{tab:E6}
 \end{table}
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$q$ & orbit size & number of orbits\\
+$m$ & orbit size & number of orbits\\
   \hline
   17 & 1 & 1\\
   \hline
@@ -1064,7 +1064,7 @@ $q$ & orbit size & number of orbits\\
   & 27 & 484 \\
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_F)$ for each $q$.}
+\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(\lambda_F)$ for each $m$.}
 \label{tab:E7}
 \end{table}
 
@@ -1087,49 +1087,47 @@ It is essentially trivial to observe that, for any $p$, $\incgl(\lambda_p)$ cons
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$q$ & orbit size & number of orbits\\
+$m$ & orbit size & number of orbits\\
   \hline
   $2p-1$ & 1 & 1\\
   \hline
   $2p$ & 2 & 1\\ 
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_p)$ for each $q$.}
+\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(\lambda_p)$ for each $m$.}
 \label{tab:prop}
 \end{table}
 
- Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
+ Additionally, we need the fact that the number of elements of $\binom{[i]}{j}$ of any fixed $\Sigma^i$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
 \begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
 Let 
 \begin{equation*}
-f_{M,k}(q) \coloneqq 
+f_{i,j}(q) \coloneqq 
 \begin{cases}
- \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q} & \text{if } M \geq k \\
- 0 & \text{if } M < k 
+ \frac{[i]!_q}{[j]!_q\cdot [i-j]!_q} & \text{if } i \geq j \\
+ 0 & \text{if } i < j 
 \end{cases}
 \end{equation*}
-where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j = 0}^{i-1} q^j$ are the standard $q$-analogues. Then, 
-\[\#\left\{ v \in \binom{[M]}{k} : (\Sigma^M)^{\circ s}(v) = v \right\} = f_{M,k}(\zeta^s),\] where $\zeta$ is any primitive $M$th root of unity. \qed
+where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b = 0}^{a-1} q^b$ are the standard $q$-analogues. Then, 
+\[\#\left\{ v \in \binom{[i]}{j} : (\Sigma^i)^{\circ s}(v) = v \right\} = f_{i,j}(\zeta^s),\] where $\zeta$ is any primitive $i$th root of unity. \qed
 \end{theorem} 
-We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_p \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^M$.
-
-\-\
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on any set $\inc^m(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_p \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
 
 \begin{theorem}~\label{thm:actualpdbound}
-$M \gg 0$, the period of $\pro^M$ on $\inc^M(\lambda)$ is 
+For $m \gg 0$, the period of $\pro^m$ on $\inc^m(\lambda)$ is 
 \begin{itemize}
-\item $M$ for $\lambda = \lambda_p$, 
-\item $M$ for $\lambda = \lambda_{CM}$, and 
-\item $3M$ for $\lambda = \lambda_{F}$. 
+\item $m$ for $\lambda = \lambda_p$, 
+\item $m$ for $\lambda = \lambda_{CM}$, and 
+\item $3m$ for $\lambda = \lambda_F$. 
 \end{itemize}
-(Here `$M \gg 0$' means $M \geq 2p$ for $\lambda = \lambda_p$, $M \geq 12$ for $\lambda = \lambda_{CM}$, and $M \geq 22$ for $\lambda = \lambda_{F}$.) For $M \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^M$ on $\inc^M(\lambda_F)$ is $M$.
+(Here `$m \gg 0$' means $m \geq 2p$ for $\lambda = \lambda_p$, $m \geq 12$ for $\lambda = \lambda_{CM}$, and $m \geq 22$ for $\lambda = \lambda_F$.) For $m \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^m$ on $\inc^m(\lambda_F)$ is $m$.
 \end{theorem}
 \begin{proof}
-Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each gapless tableau (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $M$, the $\pro^M$-period of each tableau divides $M$.
-Whenever $M$ is at least $12$,  
-it is always possible to find a tableau attaining period $M$ by taking a gapless tableau $T \in \incgl^{12}(\lambda_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^M$-period $M$.
+Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each gapless tableau (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$.
+Whenever $m$ is at least $12$,  
+it is always possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(\lambda_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$.
 
-The argument is identical for $\lambda = \lambda_F$ when $M \in \lbrace 18,19,20, 21 \rbrace$, but when $M \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
+The argument is completely analogous for $\lambda = \lambda_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each tableau divides $3m$. Whenever $m$ is at least $22$, the period $3m$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^m$-period $m$ to a height $m$ tableau of period $3m$. 
 
 Finally, the analogous calculation for $\lambda = \lambda_p$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
