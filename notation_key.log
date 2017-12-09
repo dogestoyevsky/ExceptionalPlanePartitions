@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 DEC 2017 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 DEC 2017 14:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**exceptionals4.tex
-(./exceptionals4.tex
+**notation_key.tex
+(./notation_key.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsart.cls
@@ -1332,8 +1332,8 @@ File: xkeyval.tex 2014/05/09 v2.6d key=value parser (HA)
 ))
 \c@@todonotes@numberoftodonotes=\count186
 )
-(./exceptionals4.aux)
-\openout1 = `exceptionals4.aux'.
+(./notation_key.aux)
+\openout1 = `notation_key.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
 LaTeX Font Info:    ... okay on input line 138.
@@ -1411,9 +1411,9 @@ LaTeX Info: Redefining \ref on input line 138.
 LaTeX Info: Redefining \pageref on input line 138.
 LaTeX Info: Redefining \nameref on input line 138.
 
-(./exceptionals4.out) (./exceptionals4.out)
+(./notation_key.out) (./notation_key.out)
 \@outlinefile=\write4
-\openout4 = `exceptionals4.out'.
+\openout4 = `notation_key.out'.
 
 
 ABD: EveryShipout initializing macros
@@ -1433,250 +1433,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (11.4829pt too wide) in paragraph at lines 209--209
- [][] 
- []
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (1.49785pt too wide) in paragraph at lines 227--228
-[]\OT1/cmr/m/n/12 Our ap-proach to prov-ing The-o-rem []1.2[] is to ex-tend the
- ideas of K. Dilks, O. Pechenik,
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 233.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 233.
-
-Overfull \hbox (3.9867pt too wide) in paragraph at lines 235--236
-[]\OT1/cmr/m/n/12 Often in-stances of the cyclic siev-ing phe-nom-e-non can be 
-proven us-ing representation-
- []
-
-[2] [3]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [4]
-Overfull \hbox (28.07857pt too wide) in paragraph at lines 359--359
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 364.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Psi' on input line 364.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 364.
-
-[5] [6]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Overfull \hbox (4.64925pt too wide) in paragraph at lines 404--405
-[]\OT1/cmr/m/n/12 The first $\OML/cmm/m/it/12 K$\OT1/cmr/m/n/12 -theoretic Litt
-lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
- []
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 410.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [7]
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8] [9] [10]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 546.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 546.
-
-[11] [12] [13] [14] [15] [16]
-Overfull \hbox (100.32808pt too wide) in paragraph at lines 762--762
-[] 
- []
-
-
-Overfull \hbox (15.58842pt too wide) in paragraph at lines 769--769
-[] 
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
-
- []
-
-
-Overfull \hbox (5.51155pt too wide) in paragraph at lines 796--798
-\OT1/cmr/m/n/12 Now say $\OML/cmm/m/it/12 ^^\ \OT1/cmr/m/n/12 = \OML/cmm/m/it/1
-2 s^^\[]$ \OT1/cmr/m/n/12 for some $\OML/cmm/m/it/12 s \OMS/cmsy/m/n/12 2 \U/ms
-b/m/n/12 N$\OT1/cmr/m/n/12 . For any in-te-ger $\OML/cmm/m/it/12 n$\OT1/cmr/m/n
-/12 , $\OML/cmm/m/it/12 ^^\[]=[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^\[]; n\OT1/
-cmr/m/n/12 )$ di-vides $\OML/cmm/m/it/12 s^^\[]=[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
-t/12 s^^\[]; n\OT1/cmr/m/n/12 )$.
- []
-
-[18] [19]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 888.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Omega' on input line 888.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 888.
-
-[20]
-Overfull \hbox (1.8469pt too wide) in paragraph at lines 903--903
-[]\OT1/cmr/m/n/12 By as-sump-tion, $(\OML/cmm/m/it/12 i[]; j[]\OT1/cmr/m/n/12 )
- \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i; j\OT1/cmr/m/n/12 )$.
- Hence, by con-di-tion $(\OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )$, $[]((\OML/cmm/m/
-it/12 i; j\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; Q\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/
-12 ^^T []\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 i[]; j[]\OT1/cmr/m/n/12 )\OML/cmm/m
-/it/12 ; Q\OT1/cmr/m/n/12 )$.
- []
-
-[21] [22]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24] [25] [26] [27]
-Overfull \hbox (3.82904pt too wide) detected at line 1185
-\OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^U[]; q; d\OT1/cmr/m/n/12 
-) = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/
-n/12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it
-/12 :
- []
-
-
-Overfull \hbox (37.4011pt too wide) in paragraph at lines 1206--1206
-[] 
- []
-
-[28] [29] (./exceptionals4.bbl (./exceptionals4.brf)
-\tf@brf=\write5
-\openout5 = `exceptionals4.brf'.
-
- [30])
-Underfull \hbox (badness 7030) in paragraph at lines 1393--1393
-[]\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
--sity of Cal-i-for-nia, Berke-ley,
- []
-
-[31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1393.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1393.
- (./exceptionals4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1393.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1393.
-
-Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
-(rerunfilecheck)             Checksum: 69DFD94F9406E6BED5A9F6B67A70080A;972.
-Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
-(rerunfilecheck)             Checksum: F29B74FC7E370F651A16B7AE54299E8A;2451.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1393.
+(./notation_key.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
+Package rerunfilecheck Info: File `notation_key.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 29485 strings out of 493117
- 587205 string characters out of 6135433
- 672989 words of memory out of 5000000
- 32144 multiletter control sequences out of 15000+600000
- 26744 words of font info for 108 fonts, out of 8000000 for 9000
+ 28696 strings out of 493117
+ 573877 string characters out of 6135433
+ 629376 words of memory out of 5000000
+ 31506 multiletter control sequences out of 15000+600000
+ 21432 words of font info for 89 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,12n,82p,10385b,1079s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/201
-4/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2014/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-014/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals4.pdf (31 pages, 464375 bytes).
+ 60i,5n,82p,10384b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/l
+ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on notation_key.pdf (1 page, 57400 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 641 compressed objects within 7 object streams
- 130 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 44 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
