@@ -1137,16 +1137,16 @@ For specified $\lambda \in \{\lambda_p, \lambda_{CM}, \lambda_F\}$, we denote by
 \-\ \\ \-\
 
 \begin{theorem}~\label{thm:mainresult}
-Fix $\lambda \in \lbrace  \lambda_p, \lambda_{CM} \rbrace$, $M \gg 0$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
+Fix $\lambda \in \lbrace  \lambda_p, \lambda_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(\lambda,m,d)$ be the number of increasing tableaux $T \in \inc^m(\lambda)$ whose $\pro^m$-period divides $m/d$. Then,
 \begin{equation}\label{eq:mainresulteq} 
-\mathcal{R}(\lambda,q,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{q,N_T}(\zeta^{q/d}).
+\mathcal{R}(\lambda,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,N_T}(\zeta^{m/d}).
 \end{equation}
 \end{theorem}
 \begin{proof}
-Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of gapless tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
+Theorem~\ref{thm:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
 
-For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
-Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}).
+For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $m\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{m\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{m\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{m\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
+Therefore, the tableau has period dividing $m\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $N_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,N_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
 In the cases $\lambda = \lambda_p$ and $\lambda = \lambda_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
@@ -1164,21 +1164,21 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{equation}
 \end{lemma}
 
-For example, we evaluate $f_k(\zeta^{q/d})$ for some $d$ dividing both $q$ and $k$. By definition,
-\[ f_k(\zeta^{q/d}) = \frac{[q-(2k-2)]_{\zeta^{q/d}}[q-(2k-2)+1]_{\zeta^{q/d}}...[q-(k-1)]_{\zeta^{q/d}}^2...[q-1]_{\zeta^{q/d}}[q]_{\zeta^{q/d}}}{[1]_{\zeta^{q/d}}[2]_{\zeta^{q/d}}...[k]_{\zeta^{q/d}}^2...[2k-2]_{\zeta^{q/d}}[2k-1]_{\zeta^{q/d}}}.\]
+For example, we evaluate $f_{\lambda_p}(\zeta^{m/d})$ for some $d$ dividing both $m$ and $p$. By definition,
+\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}.\]
 Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that each term in the numerator has a corresponding term in the denominator. All ratios evaluate to $1$ except those divisible by $d$. Collecting these, we have
-\[ f_k(\zeta^{q/d}) = \frac{(q-(2k-d)) ...  (q)}{(d) ...  (2k-d) k} = \frac{2k}{k}  \binom{q/d}{2k/d} = 2 \binom{q/d}{2k/d}\]    
+\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) ...  (m)}{(d) ...  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}\]    
 as desired. 
 
-An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $M, k \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $M$th root of unity and $d$ divides $\gcd(M,k)$, then
+An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
-f_{M,k}(\zeta^{M/d}) = \binom{M/d}{k/d} = \frac{(M-(k-d))(M-(k-2d)) ...  (M-d)(M)}{(d)  (2d)  ...  (k-d) (k)}. 
+f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d)(i)}{(d)  (2d)  \cdots  (j-d) (j)}. 
 \end{equation}
-This equation holds even when $k > M$ because in this case, one of the numerator terms will be $0$. 
+This equation holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
 
 
 
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $q$, and suppose $d \divides q$. We have that \[ f_p(\zeta) = \frac{[q]!_q [q-(p-1)]_q}{[2p-1]!_q [q-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d \divides m$. We have that \[ f_p(\zeta) = \frac{[q]!_q [q-(p-1)]_q}{[2p-1]!_q [q-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \[ \mathcal{R}(\lambda_p,q,d) = f_{q,2p-1}(1) + 2 \, f_{q,2p}(1) = \binom{q}{2p-1} + 2 \binom{q}{2p} = \frac{(2q-2p+1)q!}{(2p)!(q-2p+1)!} = f_p(1). \]
 Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
 \[ \mathcal{R}(\lambda_p,q,d) = 2 \, f_{q,2p}(\zeta^{q/d}) = 2\binom{q/d}{2p/d} = f_p(\zeta^{q/d}).\]
