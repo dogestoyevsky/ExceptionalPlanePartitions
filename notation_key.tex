@@ -1,0 +1,143 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath,amsfonts,amssymb,mathabx,shuffle,latexsym,breqn,stmaryrd,mathtools,mathrsfs}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage[backref=page]{hyperref}
+\usepackage{ytableau}
+\usepackage{tikz-cd}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes, backgrounds,arrows.meta,positioning,plotmarks,decorations.markings}
+\tikzset{>=Straight Barb,
+  head/.style = {fill = white, text=black},
+  plaque/.style = {draw, rectangle, minimum size = 10mm}, 
+  pil/.style={->,thick},
+  pilpil/.style={<->,thick},
+  junct/.style = {draw,circle,inner sep=0.5pt,outer sep=0pt, fill=black}
+  }
+ 
+%\usepackage{fullpage}
+\setlength{\evensidemargin}{0in} 
+\setlength{\textheight}{8.4in}      
+\setlength{\textwidth}{6in}    
+\setlength{\topmargin}{0in}      
+\setlength{\oddsidemargin}{0in} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dynkin things
+\newcommand{\dynkinradius}{.15cm}
+\newcommand{\dynkinstep}{.58cm}
+\newcommand{\dynkinnormal}[2]{\fill (\dynkinstep*#1,\dynkinstep*#2) circle (\dynkinradius);}
+%\newcommand{\dynkinXsize}{1.5}
+\newcommand{\dynkinmin}[2]{\filldraw[fill=SkyBlue,draw=black] (\dynkinstep*#1,\dynkinstep*#2) circle (\dynkinradius);}
+\newcommand{\dynkinline}[4]{\draw[thin] (\dynkinstep*#1,\dynkinstep*#2) -- (\dynkinstep*#3,\dynkinstep*#4);}
+\newcommand{\dynkindots}[4]{\draw[dotted,very thick] (\dynkinstep*#1,\dynkinstep*#2) -- (\dynkinstep*#3,\dynkinstep*#4);}
+\newcommand{\dynkindoubleline}[4]{\draw[double,double distance between line centers=0.19em,postaction={decorate}] (\dynkinstep*#1,\dynkinstep*#2) -- (\dynkinstep*#3,\dynkinstep*#4);}
+
+\newenvironment{dynkin}{\begin{tikzpicture}[decoration={markings,mark=at position 0.7 with {\arrow{>[scale=.7]}}}]}
+{\end{tikzpicture}}
+
+\usepackage{enumitem}
+\newlist{arrowlist}{itemize}{1}
+\setlist[arrowlist]{label=$\Rightarrow$}
+\newcommand{\x}{\ensuremath{\mathsf{x}}}
+\newcommand{\y}{\ensuremath{\mathsf{y}}}
+\newcommand{\e}{\ensuremath{\mathsf{e}}}
+\newcommand{\aaa}{\ensuremath{\mathsf{a}}}
+
+\newcommand{\gap}{\hspace{1in} \\ \vspace{-.2in}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Environments 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{examplex}[theorem]{Example}
+\newenvironment{example}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\diamondsuit$}\examplex}
+  {\popQED\endexamplex}
+\newtheorem{xca}[theorem]{Exercise}
+\newtheorem{algorithm}[theorem]{Algorithm}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MACROS for this particular document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\ex}{ex}
+\newcommand{\wt}{\ensuremath{\mathrm{wt}}}
+\newcommand{\kwt}{\ensuremath{\mathrm{kwt}}}
+\newcommand{\rev}{\ensuremath{\mathrm{rev}}}
+\newcommand{\inv}{\ensuremath{\mathrm{inv}}}
+\newcommand{\reduct}{\ensuremath{\mathtt{reduct}}}
+\newcommand{\Des}{\ensuremath{\mathrm{Des}}}
+\newcommand{\SSYT}{\ensuremath{\mathrm{SSYT}}}
+\newcommand{\SYT}{\ensuremath{\mathrm{SYT}}}
+\newcommand{\sit}{\ensuremath{\mathrm{sit}}}
+\newcommand{\gen}{\ensuremath{\mathrm{gen}}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\inc}{\ensuremath{\mathrm{Inc}}}
+\newcommand{\incgl}{\inc_{\mathrm{gl}}}
+\newcommand{\pro}{\mathfrak{pro}}
+\newcommand{\evac}{\mathfrak{Evac}}
+\newcommand{\rot}{\ensuremath{\mathsf{rot}}}
+\newcommand{\Frame}{\ensuremath{\mathsf{Frame}}}
+\newcommand{\rect}{\ensuremath{\mathsf{rect}}}
+\newcommand{\LIS}{\ensuremath{\mathsf{LIS}}}
+\newcommand{\swap}{\ensuremath{\mathsf{swap}}}
+\newcommand{\ein}{\ensuremath{\mathsf{In}}}
+\newcommand{\eout}{\ensuremath{\mathsf{Out}}}
+\newcommand{\decr}{\ensuremath{\mathsf{Decr}}}
+\newcommand{\partialfill}{\ensuremath{\mathsf{PartialFilling}}}
+\newcommand{\bulltab}{\ensuremath{\mathsf{BulletTableaux}}}
+\newcommand{\slide}{\ensuremath{\mathsf{slide}}}
+\newcommand{\rep}{\ensuremath{\mathsf{Rep}}}
+\newcommand{\blank}{\phantom{2}}
+\newcommand{\shape}{\ensuremath{\mathsf{sh}}}
+\newcommand{\id}{\ensuremath{\mathrm{id}}}
+\newcommand{\bbb}{\ensuremath{\mathsf{b}}}
+\newcommand{\dist}{\ensuremath{\mathrm{Dist}}}
+\newcommand{\rank}{\ensuremath{\mathrm{rk}}}
+\newcommand{\mot}{\ensuremath{\mathsf{Mot}}}
+\newcommand{\pp}{\ensuremath{\mathsf{PP}}}
+\newcommand{\deflate}{\ensuremath{\mathsf{Defl}}}
+\newcommand{\inflate}{\ensuremath{\mathsf{VecInfl}}}
+\newcommand{\reinflate}{\ensuremath{\mathsf{Reinfl}}}
+\newcommand{\tinflate}{\ensuremath{\mathsf{Infl}}}
+\newcommand{\content}{\ensuremath{\mathsf{Con}}}
+\newcommand{\compress}{\ensuremath{\mathsf{DeflCon}}}
+
+\newcommand{\uu}{\mathcal{I}}
+
+% Fancy comments
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\holly}[1]{\todo[size=\tiny,color=blue!30]{#1 \\ \hfill --- Holly}}
+\newcommand{\Holly}[1]{\todo[size=\tiny,inline,color=blue!30]{#1
+      \\ \hfill --- Holly}}
+\newcommand{\oliver}[1]{\todo[size=\tiny,color=red!30]{#1 \\ \hfill --- Oliver}}
+\newcommand{\Oliver}[1]{\todo[size=\tiny,inline,color=red!30]{#1
+      \\ \hfill --- Oliver}}
+
+\begin{document}
+
+\begin{itemize} 
+\item $\pp^k(P)$ - ``the set of plane partitions of height at most $k$ over $P$, that is to say the set of order ideals in the product $P \times {\bf k}$ of $P$ with a chain poset of size $k$.''
+\end{itemize} 
+\end{document}
