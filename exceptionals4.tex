@@ -1178,55 +1178,55 @@ This equation holds even when $j > i$, since in that case one of terms in the nu
 
 
 
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d \divides m$. We have that \[ f_p(\zeta) = \frac{[q]!_q [q-(p-1)]_q}{[2p-1]!_q [q-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
-\[ \mathcal{R}(\lambda_p,q,d) = f_{q,2p-1}(1) + 2 \, f_{q,2p}(1) = \binom{q}{2p-1} + 2 \binom{q}{2p} = \frac{(2q-2p+1)q!}{(2p)!(q-2p+1)!} = f_p(1). \]
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d \divides m$. We have that \[ f_{\lambda_p}(\zeta) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\[ \mathcal{R}(\lambda_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) = \binom{m}{2p-1} + 2 \binom{m}{2p} = \frac{(2m-2p+1)m!}{(2p)!(m-2p+1)!} = f_{\lambda_p}(1). \]
 Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
-\[ \mathcal{R}(\lambda_p,q,d) = 2 \, f_{q,2p}(\zeta^{q/d}) = 2\binom{q/d}{2p/d} = f_p(\zeta^{q/d}).\]
+\[ \mathcal{R}(\lambda_p,m,d) = 2 \, f_{m,2p}(\zeta^{m/d}) = 2\binom{m/d}{2p/d} = f_{\lambda_p}(\zeta^{m/d}).\]
 
 If $d$ divides $2p-1$,  then
-\[ \mathcal{R}(\lambda_p,q,d) =  f_{q,2p-1}(\zeta^{q/d}) = \binom{q/d}{(2p-1)/d} = f_p(\zeta^{q/d}).\]
-If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_p(\zeta^{q/d})$ and $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_p(\zeta^{q/d}) = 0$. 
+\[ \mathcal{R}(\lambda_p,m,d) =  f_{m,2p-1}(\zeta^{m/d}) = \binom{m/d}{(2p-1)/d} = f_{\lambda_p}(\zeta^{m/d}).\]
+If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_{\lambda_p}(\zeta^{m/d})$ and $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_{\lambda_p}(\zeta^{m/d}) = 0$. 
 \end{proof}
 
-The verification for $\lambda = \lambda_{CM}$ is equally straightforward. 
+The verification for $\lambda = \lambda_{CM}$ is similarly straightforward. 
 
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $\lambda_F$ cases. Hence, it remains to consider $\lambda = \lambda_{CM}$.
 
-Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},q,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^q_{CM}$, and that $f^q_{CM}$ predicts $\mathcal{R}(\lambda_{CM},q,d) = 0$ for all $d$ not dividing any of these integers.
+Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},m,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^m_{CM}$, and that $f^m_{CM}$ predicts $\mathcal{R}(\lambda_{CM},m,d) = 0$ for all $d$ not dividing any of these integers.
 \begin{itemize}
 \item If $d$ divides $1$, then Theorem~\ref{thm:mainresult} predicts 
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,1) &= 1 \cdot 1 \cdot \binom{q}{11} + (3 \cdot 1  + 12 \cdot 1)  \cdot \binom{q}{12} + 13 \cdot 6 \cdot \binom{q}{13} + (7\cdot 2 + 14 \cdot 12) \binom{q}{14}  \\ &\ \ \ \ \ \ + 15 \cdot 13 \cdot \binom{q}{15} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1 + 16 \cdot 4) \binom{q}{16} \\
-&= \frac{(q-10)(q-9)(q-8)(q-7)^2(q-6)^2(q-5)^2(q-4)^2(q-3)^2(q-2)(q-1)q}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
-&= f_{CM}^q(1).
+\mathcal{R}(\lambda_{CM},m,1) &= 1 \cdot 1 \cdot \binom{m}{11} + (3 \cdot 1  + 12 \cdot 1)  \cdot \binom{m}{12} + 13 \cdot 6 \cdot \binom{m}{13} + (7\cdot 2 + 14 \cdot 12) \binom{m}{14}  \\ &\ \ \ \ \ \ + 15 \cdot 13 \cdot \binom{m}{15} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1 + 16 \cdot 4) \binom{m}{16} \\
+&= \frac{(m-10)(m-9)(m-8)(m-7)^2(m-6)^2(m-5)^2(m-4)^2(m-3)^2(m-2)(m-1)m}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
+&= f_{CM}^m(1).
 \end{align*}
 \item If $d$ divides $11$ but not $1$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,11) &= 1 \cdot 1 \cdot \binom{q/11}{11/11} \\
+\mathcal{R}(\lambda_{CM},m,11) &= 1 \cdot 1 \cdot \binom{m/11}{11/11} \\
 &= q/11 \\ 
-&= f_{CM}^q(\zeta^{N/11}).
+&= f_{CM}^m(\zeta^{N/11}).
 \end{align*}
 \item If $d$ divides $8$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,8) &= 2 \cdot 1 \cdot \binom{q/8}{16/8} \\
-&= \frac{(q)(q-8)}{8^2} \\
-&= f_{CM}^q(\zeta^{N/8}).
+\mathcal{R}(\lambda_{CM},m,8) &= 2 \cdot 1 \cdot \binom{m/8}{16/8} \\
+&= \frac{(m)(m-8)}{8^2} \\
+&= f_{CM}^m(\zeta^{N/8}).
 \end{align*}
 \item If $d$ divides $4$ but not $2$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,4) &= 3 \cdot 1 \cdot \binom{q/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{q/4}{16/4}  \\
-&= \frac{(q-8)(q-4)^2q}{4^2 \cdot 8^2} \\
-&= f_{CM}^q(\zeta^{N/4}).
+\mathcal{R}(\lambda_{CM},m,4) &= 3 \cdot 1 \cdot \binom{m/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{m/4}{16/4}  \\
+&= \frac{(m-8)(m-4)^2m}{4^2 \cdot 8^2} \\
+&= f_{CM}^m(\zeta^{N/4}).
 \end{align*}
 \item If $d$ divides $2$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,2) &= 3 \cdot 1 \cdot \binom{q/2}{12/2} + 7 \cdot 2 \cdot \binom{q/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{q/2}{16/2} \\
-&= \frac{(q-10)(q-8)(q-6)^2(q-4)^2(q-2)q}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
-&= f_{CM}^q(\zeta^{N/2}).
+\mathcal{R}(\lambda_{CM},m,2) &= 3 \cdot 1 \cdot \binom{m/2}{12/2} + 7 \cdot 2 \cdot \binom{m/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{m/2}{16/2} \\
+&= \frac{(m-10)(m-8)(m-6)^2(m-4)^2(m-2)m}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
+&= f_{CM}^m(\zeta^{N/2}).
 \end{align*}
 \end{itemize}
-This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^q(\zeta^{N/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[q]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
+This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^m(\zeta^{N/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
@@ -1237,13 +1237,13 @@ Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
 \begin{proof}
 That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is a calculation using Table~\ref{tab:E7}, Theorem~\ref{thm:periodthm}, and Theorem~\ref{thm:actualpdbound}, as demonstrated in the cases $\lambda = \lambda_p$ and $\lambda = \lambda_{CM}$.  I SHOULD ACTUALLY CHECK THIS.
 
-It remains to show that the conjecture fails for $k \geq 5$. Hence, let $M \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^{M}$ has order $3M$ on $\inc^{M}(\lambda_F)$. 
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has order $3m$ on $\inc^m(\lambda_F)$. 
 
-Suppose $T \in \inc^{M}(\lambda_F)$ were fixed by $\pro^{M}$.  By Equation~\ref{eq:period}, the $\Sigma^{M}$-period of $\content^{M}(T)$ is $1$. Since $\content^M(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = M$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{M}(\lambda_F)$ is fixed by $\pro^{M}$, for any $M \geq 22$, so such a $T$ does not exist.
+Suppose $T \in \inc^m(\lambda_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(\lambda_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
 
 %Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
 
-Now let $\zeta$ be a primitive $(3M)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3M}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-q^m$ where $m < 3M$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3m}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
 \end{proof}
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
