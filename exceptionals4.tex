@@ -992,14 +992,20 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 %\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
 %Note that
 %\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
+<<<<<<< HEAD
 In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. The remaining ingredients that we need to add are essentially calculations. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{m})$ equals the multiset of $\pro^{\rank(\lambda)+ m+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ m+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $2k$ boxes ($k \geq 3$) by $\lambda_{k}$. Note that for each of these shapes $\lambda$, we have $\lambda = \lambda^\star$.
+||||||| merged common ancestors
+In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. The remaining ingredients that we need to add are essentially calculations. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{m})$ equals the multiset of $\pro^{\rank(\lambda)+ m+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ m+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $\lambda_{p}$. Note that for each of these shapes $\lambda$, we have $\lambda = \lambda^\star$.
+=======
+In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. The remaining ingredients that we need to add are essentially calculations. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{k})$ equals the multiset of $\pro^{\rank(\lambda)+ k+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ k+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $\lambda_{CM}$, the Freudenthal shape by $\lambda_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $\lambda_p$. Note that for each of these shapes $\lambda$, we have $\lambda = \lambda^\star$.
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 
-By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $\lambda_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $\lambda_F$. For each such tableau $T \in \incgl^q(\lambda_{CM})$ or $\incgl^q(\lambda_F)$, we then determined the size of its orbit under $\pro^q$ by direct calculation. These data are given in Table~\ref{tab:E6} for $\lambda_{CM}$ and in Table \ref{tab:E7} for $\lambda_F$. 
+By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $\lambda_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $\lambda_F$. For each such tableau $T \in \incgl^m(\lambda_{CM})$ or $\incgl^m(\lambda_F)$, we then determined the size of its orbit under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $\lambda_{CM}$ and in Table \ref{tab:E7} for $\lambda_F$. 
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$q$ & orbit size & number of orbits\\
+$m$ & orbit size & number of orbits\\
   \hline
   11 & 1 & 1\\
   \hline
@@ -1019,14 +1025,14 @@ $q$ & orbit size & number of orbits\\
   & 16 & 4\\
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_{CM})$ for each $q$.}
+\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(\lambda_{CM})$ for each $m$.}
 \label{tab:E6}
 \end{table}
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$q$ & orbit size & number of orbits\\
+$m$ & orbit size & number of orbits\\
   \hline
   17 & 1 & 1\\
   \hline
@@ -1065,7 +1071,7 @@ $q$ & orbit size & number of orbits\\
   & 27 & 484 \\
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_F)$ for each $q$.}
+\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(\lambda_F)$ for each $m$.}
 \label{tab:E7}
 \end{table}
 
@@ -1088,49 +1094,85 @@ It is essentially trivial to observe that, for any $k$, $\incgl(\lambda_k)$ cons
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$q$ & orbit size & number of orbits\\
+$m$ & orbit size & number of orbits\\
   \hline
   $2k-1$ & 1 & 1\\
   \hline
   $2k$ & 2 & 1\\ 
   \hline
 \end{tabular}
+<<<<<<< HEAD
 \caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_{k})$ for each $q$.}
+||||||| merged common ancestors
+\caption{The distribution of $\pro^q$-orbits of gapless increasing tableaux in $\incgl^q(\lambda_p)$ for each $q$.}
+=======
+\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(\lambda_p)$ for each $m$.}
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 \label{tab:prop}
 \end{table}
 
- Additionally, we need the fact that the number of elements of $\binom{[M]}{k}$ of any fixed $\Sigma^M$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
+ Additionally, we need the fact that the number of elements of $\binom{[i]}{j}$ of any fixed $\Sigma^i$-order is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
 \begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
 Let 
 \begin{equation*}
-f_{M,k}(q) \coloneqq 
+f_{i,j}(q) \coloneqq 
 \begin{cases}
- \frac{[M]!_q}{[k]!_q\cdot [M-k]!_q} & \text{if } M \geq k \\
- 0 & \text{if } M < k 
+ \frac{[i]!_q}{[j]!_q\cdot [i-j]!_q} & \text{if } i \geq j \\
+ 0 & \text{if } i < j 
 \end{cases}
 \end{equation*}
-where $[\ell]!_q \coloneqq \prod_{i=1}^\ell [i]_q$ and $[i]_q \coloneqq \sum_{j = 0}^{i-1} q^j$ are the standard $q$-analogues. Then, 
-\[\#\left\{ v \in \binom{[M]}{k} : (\Sigma^M)^{\circ s}(v) = v \right\} = f_{M,k}(\zeta^s),\] where $\zeta$ is any primitive $M$th root of unity. \qed
+where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b = 0}^{a-1} q^b$ are the standard $q$-analogues. Then, 
+\[\#\left\{ v \in \binom{[i]}{j} : (\Sigma^i)^{\circ s}(v) = v \right\} = f_{i,j}(\zeta^s),\] where $\zeta$ is any primitive $i$th root of unity. \qed
 \end{theorem} 
+<<<<<<< HEAD
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_k \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^M$.
 
 \-\
+||||||| merged common ancestors
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^M$-orbit cardinalities on any set $\inc^M(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_p \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^M$.
+
+\-\
+=======
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on any set $\inc^m(\lambda)$ for $\lambda \in \{ \lambda_{CM}, \lambda_F, \lambda_p \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 
 \begin{theorem}~\label{thm:actualpdbound}
-$M \gg 0$, the period of $\pro^M$ on $\inc^M(\lambda)$ is 
+For $m \gg 0$, the period of $\pro^m$ on $\inc^m(\lambda)$ is 
 \begin{itemize}
+<<<<<<< HEAD
 \item $M$ for $\lambda = \lambda_k$, 
 \item $M$ for $\lambda = \lambda_{CM}$, and 
 \item $3M$ for $\lambda = \lambda_{F}$. 
+||||||| merged common ancestors
+\item $M$ for $\lambda = \lambda_p$, 
+\item $M$ for $\lambda = \lambda_{CM}$, and 
+\item $3M$ for $\lambda = \lambda_{F}$. 
+=======
+\item $m$ for $\lambda = \lambda_p$, 
+\item $m$ for $\lambda = \lambda_{CM}$, and 
+\item $3m$ for $\lambda = \lambda_F$. 
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 \end{itemize}
+<<<<<<< HEAD
 (Here `$M \gg 0$' means $M \geq 2k$ for $\lambda = \lambda_k$, $M \geq 12$ for $\lambda = \lambda_{CM}$, and $M \geq 22$ for $\lambda = \lambda_{F}$.) For $M \in \lbrace 18,19,20 \rbrace$, the period of $\pro^M$ on $inc^M(\lambda_F)$ is $M$.
+||||||| merged common ancestors
+(Here `$M \gg 0$' means $M \geq 2p$ for $\lambda = \lambda_p$, $M \geq 12$ for $\lambda = \lambda_{CM}$, and $M \geq 22$ for $\lambda = \lambda_{F}$.) For $M \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^M$ on $\inc^M(\lambda_F)$ is $M$.
+=======
+(Here `$m \gg 0$' means $m \geq 2p$ for $\lambda = \lambda_p$, $m \geq 12$ for $\lambda = \lambda_{CM}$, and $m \geq 22$ for $\lambda = \lambda_F$.) For $m \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^m$ on $\inc^m(\lambda_F)$ is $m$.
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 \end{theorem}
 \begin{proof}
-Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each gapless tableau (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $M$, the $\pro^M$-period of each tableau divides $M$.
-Whenever $M$ is at least $12$,  
-it is always possible to find a tableau attaining period $M$ by taking a gapless tableau $T \in \incgl^{12}(\lambda_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^M$-period $M$.
+Inspecting Table~\ref{tab:E6} shows that, for $\lambda_{CM}$, the period of each gapless tableau (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$.
+Whenever $m$ is at least $12$,  
+it is always possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(\lambda_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$.
 
+<<<<<<< HEAD
 The argument is identical for $\lambda = \lambda_F$ when $M \in \lbrace 18,19,20 \rbrace$, but when $M \geq 21$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
+||||||| merged common ancestors
+The argument is identical for $\lambda = \lambda_F$ when $M \in \lbrace 18,19,20, 21 \rbrace$, but when $M \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $M$, the period of each tableau divides $3M$. Whenever $M$ is at least $22$, the period $3M$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^M$-period $M$ to a height $M$ tableau of period $3M$. 
+=======
+The argument is completely analogous for $\lambda = \lambda_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $\lambda_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each tableau divides $3m$. Whenever $m$ is at least $22$, the period $3m$ is attained, since any gapless tableau  $T \in \incgl^{22}(\lambda_F)$ with period $66$ may be inflated according to a content vector of $\Sigma^m$-period $m$ to a height $m$ tableau of period $3m$. 
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 
 Finally, the analogous calculation for $\lambda = \lambda_k$ is easy by inspection of Table~\ref{tab:prop}.
 \end{proof}
@@ -1140,16 +1182,22 @@ For specified $\lambda \in \{\lambda_k, \lambda_{CM}, \lambda_F\}$, we denote by
 \-\ \\ \-\
 
 \begin{theorem}~\label{thm:mainresult}
+<<<<<<< HEAD
 Fix $\lambda \in \lbrace  \lambda_k, \lambda_{CM} \rbrace$, $M \gg 0$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
+||||||| merged common ancestors
+Fix $\lambda \in \lbrace  \lambda_p, \lambda_{CM} \rbrace$, $M \gg 0$, and $d$ dividing $q$. Let $\mathcal{R}(\lambda,q,d)$ be the number of increasing tableaux $T \in \inc^q(\lambda)$ whose $\pro^q$-period divides $q/d$. Then,
+=======
+Fix $\lambda \in \lbrace  \lambda_p, \lambda_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(\lambda,m,d)$ be the number of increasing tableaux $T \in \inc^m(\lambda)$ whose $\pro^m$-period divides $m/d$. Then,
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 \begin{equation}\label{eq:mainresulteq} 
-\mathcal{R}(\lambda,q,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{q,N_T}(\zeta^{q/d}).
+\mathcal{R}(\lambda,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,N_T}(\zeta^{m/d}).
 \end{equation}
 \end{theorem}
 \begin{proof}
-Theorem~\ref{thm:compressbijective} gives that tableaux of height $q$ correspond bijectively to pairs of gapless tableaux and content vectors of length $q$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$q$ tableaux whose periods divide $q/d$. 
+Theorem~\ref{thm:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
 
-For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $q\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{q\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{q\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
-Therefore, the tableau has period dividing $q\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $q\{i\}/d$. But the number of content vectors of length $q\{i\}$ with $N_T\{i\}$ ones and with period dividing $q\{i\}/d$ is precisely $f_{q,N_T}(\zeta^{q/d})$ (Theorem~\ref{thm:rsw}).
+For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $m\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{m\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{m\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{m\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
+Therefore, the tableau has period dividing $m\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $N_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,N_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
 In the cases $\lambda = \lambda_k$ and $\lambda = \lambda_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
@@ -1167,69 +1215,91 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{equation}
 \end{lemma}
 
-For example, we evaluate $f_k(\zeta^{q/d})$ for some $d$ dividing both $q$ and $k$. By definition,
-\[ f_k(\zeta^{q/d}) = \frac{[q-(2k-2)]_{\zeta^{q/d}}[q-(2k-2)+1]_{\zeta^{q/d}}...[q-(k-1)]_{\zeta^{q/d}}^2...[q-1]_{\zeta^{q/d}}[q]_{\zeta^{q/d}}}{[1]_{\zeta^{q/d}}[2]_{\zeta^{q/d}}...[k]_{\zeta^{q/d}}^2...[2k-2]_{\zeta^{q/d}}[2k-1]_{\zeta^{q/d}}}.\]
+For example, we evaluate $f_{\lambda_p}(\zeta^{m/d})$ for some $d$ dividing both $m$ and $p$. By definition,
+\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}.\]
 Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that each term in the numerator has a corresponding term in the denominator. All ratios evaluate to $1$ except those divisible by $d$. Collecting these, we have
-\[ f_k(\zeta^{q/d}) = \frac{(q-(2k-d)) ...  (q)}{(d) ...  (2k-d) k} = \frac{2k}{k}  \binom{q/d}{2k/d} = 2 \binom{q/d}{2k/d}\]    
+\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) ...  (m)}{(d) ...  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}\]    
 as desired. 
 
-An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $M, k \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $M$th root of unity and $d$ divides $\gcd(M,k)$, then
+An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
-f_{M,k}(\zeta^{M/d}) = \binom{M/d}{k/d} = \frac{(M-(k-d))(M-(k-2d)) ...  (M-d)(M)}{(d)  (2d)  ...  (k-d) (k)}. 
+f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d)(i)}{(d)  (2d)  \cdots  (j-d) (j)}. 
 \end{equation}
-This equation holds even when $k > M$ because in this case, one of the numerator terms will be $0$. 
+This equation holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
 
 
 
+<<<<<<< HEAD
 \begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $k$, $q$, and $d$ dividing $q$. We have that \[ f_k(\zeta) = \frac{[q]!_q [q-(k-1)]_q}{[2k-1]!_q [q-(2k-1)]!_q [k]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \[ \mathcal{R}(\lambda_k,q,d) = f_{q,2k-1}(1) + 2 \, f_{q,2k}(1) = \binom{q}{2k-1} + 2 \binom{q}{2k} = \frac{(2q-2k+1)q!}{(2k)!(q-2k+1)!} = f_k(1). \]
 Now for $d > 1$, we can have that $d$ divides $k$, or $d$ divides $2k-1$, or $d$ divides neither. If $d$ divides $k$, then by Equation~\ref{eq:evalstraightshape},
 \[ \mathcal{R}(\lambda_k,q,d) = 2 \, f_{q,2k}(\zeta^{q/d}) = 2\binom{q/d}{2k/d} = f_k(\zeta^{q/d}).\]
+||||||| merged common ancestors
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $q$, and suppose $d \divides q$. We have that \[ f_p(\zeta) = \frac{[q]!_q [q-(p-1)]_q}{[2p-1]!_q [q-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\[ \mathcal{R}(\lambda_p,q,d) = f_{q,2p-1}(1) + 2 \, f_{q,2p}(1) = \binom{q}{2p-1} + 2 \binom{q}{2p} = \frac{(2q-2p+1)q!}{(2p)!(q-2p+1)!} = f_p(1). \]
+Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
+\[ \mathcal{R}(\lambda_p,q,d) = 2 \, f_{q,2p}(\zeta^{q/d}) = 2\binom{q/d}{2p/d} = f_p(\zeta^{q/d}).\]
+=======
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d \divides m$. We have that \[ f_{\lambda_p}(\zeta) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\[ \mathcal{R}(\lambda_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) = \binom{m}{2p-1} + 2 \binom{m}{2p} = \frac{(2m-2p+1)m!}{(2p)!(m-2p+1)!} = f_{\lambda_p}(1). \]
+Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
+\[ \mathcal{R}(\lambda_p,m,d) = 2 \, f_{m,2p}(\zeta^{m/d}) = 2\binom{m/d}{2p/d} = f_{\lambda_p}(\zeta^{m/d}).\]
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 
+<<<<<<< HEAD
 If $d$ divides $2k-1$,  then
 \[ \mathcal{R}(\lambda_k,q,d) =  f_{q,2k-1}(\zeta^{q/d}) = \binom{q/d}{(2k-1)/d} = f_k(\zeta^{q/d}).\]
 If $d$ does not divide either $k$ or $2k-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_k,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2k}{d}}\rceil$ of the terms in the numerator of $f_k(\zeta^{q/d})$ and $\lfloor{\frac{2k}{d}}\rfloor$ of the terms in the denominator, so $f_k(\zeta^{q/d}) = 0$. 
+||||||| merged common ancestors
+If $d$ divides $2p-1$,  then
+\[ \mathcal{R}(\lambda_p,q,d) =  f_{q,2p-1}(\zeta^{q/d}) = \binom{q/d}{(2p-1)/d} = f_p(\zeta^{q/d}).\]
+If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,q,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_p(\zeta^{q/d})$ and $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_p(\zeta^{q/d}) = 0$. 
+=======
+If $d$ divides $2p-1$,  then
+\[ \mathcal{R}(\lambda_p,m,d) =  f_{m,2p-1}(\zeta^{m/d}) = \binom{m/d}{(2p-1)/d} = f_{\lambda_p}(\zeta^{m/d}).\]
+If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_{\lambda_p}(\zeta^{m/d})$ and $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_{\lambda_p}(\zeta^{m/d}) = 0$. 
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 \end{proof}
 
-The verification for $\lambda = \lambda_{CM}$ is equally straightforward. 
+The verification for $\lambda = \lambda_{CM}$ is similarly straightforward. 
 
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $\lambda_F$ cases. Hence, it remains to consider $\lambda = \lambda_{CM}$.
 
-Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},q,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^q_{CM}$, and that $f^q_{CM}$ predicts $\mathcal{R}(\lambda_{CM},q,d) = 0$ for all $d$ not dividing any of these integers.
+Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},m,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^m_{CM}$, and that $f^m_{CM}$ predicts $\mathcal{R}(\lambda_{CM},m,d) = 0$ for all $d$ not dividing any of these integers.
 \begin{itemize}
 \item If $d$ divides $1$, then Theorem~\ref{thm:mainresult} predicts 
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,1) &= 1 \cdot 1 \cdot \binom{q}{11} + (3 \cdot 1  + 12 \cdot 1)  \cdot \binom{q}{12} + 13 \cdot 6 \cdot \binom{q}{13} + (7\cdot 2 + 14 \cdot 12) \binom{q}{14}  \\ &\ \ \ \ \ \ + 15 \cdot 13 \cdot \binom{q}{15} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1 + 16 \cdot 4) \binom{q}{16} \\
-&= \frac{(q-10)(q-9)(q-8)(q-7)^2(q-6)^2(q-5)^2(q-4)^2(q-3)^2(q-2)(q-1)q}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
-&= f_{CM}^q(1).
+\mathcal{R}(\lambda_{CM},m,1) &= 1 \cdot 1 \cdot \binom{m}{11} + (3 \cdot 1  + 12 \cdot 1)  \cdot \binom{m}{12} + 13 \cdot 6 \cdot \binom{m}{13} + (7\cdot 2 + 14 \cdot 12) \binom{m}{14}  \\ &\ \ \ \ \ \ + 15 \cdot 13 \cdot \binom{m}{15} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1 + 16 \cdot 4) \binom{m}{16} \\
+&= \frac{(m-10)(m-9)(m-8)(m-7)^2(m-6)^2(m-5)^2(m-4)^2(m-3)^2(m-2)(m-1)m}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
+&= f_{CM}^m(1).
 \end{align*}
 \item If $d$ divides $11$ but not $1$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,11) &= 1 \cdot 1 \cdot \binom{q/11}{11/11} \\
+\mathcal{R}(\lambda_{CM},m,11) &= 1 \cdot 1 \cdot \binom{m/11}{11/11} \\
 &= q/11 \\ 
-&= f_{CM}^q(\zeta^{N/11}).
+&= f_{CM}^m(\zeta^{N/11}).
 \end{align*}
 \item If $d$ divides $8$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,8) &= 2 \cdot 1 \cdot \binom{q/8}{16/8} \\
-&= \frac{(q)(q-8)}{8^2} \\
-&= f_{CM}^q(\zeta^{N/8}).
+\mathcal{R}(\lambda_{CM},m,8) &= 2 \cdot 1 \cdot \binom{m/8}{16/8} \\
+&= \frac{(m)(m-8)}{8^2} \\
+&= f_{CM}^m(\zeta^{N/8}).
 \end{align*}
 \item If $d$ divides $4$ but not $2$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,4) &= 3 \cdot 1 \cdot \binom{q/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{q/4}{16/4}  \\
-&= \frac{(q-8)(q-4)^2q}{4^2 \cdot 8^2} \\
-&= f_{CM}^q(\zeta^{N/4}).
+\mathcal{R}(\lambda_{CM},m,4) &= 3 \cdot 1 \cdot \binom{m/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{m/4}{16/4}  \\
+&= \frac{(m-8)(m-4)^2m}{4^2 \cdot 8^2} \\
+&= f_{CM}^m(\zeta^{N/4}).
 \end{align*}
 \item If $d$ divides $2$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
-\mathcal{R}(\lambda_{CM},q,2) &= 3 \cdot 1 \cdot \binom{q/2}{12/2} + 7 \cdot 2 \cdot \binom{q/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{q/2}{16/2} \\
-&= \frac{(q-10)(q-8)(q-6)^2(q-4)^2(q-2)q}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
-&= f_{CM}^q(\zeta^{N/2}).
+\mathcal{R}(\lambda_{CM},m,2) &= 3 \cdot 1 \cdot \binom{m/2}{12/2} + 7 \cdot 2 \cdot \binom{m/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{m/2}{16/2} \\
+&= \frac{(m-10)(m-8)(m-6)^2(m-4)^2(m-2)m}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
+&= f_{CM}^m(\zeta^{N/2}).
 \end{align*}
 \end{itemize}
-This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^q(\zeta^{N/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[q]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
+This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^m(\zeta^{N/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
@@ -1240,13 +1310,19 @@ Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ only when $k \leq 4$.
 \begin{proof}
 That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$ is a calculation using Table~\ref{tab:E7}, Theorem~\ref{thm:periodthm}, and Theorem~\ref{thm:actualpdbound}, as demonstrated in the cases $\lambda = \lambda_k$ and $\lambda = \lambda_{CM}$.  I SHOULD ACTUALLY CHECK THIS.
 
-It remains to show that the conjecture fails for $k \geq 5$. Hence, let $M \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^{M}$ has order $3M$ on $\inc^{M}(\lambda_F)$. 
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has order $3m$ on $\inc^m(\lambda_F)$. 
 
-Suppose $T \in \inc^{M}(\lambda_F)$ were fixed by $\pro^{M}$.  By Equation~\ref{eq:period}, the $\Sigma^{M}$-period of $\content^{M}(T)$ is $1$. Since $\content^M(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = M$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^{M}(\lambda_F)$ is fixed by $\pro^{M}$, for any $M \geq 22$, so such a $T$ does not exist.
+Suppose $T \in \inc^m(\lambda_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(\lambda_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
 
 %Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
 
+<<<<<<< HEAD
 Now let $\zeta$ be a primitive $(3M)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3M}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-x^m$ where $m < 3M$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+||||||| merged common ancestors
+Now let $\zeta$ be a primitive $(3M)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3M}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-q^m$ where $m < 3M$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+=======
+Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3m}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+>>>>>>> 73817c29c8fcf46fc87367ae30d93836c8f17b60
 \end{proof}
 %We will also need the following elementary algorithm. We say that a quantity $F$ {\bf has the same dependence on $x$ and $x'$} if $F(x) = P(x)$ and $F(x') = P(x')$ for some polynomial $P$. A vector $(F^1,...,F^n)$ has the same dependence on $x$ and $x'$ if $F^i$ has the same dependence on $x$ and $x'$ for each $i$. 
 %
