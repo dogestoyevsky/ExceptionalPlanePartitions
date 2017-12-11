@@ -338,7 +338,7 @@ The minuscule posets are completely classified. We illustrate them here in Figur
 
 A poset that is linearly ordered is called a {\bf chain}; we denote the chain of size $k$ by $\mathbf{k}$. By a {\bf plane partition} of height at most $k$ over a poset $P$, we mean an order ideal of the product poset $P \times \mathbf{k}$.  Clearly, a such a plane partition may be identified with a weakly order-reversing map $\pi : P \to \mathbf{k}$ (i.e., a map $\pi$ such that $p \leq p'$ implies $\pi(p) \geq \pi(p')$). The poset $P$ is called {\bf Gaussian} if the generating function $f_P^k(q)$ enumerating plane partitions of height at most $k$ over $P$ according to cardinality may be expressed in the form
 \[
-\frac{(1 - q^{h_1 + k})(1 - q^{h_2 + k})\cdots(1 - q^{h_t + k})}{(1 - q^{h_1})(1 - q^{h_2})\cdots(1 - q^{h_t})},
+f_P^k(q) = \frac{(1 - q^{h_1 + k})(1 - q^{h_2 + k})\cdots(1 - q^{h_t + k})}{(1 - q^{h_1})(1 - q^{h_2})\cdots(1 - q^{h_t})},
 \]
 for some nonnegative integers $t, h_1, h_2, \dots, h_t \in \mathbb{Z}_{\geq 0}$ independent of $k$.
 R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed, it is conjectured that there are no other Gaussian posets. Given the beautiful form of these generating functions, it is perhaps not too surprising that $f_P^k$ should in some instances play a role in cyclic sieving phenomena, as in Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}.
