@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 DEC 2017 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 DEC 2017 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1433,7 +1433,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (11.4829pt too wide) in paragraph at lines 209--209
+Overfull \hbox (11.4829pt too wide) in paragraph at lines 212--212
  [][] 
  []
 
@@ -1441,25 +1441,25 @@ Overfull \hbox (11.4829pt too wide) in paragraph at lines 209--209
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (1.49785pt too wide) in paragraph at lines 227--228
+Overfull \hbox (1.49785pt too wide) in paragraph at lines 230--231
 []\OT1/cmr/m/n/12 Our ap-proach to prov-ing The-o-rem []1.2[] is to ex-tend the
  ideas of K. Dilks, O. Pechenik,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 233.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 236.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 233.
-
-Overfull \hbox (3.9867pt too wide) in paragraph at lines 235--236
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 236.
+ [2]
+Overfull \hbox (3.9867pt too wide) in paragraph at lines 238--239
 []\OT1/cmr/m/n/12 Often in-stances of the cyclic siev-ing phe-nom-e-non can be 
 proven us-ing representation-
  []
 
-[2] [3]
+[3]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1480,7 +1480,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
  [4]
-Overfull \hbox (28.07857pt too wide) in paragraph at lines 359--359
+Overfull \hbox (28.07857pt too wide) in paragraph at lines 362--362
  [][] 
  []
 
@@ -1489,33 +1489,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 364.
+(hyperref)                removing `math shift' on input line 367.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Psi' on input line 364.
+(hyperref)                removing `\Psi' on input line 367.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 364.
+(hyperref)                removing `math shift' on input line 367.
 
 [5] [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
+(hyperref)                removing `math shift' on input line 402.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
+(hyperref)                removing `math shift' on input line 402.
 
 
-Overfull \hbox (4.64925pt too wide) in paragraph at lines 404--405
+Overfull \hbox (4.64925pt too wide) in paragraph at lines 407--408
 []\OT1/cmr/m/n/12 The first $\OML/cmm/m/it/12 K$\OT1/cmr/m/n/12 -theoretic Litt
 lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
  []
 
 [7]
-LaTeX Font Info:    Try loading font information for U+euf on input line 410.
+LaTeX Font Info:    Try loading font information for U+euf on input line 413.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -1535,29 +1535,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [8] [9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 546.
+(hyperref)                removing `math shift' on input line 549.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 546.
+(hyperref)                removing `math shift' on input line 549.
 
 [11] [12] [13] [14] [15]
-Overfull \hbox (118.71487pt too wide) in paragraph at lines 762--762
+Overfull \hbox (118.71487pt too wide) in paragraph at lines 765--765
 [] 
  []
 
 [16]
-Overfull \hbox (29.33488pt too wide) in paragraph at lines 769--769
+Overfull \hbox (29.33488pt too wide) in paragraph at lines 772--772
 [] 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
+Underfull \hbox (badness 10000) in paragraph at lines 791--793
 
  []
 
 
-Overfull \hbox (5.51155pt too wide) in paragraph at lines 796--798
+Overfull \hbox (5.51155pt too wide) in paragraph at lines 799--801
 \OT1/cmr/m/n/12 Now say $\OML/cmm/m/it/12 ^^\ \OT1/cmr/m/n/12 = \OML/cmm/m/it/1
 2 s^^\[]$ \OT1/cmr/m/n/12 for some $\OML/cmm/m/it/12 s \OMS/cmsy/m/n/12 2 \U/ms
 b/m/n/12 N$\OT1/cmr/m/n/12 . For any in-te-ger $\OML/cmm/m/it/12 n$\OT1/cmr/m/n
@@ -1569,18 +1569,18 @@ t/12 s^^\[]; n\OT1/cmr/m/n/12 )$.
 [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 887.
+(hyperref)                removing `math shift' on input line 890.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Omega' on input line 887.
+(hyperref)                removing `\Omega' on input line 890.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 887.
+(hyperref)                removing `math shift' on input line 890.
 
 [20]
-Overfull \hbox (1.8469pt too wide) in paragraph at lines 902--902
+Overfull \hbox (1.8469pt too wide) in paragraph at lines 905--905
 []\OT1/cmr/m/n/12 By as-sump-tion, $(\OML/cmm/m/it/12 i[]; j[]\OT1/cmr/m/n/12 )
  \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i; j\OT1/cmr/m/n/12 )$.
  Hence, by con-di-tion $(\OML/cmm/m/it/12 b\OT1/cmr/m/n/12 )$, $[]((\OML/cmm/m/
@@ -1590,7 +1590,7 @@ it/12 i; j\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; Q\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/
  []
 
 [21] [22]
-Underfull \hbox (badness 1859) in paragraph at lines 1021--1021
+Underfull \hbox (badness 1859) in paragraph at lines 1024--1024
 []\OT1/cmr/m/sc/12 Table 1.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1599,7 +1599,7 @@ s of gap-less in-creas-ing
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 1859) in paragraph at lines 1067--1067
+Underfull \hbox (badness 1859) in paragraph at lines 1070--1070
 []\OT1/cmr/m/sc/12 Table 2.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1608,7 +1608,7 @@ s of gap-less in-creas-ing
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [23]
-Underfull \hbox (badness 1859) in paragraph at lines 1097--1097
+Underfull \hbox (badness 1859) in paragraph at lines 1100--1100
 []\OT1/cmr/m/sc/12 Table 3.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1617,13 +1617,13 @@ s of gap-less in-creas-ing
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [24] [25] [26]
-Overfull \hbox (56.34785pt too wide) detected at line 1168
+Overfull \hbox (56.34785pt too wide) detected at line 1171
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^P[]\OT1/cmr/m/n/12 ) = 
 []\OML/cmm/m/it/12 :
  []
 
 [27]
-Overfull \hbox (21.10422pt too wide) detected at line 1182
+Overfull \hbox (21.10422pt too wide) detected at line 1185
 \OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^U[]; m; d\OT1/cmr/m/n/12 
 ) = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/
 n/12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it
@@ -1631,7 +1631,7 @@ n/12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it
  []
 
 
-Overfull \hbox (93.05032pt too wide) in paragraph at lines 1203--1203
+Overfull \hbox (93.05032pt too wide) in paragraph at lines 1206--1206
 [] 
  []
 
@@ -1640,17 +1640,17 @@ Overfull \hbox (93.05032pt too wide) in paragraph at lines 1203--1203
 \openout5 = `exceptionals4.brf'.
 
  [30])
-Underfull \hbox (badness 7030) in paragraph at lines 1390--1390
+Underfull \hbox (badness 7030) in paragraph at lines 1393--1393
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
 [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1390.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1390.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1393.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1393.
  (./exceptionals4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1390.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1390.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1393.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1393.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: 69DFD94F9406E6BED5A9F6B67A70080A;972.
@@ -1660,7 +1660,7 @@ Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1390.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1393.
  ) 
 Here is how much of TeX's memory you used:
  30131 strings out of 493089
@@ -1699,7 +1699,7 @@ dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals4.pdf (31 pages, 464894 bytes).
+Output written on exceptionals4.pdf (31 pages, 465384 bytes).
 PDF statistics:
  715 PDF objects out of 1000 (max. 8388607)
  641 compressed objects within 7 object streams
