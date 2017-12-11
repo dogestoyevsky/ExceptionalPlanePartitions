@@ -515,9 +515,9 @@ Note that if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \bin
 \end{theorem}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
-A two-sided inverse for $\compress^m$ is given as follows. Let $[j]$ denote the set $\{1, 2, \dots, j\}$.
+A two-sided inverse for $\compress^m$ is given as follows. For any nonnegative integer $j$, let $[j]$ denote the set $\{1, 2, \dots, j\}$.
 For a binary vector $v \in \{0,1\}^m$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^m_v : [N_v] \to [m]\] by
-\[ \inflate^m_v(k) = \min_{n \in [m]} \left( \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \right).\] (We use curly braces $``\{\}"$ throughout to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. From this fact and the definitions, it follows that $\inflate^m_{\content^m(T)} \circ \deflate^m(T) = T$. Now define the {\bf tableau inflation} map 
+\[ \inflate^m_v(k) = \min_{n \in [m]} \left( \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \right).\] (We use curly braces $``\{\}"$ throughout the paper to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. From this fact and the definitions, it follows that $\inflate^m_{\content^m(T)} \circ \deflate^m(T) = T$. Now define the {\bf tableau inflation} map 
 \[
 \tinflate^m : \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right) \to \inc^m(\lambda)
 \] 
@@ -534,13 +534,13 @@ Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective
 Therefore, $\tinflate^m$ is a two-sided inverse for $\compress^m$.
 \end{proof} 
 \begin{example}\label{ex:reinflate}
-Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and $\inflate^7_v : [5] \to [7]$ is given by 
+Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and the map $\inflate^7_v : [5] \to [7]$ is given by 
 \begin{align*}
 \inflate^7_v(1) &= 1, \\
 \inflate^7_v(2) &= 2, \\
 \inflate_v^7(3) &= 4, \\
 \inflate_v^7(4) &= 5, \\
-\inflate_v^7(5) &= 6. \\
+\inflate_v^7(5) &= 6. 
 \end{align*}
 Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v \circ S = \ytableaushort{456,125}$. Note that this process has recovered the tableau $T$ of Example~\ref{ex:deflate} from $S=\deflate^7(T)$ and $v=\content^7(T)$.
 \end{example}
@@ -576,7 +576,7 @@ To establish this relation, we first need to introduce notation for the steps in
  \end{figure}
 
 Using this characterization of $\pro^m$, we give names to the intermediate products of this process.
-For $T \in \inc^m(\lambda)$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
+For $T \in \inc^m(\lambda)$ and $N \leq m$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
 \[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $N > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
 \[
 \lambda \left( T^{(N)} \right) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})
@@ -623,7 +623,7 @@ shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^m_{\content^m(T)}(k)$ for $k = 1,...,N_T$. Then, for all $\x \in \lambda$ and $1 \leq k \leq N_T$, we have
+Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_k = \inflate^m_{\content^m(T)}(k)$ for $k = 1, \ldots, N_T$. Then, for all $\x \in \lambda$ and $1 \leq k \leq N_T$, we have
  \begin{equation}\label{eq:gappy_promotion2}
 \deflate^m(T)^{(k)}(\x) = \bullet \text{ if and only if } T^{(i_k)}(\x) = \bullet.
 \end{equation}
@@ -637,7 +637,7 @@ Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-
 \end{proof}
 
 \begin{lemma} \label{lem:gappy_promotion}
-Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq k \leq N_T$, 
+Take $T$ and $i_1, \ldots, i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq k \leq N_T$, 
 \begin{equation}\label{eq:gappy_promotion}
  \tinflate^m \Big( \deflate^m(T)_k, \content^m(T) \Big) = T_{i_k}. 
 \end{equation}
@@ -671,7 +671,7 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ 
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
-Take $T$ and $i_1,...,i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then
+Take $T$ and $i_1, \ldots, i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then
 \begin{equation}\label{eq:deflation_commutation}
 \deflate^m \circ \pro^m(T) = \pro^{N_T} \circ \deflate^m(T).
 \end{equation}
@@ -806,7 +806,7 @@ A more general approach to the ideas in this section was developed independently
 
 \subsection{Bijection between plane partitions and increasing tableaux.} 
 
-Let $\{ \e_1, \e_2 \}$ be the standard basis for $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the projection map onto the $i$th coordinate. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1,...,d_r \in \{1, 2 \}$, and signs $n_1,...,n_r \in \{ \pm 1 \}$ such that 
+Let $\{ \e_1, \e_2 \}$ be the standard basis for $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the projection map onto the $i$th coordinate. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1, \ldots, d_r \in \{1, 2 \}$, and signs $n_1, \ldots, n_r \in \{ \pm 1 \}$ such that 
 \[\left\{ \x + \sum_{k=1}^j n_k \e_{d_k} :  1\leq j \leq r \right\} \subseteq \lambda\]
  and $\x + \sum_{k=1}^r n_k \e_{d_k} = \x'$. Given these data, define $\x_0 = \x$ and $\x_\ell = \x + \sum_{k=1}^\ell n_k \e_{d_k}$ for $1 \leq \ell \leq r$. Then the sequence $\left( \x_\ell  \right)_{0 \leq \ell \leq r}$ is called a {\bf path of length} $r$. If $n_k = 1$ for all $k$, then the path is called a {\bf chain}. We call a finite nonempty connected subset of $\mathbb{Z}_{\geq 0}^2$ a {\bf shape}.  Shapes inherit a partial order from the natural componentwise partial order on $\mathbb{Z}^2$, and we will conflate a shape $\lambda$ with the poset thereby induced on it. Note that the restriction of this partial order to a chain in $\lambda$ is a chain poset, justifying our double use of terminology. A shape poset $\lambda$ is ranked by restricting the standard rank function $\text{rk}(x_1,x_2) = x_1 + x_2$ on $\mathbb{Z}^2$ to the subset $\lambda$. Each minuscule poset $P$ can be realized as a shape by considering its diagram from Figure~\ref{fig:min_poset_E} or~\ref{fig:min_poset} and then embedding the diagram in $\mathbb{Z}^2$ in the obvious way, so that the bottom-leftmost box sits at the origin of $\mathbb{Z}^2$ and the cover relations in $P$ correspond to cover relations in $\mathbb{Z}^2$. When we consider a minuscule poset $P$ as a shape, it will always be with respect to this particular embedding in $\mathbb{Z}^2$.
 
@@ -827,7 +827,7 @@ Let $\lambda$ be a convex shape and let $\x,\x' \in \lambda$ be distinct. If $\x
 \end{lemma}
 
 \begin{proof} 
-Let $\x = (i,j)$ and $\x' = (i',j')$. Because $\x < \x'$, we have $i \leq i'$ and $j \leq j'$. Since $\lambda$ is a shape, there is at least one path from $\x$ to $\x'$. Take such a path $\mathscr{P} = (\x_{\ell})_{0\leq \ell \leq r}$ of minimal length, characterized by directions $d_1,...,d_r \in \{ 1,2 \}$ and signs $n_1,...,n_r \in \{ \pm 1\}$.  We claim that $\mathscr{P}$ is a chain. 
+Let $\x = (i,j)$ and $\x' = (i',j')$. Because $\x < \x'$, we have $i \leq i'$ and $j \leq j'$. Since $\lambda$ is a shape, there is at least one path from $\x$ to $\x'$. Take such a path $\mathscr{P} = (\x_{\ell})_{0\leq \ell \leq r}$ of minimal length, characterized by directions $d_1, \ldots, d_r \in \{ 1,2 \}$ and signs $n_1, \ldots, n_r \in \{ \pm 1\}$.  We claim that $\mathscr{P}$ is a chain. 
 
 If not, then $n_t  = -1$ for some $1 \leq t \leq r$. Let $t$ be the least such index. For  $0 \leq \ell \leq r$, define $(i_\ell, j_\ell) = \x_\ell$, so that in particular $(i_0, j_0) = (i,j)$ and $(i_r, j_r) = (i',j')$.
 
@@ -1170,7 +1170,7 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 For example, we evaluate $f_{\lambda_p}(\zeta^{m/d})$ for some $d$ dividing both $m$ and $p$. By definition,
 \[ f_{\lambda_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}.\]
 Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that each term in the numerator has a corresponding term in the denominator. All ratios evaluate to $1$ except those divisible by $d$. Collecting these, we have
-\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) ...  (m)}{(d) ...  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}\]    
+\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}\]    
 as desired. 
 
 An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
