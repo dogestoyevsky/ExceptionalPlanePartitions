@@ -517,7 +517,10 @@ Note that if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \bin
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
 A two-sided inverse for $\compress^m$ is given as follows. For any nonnegative integer $j$, let $[j]$ denote the set $\{1, 2, \dots, j\}$.
 For a binary vector $v \in \{0,1\}^m$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^m_v : [N_v] \to [m]\] by
-\[ \inflate^m_v(k) = \min_{n \in [m]} \left( \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \right).\] (We use curly braces $``\{\}"$ throughout the paper to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. From this fact and the definitions, it follows that $\inflate^m_{\content^m(T)} \circ \deflate^m(T) = T$. Now define the {\bf tableau inflation} map 
+\[ \inflate^m_v(k) = \min \bigg\lbrace n \in [m]:   \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \bigg\rbrace.\] (We use curly braces $``\{\}"$ throughout the paper to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. Therefore
+\begin{align*}
+[\inflate^m_{\content^m(T)} \circ \deflate^m(T)](\x) &= \min \bigg\lbrace n \in [m]:    \# \{ h \in \mathrm{range}(T): h \leq n \} = [\deflate^m(T)](\x) \bigg\rbrace \\ &= T(\x). 
+\end{align*} Now define the {\bf tableau inflation} map 
 \[
 \tinflate^m : \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right) \to \inc^m(\lambda)
 \] 
