@@ -834,18 +834,18 @@ If not, then $n_t  = -1$ for some $1 \leq t \leq r$. Let $t$ be the least such i
 
 Since $n_t = -1$, either $i_t = i_{t-1} -1$ or $j_t = j_{t-1} -1$.  Without loss of generality, we may assume $i_t = i_{t-1} -1$. 
 
-Suppose there is no $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_t = i_0 - 1$. Furthermore, since $i' = i_r \geq i_0$, there must be a least $k > t$ such that $i_k = i_0 = i_{t-1}$. Let $q = j_k - j_{t-1} $. Then clearly the subpath $(\x_{\ell})_{t-1\leq \ell \leq k}$ of $\mathscr{P}$ has length at least $|q| + 2$.
+Suppose there is no $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_t = i_0 - 1$. Furthermore, since $i' = i_r \geq i_0$, there must be a least $k > t$ such that $i_k = i_0 = i_{t-1}$. Let $g = j_k - j_{t-1} $. Then clearly the subpath $(\x_{\ell})_{t-1\leq \ell \leq k}$ of $\mathscr{P}$ has length at least $|g| + 2$.
 However by convexity, the path 
 \[
-\bigg( (i_{t-1}, j_{t-1}),   (i_{t-1}, j_{t-1} + \frac{q}{|q|}), (i_{t-1}, j_{t-1} + 2\frac{q}{|q|}), \dots , (i_{t-1}, j_{t-1} + |q|\frac{q}{|q|}) \bigg)
+\bigg( (i_{t-1}, j_{t-1}),   (i_{t-1}, j_{t-1} + \frac{g}{|g|}), (i_{t-1}, j_{t-1} + 2\frac{g}{|g|}), \dots , (i_{t-1}, j_{t-1} + |g|\frac{g}{|g|}) \bigg)
 \]
-of length $|q|$ from $(i_{t-1}, j_{t-1})$ to $(i_k, j_k)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
+of length $|g|$ from $(i_{t-1}, j_{t-1})$ to $(i_k, j_k)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
 
-Otherwise, consider the greatest $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_{h-1} = i_t$. By minimality of $t$, we have $j_t \geq j_{h-1}$. Let $q = j_t - j_{h-1}$. Now the subpath $(\x_{\ell})_{h-1\leq \ell \leq t}$ of $\mathscr{P}$ has length $q + 2$. However by convexity, the path 
+Otherwise, consider the greatest $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_{h-1} = i_t$. By minimality of $t$, we have $j_t \geq j_{h-1}$. Let $g = j_t - j_{h-1}$. Now the subpath $(\x_{\ell})_{h-1\leq \ell \leq t}$ of $\mathscr{P}$ has length $g + 2$. However by convexity, the path 
 \[
-\big( (i_{h-1}, j_{h-1}),   (i_{h-1}, j_{h-1} + 1), (i_{h-1}, j_{h-1} + 2), \dots , (i_{h-1}, j_{h-1} + q) \big)
+\big( (i_{h-1}, j_{h-1}),   (i_{h-1}, j_{h-1} + 1), (i_{h-1}, j_{h-1} + 2), \dots , (i_{h-1}, j_{h-1} + g) \big)
 \]
-of length $q$ from $(i_{h-1}, j_{h-1})$ to $(i_t, j_t)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
+of length $g$ from $(i_{h-1}, j_{h-1})$ to $(i_t, j_t)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
 %If $i_t \geq i'$, then certainly $i_t \geq i = i_0$, so $t \geq 2$ and $i_t = i_{t-k}$ for some $k > 0$. If instead $i_t < i'$, then there must be some  $t < s \leq r$ with  $i_s = i_{t-1}$. Thus in both cases there are $u,v$ with $0 \leq u \leq r$ and $0 \leq v \leq r$ such that $i_u = i_v$ and $n_w  = -1$ for $u < w \leq v$. 
 %But by convexity, all elements $(i_u,x)$ for $x \in (j_u,j_v)$ (or $(j_v,j_u)$) are contained in $\lambda$. Now the direct path along these elements has $\vert j_v-j_u \vert$ steps, while the path $(i_u,j_u),(i_{u+1},j_{u+1}),...,(i_v,j_v)$ must have at least $\vert j_v-j_u \vert + 2$ steps, since it has at least $\vert j_v - j_u \vert$ steps along the second dimension and at least two steps along the first dimension, one in the negative direction and one to cancel it out. This contradicts the minimality of this path, so no such $t$ exists and the path is a chain.  
 \end{proof}
