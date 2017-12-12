@@ -640,17 +640,17 @@ Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-
 \end{proof}
 
 \begin{lemma} \label{lem:gappy_promotion}
-Take $T$ and $i_1, \ldots, i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq k \leq N_T$, 
+Take $T$ and $i_1, \ldots, i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq j \leq N_T$, 
 \begin{equation}\label{eq:gappy_promotion}
- \tinflate^m \Big( \deflate^m(T)_k, \content^m(T) \Big) = T_{i_k}. 
+ \tinflate^m \Big( \deflate^m(T)_j, \content^m(T) \Big) = T_{i_j}. 
 \end{equation}
 That is, the two sides are identical functions on the same domain. 
 \end{lemma}
 
-\begin{proof}  We proceed again by induction on $k$. The base case $k=1$ is trivial, since if $T \in \inc^m(\lambda)$ is any tableau, then $\lambda \left( \deflate^m(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
+\begin{proof}  We proceed again by induction on $j$. The base case $j=1$ is trivial, since if $T \in \inc^m(\lambda)$ is any tableau, then $\lambda \left( \deflate^m(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
 %To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
 
-Now, assume that the lemma holds for all increasing tableaux $T$ in the case $k < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^m(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^m(T)^{(t-1)} \right)$, then 
+Now, assume that the lemma holds for all increasing tableaux $T$ in the case $j < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^m(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^m(T)^{(t-1)} \right)$, then 
 $[\deflate^m(T)^{(t-1)}](\x) \leq t-1$ and hence
 \[
 \left[ \swap_{t}(\deflate^m(T)^{(t-1)})\right](\x) = \deflate^m(T)^{(t-1)}(\x).
@@ -666,11 +666,11 @@ Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). Take $\x 
  for all $i_{t-1} \leq \ell$. Therefore by the previous paragraph and the inductive hypothesis,
  \[ T^{(i_t)}(\x) = T^{(i_{t-1})}(\x) = \inflate^m_{\content^m(T)} \circ \deflate^m(T)^{(t-1)}(\x) =  \inflate^m_{\content^m(T)} \circ \deflate^m(T)^{(t)}(\x). \] This shows that Equation~(\ref{eq:gappy_promotion}) holds at $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T^{(i_{t})}(\x) \leq i_t$. Thus, we must have that $T^{(i_{t})}(\x) = i_{t}$, since the $\swap$ operators do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^m(T)^{(t-1)}(\x') = \deflate^m(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $\content^m(T) \lbrace 1 \rbrace = 1$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^m(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. Therefore each of these conditions is equivalent to the corresponding condition from the previous paragraph. 
  
-Putting these facts together, we have shown that $\lambda \left(T^{(i_k)} \right) = \lambda \left(\deflate^m(T)^{(k)} \right)$ for all $k$, and that moreover, if $\deflate^m(T)_{k}(\x) = h$, then $T_k(\x) = \inflate^m_{\content^m(T)}(h)$. 
+Putting these facts together, we have shown that $\lambda \left(T^{(i_j)} \right) = \lambda \left(\deflate^m(T)^{(j)} \right)$ for all $j$, and that moreover, if $\deflate^m(T)_j(\x) = h$, then $T_j(\x) = \inflate^m_{\content^m(T)}(h)$. 
 \end{proof}
 
 \begin{remark}
-As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_k$ is, in fact, in $\inc^m \left(\lambda \left( T^{(k)} \right) \right)$. However, we do not need this observation here.
+As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ is, in fact, in $\inc^m \left(\lambda \left( T^{(j)} \right) \right)$. However, we do not need this observation here.
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
