@@ -734,7 +734,7 @@ Because the content vector shifts cyclically, this implies that
   for $(v_1, \dots, v_m) \in \lbrace 0,1 \rbrace^m$. 
   
 \begin{theorem}\label{thm:periodthm}
-Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\deflate^m(T)$ and $\ell$ be the period of $\Sigma^m$ on $\content^m(T)$. If $d = \frac{m}{\ell}$, then the period of $\pro^m$ on $T$ is \[\frac{m/d \cdot \tau}{\mathrm{gcd}(N_T/d,\tau)}. \]
+Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\deflate^m(T)$ and $\ell$ be the period of $\Sigma^m$ on $\content^m(T)$. If $d = \frac{m}{\ell}$, then the period of $\pro^m$ on $T$ is \[\frac{\ell  \tau}{\mathrm{gcd}(N_T/d,\tau)}. \]
 \end{theorem} 
     
   \begin{proof}
@@ -787,7 +787,7 @@ n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\
 \end{equation}
 But if $d = m/\ell$, then $r = (m-N_T)/d$, so \[ \ell - r = m/d - (m-N_t)/d = N_T/d.\]
 Therefore
-\[ n = \frac{m/d \cdot \tau}{\text{gcd}(N_T/d,\tau)}, \]
+\[ n = \frac{\ell \tau}{\text{gcd}(N_T/d,\tau)}, \]
 as desired. 
 \end{proof}
 
@@ -798,7 +798,7 @@ In the notation of Theorem~\ref{thm:periodthm}, say that $\tau$ divides $j N_T$ 
 \end{corollary} 
 \begin{proof}
 First say $\tau = j N_T$. Then
-\begin{equation}~\label{eq:pdbound} \frac{m/d \cdot \tau}{\text{gcd}(N_T/d,\tau)} = \frac{m/d \cdot j N_T}{\text{gcd}(N_T/d,j N_T)} = \frac{m/d \cdot j N_T}{N_T/d} = jm. 
+\begin{equation}~\label{eq:pdbound} \frac{\ell \tau}{\text{gcd}(N_T/d,\tau)} = \frac{m/d \cdot j N_T}{\text{gcd}(N_T/d,j N_T)} = \frac{m/d \cdot j N_T}{N_T/d} = jm. 
 \end{equation}
 Now say $\tau = s \tau'$ for some $s \in \mathbb{N}$. For any integer $n$, $\tau'/\gcd(\tau',n)$ divides $s \tau'/\gcd(s \tau',n)$. Applying this fact to the leftmost term in Equation~\ref{eq:pdbound}, it follows that the period associated to $\tau'$ divides $j m$. 
 \end{proof}
