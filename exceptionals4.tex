@@ -749,49 +749,54 @@ K^m(S,v) =
    \big( S,\Sigma^m(v) \big), & \text{otherwise.}
 \end{cases}
 \]
-We show that, for $T \in \inc^m(\lambda)$,
+We first show that, for $T \in \inc^m(\lambda)$,
 \begin{equation}\label{eq:k_commutes}
-\compress^m \circ (\pro^m)^{\circ n}(T) = (K^m)^{\circ n} \circ \compress^m(T).
+\compress^m \circ \pro^m(T) = K^m \circ \compress^m(T).
 \end{equation}
-Let \[ \pi_1: \coprod_{k \leq m}\incgl^k(\lambda) \times \binom{[m]}{k} \rightarrow \coprod_{k \leq m} \incgl^k(\lambda) \] be the projection onto the first factor and define $\pi_2$ similarly. It is immediate from the definitions that \[ \pi_2 \circ (K^m)^{\circ n} \circ \compress^m(T) = (\Sigma^m)^{\circ n} \circ \content^m(T)\] for all $n$. But by \cite[Lemma~2.1]{DPS},
-\[  (\Sigma^m)^{\circ n} \circ \content^m(T) = \content^m \circ (\pro^m)^{\circ n} (T).\] This shows that the two sides of Equation~(\ref{eq:k_commutes}) are equal in the second factor.  
+Let \[ \pi_1: \coprod_{k \leq m}\incgl^k(\lambda) \times \binom{[m]}{k} \rightarrow \coprod_{k \leq m} \incgl^k(\lambda) \] be the projection onto the first factor and $\pi_2$ the projection onto the second factor. It is immediate from the definitions that \[ \pi_2(K^m \circ \compress^m(T)) = \Sigma^m \circ \content^m(T).\] But by \cite[Lemma~2.1]{DPS},
+\[  \Sigma^m \circ \content^m(T) = \content^m \circ \pro^m(T) = \pi_2(\compress^m \circ \pro^m(T)).\] Thus, the two sides of Equation~(\ref{eq:k_commutes}) are equal in the second factor.  
 
-To show that Equation~(\ref{eq:k_commutes}) holds in the first factor, we proceed by induction on $n$. The base case $n = 0$ is tautological. Assume that Equation~(\ref{eq:k_commutes}) holds for $n-1$ and let \[ w \coloneqq \content^m \circ (\pro^m)^{\circ (n-1)}(T) = \pi_2 \circ (K^m)^{\circ (n-1)} \circ \compress^m(T). \]  By Theorem~\ref{thm:compressbijective}, we can write
-\[ (\pro^m)^{\circ (n-1)}(T) = \inflate^m_w \circ (K^m)^{\circ (n-1)} \circ \compress^m(T).\] 
+We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \[ w \coloneqq \content^m(T) = \pi_2(\compress^m(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
+\[ T = \tinflate^m(\deflate^m(T), w).\] 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
-\pi_1 \circ \compress^m \circ (\pro^m)^{\circ (n)}(T) &= \deflate^m \circ (\pro^m)^{\circ (n)}(T) \\
-&= \pro^{N_T} \circ \deflate^m \circ (\pro^m)^{\circ (n-1)}(T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
-&= \pro^{N_T} \circ \deflate^m \circ \inflate^m_{w} \circ (K^m)^{\circ (n-1)} \circ \compress^m(T)  \\
-&= \pro^{N_T} \circ \pi_1 \circ (K^m)^{\circ (n-1)} \circ \compress^m(T) &\text{by Theorem~\ref{thm:compressbijective}} \\ 
-&= \pi_1 \circ (K^m)^{\circ (n)} \circ \compress^m(T) &\text{because $w\lbrace 1 \rbrace = 1$.}
+\pi_1(\compress^m \circ \pro^m(T)) &= \deflate^m \circ \pro^m(T) \\
+&= \pro^{N_T} \circ \deflate^m (T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
+&= \pro^{N_T} \circ \pi_1 \circ \compress^m(T) \\ 
+&= \pi_1(K^m \circ \compress^m(T)) &\text{because $w\lbrace 1 \rbrace = 1$.}
 \end{align*}
-On the other hand, if $w \lbrace 0 \rbrace = 0$, then 
+On the other hand, if $w \lbrace 1 \rbrace = 0$, then 
 \begin{align*}
-\pi_1 \circ \compress^m \circ (\pro^m)^{\circ (n)}(T)) &= \deflate^m \circ (\pro^m)^{\circ (n)}(T) \\
-&= \deflate^m \circ (\pro^m)^{\circ (n-1)}(T) &\text{by Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$} \\
-&= \pi_1  \circ (K^m)^{\circ (n-1)} \circ \compress^m(T)  \\
-&= \pi_1 \circ (K^m)^{\circ (n)} \circ \compress^m(T) &\text{because $w\lbrace 1 \rbrace = 0$.}
+\pi_1(\compress^m \circ \pro^m(T)) &= \deflate^m \circ \pro^m(T) \\
+&= \deflate^m(T) &\text{by Lemma~\ref{lem:no_ones}, $w \lbrace 1 \rbrace = 0$} \\
+&= \pi_1 ( \compress^m(T) ) \\
+&= \pi_1 ( K^m \circ \compress^m(T)) &\text{because $w\lbrace 1 \rbrace = 0$.}
 \end{align*}
 This completes the proof of Equation~(\ref{eq:k_commutes}).
 
-Now, since $\compress^m$ is an injection, $(\pro^m)^{\circ n}(T) = T$ exactly when $\compress^m \circ (\pro^m)^{\circ n}(T) = \compress^m \circ T$. So we are reduced to looking at what powers $n$ of $K^m$ stabilize $\compress^m(T)$.
+Now, since $\compress^m$ is a bijection by Theorem~\ref{thm:compressbijective}, $(\pro^m)^{\circ n}(T) = T$ exactly when $\compress^m \circ (\pro^m)^{\circ n}(T) = \compress^m \circ T$. So, by Equation~(\ref{eq:k_commutes}), we are reduced to determining which powers $n$ of $K^m$ stabilize $\compress^m(T)$.
  
 
  
-Say $n$ satisfies this property. Projecting onto the second factor, we must have that \[ (\Sigma^m)^{\circ n}(\content^m(T)) = \content^m(T), \] so $n = t \ell$ for some integer $t$, where $\ell$ is the period of $\content^m(T)$ under $\Sigma^m$.  Projecting onto the first factor, we must have that  \[ \pro^{n'}(\deflate^m(T)) = \deflate^m(T), \] where $n'$ is $n$ minus the number of times that $\content^m \circ (K^m)^{\circ j} \circ \compress(T) \lbrace 1 \rbrace = 0$ for $j \in \{ 0, \dots, n-1 \}$. If there are $r \cdot (m/\ell)$ zeros in $\content^m(T)$ and $n = t \ell$, then $n' = t \cdot(\ell - r)$. By our assumption on $n$, if $\tau$ is the order of $\pro^{N_T}$ on $\deflate^m(T)$, then $s \tau = n' = t(\ell - r)$ for some $s$.
+Say $(K^m)^{\circ n}(\compress^m(T)) = \compress^m(T)$. Applying $\pi_2$ to both sides, we have \[ (\Sigma^m)^{\circ n}(\content^m(T)) = \content^m(T), \] so $n$ is a multiple of $\ell$. Hence, $n = t \ell$ for some integer $t \in \mathbb{Z}$.  Applying instead $\pi_1$ to both sides, we have \[ \pro^{n'}(\deflate^m(T)) = \deflate^m(T), \] where 
+\begin{align*}
+n' &\coloneqq n - \# \{ 0 \leq j \leq n-1 : \pi_2 ((K^m)^{\circ j} \circ \compress^m(T)) \lbrace 1 \rbrace = 0\} \\
+&= n - \#  \{ 1 \leq i \leq n : \content^m(T) \lbrace i \mod m \rbrace = 0\}.
+\end{align*}
+Let $r$ be the number of $0$s among the first $\ell$ entries of $\content^m(T)$. Then, $n' = t(\ell - r)$. By our assumption on $n$, $n'$ is a multiple of $\tau$. Hence, $n' = s \tau = t(\ell - r)$ for some integer $s$, and so $n = n' + tr = s\tau + tr$.
 
-Therefore, $(K^m)^{\circ n}  \circ \compress^m(T) = \compress^m(T)$ if and only if $n = t \ell = s \tau + t  r$ for positive integers $s$ and $t$. Hence, the order of $\pro^m$ on $T$ is equal to the least positive integer that can be simultaneously written in the forms $t \ell$ and $s \tau + t r$ for the same value of $t$. But $t \ell = s\tau + tr$ implies that $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the least such $t \ell$ is clearly achieved when $t$ is minimal, which occurs when $t(\ell-r)$ is minimal, namely the least common multiple of $\ell-r$ and $\tau$. Thus, the least such $n$ can be expressed as 
+Thus, we have $(K^m)^{\circ n}  \circ \compress^m(T) = \compress^m(T)$ if and only if $n = t \ell = s \tau + t  r$ for some integers $s$ and $t$. Hence, the order of $\pro^m$ on $T$ is the least positive integer $h$ that can be simultaneously written in the forms $h = t \ell$ and $h=s \tau + t r$ for the same value of $t$. But $t \ell = s\tau + tr$ implies $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the least such $h$ is clearly achieved when $t$ is minimal, i.e.\ when $t(\ell-r)$ is the least common multiple of $\ell-r$ and $\tau$. Thus, $h$ can be expressed as 
 \begin{equation}\label{eq:period}
-n = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}.
+h = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}.
 \end{equation}
-But if $d = m/\ell$, then $r = (m-N_T)/d$, so \[ \ell - r = m/d - (m-N_t)/d = N_T/d.\]
-Therefore
-\[ n = \frac{\ell \tau}{\text{gcd}(N_T/d,\tau)}, \]
+
+Finally, observe that $r = \frac{\ell (m-N_T)}{m}$, so that \[ \ell - r = \frac{\ell N_t}{m}.\]
+Therefore,
+\[ h = \frac{\ell \tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)}, \]
 as desired. 
 \end{proof}
 
-The following corollary will allow us to determine the period of $\pro^m$ in Section~\ref{sec:arithmetic}. 
+The following corollary will allow us to determine the period of $\pro^m$ on $\inc^m(\lambda)$ in Section~\ref{sec:arithmetic}. 
 \\
 \begin{corollary}~\label{corr:pdbound}
 In the notation of Theorem~\ref{thm:periodthm}, say that $\tau$ divides $j N_T$ for some $j \in \mathbb{N}$. Then the period of $\pro^m$ on $T$ divides $j m$. 
