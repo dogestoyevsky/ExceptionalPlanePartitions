@@ -484,7 +484,7 @@ is necessarily finite; this fact will be critical for our ability to prove Theor
 
 For $T \in \inc^m(\lambda)$, let $N_T \coloneqq |\mathrm{range}(T)|$ be the number of distinct labels in $T$. For each $m$, we define the {\bf deflation} map \[\deflate^m : \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \incgl^n(\lambda)\] by
 \[
-[\deflate^m(T)](\x) =
+(\deflate^m(T))(\x) =
 \# \{ h \in \mathrm{range}(T): h \leq T(\x) \} ,
 \]
 for $T \in \inc^m(\lambda)$ and $\x \in \lambda$. Note that $\deflate^m(T) \in \incgl^{N_T}(\lambda)$ and that $N_T \leq m$.
@@ -519,7 +519,7 @@ A two-sided inverse for $\compress^m$ is given as follows. For any nonnegative i
 For a binary vector $v \in \{0,1\}^m$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^m_v : [N_v] \to [m]\] by
 \[ \inflate^m_v(k) = \min \bigg\lbrace n \in [m]:   \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \bigg\rbrace.\] (We use curly braces $``\{\}"$ throughout the paper to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. Therefore
 \begin{align*}
-[\inflate^m_{\content^m(T)} \circ \deflate^m(T)](\x) &= \min \bigg\lbrace n \in [m]:    \# \{ h \in \mathrm{range}(T): h \leq n \} = [\deflate^m(T)](\x) \bigg\rbrace \\ &= T(\x). 
+[\inflate^m_{\content^m(T)} \circ \deflate^m(T)](\x) &= \min \bigg\lbrace n \in [m]:    \# \{ h \in \mathrm{range}(T): h \leq n \} = (\deflate^m(T))(\x) \bigg\rbrace \\ &= T(\x). 
 \end{align*} Now define the {\bf tableau inflation} map 
 \[
 \tinflate^m : \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right) \to \inc^m(\lambda)
@@ -528,9 +528,9 @@ by
 \[
 \tinflate^m(S,v) = \inflate^m_v \circ S.
 \]
-Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective and $\tinflate^m(S,v)$ maps onto the indices of nonzero components in $v$, $\content^m \circ \tinflate^m(S,v) = v$.  Also,
+Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective onto $[n]$ and $\inflate^m_v$ maps $[n]$ onto the indices of nonzero components in $v$, $\content^m \circ \tinflate^m(S,v) = v$.  Also,
 \begin{align*}
- (\deflate^m(\inflate^m_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^m_v \circ S)): h \leq (\inflate^m_v \circ S)(\x) \} \\  
+ (\deflate^m(\inflate^m_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^m_v \circ S): h \leq (\inflate^m_v \circ S)(\x) \} \\  
  &= \# \{ h: v\{h\} \neq 0 \text{ and } \sum_{\ell = 1}^h v\{\ell\} \leq S(\x)  \} \\
  &= S(\x).
 \end{align*}
@@ -596,7 +596,7 @@ For $T \in \inc^m(\lambda)$ and $N \leq m$, we define the tableau $T^{(N)}: \lam
 If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\pro^m(T) = \decr(T)$. 
 \end{lemma} 
 \begin{proof}
-If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is not $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
+If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is no $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
 \end{proof}
 
 \begin{figure}[h]
@@ -634,7 +634,7 @@ Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_k
 \begin{proof} We proceed by induction on $k$. Fix $T \in \inc^m(\lambda)$  with $\content^m(T) \lbrace 1 \rbrace = 1$. In the base case $k = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^m(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^m(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^m(T)(\x) = 1$. But since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all tableaux $T$ in the case $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T^{(i_{t-1})}(\x) = T(\x) = i_t$. This is, in turn, equivalent by Theorem~\ref{thm:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
+Now, say the lemma holds for all such $T$ in the case $k < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T(\x) = i_t$. This is, in turn, equivalent by Theorem~\ref{thm:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
 
 Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This scenario is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^m(T)(\x') = \deflate^m(T)^{(t-1)}(\x') = t$. Since $\deflate^m(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) = \bullet$, and we are done.
 \end{proof}
