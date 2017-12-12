@@ -674,7 +674,7 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ 
 \end{remark}
 
 \begin{lemma}\label{lem:deflation_commutation}
-Take $T$ and $i_1, \ldots, i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then
+Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Then
 \begin{equation}\label{eq:deflation_commutation}
 \deflate^m \circ \pro^m(T) = \pro^{N_T} \circ \deflate^m(T).
 \end{equation}
@@ -703,7 +703,7 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
   [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ \deflate(T)](\x) = N_T.
   \] 
 
-Now say $\x \in \lambda(T^{(m)})$. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
+Now say $\x \in \lambda(T^{(m)})$ and let $i_1, \ldots, i_{N_T}$ be as in Lemma~\ref{lem:bullet_placement}. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
 \[ (\swap_m \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_m = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
 Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $j = N_T$, that 
 \[ (\swap_m \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_m = \inflate^m_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)_{N_T}). \]
@@ -734,7 +734,7 @@ Because the content vector shifts cyclically, this implies that
   for $(v_1, \dots, v_m) \in \lbrace 0,1 \rbrace^m$. 
   
 \begin{theorem}\label{thm:periodthm}
-Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\deflate^m(T)$ and $\ell$ be the period of $\Sigma^m$ on $\content^m(T)$. If $d = \frac{m}{\ell}$, then the period of $\pro^m$ on $T$ is \[\frac{\ell  \tau}{\mathrm{gcd}(N_T/d,\tau)}. \]
+Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\deflate^m(T)$ and $\ell$ be the period of $\Sigma^m$ on $\content^m(T)$. Then, the period of $\pro^m$ on $T$ is \[\frac{\ell  \tau}{\mathrm{gcd}(\ell N_T / m,\tau)}. \]
 \end{theorem} 
     
   \begin{proof}
