@@ -705,24 +705,24 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
 
 Now say $\x \in \lambda(T^{(m)})$. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{N_T} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
 \[ (\swap_m \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_m = (\swap_{i_{N_T}} \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
-Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $k = N_T$, that 
+Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $j = N_T$, that 
 \[ (\swap_m \circ \cdots \circ \swap_1 \circ \rep_{1 \rightarrow \bullet}( T ))_m = \inflate^m_{\content(T)} \circ (\swap_{N_T} \circ \cdots \circ  \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)_{N_T}). \]
 
-Now, since $\x \in \lambda(T^{(m)})$, we have that $T^{(m)}(\x) = \ell$ for $\ell \in \{2,3,\dots,m\}$. This implies that $\ell = i_k$ for some $2 \leq k \leq N_T$. Then, 
+Now, since $\x \in \lambda(T^{(m)})$, we have that $T^{(m)}(\x) = \ell$ for $\ell \in \{2,3,\dots,m\}$. This implies that $\ell = i_j$ for some $2 \leq j \leq N_T$. Then, 
 \[
-\decr \circ \rep_{\bullet \to m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)(\x) = i_k-1.
+\decr \circ \rep_{\bullet \to m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)(\x) = i_j-1.
 \]
 Because the content vector shifts cyclically, this implies that 
  \[
- [\deflate^m \circ \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)](\x) = k-1.
+ [\deflate^m \circ \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_1 (T)](\x) = j-1.
  \]
   On the other hand, 
   \[
-  [\swap_m \circ \cdots \circ \swap_1 \circ \deflate^m(T)](\x) = k,
+  [\swap_m \circ \cdots \circ \swap_1 \circ \deflate^m(T)](\x) = j,
   \]
    so 
    \[
-   [ \pushQED{\qed} \decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate^m(T)](\x) = k-1. \qedhere \popQED \] \let\qed\relax
+   [ \pushQED{\qed} \decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_1 \circ  \deflate^m(T)](\x) = j-1. \qedhere \popQED \] \let\qed\relax
 \end{proof}
 
 \subsection{Computation of period}\label{sec:period} We use the results of the previous subsection to relate the period of $T \in \inc^m(\lambda)$ under $\pro^m$ to data concerning $\deflate^m(T)$. Let 
