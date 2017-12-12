@@ -799,13 +799,13 @@ as desired.
 The following corollary will allow us to determine the period of $\pro^m$ on $\inc^m(\lambda)$ in Section~\ref{sec:arithmetic}. 
 \\
 \begin{corollary}~\label{corr:pdbound}
-In the notation of Theorem~\ref{thm:periodthm}, say that $\tau$ divides $j N_T$ for some $j \in \mathbb{N}$. Then the period of $\pro^m$ on $T$ divides $j m$. 
+In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer with $j N_T$ a multiple of $\tau$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
 \end{corollary} 
 \begin{proof}
-First say $\tau = j N_T$. Then
-\begin{equation}~\label{eq:pdbound} \frac{\ell \tau}{\text{gcd}(N_T/d,\tau)} = \frac{m/d \cdot j N_T}{\text{gcd}(N_T/d,j N_T)} = \frac{m/d \cdot j N_T}{N_T/d} = jm. 
+First, say $j N_T = \tau$. Then,
+\begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} = \frac{\ell \cdot j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)} = \frac{\ell \cdot j N_T}{\frac{\ell N_T}{m}} = jm. 
 \end{equation}
-Now say $\tau = s \tau'$ for some $s \in \mathbb{N}$. For any integer $n$, $\tau'/\gcd(\tau',n)$ divides $s \tau'/\gcd(s \tau',n)$. Applying this fact to the leftmost term in Equation~\ref{eq:pdbound}, it follows that the period associated to $\tau'$ divides $j m$. 
+Now say $\tau = s \tau'$ for some $s \in \mathbb{N}$. For any integer $n$, $\tau'/\gcd(\tau',n)$ divides $s \tau'/\gcd(s \tau',n)$. Applying this fact to the leftmost term in Equation~(\ref{eq:pdbound}), it follows that the period associated to $\tau'$ divides $j m$. 
 \end{proof}
 
 \section{The equivariant bijection}\label{sec:equivariant}
