@@ -563,7 +563,7 @@ To establish this relation, we first need to introduce notation for the steps in
 \node[right  = 1.7 of T6] (T7) {\ytableaushort{   35 \bullet, 234 }};
 \node[right  = 1.7 of T7] (T9) {\ytableaushort{  356,234 }};
 \node[below right = 1.5 and -2.2 of T6] (T10) {\ytableaushort{245,123}};
-\node[right = -0.1 of T10] (pro) {$=\pro^{5}(T)$};
+\node[right = -0.1 of T10] (pro) {$=\pro^5(T)$};
 \path (T) edge[pil]  node[above]{$\rep_{1 \rightarrow \bullet}$} (T4);
 \path (T4) edge[pil] node[above]{$\swap_2$} (T5);
 \draw[->, thick] (T5.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
@@ -571,20 +571,20 @@ To establish this relation, we first need to introduce notation for the steps in
 \path (T6) edge[pil] node[above]{$\swap_5$} (T7);
 \path (T7) edge[pil] node[above]{$\rep_{\bullet \rightarrow 6}$} (T9);
 \end{tikzpicture}
-\caption{The calculation of the $K$-promotion $\pro^{5}(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
+\caption{The calculation of the $K$-promotion $\pro^5(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
  \end{figure}
 
 Using this characterization of $\pro^m$, we give names to the intermediate products of this process.
-For $T \in \inc^m(\lambda)$ and $N \leq m$, we define the tableau $T^{(N)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
-\[T^{(N)} \coloneqq \swap_N \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $N > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
+For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
+\[T^{(n)} \coloneqq \swap_n \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $n > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
 \[
-\lambda \left( T^{(N)} \right) \coloneqq \left( T^{(N)} \right)^{-1}(\{2,\dots,N\})
+\lambda \left( T^{(n)} \right) \coloneqq \left( T^{(n)} \right)^{-1}(\{2,\dots,n\})
 \]
- to be the set of boxes of $T^{(N)}$ containing entries from $\{2,\dots,N\}$. Finally, define 
+ to be the set of boxes of $T^{(n)}$ containing entries from $\{2,\dots,n\}$. Finally, define 
  \[
- T_N \coloneqq T^{(N)} \vert_{\lambda \left( T^{(N)} \right) }.
+ T_n \coloneqq T^{(n)} \vert_{\lambda \left( T^{(n)} \right) }.
  \]
-  Intuitively, $T^{(N)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $N$ have been acted upon by $\swap$ operators, while $T_N$ is the restriction of $T^{(N)}$ to this subset of boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. 
+  Intuitively, $T^{(n)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $n$ have been acted upon by $\swap$ operators, while $T_n$ is the restriction of $T^{(n)}$ to this subset of boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. 
   
   The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. The following simple, but important, result shows why this condition on content is necessary.
 
