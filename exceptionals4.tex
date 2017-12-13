@@ -82,7 +82,6 @@
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\ex}{ex}
 \newcommand{\wt}{\ensuremath{\mathrm{wt}}}
-\newcommand{\kwt}{\ensuremath{\mathrm{kwt}}}
 \newcommand{\rev}{\ensuremath{\mathrm{rev}}}
 \newcommand{\inv}{\ensuremath{\mathrm{inv}}}
 \newcommand{\reduct}{\ensuremath{\mathtt{reduct}}}
@@ -98,9 +97,7 @@
 \newcommand{\pro}{\mathfrak{pro}}
 \newcommand{\evac}{\mathfrak{Evac}}
 \newcommand{\rot}{\ensuremath{\mathsf{rot}}}
-\newcommand{\Frame}{\ensuremath{\mathsf{Frame}}}
 \newcommand{\rect}{\ensuremath{\mathsf{rect}}}
-\newcommand{\LIS}{\ensuremath{\mathsf{LIS}}}
 \newcommand{\swap}{\ensuremath{\mathsf{swap}}}
 \newcommand{\ein}{\ensuremath{\mathsf{In}}}
 \newcommand{\eout}{\ensuremath{\mathsf{Out}}}
@@ -113,7 +110,6 @@
 \newcommand{\shape}{\ensuremath{\mathsf{sh}}}
 \newcommand{\id}{\ensuremath{\mathrm{id}}}
 \newcommand{\bbb}{\ensuremath{\mathsf{b}}}
-\newcommand{\dist}{\ensuremath{\mathrm{Dist}}}
 \newcommand{\rank}{\ensuremath{\mathrm{rk}}}
 \newcommand{\mot}{\ensuremath{\mathsf{Mot}}}
 \newcommand{\pp}{\ensuremath{\mathsf{PP}}}
@@ -482,12 +478,12 @@ Suppose $T \in \inc^m(\lambda)$ and consider $T$ as a strictly order-preserving 
 \]
 is necessarily finite; this fact will be critical for our ability to prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}.
 
-For $T \in \inc^m(\lambda)$, let $N_T \coloneqq |\mathrm{range}(T)|$ be the number of distinct labels in $T$. For each $m$, we define the {\bf deflation} map \[\deflate^m : \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \incgl^n(\lambda)\] by
+For $T \in \inc^m(\lambda)$, let $m_T \coloneqq |\mathrm{range}(T)|$ be the number of distinct labels in $T$. For each $m$, we define the {\bf deflation} map \[\deflate^m : \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \incgl^n(\lambda)\] by
 \[
 (\deflate^m(T))(\x) =
 \# \{ h \in \mathrm{range}(T): h \leq T(\x) \} ,
 \]
-for $T \in \inc^m(\lambda)$ and $\x \in \lambda$. Note that $\deflate^m(T) \in \incgl^{N_T}(\lambda)$ and that $N_T \leq m$.
+for $T \in \inc^m(\lambda)$ and $\x \in \lambda$. Note that $\deflate^m(T) \in \incgl^{m_t}(\lambda)$ and that $m_t \leq m$.
 
 For positive integers $k \leq j$, let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
 \[
@@ -626,7 +622,7 @@ shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
 \begin{lemma} \label{lem:bullet_placement}
-Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_j = \inflate^m_{\content^m(T)}(j)$ for $1 \leq j \leq N_T$. Then, for all $\x \in \lambda$ and $1 \leq j \leq N_T$, we have
+Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_j = \inflate^m_{\content^m(T)}(j)$ for $1 \leq j \leq m_t$. Then, for all $\x \in \lambda$ and $1 \leq j \leq m_t$, we have
  \begin{equation}\label{eq:gappy_promotion2}
 \deflate^m(T)^{(j)}(\x) = \bullet \text{ if and only if } T^{(i_j)}(\x) = \bullet.
 \end{equation}
@@ -639,7 +635,7 @@ Now, say the lemma holds for all such $T$ in the case $j < t$. First consider th
 Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This scenario is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^m(T)(\x') = \deflate^m(T)^{(t-1)}(\x') = t$. Since $\deflate^m(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) = \bullet$, and we are done.
 \end{proof}
 \begin{lemma} \label{lem:gappy_promotion}
-Take $T$ and $i_1, \ldots, i_{N_T}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq j \leq N_T$, 
+Take $T$ and $i_1, \ldots, i_{m_t}$ as in Lemma~\ref{lem:bullet_placement}. Then for $1 \leq j \leq m_t$, 
 \begin{equation}\label{eq:gappy_promotion}
  \tinflate^m \Big( \deflate^m(T)_j, \content^m(T) \Big) = T_{i_j}.
 \end{equation}
@@ -676,7 +672,7 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ 
 \begin{lemma}\label{lem:deflation_commutation}
 Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Then
 \begin{equation}\label{eq:deflation_commutation}
-\deflate^m \circ \pro^m(T) = \pro^{N_T} \circ \deflate^m(T).
+\deflate^m \circ \pro^m(T) = \pro^{m_t} \circ \deflate^m(T).
 \end{equation}
 
 \end{lemma}
@@ -684,7 +680,7 @@ Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Then
 By Equation~(\ref{eq:kprodef2}), it is sufficient to show that
 \begin{align*}
 \deflate^m \circ &\decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2\circ \rep_{1 \rightarrow \bullet} (T) = \\
- & \decr \circ \rep_{\bullet \rightarrow N_T+1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m (T). 
+ & \decr \circ \rep_{\bullet \rightarrow m_t+1} \circ \swap_{m_t} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m (T). 
 \end{align*}
 Say $\x \not \in \lambda(T^{(m)})$; that is,  $T^{(m)}(\x) = \bullet$.  Then,
 \[
@@ -694,21 +690,21 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
 \[
 \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T) = \pro^m(T)
 \]
- is a cyclic rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro^m(T)$, namely $N_T$, and, since $m$ is included, it must be the greatest such label, so 
+ is a cyclic rotation by one of the content vector of $T$. This implies that there are the same number of distinct labels in the content vector of $\pro^m(T)$, namely $m_t$, and, since $m$ is included, it must be the greatest such label, so 
  \[
- [\deflate^m \circ \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)](\x) = N_T.
+ [\deflate^m \circ \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)](\x) = m_t.
  \]
-  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate^m(T)^{(N_T)})$, we have
+  On the other hand, since Lemma~\ref{lem:bullet_placement} implies that $\x \not \in \lambda(\deflate^m(T)^{(m_t)})$, we have
   \[
-  [\decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate(T)](\x) = N_T.
+  [\decr \circ \rep_{\bullet \rightarrow m_t + 1} \circ \swap_{m_t} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate(T)](\x) = m_t.
   \] 
 
-Now say $\x \in \lambda(T^{(m)})$ and let $i_1, \ldots, i_{N_T}$ be as in Lemma~\ref{lem:bullet_placement}. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{N_T}$, we have that
-\[ (\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_m = (\swap_{i_{N_T}} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{N_T}}.  \]
-Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $j = N_T$, that 
-\[ (\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_m = \inflate^m_{\content^m(T)} \circ (\swap_{N_T} \circ \cdots \circ   \swap_2  \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)_{N_T}). \]
+Now say $\x \in \lambda(T^{(m)})$ and let $i_1, \ldots, i_{m_t}$ be as in Lemma~\ref{lem:bullet_placement}. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{m_t} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{m_t}$, we have that
+\[ (\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_m = (\swap_{i_{m_t}} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{m_t}}.  \]
+Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $j = m_t$, that 
+\[ (\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_m = \inflate^m_{\content^m(T)} \circ (\swap_{m_t} \circ \cdots \circ   \swap_2  \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)_{m_t}). \]
 
-Now, since $\x \in \lambda(T^{(m)})$, we have that $T^{(m)}(\x) = \ell$ for $\ell \in \{2,3,\dots,m\}$. This implies that $\ell = i_j$ for some $2 \leq j \leq N_T$. Then, 
+Now, since $\x \in \lambda(T^{(m)})$, we have that $T^{(m)}(\x) = \ell$ for $\ell \in \{2,3,\dots,m\}$. This implies that $\ell = i_j$ for some $2 \leq j \leq m_t$. Then, 
 \[
 \decr \circ \rep_{\bullet \to m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)(\x) = i_j-1.
 \]
@@ -718,11 +714,11 @@ Because $\content^m(T) \lbrace 1 \rbrace = 1$ and the content vector shifts cycl
  \]
   On the other hand, 
   \[
-  [\swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)](\x) = j,
+  [\swap_{m_t} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)](\x) = j,
   \]
    so 
    \[
-   [ \pushQED{\qed} \decr \circ \rep_{\bullet \rightarrow N_T + 1} \circ \swap_{N_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ  \deflate^m(T)](\x) = j-1. \qedhere \popQED \] \let\qed\relax
+   [ \pushQED{\qed} \decr \circ \rep_{\bullet \rightarrow m_t + 1} \circ \swap_{m_t} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ  \deflate^m(T)](\x) = j-1. \qedhere \popQED \] \let\qed\relax
 \end{proof}
 
 \subsection{Computation of period}\label{sec:period} We use the results of the previous subsection to relate the period of $T \in \inc^m(\lambda)$ under $\pro^m$ to data concerning $\deflate^m(T)$. Let 
@@ -734,7 +730,7 @@ Because $\content^m(T) \lbrace 1 \rbrace = 1$ and the content vector shifts cycl
   for $(v_1, \dots, v_m) \in \lbrace 0,1 \rbrace^m$. 
   
 \begin{theorem}\label{thm:periodthm}
-Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\deflate^m(T)$ and $\ell$ be the period of $\Sigma^m$ on $\content^m(T)$. Then, the period of $\pro^m$ on $T$ is \[\frac{\ell  \tau}{\mathrm{gcd}(\ell N_T / m,\tau)}. \]
+Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{m_t}$ on $\deflate^m(T)$ and $\ell$ be the period of $\Sigma^m$ on $\content^m(T)$. Then, the period of $\pro^m$ on $T$ is \[\frac{\ell  \tau}{\mathrm{gcd}(\ell m_t / m,\tau)}. \]
 \end{theorem} 
     
   \begin{proof}
@@ -761,8 +757,8 @@ We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
 \pi_1(\compress^m \circ \pro^m(T)) &= \deflate^m \circ \pro^m(T) \\
-&= \pro^{N_T} \circ \deflate^m (T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
-&= \pro^{N_T} \circ \pi_1 \circ \compress^m(T) \\ 
+&= \pro^{m_t} \circ \deflate^m (T) &\text{Lemma~\ref{lem:deflation_commutation}, $w\lbrace 1 \rbrace = 1$} \\
+&= \pro^{m_t} \circ \pi_1 \circ \compress^m(T) \\ 
 &= \pi_1(K^m \circ \compress^m(T)) &\text{because $w\lbrace 1 \rbrace = 1$.}
 \end{align*}
 On the other hand, if $w \lbrace 1 \rbrace = 0$, then 
@@ -790,20 +786,20 @@ Thus, we have $(K^m)^{\circ n}  \circ \compress^m(T) = \compress^m(T)$ if and on
 h = t \ell = \frac{\ell \, \text{lcm}(\ell-r,\tau)}{\ell-r} = \frac{\ell \tau}{\text{gcd}(\ell-r,\tau)}.
 \end{equation}
 
-Finally, observe that $r = \frac{\ell (m-N_T)}{m}$, so that \[ \ell - r = \frac{\ell N_t}{m}.\]
+Finally, observe that $r = \frac{\ell (m-m_t)}{m}$, so that \[ \ell - r = \frac{\ell m_t}{m}.\]
 Therefore,
-\[ h = \frac{\ell \tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)}, \]
+\[ h = \frac{\ell \tau}{\text{gcd}(\frac{\ell m_t}{m},\tau)}, \]
 as desired. 
 \end{proof}
 
 The following corollary will allow us to determine the period of $\pro^m$ on $\inc^m(\lambda)$ in Section~\ref{sec:arithmetic}. 
 \\
 \begin{corollary}~\label{corr:pdbound}
-In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer with $j N_T$ a multiple of $\tau$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
+In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer with $j m_t$ a multiple of $\tau$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
 \end{corollary} 
 \begin{proof}
-First, say $j N_T = \tau$. Then,
-\begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} = \frac{\ell \cdot j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)} = \frac{\ell \cdot j N_T}{\frac{\ell N_T}{m}} = jm. 
+First, say $j m_t = \tau$. Then,
+\begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell m_t}{m},\tau)} = \frac{\ell \cdot j m_t}{\text{gcd}(\frac{\ell m_t}{m},j m_t)} = \frac{\ell \cdot j m_t}{\frac{\ell m_t}{m}} = jm. 
 \end{equation}
 Now say $\tau$ divides $jN_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} \ \ \  \text{    divides   } \ \ \ \frac{j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)}.\] Thus $h$ divides $j m$. 
 \end{proof}
@@ -1144,20 +1140,20 @@ Finally, the analogous calculation for $\lambda = \lambda_p$ is easy by inspecti
 \end{proof}
 
 
-For specified $\lambda \in \{\lambda_p, \lambda_{CM}, \lambda_F\}$, we denote by $N_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
+For specified $\lambda \in \{\lambda_p, \lambda_{CM}, \lambda_F\}$, we denote by $m_t\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 \-\ \\ \-\
 
 \begin{theorem}~\label{thm:mainresult}
 Fix $\lambda \in \lbrace  \lambda_p, \lambda_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(\lambda,m,d)$ be the number of increasing tableaux $T \in \inc^m(\lambda)$ whose $\pro^m$-period divides $m/d$. Then,
 \begin{equation}\label{eq:mainresulteq} 
-\mathcal{R}(\lambda,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{N_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,N_T}(\zeta^{m/d}).
+\mathcal{R}(\lambda,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{m_t\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,m_t}(\zeta^{m/d}).
 \end{equation}
 \end{theorem}
 \begin{proof}
-Theorem~\ref{thm:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $N_T$ ones, where $N_T$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
+Theorem~\ref{thm:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_t$ ones, where $m_t$ is the height of the gapless tableau. The table corresponding to $\lambda$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
 
-For each $i$, let $\ell\{i\} = N_T\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $N_T\{i\}$ and a content vector with period $m\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{m\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\gcd(\frac{N_T\{i\}}{\tilde{d}},\frac{N_T\{i\}}{\ell\{i\}})} = \frac{\frac{m\{i\}}{\tilde{d}} \frac{N_T\{i\}}{\ell\{i\}}}{\frac{N_T \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{m\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
-Therefore, the tableau has period dividing $m\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $N_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,N_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
+For each $i$, let $\ell\{i\} = m_t\{i\}/\tau\{i\}$. Then $\ell\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $m_t\{i\}$ and a content vector with period $m\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{m\{i\}}{\tilde{d}} \frac{m_t\{i\}}{\ell\{i\}}}{\gcd(\frac{m_t\{i\}}{\tilde{d}},\frac{m_t\{i\}}{\ell\{i\}})} = \frac{\frac{m\{i\}}{\tilde{d}} \frac{m_t\{i\}}{\ell\{i\}}}{\frac{m_t \, \gcd(\ell\{i\},\tilde{d})}{\tilde{d} \ell\{i\}}} = \frac{m\{i\}}{\gcd(\ell\{i\},\tilde{d})}. \] 
+Therefore, the tableau has period dividing $m\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $\ell\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $m_t\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,m_t}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
 In the cases $\lambda = \lambda_p$ and $\lambda = \lambda_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
@@ -1204,7 +1200,7 @@ The verification for $\lambda = \lambda_{CM}$ is similarly straightforward.
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $\lambda_F$ cases. Hence, it remains to consider $\lambda = \lambda_{CM}$.
 
-Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = N_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},m,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^m_{CM}$, and that $f^m_{CM}$ predicts $\mathcal{R}(\lambda_{CM},m,d) = 0$ for all $d$ not dividing any of these integers.
+Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = m_t\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(\lambda_{CM},m,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^m_{CM}$, and that $f^m_{CM}$ predicts $\mathcal{R}(\lambda_{CM},m,d) = 0$ for all $d$ not dividing any of these integers.
 \begin{itemize}
 \item If $d$ divides $1$, then Theorem~\ref{thm:mainresult} predicts 
 \begin{align*}
@@ -1250,9 +1246,9 @@ That Conjecture~\ref{conj:rush.shi} holds for $\lambda_F$ in the case $k \leq 4$
 
 It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(\lambda_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has order $3m$ on $\inc^m(\lambda_F)$. 
 
-Suppose $T \in \inc^m(\lambda_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $N_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(\lambda_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
+Suppose $T \in \inc^m(\lambda_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_t = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(\lambda_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
 
-%Therefore $\gcd{(N_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
+%Therefore $\gcd{(m_t/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
 
 Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{\lambda_F}(\zeta) = 0$. But this is impossible, for if $f_{\lambda_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3m}$ would divide the numerator of $f_{\lambda_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
 \end{proof}
@@ -1352,7 +1348,7 @@ Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture
 %\begin{proof}
 %By Corollary~\ref{cor:multisets}, it suffices to show that in the output of Algorithm~\ref{alg:1}, $V\lbrace L \rbrace$ is equal to the number of elements of $\inc^M(\lambda)$ whose period under $\pro^M$ divides $L$, where $M = \rank(\lambda)+m+1$. By Theorem~\ref{thm:compressbijective}, an element $T \in \inc^M(\lambda)$ corresponds to a unique pair $(S,v) \in \coprod_{k \leq M} (\incgl^k(\lambda) \times \binom{[M]}{k})$. Therefore, we we may instead count pairs $(S,v)$ such that the period of the inflated tableau associated to $(S,v)$ divides $L$. Now, select a row $(q,\tau,N)$ from Table~\ref{tab:E6}, Table~\ref{tab:E7}, or Table~\ref{tab:prop}. These data correspond uniquely to $\tau N$ gapless tableaux in $\incgl^q(\lambda)$. Conversely, by Theorem~\ref{thm:compressbijective}, each gapless tableau $S \in \coprod_{k \leq M} \incgl^k(\lambda)$ must come from a row in this table. 
 %
-%If $i$ is as in Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $M = q$ and  $q = N_T$. FIX THIS. Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. This proves the first assertion.
+%If $i$ is as in Equation~(\ref{eq:i}), then this row yields $i\tau N$ tableaux. In the notation of Theorem~\ref{thm:periodthm}, we have $M = q$ and  $q = m_t$. FIX THIS. Therefore, the period associated to each of these tableaux is given by Equation~(\ref{eq:p}), as required. This proves the first assertion.
 %
 %To prove the second assertion, say $\gcd(M,q) = \gcd(M,q')$ for all $q$ in the first column of the table corresponding to $\lambda$. 
 %\end{proof}
