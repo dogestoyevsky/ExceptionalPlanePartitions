@@ -672,10 +672,16 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ 
 \begin{lemma}\label{lem:deflation_commutation}
 Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Then
 \begin{equation}\label{eq:deflation_commutation}
-\deflate^m \circ \pro^m(T) = \pro^{m_t} \circ \deflate^m(T).
+\deflate^m \circ \pro^m(T) = \pro^{m_T} \circ \deflate^m(T).
 \end{equation}
 
 \end{lemma}
+%\begin{proof} Since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)$ and $T$ are labelled by $1$ in the same boxes, and therefore $\rep_{1 \rightarrow \bullet}(\deflate^m(T))$ and $\rep_{1 \rightarrow \bullet}(T)$ have $\bullet$s in the same boxes. 
+%
+%Now each operation $\swap_j$ either leaves the tableau unchanged or exchanges $\bullet$s and numerical values in a way that depends only on the relative magnitude of the labels of the tableau. Since $\deflate^m$ preserves the relative magnitude of labels, it therefore clear that the relative magnitudes of the labels of $\rep_{\bullet \rightarrow m+1} \circ \swap_m \circ ... \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ are the same as the relative magnitudes of the labels of  $\rep_{\bullet \rightarrow {m_T}+1} \circ \swap_{m_T} \circ ... \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (\deflate^m(T))$.  
+%
+%Since $\decr$ does not change the relative order of labels, it follows that $\pro^m(T)$ and $\pro^{m_T} \circ \deflate^m(T)$ have the same relative magnitudes of labels. But $\pro^m$ does not change the content vector of $T$, so $\inflate^m_{\content^m(T)} \circ \pro^{m_T} \circ \deflate^m(T) = \pro^m(T)$. 
+%\end{proof}
 \begin{proof}
 By Equation~(\ref{eq:kprodef2}), it is sufficient to show that
 \begin{align*}
