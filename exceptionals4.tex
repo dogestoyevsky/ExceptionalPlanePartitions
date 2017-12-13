@@ -740,7 +740,7 @@ Fix $T \in \inc^m(\lambda)$. Let $\tau$ be the the period of $\pro^{N_T}$ on $\d
   \begin{proof}
 Define
   \[
-  K^m: \coprod_{k \leq m}\incgl^k(\lambda) \times \binom{[m]}{k} \rightarrow \coprod_{k \leq m}\incgl^k(\lambda) \times \binom{[m]}{k}
+  K^m: \coprod_{n \leq m}\incgl^n(\lambda) \times \binom{[m]}{n} \rightarrow \coprod_{n \leq m}\incgl^n(\lambda) \times \binom{[m]}{n}
   \] by
 \[
 K^m(S,v) =
@@ -753,7 +753,7 @@ We first show that, for $T \in \inc^m(\lambda)$,
 \begin{equation}\label{eq:k_commutes}
 \compress^m \circ \pro^m(T) = K^m \circ \compress^m(T).
 \end{equation}
-Let \[ \pi_1: \coprod_{k \leq m}\incgl^k(\lambda) \times \binom{[m]}{k} \rightarrow \coprod_{k \leq m} \incgl^k(\lambda) \] be the projection onto the first factor and $\pi_2$ the projection onto the second factor. It is immediate from the definitions that \[ \pi_2(K^m \circ \compress^m(T)) = \Sigma^m \circ \content^m(T).\] But by \cite[Lemma~2.1]{DPS},
+Let $\pi_1$ be the projection onto the first factor of $\coprod_{n \leq m}\incgl^n(\lambda) \times \binom{[m]}{n}$ and $\pi_2$ the projection onto the second factor. It is immediate from the definitions that \[ \pi_2(K^m \circ \compress^m(T)) = \Sigma^m \circ \content^m(T).\] But by \cite[Lemma~2.1]{DPS},
 \[  \Sigma^m \circ \content^m(T) = \content^m \circ \pro^m(T) = \pi_2(\compress^m \circ \pro^m(T)).\] Thus, the two sides of Equation~(\ref{eq:k_commutes}) are equal in the second factor.  
 
 We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \[ w \coloneqq \content^m(T) = \pi_2(\compress^m(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
