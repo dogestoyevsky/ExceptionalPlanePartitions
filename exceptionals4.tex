@@ -586,15 +586,7 @@ For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lam
  \]
   Intuitively, $T^{(n)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $n$ have been acted upon by $\swap$ operators, while $T_n$ is the restriction of $T^{(n)}$ to this subset of boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. 
   
-  The following lemmas use these intermediate products to show that $K$-promotion acts on a gappy tableau in essentially the same way and as on its deflation, provided that the gappy tableau contains at least one $1$. The following simple, but important, result shows why this condition on content is necessary.
-
-\begin{lemma}\label{lem:no_ones}
-If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\pro^m(T) = \decr(T)$. 
-\end{lemma} 
-\begin{proof}
-If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is no $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
-\end{proof}
-
+  
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
 \begin{tikzpicture}
@@ -621,6 +613,20 @@ shape of the tableau $T_3$. }\label{fig:restricted_promotions}
 \end{figure}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
+We use these intermediate products to characterize the action of $K$-promotion on gappy tableaux. There are two cases bases on the content of the tableau. 
+
+\begin{lemma}\label{lem:no_ones}
+For $T \in \inc^m(\lambda)$, if $\content^m(T)\lbrace 1 \rbrace = 0$, then $\pro^m(T) = \decr(T)$. 
+\end{lemma} 
+\begin{proof}
+If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is no $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
+\end{proof}
+\begin{lemma}\label{lem:deflation_commutation}
+For $T \in \inc^m(\lambda)$, if $\content^m(T) \lbrace 1 \rbrace = 1$, then
+\begin{equation}\label{eq:deflation_commutation}
+\deflate^m \circ \pro^m(T) = \pro^{m_T} \circ \deflate^m(T).
+\end{equation}
+\end{lemma} This result is intuitive, since after the ``initialization'' that replaces $1$s with $\bullet$s, the steps of $K$-promotion depend essentially on the relative magnitude of the labels. A careful proof requires the following technical statements (Lemmas~\ref{lem:bullet_placement} and ~\ref{lem:gappy_promotion}). 
 \begin{lemma} \label{lem:bullet_placement}
 Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_j = \inflate^m_{\content^m(T)}(j)$ for $1 \leq j \leq m_t$. Then, for all $\x \in \lambda$ and $1 \leq j \leq m_t$, we have
  \begin{equation}\label{eq:gappy_promotion2}
@@ -669,20 +675,14 @@ Putting these facts together, we have shown that $\lambda \left(T^{(i_j)} \right
 As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ is, in fact, in $\inc^m \left(\lambda \left( T^{(j)} \right) \right)$. However, we do not need this observation here.
 \end{remark}
 
-\begin{lemma}\label{lem:deflation_commutation}
-Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Then
-\begin{equation}\label{eq:deflation_commutation}
-\deflate^m \circ \pro^m(T) = \pro^{m_T} \circ \deflate^m(T).
-\end{equation}
 
-\end{lemma}
 %\begin{proof} Since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)$ and $T$ are labelled by $1$ in the same boxes, and therefore $\rep_{1 \rightarrow \bullet}(\deflate^m(T))$ and $\rep_{1 \rightarrow \bullet}(T)$ have $\bullet$s in the same boxes. 
 %
 %Now each operation $\swap_j$ either leaves the tableau unchanged or exchanges $\bullet$s and numerical values in a way that depends only on the relative magnitude of the labels of the tableau. Since $\deflate^m$ preserves the relative magnitude of labels, it therefore clear that the relative magnitudes of the labels of $\rep_{\bullet \rightarrow m+1} \circ \swap_m \circ ... \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ are the same as the relative magnitudes of the labels of  $\rep_{\bullet \rightarrow {m_T}+1} \circ \swap_{m_T} \circ ... \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (\deflate^m(T))$.  
 %
 %Since $\decr$ does not change the relative order of labels, it follows that $\pro^m(T)$ and $\pro^{m_T} \circ \deflate^m(T)$ have the same relative magnitudes of labels. But $\pro^m$ does not change the content vector of $T$, so $\inflate^m_{\content^m(T)} \circ \pro^{m_T} \circ \deflate^m(T) = \pro^m(T)$. 
 %\end{proof}
-\begin{proof}
+\begin{proof}[Proof of Lemma~\ref{lem:deflation_commutation}]
 By Equation~(\ref{eq:kprodef2}), it is sufficient to show that
 \begin{align*}
 \deflate^m \circ &\decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2\circ \rep_{1 \rightarrow \bullet} (T) = \\
