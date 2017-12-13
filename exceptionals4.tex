@@ -778,12 +778,12 @@ Now, since $\compress^m$ is a bijection by Theorem~\ref{thm:compressbijective}, 
  
 
  
-Say $(K^m)^{\circ n}(\compress^m(T)) = \compress^m(T)$. Applying $\pi_2$ to both sides, we have \[ (\Sigma^m)^{\circ n}(\content^m(T)) = \content^m(T), \] so $n$ is a multiple of $\ell$. Hence, $n = t \ell$ for some integer $t \in \mathbb{Z}$.  Applying instead $\pi_1$ to both sides, we have \[ \pro^{n'}(\deflate^m(T)) = \deflate^m(T), \] where 
+Say $(K^m)^{\circ n}(\compress^m(T)) = \compress^m(T)$. Applying $\pi_2$ to both sides, we have \[ (\Sigma^m)^{\circ n}(\content^m(T)) = \content^m(T), \] so $n$ is a multiple of $\ell$. Hence, $n = t \ell$ for some integer $t \in \mathbb{Z}$.  Applying instead $\pi_1$ to both sides, we have \[ (\pro^m)^{\circ n'}(\deflate^m(T)) = \deflate^m(T), \] where 
 \begin{align*}
 n' &\coloneqq n - \# \{ 0 \leq j \leq n-1 : \pi_2 ((K^m)^{\circ j} \circ \compress^m(T)) \lbrace 1 \rbrace = 0\} \\
 &= n - \#  \{ 1 \leq i \leq n : \content^m(T) \lbrace i \mod m \rbrace = 0\}.
 \end{align*}
-Let $r$ be the number of $0$s among the first $\ell$ entries of $\content^m(T)$. Then, $n' = t(\ell - r)$. By our assumption on $n$, $n'$ is a multiple of $\tau$. Hence, $n' = s \tau = t(\ell - r)$ for some integer $s$, and so $n = n' + tr = s\tau + tr$.
+Let $r$ be the number of $0$s among the first $\ell$ entries of $\content^m(T)$. Then, $n' = t(\ell - r)$. Since $(\pro^m)^{\circ n'}$ fixes $\deflate^m(T)$, $n'$ is a multiple of $\tau$. Hence, $n' = s \tau = t(\ell - r)$ for some integer $s$, and so $n = n' + tr = s\tau + tr$.
 
 Thus, we have $(K^m)^{\circ n}  \circ \compress^m(T) = \compress^m(T)$ if and only if $n = t \ell = s \tau + t  r$ for some integers $s$ and $t$. Hence, the order of $\pro^m$ on $T$ is the least positive integer $h$ that can be simultaneously written in the forms $h = t \ell$ and $h=s \tau + t r$ for the same value of $t$. But $t \ell = s\tau + tr$ implies $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the least such $h$ is clearly achieved when $t$ is minimal, i.e.\ when $t(\ell-r)$ is the least common multiple of $\ell-r$ and $\tau$. Thus, $h$ can be expressed as 
 \begin{equation}\label{eq:period}
@@ -805,7 +805,7 @@ In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive intege
 First, say $j N_T = \tau$. Then,
 \begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} = \frac{\ell \cdot j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)} = \frac{\ell \cdot j N_T}{\frac{\ell N_T}{m}} = jm. 
 \end{equation}
-Now say $\tau = s \tau'$ for some $s \in \mathbb{N}$. For any integer $n$, $\tau'/\gcd(\tau',n)$ divides $s \tau'/\gcd(s \tau',n)$. Applying this fact to the leftmost term in Equation~(\ref{eq:pdbound}), it follows that the period associated to $\tau'$ divides $j m$. 
+Now say $\tau$ divides $jN_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} \ \ \  \text{    divides   } \ \ \ \frac{j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)}.\] It follows that the period associated to $\tau$ divides $j m$. 
 \end{proof}
 
 \section{The equivariant bijection}\label{sec:equivariant}

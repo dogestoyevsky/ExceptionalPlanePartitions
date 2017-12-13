@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  12 DEC 2017 21:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 DEC 2017 10:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1559,16 +1559,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 799--801
 
  []
 
-
-Overfull \hbox (5.51155pt too wide) in paragraph at lines 807--809
-\OT1/cmr/m/n/12 Now say $\OML/cmm/m/it/12 ^^\ \OT1/cmr/m/n/12 = \OML/cmm/m/it/1
-2 s^^\[]$ \OT1/cmr/m/n/12 for some $\OML/cmm/m/it/12 s \OMS/cmsy/m/n/12 2 \U/ms
-b/m/n/12 N$\OT1/cmr/m/n/12 . For any in-te-ger $\OML/cmm/m/it/12 n$\OT1/cmr/m/n
-/12 , $\OML/cmm/m/it/12 ^^\[]=[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^\[]; n\OT1/
-cmr/m/n/12 )$ di-vides $\OML/cmm/m/it/12 s^^\[]=[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
-t/12 s^^\[]; n\OT1/cmr/m/n/12 )$.
- []
-
 [18] [19] [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1708,10 +1698,10 @@ dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2014/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals4.pdf (32 pages, 466819 bytes).
+Output written on exceptionals4.pdf (32 pages, 466032 bytes).
 PDF statistics:
- 719 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
+ 718 PDF objects out of 1000 (max. 8388607)
+ 644 compressed objects within 7 object streams
  132 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
