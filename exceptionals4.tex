@@ -1010,7 +1010,7 @@ By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$m$ & orbit size & number of orbits\\
+$m_T$ & orbit size & number of orbits\\
   \hline
   11 & 1 & 1\\
   \hline
@@ -1037,7 +1037,7 @@ $m$ & orbit size & number of orbits\\
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$m$ & orbit size & number of orbits\\
+$m_T$ & orbit size & number of orbits\\
   \hline
   17 & 1 & 1\\
   \hline
@@ -1099,7 +1099,7 @@ It is essentially trivial to observe that, for any $p$, $\incgl(\lambda_p)$ cons
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$m$ & orbit size & number of orbits\\
+$m_T$ & orbit size & number of orbits\\
   \hline
   $2p-1$ & 1 & 1\\
   \hline
@@ -1174,11 +1174,10 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{equation}
 \end{lemma}
 
-For example, we evaluate $f_{\lambda_p}(\zeta^{m/d})$ for some $d$ dividing both $m$ and $p$. By definition,
+For example, we evaluate $f_{\lambda_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. By definition,
 \[ f_{\lambda_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}.\]
-Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that each term in the numerator has a corresponding term in the denominator. All ratios evaluate to $1$ except those divisible by $d$. Collecting these, we have
-\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}\]    
-as desired. 
+Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multisets of equivalence classes modulo $d$. Pairing equivalent terms and using the lemma, we have
+\[ f_{\lambda_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
 
 An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
@@ -1188,14 +1187,14 @@ This equation holds even when $j > i$, since in that case one of terms in the nu
 
 
 
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d \divides m$. We have that \[ f_{\lambda_p}(\zeta) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
-\[ \mathcal{R}(\lambda_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) = \binom{m}{2p-1} + 2 \binom{m}{2p} = \frac{(2m-2p+1)m!}{(2p)!(m-2p+1)!} = f_{\lambda_p}(1). \]
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d$ divides $m$. We have that \[ f_{\lambda_p}(\zeta) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\[ \mathcal{R}(\lambda_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) = \binom{m}{2p-1} + 2 \binom{m}{2p} = \frac{(2m-2p+2)m!}{(2p)!(m-2p+1)!} = f_{\lambda_p}(1). \]
 Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
 \[ \mathcal{R}(\lambda_p,m,d) = 2 \, f_{m,2p}(\zeta^{m/d}) = 2\binom{m/d}{2p/d} = f_{\lambda_p}(\zeta^{m/d}).\]
 
 If $d$ divides $2p-1$,  then
 \[ \mathcal{R}(\lambda_p,m,d) =  f_{m,2p-1}(\zeta^{m/d}) = \binom{m/d}{(2p-1)/d} = f_{\lambda_p}(\zeta^{m/d}).\]
-If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_{\lambda_p}(\zeta^{m/d})$ and $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_{\lambda_p}(\zeta^{m/d}) = 0$. 
+If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(\lambda_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_{\lambda_p}(\zeta^{m/d})$ and at most $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_{\lambda_p}(\zeta^{m/d}) = 0$. 
 \end{proof}
 
 The verification for $\lambda = \lambda_{CM}$ is similarly straightforward. 
