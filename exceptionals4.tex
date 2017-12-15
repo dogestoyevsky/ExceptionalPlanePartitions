@@ -467,6 +467,19 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 \caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of the sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
 \end{figure}
 
+\subsection{The equivariant bijection}\label{sec:equivariant}
+
+In this section we prove Proposition~\ref{prop:equivariant}, our key to proving Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Proposition~\ref{prop:equivariant} is a mild extension of \cite[Lemma~4.2]{DPS} and our proof follows the same outline. We, however, still give significant details of the proof, as there are a few extra subtleties in our case.
+
+
+\begin{corollary}\label{cor:multisets}
+Let $\lambda$ be a convex justified shape.
+Then the multiset of cardinalities of $\Psi$-orbits on $J(\lambda \times \mathbf{m})$ and the multiset of cardinalities of $\pro^{\rank(\lambda)+ m+1}$-orbits on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
+\end{corollary}
+\begin{proof}
+By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
+\end{proof}
+
 \subsection{Inflation and deflation}
 Suppose $T \in \inc^m(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf m}$. We say that $T$ is {\bf gapless} if this map is surjective; otherwise, $T$ is {\bf gappy}. We write $\incgl^m(\lambda)$ for the subset of all gapless tableaux in $\inc^m(\lambda)$. Notice that the set 
 \[
@@ -803,186 +816,6 @@ First, say $j m_t = \tau$. Then,
 \begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell m_t}{m},\tau)} = \frac{\ell \cdot j m_t}{\text{gcd}(\frac{\ell m_t}{m},j m_t)} = \frac{\ell \cdot j m_t}{\frac{\ell m_t}{m}} = jm. 
 \end{equation}
 Now say $\tau$ divides $jN_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} \ \ \  \text{    divides   } \ \ \ \frac{j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)}.\] Thus $h$ divides $j m$. 
-\end{proof}
-
-\subsection{The equivariant bijection}\label{sec:equivariant}
-
-
-
-Let $\{ \e_1, \e_2 \}$ be the standard basis for $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the projection map onto the $i$th coordinate. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1, \ldots, d_r \in \{1, 2 \}$, and signs $n_1, \ldots, n_r \in \{ \pm 1 \}$ such that 
-\[\left\{ \x + \sum_{k=1}^j n_k \e_{d_k} :  1\leq j \leq r \right\} \subseteq \lambda\]
- and $\x + \sum_{k=1}^r n_k \e_{d_k} = \x'$. Given these data, define $\x_0 = \x$ and $\x_\ell = \x + \sum_{k=1}^\ell n_k \e_{d_k}$ for $1 \leq \ell \leq r$. Then the sequence $\left( \x_\ell  \right)_{0 \leq \ell \leq r}$ is called a {\bf path of length} $r$. If $n_k = 1$ for all $k$, then the path is called a {\bf chain}. We call a finite nonempty connected subset of $\mathbb{Z}_{\geq 0}^2$ a {\bf shape}.  Shapes inherit a partial order from the natural componentwise partial order on $\mathbb{Z}^2$, and we will conflate a shape $\lambda$ with the poset thereby induced on it. Note that the restriction of this partial order to a chain in $\lambda$ is a chain poset, justifying our double use of terminology. A shape poset $\lambda$ is ranked by restricting the standard rank function $\text{rk}(x_1,x_2) = x_1 + x_2$ on $\mathbb{Z}^2$ to the subset $\lambda$. Each minuscule poset $P$ can be realized as a shape by considering its diagram from Figure~\ref{fig:min_poset_E} or~\ref{fig:min_poset} and then embedding the diagram in $\mathbb{Z}^2$ in the obvious way, so that the bottom-leftmost box sits at the origin of $\mathbb{Z}^2$ and the cover relations in $P$ correspond to cover relations in $\mathbb{Z}^2$. When we consider a minuscule poset $P$ as a shape, it will always be with respect to this particular embedding in $\mathbb{Z}^2$.
-
-We say that the shape $\lambda$ is {\bf convex} if $\x\in \lambda$ and $\x + k  \e_d \in \lambda $ for some $d \in \{1, 2\}$ and $k \in \mathbb{Z}_{> 0}$ together imply  that $\{\x + j \e_d : 1 \leq j \leq k-1 \} \subseteq \lambda.$
-
-For any shape $\lambda$, let \[a_i(\lambda) = \max \{ \pi_i(\x) \colon \x \in \lambda\}\] and \[\aaa_\lambda = \big(a_1(\lambda),a_{2}(\lambda)\big) \in \mathbb{Z}^2.\] We say the shape $\lambda$ is {\bf justified} if $(0,0) \in \lambda$ and $\aaa_{\lambda} \in \lambda$. Note that the minuscule posets are convex and justified, when considered as shapes as above. For any shape $\lambda$, define 
-\[
-\lambda^\star \coloneqq \lbrace \aaa_\lambda - \x: \x \in \lambda \rbrace.
-\] It is clear that $\lambda^{\star}$ is a shape and that if $\lambda$ is convex (resp.\ justified), then $\lambda^\star$ is convex (resp.\ justified).  Define the {\bf rank} of $\lambda$ to be
-\[ 
-\rank(\lambda) \coloneqq \max_{\x \in \lambda} \rank(\x).
-\]
-
-The following elementary lemmas determine useful characteristics of the shapes considered in this paper. 
-
-\begin{lemma} \label{lem:convex_chain}
-Let $\lambda$ be a convex shape and let $\x,\x' \in \lambda$ be distinct. If $\x < \x'$, then $\lambda$ contains a chain from $\x$ to $\x'$. 
-\end{lemma}
-
-\begin{proof} 
-Let $\x = (i,j)$ and $\x' = (i',j')$. Because $\x < \x'$, we have $i \leq i'$ and $j \leq j'$. Since $\lambda$ is a shape, there is at least one path from $\x$ to $\x'$. Take such a path $\mathscr{P} = (\x_{\ell})_{0\leq \ell \leq r}$ of minimal length, characterized by directions $d_1, \ldots, d_r \in \{ 1,2 \}$ and signs $n_1, \ldots, n_r \in \{ \pm 1\}$.  We claim that $\mathscr{P}$ is a chain. 
-
-If not, then $n_t  = -1$ for some $1 \leq t \leq r$. Let $t$ be the least such index. For  $0 \leq \ell \leq r$, define $(i_\ell, j_\ell) = \x_\ell$, so that in particular $(i_0, j_0) = (i,j)$ and $(i_r, j_r) = (i',j')$.
-
-
-Since $n_t = -1$, either $i_t = i_{t-1} -1$ or $j_t = j_{t-1} -1$.  Without loss of generality, we may assume $i_t = i_{t-1} -1$. 
-
-Suppose there is no $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_t = i_0 - 1$. Furthermore, since $i' = i_r \geq i_0$, there must be a least $k > t$ such that $i_k = i_0 = i_{t-1}$. Let $g = j_k - j_{t-1} $. Then clearly the subpath $(\x_{\ell})_{t-1\leq \ell \leq k}$ of $\mathscr{P}$ has length at least $|g| + 2$.
-However by convexity, the path 
-\[
-\bigg( (i_{t-1}, j_{t-1}),   (i_{t-1}, j_{t-1} + \frac{g}{|g|}), (i_{t-1}, j_{t-1} + 2\frac{g}{|g|}), \dots , (i_{t-1}, j_{t-1} + |g|\frac{g}{|g|}) \bigg)
-\]
-of length $|g|$ from $(i_{t-1}, j_{t-1})$ to $(i_k, j_k)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
-
-Otherwise, consider the greatest $h < t$ with $d_h = d_t$ and $n_h = 1$. Then $i_{h-1} = i_t$. By minimality of $t$, we have $j_t \geq j_{h-1}$. Let $g = j_t - j_{h-1}$. Now the subpath $(\x_{\ell})_{h-1\leq \ell \leq t}$ of $\mathscr{P}$ has length $g + 2$. However by convexity, the path 
-\[
-\big( (i_{h-1}, j_{h-1}),   (i_{h-1}, j_{h-1} + 1), (i_{h-1}, j_{h-1} + 2), \dots , (i_{h-1}, j_{h-1} + g) \big)
-\]
-of length $g$ from $(i_{h-1}, j_{h-1})$ to $(i_t, j_t)$ lies entirely inside $\lambda$, contradicting the minimality of $\mathscr{P}$.
-%If $i_t \geq i'$, then certainly $i_t \geq i = i_0$, so $t \geq 2$ and $i_t = i_{t-k}$ for some $k > 0$. If instead $i_t < i'$, then there must be some  $t < s \leq r$ with  $i_s = i_{t-1}$. Thus in both cases there are $u,v$ with $0 \leq u \leq r$ and $0 \leq v \leq r$ such that $i_u = i_v$ and $n_w  = -1$ for $u < w \leq v$. 
-%But by convexity, all elements $(i_u,x)$ for $x \in (j_u,j_v)$ (or $(j_v,j_u)$) are contained in $\lambda$. Now the direct path along these elements has $\vert j_v-j_u \vert$ steps, while the path $(i_u,j_u),(i_{u+1},j_{u+1}),...,(i_v,j_v)$ must have at least $\vert j_v-j_u \vert + 2$ steps, since it has at least $\vert j_v - j_u \vert$ steps along the second dimension and at least two steps along the first dimension, one in the negative direction and one to cancel it out. This contradicts the minimality of this path, so no such $t$ exists and the path is a chain.  
-\end{proof}
-
-\begin{lemma}\label{lem:max_chain_same}
-Let $\lambda$ be a convex justified shape. Then every maximal chain has length $a_1(\lambda) + a_2(\lambda)$. 
-\end{lemma}
-\begin{proof} 
-Since for all $\x \in \lambda$ we have $(0,0) \leq \x$ and $\x \leq (a_1(\lambda),a_2(\lambda))$, all maximal chains must start at $(0,0)$ and end at $(a_1(\lambda),a_2(\lambda))$ by Lemma~\ref{lem:convex_chain}. But clearly any chain between these two elements has the desired length.
-\end{proof} 
-
-For a convex shape $\lambda$, an increasing tableau on the poset $\lambda$ is equivalent to a map $T: \lambda \rightarrow \mathbb{Z}_{>0}$ such that whenever $\x \in \lambda$ and $\x+\e_i \in \lambda$ for $i \in \lbrace 1,2 \rbrace$, then $T(\x) < T(\x+\e_i)$. The {\bf height} of an increasing tableau $T$ is the maximum value in its range. Recall that $\inc^q(\lambda)$ is the set of all increasing tableaux of height at most $q$ and base $\lambda$. 
-
-Fix a convex justified shape $\lambda$ and $m \in \mathbb{Z}_{> 0}$. Now, we define a poset
-\[
-\lambda \times \mathbf{m} \coloneqq \{ (\x, y) \in \mathbb{Z}^3: \x \in \lambda, 0 \leq y \leq  m-1 \},
-\] with the partial order given by restricting the natural partial order on $\mathbb{Z}^3$, that is
-\[{\sf b_1} \geq {\sf b_2} \text{ if and only if } {\sf b_1}  - {\sf b_2} \in \mathbb{Z}_{\geq 0}^3.\] Note that, as a abstract poset, $\lambda \times \mathbf{m}$ is, in fact, isomorphic to the product of the posets $\lambda$ and $\mathbf{m}$; it is useful to us, however, to consider $\lambda \times \mathbf{m}$ as embedded inside $\mathbb{Z}^3$ in this particular fashion.
-
-
-Recall that for any poset $P$, we write $J(P)$ for the collection of all order ideals of $P$.  
- Define the map $\Omega : J(\lambda \times \mathbf{m}) \rightarrow \inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ as follows. 
-% We write $2^A$ for the power set of a set $A$. 
- First, define the function 
- \[
- \mathrm{ht}: \mathbb{Z}_{\geq 0}^2 \times 2^{(\mathbb{Z}_{\geq 0}^3)} \rightarrow \mathbb{Z}_{\geq 0}
- \] (where $2^{(\mathbb{Z}_{\geq 0}^3)}$ denotes the power set of $\mathbb{Z}_{\geq 0}^3$) by 
- \[ \mathrm{ht}(\x,S) \coloneqq  \# \{ y \in \mathbb{Z}_{\geq 0} : (\x,y) \in S \}.  \]  
-Intuitively, if an order ideal $I$ of $\lambda \times \mathbf{m}$ is viewed as a pile of blocks stacked on $\lambda \subset \mathbb{Z}^2$, then $\mathrm{ht}(\x,I)$ counts the number of blocks stacked in the column over $\x \in \lambda$. In this notation, $J(\lambda \times \mathbf{m})$ is exactly the set of all plane partitions with $\mathrm{ht}$ at most $m$ over the shape poset $\lambda$. Next, define $\Omega: J(\lambda \times \mathbf{m}) \rightarrow \inc^{\rank(\lambda) + m + 1}(\lambda^{\star})$ such that 
-\[ [\Omega(I)]( \x )= \mathrm{ht}(\aaa_\lambda - \x,I) + \rank(\x)+1.\] 
-
-\begin{proposition}\label{prop:bijection}
-If $\lambda$ is a convex justified shape, then  $\Omega$ is a bijection.
-\end{proposition}
-\begin{proof}
-Since $\lambda$ is justified and convex, $\lambda^\star$ has an element of rank $0$ and, by Lemma~\ref{lem:max_chain_same}, all maximal chains in $\lambda^\star$ have equal length. Hence the function $\Omega$ coincides with the map from \cite[Proposition~8.2]{HPPW}, and so by \cite[Proposition~8.2]{HPPW} we have that $\Omega$ is a bijection between plane partitions over $\lambda$ and increasing tableaux over $\lambda^\star$.
-\end{proof}
-
-Note, in particular, that Proposition~\ref{prop:bijection} applies to all of the minuscule posets, realized as convex justified shapes as in Figures~\ref{fig:min_poset_E} and~\ref{fig:min_poset}.
-
-\subsection{Equivariance of $\Omega$.} 
-In this section we prove Proposition~\ref{prop:equivariant}, our key to proving Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Proposition~\ref{prop:equivariant} is a mild extension of \cite[Lemma~4.2]{DPS} and our proof follows the same outline. We, however, still give significant details of the proof, as there are a few extra subtleties in our case.
-
-The following gives an easy and useful way to determine whether a subset of $\lambda \times \mathbf{m}$ is an order ideal. 
-\begin{lemma}\label{lem:whos_an_ideal?}
-Let $\lambda$ be any shape. The subset $Q \subseteq \lambda \times \mathbf{m}$ is an order ideal if and only if both
-\begin{itemize}
-\item[(a)] $(i,j,k) \in Q$ implies that $(i,j,k') \in Q$, for $0 \leq k' \leq k$; and
-\item[(b)] $(i,j) \geq (i',j')$ implies that $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$.
-\end{itemize}
-\end{lemma}
-\begin{proof} 
-The ``only if'' direction is clear. 
-
-Conversely, assume $Q$ satisfies $(a)$ and $(b)$. Consider $(i,j,k) \in Q$ and $(i',j',k') \in \lambda \times \mathbf{m}$ with $(i',j',k') \leq (i,j,k)$. We must show $(i',j',k') \in Q$. 
-
-By assumption, $(i',j') \leq (i,j)$. Hence, by condition $(b)$, $\mathrm{ht}((i,j),Q) \leq \mathrm{ht}((i',j'),Q)$. Now, condition $(a)$ implies that, for all $\x \in \lambda$, we have \[ \mathrm{ht}(\x,Q) = 1 + \max \{ k'' \in \mathbb{Z}_{\geq 0} : (\x,k'') \in Q \}. \]  Applying this equality for $\x = (i,j)$ and $\x = (i'j')$, we conclude there is a $\hat{k} \geq k$ with $(i',j',\hat{k}) \in Q$. But since $k' \leq k \leq \hat{k}$, condition $(a)$ then implies $(i',j',k') \in Q$. 
-\end{proof}
-
-\begin{proposition}\label{prop:equivariant}
-Let $\lambda$ be a convex justified shape. Then $\Omega$ intertwines $\mot_{\mathrm{id},(1,1,-1)}$ and $\pro^{\rank(\lambda)+m+1}$. That is, for $I \in J(\lambda \times \mathbf{m})$, we have \[
-\Omega \circ \mot_{\mathrm{id},(1,1,-1)}(I) = \pro^{\rank(\lambda)+m+1} \circ \Omega(I).
-\]
-\end{proposition}
-\begin{proof}
-Let $a \coloneqq a_1(\lambda)$ and let $b \coloneqq a_2(\lambda)$; that is, let $(a,b) \coloneqq \aaa_{\lambda}$. Since $\lambda$ is justified, $a+b = \rank(\lambda)$.  Fix $I \in J(\lambda \times \mathbf{m})$. 
-
-Recall that for $T \in \inc^{a+b+m+1}(\lambda)$, we have by definition that
-\begin{equation*}
-\pro^{a+b+m+1}(T) = \rho_{a+b+m} \circ  \cdots \circ \rho_1(T).
-\end{equation*}
-Since $-(m-1) \leq \langle (1,1,-1),(x,y,z) \rangle \leq a+b$ for $(x,y,z) \in \lambda \times \mathbf{m}$, we have
-\begin{equation*}
-\mot_{\mathrm{id},(1,1,-1)}(I) = \tau^{a+b-(a+b+m-1)}_{\mathrm{id},(1,1,-1)} \circ \cdots \circ \tau^{a+b}_{\mathrm{id},(1,1,-1)}(I).
-\end{equation*}
-Therefore, it suffices to show 
-\begin{equation*}
-\Omega \left(\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}(I) \right) = \rho_\ell \left(\Omega(I)\right)
-\end{equation*}
-for all $\ell \in \{1, 2, \dots, a+b+m\}$. 
-
-Fix such an index $\ell$ and a box $\y = (i,j) \in \lambda$. Let $Y \coloneqq I \cap ( \y \times \mathbf{m} )$ be the column of $\y$ in $I$. We consider the effect on $Y$ of applying $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ to the order ideal $I \in J(\lambda \times \mathbf{m})$ and the effect on the box $\aaa_\lambda - \y$ of applying $\rho_\ell$ to the increasing tableau $\Omega(I) \in \inc^{\rank(\lambda) + m + 1}(\lambda^{\star})$. Considering the definition of $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ from Equation~(\ref{eq:taudef}), note that $t_{(i,j,i+j-(a+b-(\ell-1))}$ is the unique toggle in that definition that acts on an element of $Y$.
-
-Define the function $H : \lambda \to [m+1]$ by $H(\x) = \mathrm{ht}(\x,I)$ for $\x \in \lambda$.
-By Lemma~\ref{lem:whos_an_ideal?}, observe that the function $H$ must be nonincreasing along any chain in $\lambda$. 
-There are now four cases to consider depending on the value of $H(\y)$.
-
-\medskip
-\noindent
-{\sf Case 1: $H(\y) > i+j-(a+b-(\ell-1))+1$:} 
-
-Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, so $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ either removes this element from $Y$ or leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))+1) \in Y$, removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) > \ell + 1$, so $\rho_{\ell}$ does not affect this entry of the increasing tableau $\Omega(I)$. 
-
-\medskip
-\noindent
-{\sf Case 2: $H(\y) = i+j-(a+b-(\ell-1))+1$:} 
-
-Here, $(\y,i+j-(a+b-(\ell-1))) \in Y$, while $(\y,i+j-(a+b-(\ell-1))+1) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ removes $(\y,i+j-(a+b-(\ell-1)))$ from $I$ exactly if $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all $d \in \lbrace 1,2 \rbrace$ with $\y+\e_d \in \lambda$. 
-
-For, on the one hand, if $\y+\e_d \in \lambda$ and $H(\y+\e_d) > i+j-(a+b-(\ell-1))$, then by Lemma~\ref{lem:whos_an_ideal?}, removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ would not leave an order ideal. 
-On the other hand, say that $H(\y+\e_d) \leq i+j-(a+b-(\ell-1))$ for all such $d$. To verify that removing $(\y,i+j-(a+b-(\ell-1)))$ from $I$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' > \y$.  By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that 
-$H(\y') \leq i+j-(a+b-(\ell-1)).$
-Now, by Lemma~\ref{lem:convex_chain}, since $\y' > \y$, there is a chain from $\y$ to $\y'$. Clearly, this chain contains an element of the form $\y+\e_{d} \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \leq i+j-(a+b-(\ell-1))$, as desired.
-
-On the tableaux side, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell+1$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is decreased to $\ell$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y -\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y -\e_d) \leq \ell-1$. This is easily equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
-
-\medskip
-\noindent
-{\sf Case 3: $H(\y) = i+j-(a+b-(\ell-1))$:}
-
-Here, $(\y,i+j-(a+b-(\ell-1))-1) \in Y$ but $(\y,i+j-(a+b-(\ell-1))) \notin Y$. We claim that $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ adds $(\y,i+j-(a+b-(\ell-1)))$ to $I$ exactly when $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all $d \in \lbrace 1,2 \rbrace$ with $\y-\e_d \in \lambda$. 
-
-For, on the one hand, if $\y-\e_d \in \lambda$ and $H(\y-\e_d) < i+j-(a+b-(\ell-1))+1$, then by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ does not yield an order ideal. 
-On the other hand, say that $H(\y-\e_d) \geq i+j-(a+b-(\ell-1))+1$ for all such $d$. To verify that adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ results in an order ideal, consider any fixed $\y' = (i',j') \in \lambda$ with $\y' < \y$. By Lemma~\ref{lem:whos_an_ideal?}, it is enough to check that $H(\y') \geq i+j-(a+b-(\ell-1))+1$. 
-Now, by Lemma~\ref{lem:convex_chain}, since $\y' < \y$, there is a chain from $\y'$ to $\y$. Clearly, this chain contains an element of the form $\y-\e_d \in \lambda$. But the function $H$ is nonincreasing along this chain, so $H(\y') \geq i+j-(a+b-(\ell-1))+1$ as desired.
-
-On the tableaux side, this case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) = \ell$. The $\aaa_\lambda - \y$ entry of $\Omega(I)$ is increased to $\ell+1$ by $\rho_\ell$ exactly when, for all $d$ with $\aaa_\lambda - \y +\e_d \in \lambda^\star$, $[\Omega(I)](\aaa_\lambda - \y + \e_d)) \geq \ell+2$. This is easily equivalent to the stated condition on when $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ acts nontrivially on $Y$.
-
-\medskip
-\noindent
-{\sf Case 4: $H(\y) < i+j-(a+b-(\ell-1))$:} 
-
-Here, $(\y,i+j-(a+b-(\ell-1))) \notin Y$, so $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$ either adds this element to $Y$ or else leaves $Y$ unchanged. Since, by the case assumption, $(\y,i+j-(a+b+(\ell-1))-1) \notin I$, by Lemma~\ref{lem:whos_an_ideal?}, adding $(\y,i+j-(a+b-(\ell-1)))$ to $I$ does not yield an order ideal. Therefore, the column $Y$ is unchanged by $\tau^{a+b-(\ell-1)}_{\mathrm{id},(1,1,-1)}$. On the other hand, the case assumption implies that $[\Omega(I)](\aaa_\lambda - \y) < \ell$, so $\rho_\ell$ does not affect this entry of $\Omega(I)$. 
-
-\medskip
-This completes the proof of Proposition~\ref{prop:equivariant}
-\end{proof}
-
-\begin{corollary}\label{cor:multisets}
-Let $\lambda$ be a convex justified shape.
-Then the multiset of cardinalities of $\Psi$-orbits on $J(\lambda \times \mathbf{m})$ and the multiset of cardinalities of $\pro^{\rank(\lambda)+ m+1}$-orbits on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
-\end{corollary}
-\begin{proof}
-By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
 \end{proof}
 
 \section{Proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}}\label{sec:arithmetic}
