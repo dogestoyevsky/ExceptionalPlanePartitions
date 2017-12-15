@@ -990,17 +990,7 @@ By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda 
 \end{proof}
 
 \section{Proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}}\label{sec:arithmetic}
-%
-%Let $\binom{[q]}{k}$ be the collection of binary vectors of length $q$ with $k$ ones.  In the previous section, we defined the map 
-%\[ \deflate\content: \inc^q(\lambda) \rightarrow \coprod_{1 \leq k \leq q} \incgl^k(\lambda) \times \binom{[s]}{r} \]
-%for fixed $q$. We now write $\deflate\content^q$ (and $\deflate^q$, $\content^q$) for this fixed choice of $q$. We also define \[ F^r: \coprod_{s \in \mathbb{Z}_{>0}} V_{r,s} \rightarrow \mathbb{Z}^r \]
-%where if $v$ has $r$ nonzero elements, then  $F(v) = F_v \in \mathbb{Z}^r$ is the map
-%\[  k \mapsto \min_{n \in [1,...,N]} \bigg( \sum_{\ell = 1}^n v(\ell) = k \bigg). \]
 
-%We saw in Section~\ref{sec:Kpro_defs} that $\compress^q : \inc^q(\lambda) \to \coprod_{0 \leq k \leq q} \incgl^k(\lambda) \times \binom{[q]}{k}$ is injective. Conversely, every $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ gives an element of $\inc^q(\lambda)$ in the following sense. Define the {\bf tableau inflation} map  \[ \tinflate^q: \coprod_{1 \leq k \leq q}  \incgl^k(\lambda) \times  \binom{[q]}{k}  \rightarrow  \inc^q(\lambda) \] such that if $(T,v) \in \incgl^k(\lambda) \times \binom{[q]}{k}$ then
-%\[ \tinflate^q(T,v) \coloneqq \inflate^q_v \circ T \in \inc^q(\lambda)  \]  
-%Note that
-%\[ \compress^q \circ \tinflate^q(T,v) = (T,v). \] In particular, $\tinflate^q$ is injective. ! It is also surjective, since the image of $\compress^q$ is contained in the domain of $\tinflate^q$ and we showed in the previous section that for $T \in \inc^q(\lambda)$, $\tinflate^q \circ \compress^q(T) = T$. %
 In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers, and realize $P$ as a convex justified shape $\lambda$. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(\lambda \times \mathbf{k})$ equals the multiset of $\pro^{\rank(\lambda)+ k+1}$-orbit cardinalities for $\inc^{ \rank(\lambda)+ k+1}(\lambda^\star)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $P_{CM}$, the Freudenthal shape by $P_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $P_p$. Note that for each of these shapes $\lambda$,  the shapes $\lambda$ and $\lambda^\star$ correspond to the same poset.
 
 By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $\lambda$, $\incgl(\lambda)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined the size of its orbit under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
