@@ -1059,7 +1059,8 @@ Using the same identity to count zeros in the numerator and denominator, it is e
 Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
 \end{theorem}
 \begin{proof}
-That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ is a calculation using Table~\ref{tab:E7}, Theorem~\ref{thm:periodthm}, and Theorem~\ref{thm:actualpdbound}, as demonstrated in the cases $\lambda = P_p$ and $\lambda = P_{CM}$.  I SHOULD ACTUALLY CHECK THIS.
+That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
+%note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
 
 It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has order $3m$ on $\inc^m(P_F)$. 
 
@@ -1067,7 +1068,7 @@ Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}
 
 %Therefore $\gcd{(m_t/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
 
-Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}(\zeta) = 0$. But this is impossible, for if $f_{P_F}(\zeta) = 0$, then the cyclotomic polynomial $\Phi_{3m}$ would divide the numerator of $f_{P_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}(\zeta) = 0$. But this is impossible, for if $f_{P_F}(\zeta) = 0$, then the minimal polynomial of $\zeta$ would divide the numerator of $f_{P_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
 \end{proof}
 
 \section*{Acknowledgements}
