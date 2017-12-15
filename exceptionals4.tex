@@ -200,15 +200,15 @@ Let $P$ be one of the two minuscule posets associated to an exceptional Lie alge
 	\begin{subfigure}[b]{0.35\textwidth}
 		\centering
 		\ydiagram{3+5,3+3,2+3,5}
-		\caption{Cayley-Moufang poset}
+		\caption{Cayley-Moufang poset, $P_{CM}$}
 	\end{subfigure} \\ \vspace{4mm}
 	\begin{subfigure}[b]{0.35\textwidth}
 		\centering
 		\ydiagram{8+1,8+1,8+1,7+2,4+5,4+5,4+3,3+3,6}
-		\caption{Freudenthal poset}
+		\caption{Freudenthal poset, $P_F$}
 	\end{subfigure}
 \caption{The two minuscule posets associated to exceptional Lie algebras of type $E$. Here, we have drawn the posets to resemble Young diagrams in Cartesian (``French'') orientation; the boxes are the elements of the poset and each box covers the box immediately below it and the box immediately to its left (if such boxes exist). Hence the minimal element of each poset is the box at the far left of the bottom row.
- The Cayley-Moufang poset is associated to $E_6$, while the Freudenthal poset is associated to $E_7$. (There is no minuscule poset associated to $E_8$.)}
+ The Cayley-Moufang poset $P_{CM}$ is associated to $E_6$, while the Freudenthal poset $P_F$ is associated to $E_7$. (There is no minuscule poset associated to $E_8$.)}
 \label{fig:min_poset_E}
 \end{figure}
 
@@ -355,9 +355,9 @@ R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed,
 	\begin{subfigure}[b]{0.27\textwidth}
 		\centering
 		\ydiagram{3+5,5}
-		\caption{Propeller}
+		\caption{Propeller, $P_5$}
 	\end{subfigure}
-\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. Propellers consist of two rows of arbitrary but equal length, overlapping by two boxes in the center. The Cayley-Moufang and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
+\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. The propeller $P_p$ consists of two rows of length $p$, overlapping by two boxes in the center. The Cayley-Moufang and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
 \end{figure}
 
 \section{The rowmotion operator $\Psi$}\label{sec:rowmotion}
@@ -811,9 +811,7 @@ Now say $\tau$ divides $jN_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell N_T}{m}
 
 \subsection{The equivariant bijection}\label{sec:equivariant}
 
-A more general approach to the ideas in this section was developed independently in \cite{Dilks.Striker.Vorland}. We give a complete development here, as the ideas are simpler in our more restrictive setting.
 
-\subsection{Bijection between plane partitions and increasing tableaux.} 
 
 Let $\{ \e_1, \e_2 \}$ be the standard basis for $\mathbb{Z}^{2}$ and let $\pi_i : \mathbb{Z}^{2} \to \mathbb{Z}$ be the projection map onto the $i$th coordinate. We say that a subset $\lambda \subset \mathbb{Z}^{2}$ is {\bf connected} if for all $\x,\x' \in \lambda$, there exist $r \in \mathbb{Z}_{\geq 0}$, $d_1, \ldots, d_r \in \{1, 2 \}$, and signs $n_1, \ldots, n_r \in \{ \pm 1 \}$ such that 
 \[\left\{ \x + \sum_{k=1}^j n_k \e_{d_k} :  1\leq j \leq r \right\} \subseteq \lambda\]
