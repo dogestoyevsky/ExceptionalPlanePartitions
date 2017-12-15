@@ -1028,29 +1028,29 @@ Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = m
 \item If $d$ divides $11$ but not $1$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(P_{CM},m,11) &= 1 \cdot 1 \cdot \binom{m/11}{11/11} \\
-&= q/11 \\ 
-&= f_{CM}^m(\zeta^{N/11}).
+&= m/11 \\ 
+&= f_{CM}^m(\zeta^{m/11}).
 \end{align*}
 \item If $d$ divides $8$ but not $4$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(P_{CM},m,8) &= 2 \cdot 1 \cdot \binom{m/8}{16/8} \\
 &= \frac{(m)(m-8)}{8^2} \\
-&= f_{CM}^m(\zeta^{N/8}).
+&= f_{CM}^m(\zeta^{m/8}).
 \end{align*}
 \item If $d$ divides $4$ but not $2$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(P_{CM},m,4) &= 3 \cdot 1 \cdot \binom{m/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{m/4}{16/4}  \\
 &= \frac{(m-8)(m-4)^2m}{4^2 \cdot 8^2} \\
-&= f_{CM}^m(\zeta^{N/4}).
+&= f_{CM}^m(\zeta^{m/4}).
 \end{align*}
-\item If $d$ divides $2$ but not $4$, Theorem~\ref{thm:mainresult} predicts
+\item If $d$ divides $2$ but not $1$, Theorem~\ref{thm:mainresult} predicts
 \begin{align*}
 \mathcal{R}(P_{CM},m,2) &= 3 \cdot 1 \cdot \binom{m/2}{12/2} + 7 \cdot 2 \cdot \binom{m/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{m/2}{16/2} \\
 &= \frac{(m-10)(m-8)(m-6)^2(m-4)^2(m-2)m}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
-&= f_{CM}^m(\zeta^{N/2}).
+&= f_{CM}^m(\zeta^{m/2}).
 \end{align*}
 \end{itemize}
-This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f_{CM}^m(\zeta^{N/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{N/d}}$) is zero, while none of the denominator terms are. 
+This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f^m_{CM}(\zeta^{m/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{m/d}}$) is zero, while none of the denominator terms are. 
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
 \end{proof}
