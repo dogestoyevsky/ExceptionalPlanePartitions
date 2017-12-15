@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 DEC 2017 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  15 DEC 2017 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1622,21 +1622,21 @@ s of gap-less in-creas-ing
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [24] [25] [26]
-Overfull \hbox (56.34785pt too wide) detected at line 1176
+Overfull \hbox (56.7784pt too wide) detected at line 1176
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^P[]\OT1/cmr/m/n/12 ) = 
 []\OML/cmm/m/it/12 :
  []
 
 [27]
-Overfull \hbox (21.10422pt too wide) detected at line 1189
-\OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^U[]; m; d\OT1/cmr/m/n/12 
-) = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/
-n/12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it
-/12 :
+Overfull \hbox (22.25423pt too wide) detected at line 1189
+\OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 P[]; m; d\OT1/cmr/m/n/12 ) 
+= \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/
+12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it/1
+2 :
  []
 
 
-Overfull \hbox (93.05032pt too wide) in paragraph at lines 1210--1210
+Overfull \hbox (93.76979pt too wide) in paragraph at lines 1210--1210
 [] 
  []
 
@@ -1673,7 +1673,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1397.
 Here is how much of TeX's memory you used:
  30139 strings out of 493089
  600889 string characters out of 6134842
- 681036 words of memory out of 5000000
+ 681030 words of memory out of 5000000
  32817 multiletter control sequences out of 15000+600000
  30156 words of font info for 122 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1707,7 +1707,7 @@ dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on exceptionals4.pdf (32 pages, 465948 bytes).
+Output written on exceptionals4.pdf (32 pages, 465975 bytes).
 PDF statistics:
  713 PDF objects out of 1000 (max. 8388607)
  639 compressed objects within 7 object streams
