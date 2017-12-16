@@ -5,7 +5,7 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{HPPW16}
+\begin{thebibliography}{CFDF95}
 
 \bibitem[AST13]{Armstrong.Stump.Thomas}
 Drew Armstrong, Christian Stump, and Hugh Thomas, \emph{A uniform bijection
@@ -85,11 +85,6 @@ Darij Grinberg and Tom Roby, \emph{Iterative properties of birational rowmotion
 \bysame, \emph{Iterative properties of birational rowmotion {I}: generalities
   and skeletal posets}, Electron. J. Combin. \textbf{23} (2016), no.~1, Paper
   1.33, 40.
-
-\bibitem[HPPW16]{HPPW}
-Zachary Hamaker, Rebecca Patrias, Oliver Pechenik, and Nathan Williams,
-  \emph{Doppelg\"{a}ngers: Bijections of plane partitions}, preprint (2016), 38
-  pages, {\sf arXiv:1602.05535}.
 
 \bibitem[Man01]{Manivel}
 Laurent Manivel, \emph{Symmetric functions, {S}chubert polynomials and
