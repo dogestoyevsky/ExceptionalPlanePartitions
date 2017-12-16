@@ -469,32 +469,34 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 
 \subsection{The equivariant bijection}\label{sec:equivariant}
 
-In this subsection, we recall results of \cite{Dilks.Striker.Vorland} (building on \cite{DPS}) that enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux. (The framework in \cite{Dilks.Striker.Vorland} is much more general than we need here.)
+Here, we observe that results of \cite{Dilks.Striker.Vorland} (building on \cite{DPS}) enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux.
 
-\begin{proposition}[{\cite[Corollary~3.28]{Dilks.Striker.Vorland}}]
-Let $P$ be a poset where the maximum length of a chain containing an element is the same for every element of $P$. Then Γ1(P, q) is in bijection with P × [q − rk(P)].
-\end{proposition}
+%\begin{proposition}[{\cite[Corollary~3.28]{Dilks.Striker.Vorland}}]
+%Let $P$ be a poset where the maximum length of a chain containing an element is the same for every element of $P$. Then Γ1(P, q) is in bijection with P × [q − rk(P)].
+%\end{proposition}
+%
+%
+%It is not hard to see that the posets we care about have this property. I think that by "is in bijection with", they actually mean "is isomorphic to".
+%
+%Then they have:
 
-
-It is not hard to see that the posets we care about have this property. I think that by "is in bijection with", they actually mean "is isomorphic to".
-
-Then they have:
-
-\begin{proposition}[{\cite[Corollary~5.2]{Dilks.Striker.Vorland}}]
+\begin{proposition}
 Let $P \in \{ P_{CM}, P_F, P_p \}$ and $m \in \mathbb{Z}_{\geq 0}$.
-There is an equivariant bijection between $\inc^{m+\rank(P)}(P)$ under $K$-promotion and order ideals in $P \times {\bf m}$ under $\Psi$.
+There is an equivariant bijection between $\inc^{m+\rank(P)}(P)$ under $K$-promotion and $J(P \times {\bf m})$ under $\Psi$.
 \end{proposition}
 \begin{proof}
-
+By \cite[Corollary~5.2]{Dilks.Striker.Vorland}, there is an equivariant bijection between the sets $\inc^{m+\rank(P)}(P)$ under $K$-promotion and $J(\Gamma_1(P,m+\rank(P)))$  under $\Psi$, where $\Gamma_1(P,m+\rank(P))$ is a poset constructed from $P$ in \cite[\textsection 3.1]{Dilks.Striker.Vorland}.
+For any $\x \in P$, note that the maximal length $M$ of a chain through $\x$ is independent of $\x$. (Specifically, $M = 11$ for $P = P_{CM}$, $M= 17$ for $P = P_F$, and $M = 2p-1$ for $P = P_p$.)
+Hence \cite[Corollary~3.28]{Dilks.Striker.Vorland} applies, and in these cases we have the isomorphism of posets $\Gamma_1(P,m+\rank(P)) \cong P \times {\bf m}$.
 \end{proof}
 
 \begin{corollary}\label{cor:multisets}
-Let $\lambda$ be a convex justified shape.
-Then the multiset of cardinalities of $\Psi$-orbits on $J(\lambda \times \mathbf{m})$ and the multiset of cardinalities of $\pro^{\rank(\lambda)+ m+1}$-orbits on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ are equal.
+Let $P \in \{ P_{CM}, P_F, P_p \}$ and $m \in \mathbb{Z}_{\geq 0}$.
+Then the multiset of cardinalities of $\Psi$-orbits on $J(P \times \mathbf{m})$ and the multiset of cardinalities of $\pro^{\rank(P)+ m+1}$-orbits on $\inc^{\rank(P)+ m+1}(\lambda)$ are equal. \qed
 \end{corollary}
-\begin{proof}
-By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
-\end{proof}
+%\begin{proof}
+%By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
+%\end{proof}
 
 \subsection{Inflation and deflation}
 Suppose $T \in \inc^m(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf m}$. We say that $T$ is {\bf gapless} if this map is surjective; otherwise, $T$ is {\bf gappy}. We write $\incgl^m(\lambda)$ for the subset of all gapless tableaux in $\inc^m(\lambda)$. Notice that the set 
