@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 DEC 2017 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 DEC 2017 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1567,7 +1567,7 @@ m/it/12 T\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 T$\OT1/cmr/m/n/12 . But then $[][
  []
 
 [15]
-Overfull \hbox (26.95293pt too wide) detected at line 737
+Overfull \hbox (31.94872pt too wide) detected at line 737
 \OT1/cmr/m/n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 
 (\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 ))[] = [][] \OMS/cmsy/m/n/12 ^^N \OT1/cmr/m/
 n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 (\
@@ -1650,14 +1650,9 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1110.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: 9D6771990107B0E7C4D07356FB4C6843;802.
+Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
+(rerunfilecheck)             Checksum: 529E19ABBC71242AADCEEAA9AF411946;2545.
 
-
-Package rerunfilecheck Warning: File `exceptionals4.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `exceptionals4.brf':
-(rerunfilecheck)             Before: FE7572046683F9FEF84A92883BD80077;2605
-(rerunfilecheck)             After:  529E19ABBC71242AADCEEAA9AF411946;2545.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1699,7 +1694,7 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (27 pages, 436247 bytes).
+Output written on exceptionals4.pdf (27 pages, 435914 bytes).
 PDF statistics:
  652 PDF objects out of 1000 (max. 8388607)
  585 compressed objects within 6 object streams
