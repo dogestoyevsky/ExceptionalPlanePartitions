@@ -210,13 +210,13 @@ Let $P$ be one of the two minuscule posets associated to an exceptional Lie alge
 
 Our main result is to completely resolve Conjecture~\ref{conj:rush.shi}. 
 \begin{theorem}\label{thm:exceptionals}
-Conjecture~\ref{conj:rush.shi} holds for the $E_6$ minuscule poset (cf.~Figure~\ref{fig:min_poset_E}A) and all $k$, but holds for the $E_7$ minuscule poset (cf.~Figure~\ref{fig:min_poset_E}B) only when $k \leq 4$. 
+Conjecture~\ref{conj:rush.shi} holds for the $E_6$ minuscule poset $P_{CM}$ (cf.~Figure~\ref{fig:min_poset_E}A) and all $k$, but holds for the $E_7$ minuscule poset $P_F$ (cf.~Figure~\ref{fig:min_poset_E}B) only when $k \leq 4$. 
 \end{theorem}  
-Verification of Conjecture~\ref{conj:rush.shi} in the the cases $k \leq 4$ for the $E_6$ minuscule poset and $k \leq 3$ for the $E_7$ minuscule poset was previously reported in \cite{Rush.Shi}. Our new results are therefore:
+Verification of Conjecture~\ref{conj:rush.shi} in the the cases $k \leq 4$ for $P_{CM}$ and $k \leq 3$ for $P_F$ was previously reported in \cite{Rush.Shi}. Our new results are therefore:
 \begin{itemize}
-\item cyclic sieving for the $E_6$ minuscule poset when $k > 4$,
-\item cyclic sieving for the $E_7$ minuscule poset when $k = 4$, and
-\item failure of the conjectured cyclic sieving for the $E_7$ minuscule poset for $k > 4$.
+\item cyclic sieving for $P_{CM}$ when $k > 4$,
+\item cyclic sieving for $P_F$ when $k = 4$, and
+\item failure of the conjectured cyclic sieving for $P_{CM}$ when $k > 4$.
 \end{itemize}
 
 Our approach to proving Theorem~\ref{thm:exceptionals} is to extend the ideas of K.~Dilks, O.~Pechenik, and J.~Striker \cite{DPS} to this minuscule setting, thereby relating the action of $\Psi$ to the action of \emph{$K$-promotion} on \emph{increasing tableaux}. $K$-promotion was first studied in \cite{Pechenik} building on combinatorial tools for $K$-theoretic Schubert calculus due to H.~Thomas and A.~Yong \cite{Thomas.Yong:K}. We show that the action of $K$-promotion is controlled by its behavior on a finite subset of increasing tableaux. By understanding the orbit structure of this subset, we are able to determine the complete orbit structure, thereby establishing Theorem~\ref{thm:exceptionals}.
@@ -459,9 +459,9 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 \path (fake2) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{10}$} (fake1);
 \path (fake4) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{11}$} (fake3);
 \path (fake6) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{12}$} (fake5);
-\path (fake8) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{1}$} (fake7);
-\path (fake10) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{2}$} (fake9);
-\path (fake12) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_{3}$} (fake11);
+\path (fake8) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_1$} (fake7);
+\path (fake10) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_2$} (fake9);
+\path (fake12) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_3$} (fake11);
 \end{tikzpicture}
 \end{center}
 \caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of the sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
@@ -469,6 +469,20 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 
 \subsection{The equivariant bijection}\label{sec:equivariant}
 
+In this subsection, we recall results of \cite{Dilks.Striker.Vorland} (building on \cite{DPS}) that enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux.
+
+\begin{proposition}[{\cite[Corollary~3.28]{Dilks.Striker.Vorland}}]
+Let $P$ be a poset where the maximum length of a chain containing an element is the same for every element of $P$. Then Γ1(P, q) is in bijection with P × [q − rk(P)].
+\end{proposition}
+
+
+It is not hard to see that the posets we care about have this property. I think that by "is in bijection with", they actually mean "is isomorphic to".
+
+Then they have:
+
+Corollary 5.2. There is an equivariant bijection between Incq (P) under promotion and order ideals in Γ1(P, q) under rowmotion
+
+which I think is exactly what we want, assuming 3.28 means what I think it does.
 
 \begin{corollary}\label{cor:multisets}
 Let $\lambda$ be a convex justified shape.
