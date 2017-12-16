@@ -481,18 +481,18 @@ Here, we observe that results of \cite{Dilks.Striker.Vorland} (building on \cite
 %Then they have:
 
 \begin{proposition}
-Let $P \in \{ P_{CM}, P_F, P_p \}$ and $m \in \mathbb{Z}_{\geq 0}$.
-There is an equivariant bijection between $\inc^{m+\rank(P)}(P)$ under $K$-promotion and $J(P \times {\bf m})$ under $\Psi$.
+Let $P \in \{ P_{CM}, P_F, P_p \}$ and $k \in \mathbb{Z}_{\geq 0}$.
+There is an equivariant bijection between $\inc^{k+\rank(P)}(P)$ under $K$-promotion and $J(P \times {\bf k})$ under $\Psi$.
 \end{proposition}
 \begin{proof}
-By \cite[Corollary~5.2]{Dilks.Striker.Vorland}, there is an equivariant bijection between the sets $\inc^{m+\rank(P)}(P)$ under $K$-promotion and $J(\Gamma_1(P,m+\rank(P)))$  under $\Psi$, where $\Gamma_1(P,m+\rank(P))$ is a poset constructed from $P$ in \cite[\textsection 3.1]{Dilks.Striker.Vorland}.
+By \cite[Corollary~5.2]{Dilks.Striker.Vorland}, there is an equivariant bijection between the sets $\inc^{k+\rank(P)}(P)$ under $K$-promotion and $J(\Gamma_1(P,k+\rank(P)))$  under $\Psi$, where $\Gamma_1(P,k+\rank(P))$ is a poset constructed from $P$ in \cite[\textsection 3.1]{Dilks.Striker.Vorland}.
 For any $\x \in P$, note that the maximal length $M$ of a chain through $\x$ is independent of $\x$. (Specifically, $M = 11$ for $P = P_{CM}$, $M= 17$ for $P = P_F$, and $M = 2p-1$ for $P = P_p$.)
-Hence \cite[Corollary~3.28]{Dilks.Striker.Vorland} applies, and in these cases we have the isomorphism of posets $\Gamma_1(P,m+\rank(P)) \cong P \times {\bf m}$.
+Hence \cite[Corollary~3.28]{Dilks.Striker.Vorland} applies, and in these cases we have the isomorphism of posets $\Gamma_1(P,k+\rank(P)) \cong P \times {\bf k}$.
 \end{proof}
 
 \begin{corollary}\label{cor:multisets}
 Let $P \in \{ P_{CM}, P_F, P_p \}$ and $m \in \mathbb{Z}_{\geq 0}$.
-Then the multiset of cardinalities of $\Psi$-orbits on $J(P \times \mathbf{m})$ and the multiset of cardinalities of $\pro^{\rank(P)+ m+1}$-orbits on $\inc^{\rank(P)+ m+1}(\lambda)$ are equal. \qed
+Then the multiset of cardinalities of $\Psi$-orbits on $J(P \times \mathbf{k})$ and the multiset of cardinalities of $\pro^{\rank(P)+ k+1}$-orbits on $\inc^{\rank(P)+ k+1}(\lambda)$ are equal. \qed
 \end{corollary}
 %\begin{proof}
 %By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
@@ -958,7 +958,7 @@ f_{i,j}(q) \coloneqq
 where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b = 0}^{a-1} q^b$ are the standard $q$-analogues. Then, 
 \[\#\left\{ v \in \binom{[i]}{j} : (\Sigma^i)^{\circ s}(v) = v \right\} = f_{i,j}(\zeta^s),\] where $\zeta$ is any primitive $i$th root of unity. \qed
 \end{theorem} 
-We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on any set $\inc^m(P)$ for $P \in \{ P_{CM}, P_F, P_p \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on any set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
 
 \begin{theorem}~\label{thm:actualpdbound}
 For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is 
