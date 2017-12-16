@@ -469,7 +469,7 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 
 \subsection{The equivariant bijection}\label{sec:equivariant}
 
-In this subsection, we recall results of \cite{Dilks.Striker.Vorland} (building on \cite{DPS}) that enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux.
+In this subsection, we recall results of \cite{Dilks.Striker.Vorland} (building on \cite{DPS}) that enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux. (The framework in \cite{Dilks.Striker.Vorland} is much more general than we need here.)
 
 \begin{proposition}[{\cite[Corollary~3.28]{Dilks.Striker.Vorland}}]
 Let $P$ be a poset where the maximum length of a chain containing an element is the same for every element of $P$. Then Γ1(P, q) is in bijection with P × [q − rk(P)].
@@ -480,9 +480,13 @@ It is not hard to see that the posets we care about have this property. I think 
 
 Then they have:
 
-Corollary 5.2. There is an equivariant bijection between Incq (P) under promotion and order ideals in Γ1(P, q) under rowmotion
+\begin{proposition}[{\cite[Corollary~5.2]{Dilks.Striker.Vorland}}]
+Let $P \in \{ P_{CM}, P_F, P_p \}$ and $m \in \mathbb{Z}_{\geq 0}$.
+There is an equivariant bijection between $\inc^{m+\rank(P)}(P)$ under $K$-promotion and order ideals in $P \times {\bf m}$ under $\Psi$.
+\end{proposition}
+\begin{proof}
 
-which I think is exactly what we want, assuming 3.28 means what I think it does.
+\end{proof}
 
 \begin{corollary}\label{cor:multisets}
 Let $\lambda$ be a convex justified shape.
