@@ -400,10 +400,10 @@ The first $K$-theoretic Littlewood-Richardson rule was discovered by A.~Buch \ci
 Let $\lambda$ be an order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of a positive integer to each box of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^m(\lambda)$ denote the set of all increasing tableaux of shape $\lambda$ with all entries at most $m$. We identify $\inc^m(\lambda)$ with the set of all strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{m}$ of size $m$. For examples of increasing tableaux, see Figures~\ref{fig:kbk} and ~\ref{fig:promotion}.
 \end{definition}
 
-Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$, directly extending M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. Since studying the action of $\pro^m$ will be fundamental to our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}, we must recall the definition of $\pro^m$. 
-We will indeed use both the original formulation from \cite{Pechenik}, as well as an equivalent formulation from \cite[Proposition~2.4]{DPS}.
+Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. Since studying the action of $\pro^m$ will be fundamental to our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}, we must recall the definition of $\pro^m$. 
+We will use both the original formulation from \cite{Pechenik} and an equivalent formulation from \cite[Proposition~2.4]{DPS}.
 
-Let $T \in \inc^m(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps the labels $i$ and $i+1$ in each component that is a single box, and acts trivially on each non-trivial connected component. 
+Let $T \in \inc^m(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps the labels $i$ and $i+1$ in each component that is a single box, and leaves unchanged each non-trivial connected component. 
 Notice that each $\rho_i$ is an involution.
 Using the characterization of \cite[Proposition~2.4]{DPS}, {\bf $K$-promotion} may then be defined by
 \[
@@ -467,7 +467,7 @@ Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fi
 
 \subsection{The equivariant bijection}\label{sec:equivariant}
 
-Here, we observe that results of \cite{Dilks.Striker.Vorland} (building on \cite{DPS}) enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux.
+Here, we observe that results of \cite{DPS} and \cite{Dilks.Striker.Vorland} enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux.
 
 %\begin{proposition}[{\cite[Corollary~3.28]{Dilks.Striker.Vorland}}]
 %Let $P$ be a poset where the maximum length of a chain containing an element is the same for every element of $P$. Then Γ1(P, q) is in bijection with P × [q − rk(P)].
@@ -497,20 +497,20 @@ Then the multiset of cardinalities of $\Psi$-orbits on $J(P \times \mathbf{k})$ 
 %\end{proof}
 
 \subsection{Inflation and deflation}
-Suppose $T \in \inc^m(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf m}$. We say that $T$ is {\bf gapless} if this map is surjective; otherwise, $T$ is {\bf gappy}. We write $\incgl^m(\lambda)$ for the subset of all gapless tableaux in $\inc^m(\lambda)$. Notice that the set 
+Suppose $T \in \inc^m(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf m}$. We say that $T$ is {\bf gapless} if this map is surjective and {\bf gappy} otherwise. We write $\incgl^m(\lambda)$ for the subset of all gapless tableaux in $\inc^m(\lambda)$. Notice that the set 
 \[
 \incgl(\lambda) \coloneqq \coprod_{m} \incgl^m(\lambda)
 \]
-is necessarily finite; this fact will be critical for our ability to prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}.
+is finite. This fact will be critical to our proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}.
 
 For $T \in \inc^m(\lambda)$, let $m_T \coloneqq |\mathrm{range}(T)|$ be the number of distinct labels in $T$. For each $m$, we define the {\bf deflation} map \[\deflate^m : \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \incgl^n(\lambda)\] by
 \[
-(\deflate^m(T))(\x) =
+[\deflate^m(T)](\x) =
 \# \{ h \in \mathrm{range}(T): h \leq T(\x) \} ,
 \]
 for $T \in \inc^m(\lambda)$ and $\x \in \lambda$. Note that $\deflate^m(T) \in \incgl^{m_T}(\lambda)$ and that $m_T \leq m$.
 
-For positive integers $k \leq j$, let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
+For positive integers $j$ and $k$, let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
 \[
  \content^m : \inc^m(\lambda) \to \{ 0, 1\}^m = \coprod_{0 \leq  n \leq m} \binom{[m]}{n}
  \] 
@@ -518,12 +518,12 @@ For positive integers $k \leq j$, let $\binom{[j]}{k}$ denote the collection of 
 \[
 \content^m(T) = (c_1, \dots, c_m),
 \] 
-where $c_i = 1$ if $i \in \mathrm{range}(T)$ and $c_i = 0$ if $i \notin \mathrm{range}(T)$. (Warning: This definition of content differs from the usual notion of content for semistandard tableaux in that here we do not care about the multiplicity of a label, but only its presence or absence.)
+where $c_i = 1$ if $i \in \mathrm{range}(T)$ and $c_i = 0$ if $i \notin \mathrm{range}(T)$. Note that this definition of content differs from the usual notion of content for semistandard tableaux in that here we do not care about the multiplicity of a label, but only its presence or absence.
 
 \begin{example}\label{ex:deflate}
 If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{345,124} \in \incgl^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \binom{[7]}{5} \subset \{0,1\}^7$.
 \end{example}
-Note that if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \binom{[m]}{n}$. We denote by $\compress^m$ the product map
+Now if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \binom{[m]}{n}$. We denote by $\compress^m$ the product map
 \[
 \compress^m \coloneqq (\deflate^m,\content^m).
 %: \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right).
@@ -540,7 +540,7 @@ A two-sided inverse for $\compress^m$ is given as follows. For any nonnegative i
 For a binary vector $v \in \{0,1\}^m$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^m_v : [N_v] \to [m]\] by
 \[ \inflate^m_v(k) = \min \bigg\lbrace n \in [m]:   \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \bigg\rbrace.\] (We use curly braces $``\{\}"$ throughout the paper to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. Therefore
 \begin{align*}
-[\inflate^m_{\content^m(T)} \circ \deflate^m(T)](\x) &= \min \bigg\lbrace n \in [m]:    \# \{ h \in \mathrm{range}(T): h \leq n \} = (\deflate^m(T))(\x) \bigg\rbrace \\ &= T(\x). 
+[\inflate^m_{\content^m(T)} \circ \deflate^m(T)](\x) &= \min \bigg\lbrace n \in [m]:    \# \{ h \in \mathrm{range}(T): h \leq n \} = [\deflate^m(T)](\x) \bigg\rbrace \\ &= T(\x). 
 \end{align*} Now define the {\bf tableau inflation} map 
 \[
 \tinflate^m : \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right) \to \inc^m(\lambda)
@@ -551,7 +551,7 @@ by
 \]
 Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective onto $[n]$ and $\inflate^m_v$ maps $[n]$ onto the indices of nonzero components in $v$, $\content^m \circ \tinflate^m(S,v) = v$.  Also,
 \begin{align*}
- (\deflate^m(\inflate^m_v \circ S))(\x) &= \# \{ h \in \mathrm{range}(\inflate^m_v \circ S): h \leq (\inflate^m_v \circ S)(\x) \} \\  
+ [\deflate^m(\inflate^m_v  \circ S)](\x) &= \# \{ h \in \mathrm{range}(\inflate^m_v \circ S): h \leq \inflate^m_v \circ S(\x) \} \\  
  &= \# \{ h: v\{h\} \neq 0 \text{ and } \sum_{\ell = 1}^h v\{\ell\} \leq S(\x)  \} \\
  &= S(\x).
 \end{align*}
@@ -570,7 +570,7 @@ Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v
 \end{example}
 
 \subsection{Interaction between $K$-promotion and deflation}
-By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that the behavior of $\pro^m$ is controlled by its action on the subset of gapless increasing tableaux. Much of the power of this observation comes from the fact that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$, and that therefore the action of $\pro^m$ on the set of all increasing tableaux of shape $\lambda$ is governed by a finite amount of data.
+By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus for arbitrary $m$, the action of $\pro^m$ on $\inc^m(\lambda)$ is governed by a finite amount of data.
 
 
 To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
