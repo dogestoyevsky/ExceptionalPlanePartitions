@@ -570,14 +570,14 @@ Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v
 \end{example}
 
 \subsection{Interaction between $K$-promotion and deflation}
-By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus for arbitrary $m$, the action of $\pro^m$ on $\inc^m(\lambda)$ is governed by a finite amount of data.
+By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus a finite amount of data governs the action of $\pro^m$ on $\inc^m(\lambda)$ for all $m$.
 
 
-To establish this relation, we first need to introduce notation for the steps in a different characterization of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, \cite[Proposition~2.4]{DPS} gives the following alternative characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
+To establish this relation, we first need to introduce a different characterization of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then \cite[Proposition~2.4]{DPS} gives the following equivalent characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
 \begin{equation}\label{eq:kprodef2}
 \pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
 \end{equation}
- (This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}.) An example of computing $K$-promotion via this alternative but equivalent process is shown in Figure~\ref{fig:promotion_via_swaps}.
+ This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}. An example of computing $K$-promotion via this process is shown in Figure~\ref{fig:promotion_via_swaps}.
  
  \begin{figure}[h]
  \begin{tikzpicture}
@@ -599,7 +599,7 @@ To establish this relation, we first need to introduce notation for the steps in
 \caption{The calculation of the $K$-promotion $\pro^5(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
  \end{figure}
 
-Using this characterization of $\pro^m$, we give names to the intermediate products of this process.
+Using this characterization, we give names to the intermediate products of $\pro^m$.
 For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
 \[T^{(n)} \coloneqq \swap_n \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $n > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
 \[
@@ -647,7 +647,7 @@ For $T \in \inc^m(\lambda)$, if $\content^m(T) \lbrace 1 \rbrace = 1$, then
 \end{equation}
 If $\content^m(T) \lbrace 1 \rbrace = 0$, then $\pro^m(T) = \decr(T)$. 
 \end{lemma} 
-This result is intuitive, since after the ``initialization'' that replaces $1$s with $\bullet$s, the steps of $K$-promotion depend essentially on the relative magnitude of the labels. A careful proof requires the following technical arguments (Lemmas~\ref{lem:bullet_placement} and ~\ref{lem:gappy_promotion}). 
+This result is intuitive, since after the ``initialization'' that replaces $1$s with $\bullet$s, the steps of $K$-promotion depend essentially on the relative magnitude of the labels. A careful proof requires the following technical lemmas (Lemmas~\ref{lem:bullet_placement} and ~\ref{lem:gappy_promotion}). 
 \begin{lemma} \label{lem:bullet_placement}
 Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_j = \inflate^m_{\content^m(T)}(j)$ for $1 \leq j \leq m_T$. Then, for all $\x \in \lambda$ and $1 \leq j \leq m_T$, we have
  \begin{equation}\label{eq:gappy_promotion2}
@@ -670,7 +670,7 @@ That is, the two sides are identical functions on the same domain.
 \end{lemma}
 \begin{remark}The statement of the lemma involves a slight abuse of notation, since in general $\content^m(T)$ has more nonzero entries than $\lambda(\deflate^m(T)^{(j)})$ has boxes. This does not present an issue, since $\tinflate^m$ extends to a well-defined operator on vectors with excess $1$s.
 \end{remark}
-\begin{proof}  We proceed again by induction on $j$. The base case $j=1$ is trivial, since if $T \in \inc^m(\lambda)$ is any tableau, then $\lambda \left( \deflate^m(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
+\begin{proof}  We proceed again by induction on $j$. The base case $j=1$ is trivial, since for any $T \in \inc^m(\lambda)$, $\lambda \left( \deflate^m(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
 %To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
 
 Now, assume that the lemma holds for all increasing tableaux $T$ in the case $j < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^m(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^m(T)^{(t-1)} \right)$, then 
@@ -692,10 +692,10 @@ Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). Take $\x 
 Putting these facts together, we have shown that $\lambda \left(T^{(i_j)} \right) = \lambda \left(\deflate^m(T)^{(j)} \right)$ for all $j$, and that $\deflate^m(T)_j(\x) = h$ if and only if $T_j(\x) = \inflate^m_{\content^m(T)}(h)$. 
 \end{proof}
 
-\begin{remark}
-As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ is, in fact, in $\inc^m \left(\lambda \left( T^{(j)} \right) \right)$. However, we do not need this observation here.
-\end{remark}
-
+%\begin{remark}
+%As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ is, in fact, in $\inc^m \left(\lambda \left( T^{(j)} \right) \right)$. However, we do not need this observation here.
+%\end{remark}
+%
 
 %\begin{proof} Since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)$ and $T$ are labelled by $1$ in the same boxes, and therefore $\rep_{1 \rightarrow \bullet}(\deflate^m(T))$ and $\rep_{1 \rightarrow \bullet}(T)$ have $\bullet$s in the same boxes. 
 %
@@ -707,7 +707,7 @@ As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ 
 If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is no $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
 
 
-Say otherwise that $\compress^m(T)\lbrace 1 \rbrace = 1$. By Equation~(\ref{eq:kprodef2}), it is sufficient to show that
+Say otherwise that $\compress^m(T)\lbrace 1 \rbrace = 1$. By Equation~(\ref{eq:kprodef2}), we must show that
 \begin{align*}
 \deflate^m \circ &\decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2\circ \rep_{1 \rightarrow \bullet} (T) = \\
  & \decr \circ \rep_{\bullet \rightarrow m_T+1} \circ \swap_{m_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m (T). 
@@ -809,7 +809,7 @@ Say $(K^m)^{\circ n}(\compress^m(T)) = \compress^m(T)$. Applying $\pi_2$ to both
 n' &\coloneqq n - \# \{ 0 \leq j \leq n-1 : \pi_2 ((K^m)^{\circ j} \circ \compress^m(T)) \lbrace 1 \rbrace = 0\} \\
 &= n - \#  \{ 1 \leq i \leq n : \content^m(T) \lbrace i \mod m \rbrace = 0\}.
 \end{align*}
-Let $r$ be the number of $0$s among the first $\ell$ entries of $\content^m(T)$. Then, $n' = t(\ell - r)$. Since $(\pro^m)^{\circ n'}$ fixes $\deflate^m(T)$, $n'$ is a multiple of $\tau$. Hence, $n' = s \tau = t(\ell - r)$ for some integer $s$, and so $n = n' + tr = s\tau + tr$.
+Let $r$ be the number of $0$s among the first $\ell$ entries of $\content^m(T)$. Then, $n' = t(\ell - r)$. Since $(\pro^m)^{\circ n'}$ fixes $\deflate^m(T)$, $n'$ is a multiple of $\tau$. Hence, $n' = s \tau$ for some integer $s$, and so $n = n' + tr = s\tau + tr$.
 
 Thus, we have $(K^m)^{\circ n}  \circ \compress^m(T) = \compress^m(T)$ if and only if $n = t \ell = s \tau + t  r$ for some integers $s$ and $t$. Hence, the order of $\pro^m$ on $T$ is the least positive integer $h$ that can be simultaneously written in the forms $h = t \ell$ and $h=s \tau + t r$ for the same value of $t$. But $t \ell = s\tau + tr$ implies $t(\ell-r) = s\tau$. Since $0 \leq r < \ell$, the least such $h$ is clearly achieved when $t$ is minimal, i.e.\ when $t(\ell-r)$ is the least common multiple of $\ell-r$ and $\tau$. Thus, $h$ can be expressed as 
 \begin{equation}\label{eq:period}
@@ -825,13 +825,13 @@ as desired.
 The following corollary will allow us to determine the period of $\pro^m$ on $\inc^m(\lambda)$ in Section~\ref{sec:arithmetic}. 
 \\
 \begin{corollary}~\label{corr:pdbound}
-In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer with $j m_T$ a multiple of $\tau$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
+In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer such that $\tau$ divides $j m_T$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
 \end{corollary} 
 \begin{proof}
 First, say $j m_T = \tau$. Then,
 \begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell m_T}{m},\tau)} = \frac{\ell \cdot j m_T}{\text{gcd}(\frac{\ell m_T}{m},j m_T)} = \frac{\ell \cdot j m_T}{\frac{\ell m_T}{m}} = jm. 
 \end{equation}
-Now say $\tau$ divides $jN_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell N_T}{m},\tau)} \ \ \  \text{    divides   } \ \ \ \frac{j N_T}{\text{gcd}(\frac{\ell N_T}{m},j N_T)}.\] Thus $h$ divides $j m$. 
+Now say $\tau$ divides $jm_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell m_T}{m},\tau)} \ \ \  \text{    divides   } \ \ \ \frac{j m_T}{\text{gcd}(\frac{\ell m_T}{m},j m_T)}.\] Thus $h$ divides $j m$. 
 \end{proof}
 
 \section{Proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}}\label{sec:arithmetic}
