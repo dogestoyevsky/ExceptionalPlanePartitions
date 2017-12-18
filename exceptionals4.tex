@@ -838,12 +838,12 @@ Now say $\tau$ divides $jm_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell m_T}{m}
 
 In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(P \times \mathbf{k})$ equals the multiset of $\pro^{\rank(P)+ k+1}$-orbit cardinalities for $\inc^{ \rank(P)+ k+1}(P)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $P_{CM}$, the Freudenthal shape by $P_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $P_p$. 
 
-By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined the size of its orbit under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
+By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined its period under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$m_T$ & orbit size & number of orbits\\
+${m_T}$ & period ($\tau$) & number of orbits ($N$)\\
   \hline
   11 & 1 & 1\\
   \hline
@@ -863,14 +863,14 @@ $m_T$ & orbit size & number of orbits\\
   & 16 & 4\\
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(P_{CM})$ for each $m$.}
+\caption{The distribution of $\pro^{m_T}$-orbits of gapless increasing tableaux in $\incgl^{m_T}(P_{CM})$ for each ${m_T}$.}
 \label{tab:E6}
 \end{table}
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$m_T$ & orbit size & number of orbits\\
+${m_T}$ & period ($\tau$) & number of orbits ($N$) \\
   \hline
   17 & 1 & 1\\
   \hline
@@ -909,7 +909,7 @@ $m_T$ & orbit size & number of orbits\\
   & 27 & 484 \\
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(P_F)$ for each $m$.}
+\caption{The distribution of $\pro^{m_T}$-orbits of gapless increasing tableaux in $\incgl^{m_T}(P_F)$ for each ${m_T}$.}
 \label{tab:E7}
 \end{table}
 
@@ -932,14 +932,14 @@ It is essentially trivial to observe that, for any $p$, $\incgl(P_p)$ consists o
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
 \hline
-$m_T$ & orbit size & number of orbits\\
+$m_T$ & period ($\tau$) & number of orbits ($N$)\\
   \hline
   $2p-1$ & 1 & 1\\
   \hline
   $2p$ & 2 & 1\\ 
   \hline
 \end{tabular}
-\caption{The distribution of $\pro^m$-orbits of gapless increasing tableaux in $\incgl^m(P_p)$ for each $m$.}
+\caption{The distribution of $\pro^{m_T}$-orbits of gapless increasing tableaux in $\incgl^{m_T}(P_p)$ for each ${m_T}$.}
 \label{tab:prop}
 \end{table}
 
@@ -957,7 +957,7 @@ where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b 
 \[\#\left\{ v \in \binom{[i]}{j} : (\Sigma^i)^{\circ s}(v) = v \right\} = f_{i,j}(\zeta^s),\] where $\zeta$ is any primitive $i$th root of unity. \qed
 \end{theorem} 
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on any set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
-
+\\
 \begin{theorem}~\label{thm:actualpdbound}
 For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is 
 \begin{itemize}
@@ -968,7 +968,7 @@ For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is
 (Here `$m \gg 0$' means $m \geq 2p$ for $P = P_p$, $m \geq 12$ for $P = P_{CM}$, and $m \geq 22$ for $P = P_F$.) For $m \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^m$ on $\inc^m(P_F)$ is $m$.
 \end{theorem}
 \begin{proof}
-Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gapless tableau (column 2) divides its height (column 1). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$. Clearly the $\pro^{12}$-period of $P_{CM}$ is $12$, and whenever $m> 12$, it is possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(P_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$. The analogous calculation for $P = P_p$ is easy by inspection of Table~\ref{tab:prop}.
+Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gapless tableau  divides its height ($m_T$). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$. Clearly the $\pro^{12}$-period of $P_{CM}$ is $12$, and whenever $m> 12$, it is possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(P_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$. The analogous calculation for $P = P_p$ is easy by inspection of Table~\ref{tab:prop}.
 
 The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each tableau divides $3m$. When $m \geq 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$.
 
@@ -977,7 +977,7 @@ The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace
 
 
 For specified $P \in \{P_p, P_{CM}, P_F\}$, we denote by $m_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
-\-\ \\ \-\
+\\
 
 \begin{theorem}~\label{thm:mainresult}
 Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(P,m,d)$ be the number of increasing tableaux $T \in \inc^m(P)$ whose $\pro^m$-period divides $m/d$. Then,
@@ -988,11 +988,11 @@ Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $
 \begin{proof}
 Theorem~\ref{thm:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_T$ ones, where $m_T$ is the height of the gapless tableau. The table corresponding to $P$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
 
-For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. Then $c\{i\}$ is an integer by Theorem~\ref{thm:actualpdbound}.  By Theorem~\ref{thm:periodthm}, a gapless tableau of height $m_T\{i\}$ and a content vector with period $m\{i\}/\tilde{d}$ give a tableau of period \[ \frac{\frac{m\{i\}}{\tilde{d}} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{\tilde{d}},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{\tilde{d}} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},\tilde{d})}{\tilde{d} c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},\tilde{d})}. \] 
-Therefore, the tableau has period dividing $m\{i\}/d$ is and only if $d$ divides both $\tilde{d}$ and $c\{i\}$. Now $d$ divides $\tilde{d}$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
+For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a gapless tableau of height $m_T\{i\}$ and a content vector with period $m\{i\}/d'$ give a tableau of period \[ \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{d'},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},d')}{d' c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},d')}. \] 
+Therefore, the tableau has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now $d$ divides $d'$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
 \end{proof}
 
-In the cases $P = P_p$ and $P = P_{CM}$, the resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we will need the following elementary identity, allowing us to work with integers rather than $q$-integers. 
+The resulting formula is simple enough to check by hand. As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, the following elementary identity allows us to work with integers rather than $q$-integers. 
 
 
 \begin{lemma}\label{lem:evalq}
@@ -1027,7 +1027,7 @@ Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$
 
 If $d$ divides $2p-1$,  then
 \[ \mathcal{R}(P_p,m,d) =  f_{m,2p-1}(\zeta^{m/d}) = \binom{m/d}{(2p-1)/d} = f_{P_p}(\zeta^{m/d}).\]
-If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(P_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p}{d}}\rceil$ of the terms in the numerator of $f_{P_p}(\zeta^{m/d})$ and at most $\lfloor{\frac{2p}{d}}\rfloor$ of the terms in the denominator, so $f_{P_p}(\zeta^{m/d}) = 0$. 
+If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(P_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p-1}{d}}\rceil$ of the terms in the numerator of $f_{P_p}(\zeta^{m/d})$ and at most $\lfloor{\frac{2p-1}{d}}\rfloor$ of the terms in the denominator, so $f_{P_p}(\zeta^{m/d}) = 0$. 
 \end{proof}
 
 The verification for $P = P_{CM}$ is similarly straightforward. 
