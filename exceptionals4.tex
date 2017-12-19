@@ -410,22 +410,28 @@ Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that rep
  
  \begin{figure}[h]
  \begin{tikzpicture}
-\node (T) {$T= \;$\ytableaushort{ 235,124}};
-\node[right  = 1.7 of T] (T4) {\ytableaushort{ 235, \bullet 24}};
-\node[right  = 1.7 of T4] (T5) {\ytableaushort{   \bullet 35, 2 \bullet 4}};
-\node[below right  = 1.5 and -2.2 of T] (T6) {\ytableaushort{   3 \bullet 5, 234 }};
-\node[right  = 1.7 of T6] (T7) {\ytableaushort{   35 \bullet, 234 }};
-\node[right  = 1.7 of T7] (T9) {\ytableaushort{  356,234 }};
-\node[below right = 1.5 and -2.2 of T6] (T10) {\ytableaushort{245,123}};
-\node[right = -0.1 of T10] (pro) {$=\pro^5(T)$};
+\node (T) {$T= \;$\ytableaushort{ \none \none \none 7,\none \none 467,12345}};
+\node[right  = 1.7 of T] (T4) {\ytableaushort{ \none \none \none 7,\none \none 467,\bullet 2345}};
+\node[right  = 1.7 of T4] (T5) {\ytableaushort{  \none \none \none 7,\none \none 467,2 \bullet 345}};
+\node[below right  = 1.5 and -3.4 of T] (T6) {\ytableaushort{\none \none \none 7,\none \none 467,23 \bullet 45 }};
+\node[right  = 1.7 of T6] (T7) {\ytableaushort{\none \none \none 7,\none \none \bullet 67,234 \bullet 5 }};
+\node[right  = 1.7 of T7] (T9) {\ytableaushort{\none \none \none 7,\none \none \bullet 67,2345 \bullet }};
+\node[below right = 1.5 and -3.4 of T6] (T10) {\ytableaushort{\none \none \none 7,\none \none 6 \bullet 7,2345 \bullet }};
+\node[right  = 1.7 of T10] (T11) {\ytableaushort{\none \none \none \bullet,\none \none 6 7 \bullet ,2345 7 }};
+\node[right  = 1.7 of T11] (T12) {\ytableaushort{\none \none \none 8,\none \none 6 7 8 ,2345 7 }};
+\node[below right = 1.5 and -3.4 of T10] (T13) {\ytableaushort{\none \none \none 7,\none \none 5 6 7 ,1234 6 }};
+\node[right = -0.1 of T13] (pro) {$=\pro^7(T)$};
 \path (T) edge[pil]  node[above]{$\rep_{1 \rightarrow \bullet}$} (T4);
 \path (T4) edge[pil] node[above]{$\swap_2$} (T5);
 \draw[->, thick] (T5.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
-\draw[->, thick] (T9.south) .. node[above]{$\decr$} controls ([yshift=-3cm] T9) and ([yshift=3cm] T10) .. (T10.north);
-\path (T6) edge[pil] node[above]{$\swap_5$} (T7);
-\path (T7) edge[pil] node[above]{$\rep_{\bullet \rightarrow 6}$} (T9);
+\draw[->, thick] (T12.south) .. node[above]{$\decr$} controls ([yshift=-3cm] T12) and ([yshift=3cm] T13) .. (T13.north);
+\path (T6) edge[pil] node[above]{$\swap_4$} (T7);
+\path (T11) edge[pil] node[above]{$\rep_{\bullet \rightarrow 8}$} (T12);
+\path (T7) edge[pil] node[above]{$\swap_5$} (T9);
+\draw[->, thick] (T9.south) .. node[above]{$\swap_6$} controls ([yshift=-3cm] T9) and ([yshift=3cm] T10) .. (T10.north);
+\path (T10) edge[pil] node[above]{$\swap_7$} (T11);
 \end{tikzpicture}
-\caption{The calculation of the $K$-promotion $\pro^5(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
+\caption{The calculation of the $K$-promotion $\pro^7(T)$ of the increasing tableau $T \in \inc^7(\lambda)$, where $\lambda$ is the illustrated order ideal of $P_{CM}$.}\label{fig:promotion_via_swaps}
  \end{figure}
 %We will use both the original formulation from \cite{Pechenik} and an equivalent formulation from \cite[Proposition~2.4]{DPS}.
 %
