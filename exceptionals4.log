@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 DEC 2017 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 DEC 2017 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1638,9 +1638,14 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1113.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: C0D6A544F894EECCE98CFB77B8860EF2;802.
-Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
-(rerunfilecheck)             Checksum: 84947FC40022638B4144EA099EDA24CC;2316.
 
+
+Package rerunfilecheck Warning: File `exceptionals4.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `exceptionals4.brf':
+(rerunfilecheck)             Before: 84947FC40022638B4144EA099EDA24CC;2316
+(rerunfilecheck)             After:  415E4903B05141C9CE346287CF87FB12;2271.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1682,10 +1687,10 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (24 pages, 419459 bytes).
+Output written on exceptionals4.pdf (24 pages, 419365 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 553 compressed objects within 6 object streams
+ 616 PDF objects out of 1000 (max. 8388607)
+ 552 compressed objects within 6 object streams
  110 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
