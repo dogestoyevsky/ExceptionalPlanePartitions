@@ -456,46 +456,46 @@ Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that rep
 %\caption{The three increasing tableaux on the right are obtained from the increasing tableau at left by applying the indicated $K$-Bender-Knuth operators. The arrows point in both directions since each $K$-Bender-Knuth operator is involutive.}\label{fig:kbk}
 %\end{figure}
 
-\begin{figure}[h]
-\begin{center}
-\begin{tikzpicture}
-\node (T) {$T= \!\!\!\!\!\!\!$\hspace{-4mm}\ytableaushort{ \none \none \none 89{11}{12}{13},\none \none \none 78{10},\none \none 567, 12345}};
-\node[right  = 1.35 of T] (T4) {\ytableaushort{ \none \none \none 89{11}{12}{13}, \none \none \none 78{10}, \none \none 467, 12345}};
-\node[below  = 1.35 of T] (T5) {\ytableaushort{   \none \none \none 89{11}{12}{13}, \none \none \none 78{10},\none \none 457,12346}};
-\node[right  = 1.35 of T5] (T6) {\ytableaushort{   \none \none \none 89{11}{12}{13}, \none \none \none 68{10},\none \none 457, 12346 }};
-\node[below  = 1.35 of T5] (T7) {\ytableaushort{   \none \none \none 79{11}{12}{13},\none \none \none 68{10},\none \none 457, 12346 }};
-\node[right  = 1.35 of T7] (T9) {\ytableaushort{  \none \none \none 7{10}{11}{12}{13},\none \none \none 689, \none \none 457, 12346 }};
-\node[right = -1 of T9] (finishlabel) {$=\pro^{13}(T)$};
-\node[below left = -.3 and -0.7 of T9] (fake1) {};
-\node[below left = -.3 and -1.2 of T9] (fake2) {};
-\node[below left = -.3 and -1.7 of T9] (fake3) {};
-\node[below left = -.3 and -2.2 of T9] (fake4) {};
-\node[below left = -.3 and -2.7 of T9] (fake5) {};
-\node[below left = -.3 and -3.2 of T9] (fake6) {};
-\node[above left = -.3 and -2.5 of T] (fake7) {};
-\node[above left = -.3 and -3.0 of T] (fake8) {};
-\node[above left = -.3 and -3.5 of T] (fake9) {};
-\node[above left = -.3 and -4.0 of T] (fake10) {};
-\node[above left = -.3 and -4.5 of T] (fake11) {};
-\node[above left = -.3 and -5.0 of T] (fake12) {};
-\node[below left = -.3 and -1.7 of T7] (fake13) {};
-\node[below left = -.3 and -2.2 of T7] (fake14) {};
-\path (T) edge[pil]  node[above]{$\rho_4$} (T4);
-\path (T4) edge[pil] node[above]{$\rho_5$} (T5);
-\draw[->, thick] (T5.south) .. node[above]{$\rho_6$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
-\path (T6) edge[pil] node[above]{$\rho_7$} (T7);
-\path (fake14) edge[pil,out=270,in=270,looseness=3] node[below]{$\rho_8$} (fake13);
-\path (T7) edge[pil] node[above]{$\rho_9$} (T9);
-\path (fake2) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{10}$} (fake1);
-\path (fake4) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{11}$} (fake3);
-\path (fake6) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{12}$} (fake5);
-\path (fake8) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_1$} (fake7);
-\path (fake10) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_2$} (fake9);
-\path (fake12) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_3$} (fake11);
-\end{tikzpicture}
-\end{center}
-\caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of the sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
-\end{figure}
+%\begin{figure}[h]
+%\begin{center}
+%\begin{tikzpicture}
+%\node (T) {$T= \!\!\!\!\!\!\!$\hspace{-4mm}\ytableaushort{ \none \none \none 89{11}{12}{13},\none \none \none 78{10},\none \none 567, 12345}};
+%\node[right  = 1.35 of T] (T4) {\ytableaushort{ \none \none \none 89{11}{12}{13}, \none \none \none 78{10}, \none \none 467, 12345}};
+%\node[below  = 1.35 of T] (T5) {\ytableaushort{   \none \none \none 89{11}{12}{13}, \none \none \none 78{10},\none \none 457,12346}};
+%\node[right  = 1.35 of T5] (T6) {\ytableaushort{   \none \none \none 89{11}{12}{13}, \none \none \none 68{10},\none \none 457, 12346 }};
+%\node[below  = 1.35 of T5] (T7) {\ytableaushort{   \none \none \none 79{11}{12}{13},\none \none \none 68{10},\none \none 457, 12346 }};
+%\node[right  = 1.35 of T7] (T9) {\ytableaushort{  \none \none \none 7{10}{11}{12}{13},\none \none \none 689, \none \none 457, 12346 }};
+%\node[right = -1 of T9] (finishlabel) {$=\pro^{13}(T)$};
+%\node[below left = -.3 and -0.7 of T9] (fake1) {};
+%\node[below left = -.3 and -1.2 of T9] (fake2) {};
+%\node[below left = -.3 and -1.7 of T9] (fake3) {};
+%\node[below left = -.3 and -2.2 of T9] (fake4) {};
+%\node[below left = -.3 and -2.7 of T9] (fake5) {};
+%\node[below left = -.3 and -3.2 of T9] (fake6) {};
+%\node[above left = -.3 and -2.5 of T] (fake7) {};
+%\node[above left = -.3 and -3.0 of T] (fake8) {};
+%\node[above left = -.3 and -3.5 of T] (fake9) {};
+%\node[above left = -.3 and -4.0 of T] (fake10) {};
+%\node[above left = -.3 and -4.5 of T] (fake11) {};
+%\node[above left = -.3 and -5.0 of T] (fake12) {};
+%\node[below left = -.3 and -1.7 of T7] (fake13) {};
+%\node[below left = -.3 and -2.2 of T7] (fake14) {};
+%\path (T) edge[pil]  node[above]{$\rho_4$} (T4);
+%\path (T4) edge[pil] node[above]{$\rho_5$} (T5);
+%\draw[->, thick] (T5.south) .. node[above]{$\rho_6$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
+%\path (T6) edge[pil] node[above]{$\rho_7$} (T7);
+%\path (fake14) edge[pil,out=270,in=270,looseness=3] node[below]{$\rho_8$} (fake13);
+%\path (T7) edge[pil] node[above]{$\rho_9$} (T9);
+%\path (fake2) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{10}$} (fake1);
+%\path (fake4) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{11}$} (fake3);
+%\path (fake6) edge[pil, out=270, in=270, looseness=3] node[below]{$\rho_{12}$} (fake5);
+%\path (fake8) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_1$} (fake7);
+%\path (fake10) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_2$} (fake9);
+%\path (fake12) edge[pil, out=90, in=90, looseness=3] node[above]{$\rho_3$} (fake11);
+%\end{tikzpicture}
+%\end{center}
+%\caption{The calculation of the $K$-promotion $\pro^{13}(T)$ of the increasing tableau $T$ (on the Cayley-Moufang poset) through the action of the sequence of $K$-Bender-Knuth operators $\rho_1, \dots, \rho_{12}$.}\label{fig:promotion}
+%\end{figure}
 
 \subsection{The equivariant bijection}\label{sec:equivariant}
 

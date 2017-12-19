@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 DEC 2017 15:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 DEC 2017 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1513,6 +1513,10 @@ lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
 
 LaTeX Warning: Reference `fig:kbk' on page 6 undefined on input line 400.
 
+
+LaTeX Warning: Reference `fig:promotion' on page 6 undefined on input line 400.
+
+
 [6]
 LaTeX Font Info:    Try loading font information for U+euf on input line 403.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -1528,19 +1532,15 @@ Missing character: There is no t in font nullfont!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [7]
 Underfull \vbox (badness 1325) has occurred while \output is active []
 
  [8]
-[9]
 Overfull \hbox (27.07132pt too wide) in paragraph at lines 576--576
 [] 
  []
 
-[10]
+[9]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 605.
@@ -1549,10 +1549,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 605.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12] [13]
+[10] [11] [12]
 Overfull \hbox (15.82944pt too wide) in paragraph at lines 712--713
 []\OT1/cmr/m/n/12 If $[][](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 
 f\OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = 0$, then $[][](\OML/cmm/
@@ -1568,7 +1565,7 @@ n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 (\
 OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )[])\OML/cmm/m/it/12 :
  []
 
-[14] [15] [16]
+[13] [14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 830--832
 
  []
@@ -1591,10 +1588,7 @@ s of gap-less in-creas-ing
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+[16]
 Underfull \hbox (badness 1102) in paragraph at lines 947--947
 []\OT1/cmr/m/sc/12 Table 3.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
@@ -1608,12 +1602,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 964--966
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 984--986
 
  []
 
-[20]
+[19]
 Overfull \hbox (56.7784pt too wide) detected at line 1016
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^P[]\OT1/cmr/m/n/12 ) = 
 []\OML/cmm/m/it/12 :
@@ -1627,25 +1621,22 @@ Overfull \hbox (22.25423pt too wide) detected at line 1029
 2 :
  []
 
-[21]
+[20]
 Overfull \hbox (93.76979pt too wide) in paragraph at lines 1050--1050
 [] 
  []
 
-[22] (./exceptionals4.bbl (./exceptionals4.brf)
+[21] [22] (./exceptionals4.bbl (./exceptionals4.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals4.brf'.
 
- [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24])
+ [23])
 Underfull \hbox (badness 7030) in paragraph at lines 1113--1113
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
-[25]
+[24]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1113.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1113.
  (./exceptionals4.aux)
@@ -1653,9 +1644,9 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1113.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1113.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
-(rerunfilecheck)             Checksum: BB1C296AC7AFDB3889C1F7EDBD1E635B;802.
+(rerunfilecheck)             Checksum: C0D6A544F894EECCE98CFB77B8860EF2;802.
 Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
-(rerunfilecheck)             Checksum: 16B8175B5450B7FFD538CB0D33C522F5;2317.
+(rerunfilecheck)             Checksum: 84947FC40022638B4144EA099EDA24CC;2316.
 
 
 LaTeX Warning: There were undefined references.
@@ -1666,10 +1657,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1113.
  ) 
 Here is how much of TeX's memory you used:
- 30099 strings out of 493089
- 600390 string characters out of 6134842
- 696786 words of memory out of 5000000
- 32795 multiletter control sequences out of 15000+600000
+ 29997 strings out of 493089
+ 598705 string characters out of 6134842
+ 670562 words of memory out of 5000000
+ 32695 multiletter control sequences out of 15000+600000
  30156 words of font info for 122 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1098s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1701,10 +1692,10 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 425156 bytes).
+Output written on exceptionals4.pdf (24 pages, 419642 bytes).
 PDF statistics:
- 623 PDF objects out of 1000 (max. 8388607)
- 558 compressed objects within 6 object streams
- 112 named destinations out of 1000 (max. 500000)
+ 616 PDF objects out of 1000 (max. 8388607)
+ 552 compressed objects within 6 object streams
+ 110 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
