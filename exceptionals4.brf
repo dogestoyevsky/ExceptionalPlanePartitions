@@ -17,32 +17,28 @@
 \backcite {Proctor}{{5}{2}{figure.caption.2}}
 \backcite {Brouwer.Schrijver,Duchet,Cameron.Fonderflaass}{{5}{3}{section.3}}
 \backcite {Striker.Williams}{{5}{3}{section.3}}
-\backcite {DPS}{{6}{3}{section.3}}
-\backcite {Cameron.Fonderflaass}{{7}{3.1}{theorem.3.1}}
-\backcite {DPS}{{7}{3.1}{theorem.3.1}}
-\backcite {DPS}{{7}{3.2}{theorem.3.2}}
-\backcite {Schutzenberger:jdt}{{7}{4.1}{subsection.4.1}}
-\backcite {Fulton, Manivel}{{7}{4.1}{subsection.4.1}}
-\backcite {Pechenik.Yong:genomic}{{7}{4.1}{subsection.4.1}}
-\backcite {Buch}{{7}{4.1}{subsection.4.1}}
-\backcite {Thomas.Yong:K}{{7}{4.1}{subsection.4.1}}
-\backcite {Thomas.Yong:K}{{7}{4.1}{subsection.4.1}}
-\backcite {Buch.Ravikumar,Clifford.Thomas.Yong,Buch.Samuel}{{7}{4.1}{subsection.4.1}}
-\backcite {Thomas.Yong:K}{{8}{4.1}{theorem.4.1}}
-\backcite {Schutzenberger:promotion}{{8}{4.1}{theorem.4.1}}
-\backcite {Pechenik}{{8}{4.1}{theorem.4.1}}
-\backcite {BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}{{8}{4.1}{theorem.4.1}}
-\backcite {Pechenik}{{8}{4.1}{theorem.4.1}}
-\backcite {DPS}{{8}{4.1}{theorem.4.1}}
-\backcite {DPS}{{8}{4.1}{theorem.4.1}}
-\backcite {DPS}{{9}{4.2}{subsection.4.2}}
-\backcite {Dilks.Striker.Vorland}{{9}{4.2}{subsection.4.2}}
-\backcite {Dilks.Striker.Vorland}{{9}{4.2}{theorem.4.2}}
-\backcite {Dilks.Striker.Vorland}{{9}{4.2}{theorem.4.2}}
-\backcite {Dilks.Striker.Vorland}{{10}{4.2}{theorem.4.2}}
-\backcite {DPS}{{12}{4.4}{subsection.4.4}}
-\backcite {Pechenik}{{12}{4.4}{equation.4.1}}
-\backcite {DPS}{{15}{4.4}{theorem.4.10}}
-\backcite {DPS}{{17}{4.5}{equation.4.5}}
-\backcite {Reiner.Stanton.White}{{19}{5}{table.caption.11}}
-\backcite {Reiner.Stanton.White}{{22}{5}{equation.5.1}}
+\backcite {Schutzenberger:jdt}{{6}{4.1}{subsection.4.1}}
+\backcite {Fulton, Manivel}{{6}{4.1}{subsection.4.1}}
+\backcite {Pechenik.Yong:genomic}{{6}{4.1}{subsection.4.1}}
+\backcite {Buch}{{6}{4.1}{subsection.4.1}}
+\backcite {Thomas.Yong:K}{{6}{4.1}{subsection.4.1}}
+\backcite {Thomas.Yong:K}{{6}{4.1}{subsection.4.1}}
+\backcite {Buch.Ravikumar,Clifford.Thomas.Yong,Buch.Samuel}{{6}{4.1}{subsection.4.1}}
+\backcite {Thomas.Yong:K}{{7}{4.1}{theorem.4.1}}
+\backcite {Schutzenberger:promotion}{{7}{4.1}{theorem.4.1}}
+\backcite {Pechenik}{{7}{4.1}{theorem.4.1}}
+\backcite {BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}{{7}{4.1}{theorem.4.1}}
+\backcite {Pechenik}{{7}{4.1}{theorem.4.1}}
+\backcite {DPS}{{7}{4.1}{theorem.4.1}}
+\backcite {DPS}{{7}{4.1}{theorem.4.1}}
+\backcite {DPS}{{7}{4.2}{subsection.4.2}}
+\backcite {Dilks.Striker.Vorland}{{7}{4.2}{subsection.4.2}}
+\backcite {Dilks.Striker.Vorland}{{7}{4.2}{theorem.4.2}}
+\backcite {Dilks.Striker.Vorland}{{7}{4.2}{theorem.4.2}}
+\backcite {Dilks.Striker.Vorland}{{7}{4.2}{theorem.4.2}}
+\backcite {DPS}{{11}{4.4}{subsection.4.4}}
+\backcite {Pechenik}{{11}{4.4}{equation.4.1}}
+\backcite {DPS}{{14}{4.4}{theorem.4.10}}
+\backcite {DPS}{{16}{4.5}{equation.4.5}}
+\backcite {Reiner.Stanton.White}{{18}{5}{table.caption.11}}
+\backcite {Reiner.Stanton.White}{{21}{5}{equation.5.1}}
