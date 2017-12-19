@@ -401,28 +401,54 @@ Let $\lambda$ be an order ideal in a minuscule poset, considered as an generaliz
 \end{definition}
 
 Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. Since studying the action of $\pro^m$ will be fundamental to our proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}, we must recall the definition of $\pro^m$. 
-We will use both the original formulation from \cite{Pechenik} and an equivalent formulation from \cite[Proposition~2.4]{DPS}.
 
-Let $T \in \inc^m(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps the labels $i$ and $i+1$ in each component that is a single box, and leaves unchanged each non-trivial connected component. 
-Notice that each $\rho_i$ is an involution.
-Using the characterization of \cite[Proposition~2.4]{DPS}, {\bf $K$-promotion} may then be defined by
-\[
-\pro^m(T) \coloneqq \rho_{m-1} \circ \dots \circ \rho_1(T).
-\]
-Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fig:kbk}, while an example of the full process of $K$-promotion is shown in Figure~\ref{fig:promotion}. We will relate $K$-Bender-Knuth operators to poset toggles in Section~\ref{sec:equivariant}.
-
-\begin{figure}[h]
-\begin{tikzpicture}
-\node (A) {\ytableaushort{\none \none 6,\none 45,1235 } };
-\node[above right = 1 and 2 of A] (B) {\ytableaushort{\none \none 6, \none 35, 1245}};
-\node[ right = 4 of A] (C) {\ytableaushort{\none \none 6, \none 45,1234}};
-\node[below right = 1 and 2 of A] (D) {\ytableaushort{\none \none 6, \none 45,1236}};
-\path (A) edge[pilpil,shorten >=-0mm,shorten <=-5mm] node[above]{$\rho_3$} (B);
-\path (A) edge[pilpil] node[above]{$\rho_4$} (C);
-\path (A) edge[pilpil,shorten >=-8mm] node[above]{$\rho_5$} (D);
+Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then \cite[Proposition~2.4]{DPS} gives the following equivalent characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
+\begin{equation}\label{eq:kprodef2}
+\pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
+\end{equation}
+ This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}. An example of computing $K$-promotion via this process is shown in Figure~\ref{fig:promotion_via_swaps}.
+ 
+ \begin{figure}[h]
+ \begin{tikzpicture}
+\node (T) {$T= \;$\ytableaushort{ 235,124}};
+\node[right  = 1.7 of T] (T4) {\ytableaushort{ 235, \bullet 24}};
+\node[right  = 1.7 of T4] (T5) {\ytableaushort{   \bullet 35, 2 \bullet 4}};
+\node[below right  = 1.5 and -2.2 of T] (T6) {\ytableaushort{   3 \bullet 5, 234 }};
+\node[right  = 1.7 of T6] (T7) {\ytableaushort{   35 \bullet, 234 }};
+\node[right  = 1.7 of T7] (T9) {\ytableaushort{  356,234 }};
+\node[below right = 1.5 and -2.2 of T6] (T10) {\ytableaushort{245,123}};
+\node[right = -0.1 of T10] (pro) {$=\pro^5(T)$};
+\path (T) edge[pil]  node[above]{$\rep_{1 \rightarrow \bullet}$} (T4);
+\path (T4) edge[pil] node[above]{$\swap_2$} (T5);
+\draw[->, thick] (T5.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
+\draw[->, thick] (T9.south) .. node[above]{$\decr$} controls ([yshift=-3cm] T9) and ([yshift=3cm] T10) .. (T10.north);
+\path (T6) edge[pil] node[above]{$\swap_5$} (T7);
+\path (T7) edge[pil] node[above]{$\rep_{\bullet \rightarrow 6}$} (T9);
 \end{tikzpicture}
-\caption{The three increasing tableaux on the right are obtained from the increasing tableau at left by applying the indicated $K$-Bender-Knuth operators. The arrows point in both directions since each $K$-Bender-Knuth operator is involutive.}\label{fig:kbk}
-\end{figure}
+\caption{The calculation of the $K$-promotion $\pro^5(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
+ \end{figure}
+%We will use both the original formulation from \cite{Pechenik} and an equivalent formulation from \cite[Proposition~2.4]{DPS}.
+%
+%Let $T \in \inc^m(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps the labels $i$ and $i+1$ in each component that is a single box, and leaves unchanged each non-trivial connected component. 
+%Notice that each $\rho_i$ is an involution.
+%Using the characterization of \cite[Proposition~2.4]{DPS}, {\bf $K$-promotion} may then be defined by
+%\[
+%\pro^m(T) \coloneqq \rho_{m-1} \circ \dots \circ \rho_1(T).
+%\]
+%Examples of the action of $K$-Bender-Knuth operators are shown in Figure~\ref{fig:kbk}, while an example of the full process of $K$-promotion is shown in Figure~\ref{fig:promotion}. We will relate $K$-Bender-Knuth operators to poset toggles in Section~\ref{sec:equivariant}.
+
+%\begin{figure}[h]
+%\begin{tikzpicture}
+%\node (A) {\ytableaushort{\none \none 6,\none 45,1235 } };
+%\node[above right = 1 and 2 of A] (B) {\ytableaushort{\none \none 6, \none 35, 1245}};
+%\node[ right = 4 of A] (C) {\ytableaushort{\none \none 6, \none 45,1234}};
+%\node[below right = 1 and 2 of A] (D) {\ytableaushort{\none \none 6, \none 45,1236}};
+%\path (A) edge[pilpil,shorten >=-0mm,shorten <=-5mm] node[above]{$\rho_3$} (B);
+%\path (A) edge[pilpil] node[above]{$\rho_4$} (C);
+%\path (A) edge[pilpil,shorten >=-8mm] node[above]{$\rho_5$} (D);
+%\end{tikzpicture}
+%\caption{The three increasing tableaux on the right are obtained from the increasing tableau at left by applying the indicated $K$-Bender-Knuth operators. The arrows point in both directions since each $K$-Bender-Knuth operator is involutive.}\label{fig:kbk}
+%\end{figure}
 
 \begin{figure}[h]
 \begin{center}
@@ -571,33 +597,6 @@ Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v
 
 \subsection{Interaction between $K$-promotion and deflation}
 By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus a finite amount of data governs the action of $\pro^m$ on $\inc^m(\lambda)$ for all $m$.
-
-
-To establish this relation, we first need to introduce a different characterization of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then \cite[Proposition~2.4]{DPS} gives the following equivalent characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
-\begin{equation}\label{eq:kprodef2}
-\pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
-\end{equation}
- This was, in fact, the original definition of $K$-promotion introduced in \cite{Pechenik}. An example of computing $K$-promotion via this process is shown in Figure~\ref{fig:promotion_via_swaps}.
- 
- \begin{figure}[h]
- \begin{tikzpicture}
-\node (T) {$T= \;$\ytableaushort{ 235,124}};
-\node[right  = 1.7 of T] (T4) {\ytableaushort{ 235, \bullet 24}};
-\node[right  = 1.7 of T4] (T5) {\ytableaushort{   \bullet 35, 2 \bullet 4}};
-\node[below right  = 1.5 and -2.2 of T] (T6) {\ytableaushort{   3 \bullet 5, 234 }};
-\node[right  = 1.7 of T6] (T7) {\ytableaushort{   35 \bullet, 234 }};
-\node[right  = 1.7 of T7] (T9) {\ytableaushort{  356,234 }};
-\node[below right = 1.5 and -2.2 of T6] (T10) {\ytableaushort{245,123}};
-\node[right = -0.1 of T10] (pro) {$=\pro^5(T)$};
-\path (T) edge[pil]  node[above]{$\rep_{1 \rightarrow \bullet}$} (T4);
-\path (T4) edge[pil] node[above]{$\swap_2$} (T5);
-\draw[->, thick] (T5.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
-\draw[->, thick] (T9.south) .. node[above]{$\decr$} controls ([yshift=-3cm] T9) and ([yshift=3cm] T10) .. (T10.north);
-\path (T6) edge[pil] node[above]{$\swap_5$} (T7);
-\path (T7) edge[pil] node[above]{$\rep_{\bullet \rightarrow 6}$} (T9);
-\end{tikzpicture}
-\caption{The calculation of the $K$-promotion $\pro^5(T)$ of the increasing tableau $T$ through the action of a sequence of swaps.}\label{fig:promotion_via_swaps}
- \end{figure}
 
 Using this characterization, we give names to the intermediate products of $\pro^m$.
 For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 DEC 2017 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  19 DEC 2017 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1510,6 +1510,9 @@ Overfull \hbox (4.64925pt too wide) in paragraph at lines 397--398
 lewood-Richardson rule was dis-cov-ered by A. Buch [[]][];
  []
 
+
+LaTeX Warning: Reference `fig:kbk' on page 6 undefined on input line 400.
+
 [6]
 LaTeX Font Info:    Try loading font information for U+euf on input line 403.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -1525,58 +1528,55 @@ Missing character: There is no t in font nullfont!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [7] [8] [9]
-Overfull \hbox (27.07132pt too wide) in paragraph at lines 544--544
+Overfull \hbox (27.07132pt too wide) in paragraph at lines 570--570
 [] 
  []
 
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 573.
+(hyperref)                removing `math shift' on input line 599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 573.
+(hyperref)                removing `math shift' on input line 599.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12] [13]
-Overfull \hbox (15.82944pt too wide) in paragraph at lines 707--708
+[11] [12]
+Overfull \hbox (15.82944pt too wide) in paragraph at lines 706--707
 []\OT1/cmr/m/n/12 If $[][](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 
 f\OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = 0$, then $[][](\OML/cmm/
 m/it/12 T\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 T$\OT1/cmr/m/n/12 . But then $[][
 ](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 ) =
  []
 
-[14]
-Overfull \hbox (31.94872pt too wide) detected at line 735
+[13]
+Overfull \hbox (31.94872pt too wide) detected at line 734
 \OT1/cmr/m/n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 
 (\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 ))[] = [][] \OMS/cmsy/m/n/12 ^^N \OT1/cmr/m/
 n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 (\
 OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )[])\OML/cmm/m/it/12 :
  []
 
-[15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 825--827
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 824--826
 
  []
 
-[17]
-Underfull \hbox (badness 1102) in paragraph at lines 866--866
+[16]
+Underfull \hbox (badness 1102) in paragraph at lines 865--865
 []\OT1/cmr/m/sc/12 Table 1.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 912--912
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 911--911
 []\OT1/cmr/m/sc/12 Table 2.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1588,7 +1588,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 942--942
+Underfull \hbox (badness 1102) in paragraph at lines 941--941
 []\OT1/cmr/m/sc/12 Table 3.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1596,70 +1596,78 @@ s of gap-less in-creas-ing
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 959--961
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 958--960
 
  []
 
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 979--981
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 978--980
 
  []
 
-
-Overfull \hbox (56.7784pt too wide) detected at line 1011
+[20]
+Overfull \hbox (56.7784pt too wide) detected at line 1010
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^P[]\OT1/cmr/m/n/12 ) = 
 []\OML/cmm/m/it/12 :
  []
 
-[21]
-Overfull \hbox (22.25423pt too wide) detected at line 1024
+
+Overfull \hbox (22.25423pt too wide) detected at line 1023
 \OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 P[]; m; d\OT1/cmr/m/n/12 ) 
 = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/
 12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it/1
 2 :
  []
 
-
-Overfull \hbox (93.76979pt too wide) in paragraph at lines 1045--1045
+[21]
+Overfull \hbox (93.76979pt too wide) in paragraph at lines 1044--1044
 [] 
  []
 
-[22] [23] (./exceptionals4.bbl (./exceptionals4.brf)
+[22] (./exceptionals4.bbl (./exceptionals4.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals4.brf'.
 
- [24]
+ [23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25])
-Underfull \hbox (badness 7030) in paragraph at lines 1108--1108
+ [24])
+Underfull \hbox (badness 7030) in paragraph at lines 1107--1107
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
-[26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1108.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1108.
+[25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1107.
  (./exceptionals4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1108.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1108.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1107.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1107.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
-(rerunfilecheck)             Checksum: 9D6771990107B0E7C4D07356FB4C6843;802.
-Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
-(rerunfilecheck)             Checksum: F3AE342B388BB7594B43CED071F53B62;2444.
+(rerunfilecheck)             Checksum: BB1C296AC7AFDB3889C1F7EDBD1E635B;802.
+
+
+Package rerunfilecheck Warning: File `exceptionals4.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `exceptionals4.brf':
+(rerunfilecheck)             Before: CC604C96E9F6CF5275B9B88CDEB4AF02;2322
+(rerunfilecheck)             After:  E7AD13B2C7FDE47BDE73725797B80362;2317.
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1108.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1107.
  ) 
 Here is how much of TeX's memory you used:
- 30106 strings out of 493089
- 600512 string characters out of 6134842
- 681069 words of memory out of 5000000
- 32800 multiletter control sequences out of 15000+600000
+ 30080 strings out of 493089
+ 600139 string characters out of 6134842
+ 680803 words of memory out of 5000000
+ 32776 multiletter control sequences out of 15000+600000
  30156 words of font info for 122 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,12n,82p,10385b,1098s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1691,10 +1699,10 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (26 pages, 426177 bytes).
+Output written on exceptionals4.pdf (25 pages, 422980 bytes).
 PDF statistics:
- 637 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
- 114 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 561 compressed objects within 6 object streams
+ 112 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
