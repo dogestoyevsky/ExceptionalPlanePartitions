@@ -218,7 +218,7 @@ Theorem~\ref{thm:propeller} was previously announced by D.~Rush and X.~Shi \cite
 
 Often instances of cyclic sieving can be proven using representation-theoretic techniques \cite{Reiner.Stanton.White, Rhoades:thesis}, and when cyclic sieving is established in a more direct fashion, as we do here, it may be a clue toward new underlying algebra (cf.\ \cite{Rhoades:skein}). The results in Theorems~\ref{thm:exceptionals} and \ref{thm:propeller} perhaps suggest the existence of new symmetric group module structures on the sets $\pp^k(P)$. Developing such representations would be an interesting direction for future work.
 
-This paper is organized as follows. In Section~\ref{sec:minuscule}, we define the minuscule posets, recalling their classification and other properties we will use. In Section~\ref{sec:rowmotion}, we collect the facts we need about the rowmotion operator $\Psi$. Section~\ref{sec:Kpromotion} concerns the operation of $K$-promotion on increasing tableaux, the key tool in our proofs of Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}. Having defined $K$-promotion in Section~\ref{sec:Kpro_defs}, we establish, following \cite{DPS,Dilks.Striker.Vorland}, the close connection between rowmotion and $K$-promotion in Section~\ref{sec:equivariant}. In the remainder of Section~\ref{sec:Kpromotion}, we then develop new tools for understanding the orbit structure of $K$-promotion.
+This paper is organized as follows. In Section~\ref{sec:minuscule}, we define the minuscule posets, recalling their classification and other properties we will use. In Section~\ref{sec:Kpromotion}, we define the operation of $K$-promotion on increasing tableaux, the key tool in our proofs of Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}. Section~\ref{sec:rowmotion} gives the precise definition of rowmotion and, following \cite{DPS,Dilks.Striker.Vorland}, establishes the close relation between rowmotion and $K$-promotion. We then develop new tools for understanding the orbit structure of $K$-promotion in Sections~\ref{sec:inflation}, \ref{sec:interaction}, and \ref{sec:period}. Specifically, Section~\ref{sec:inflation} introduces the operations of \emph{inflation} and \emph{deflation}, retracting the set of increasing tableaux onto the finite subset of \emph{gapless tableaux}. Section~\ref{sec:interaction} then shows how $K$-promotion is governed by its restriction to gapless tableaux, while Section~\ref{sec:period} uses this information to determine the order of $K$-promotion on general increasing tableaux.
 Finally, Section~\ref{sec:arithmetic} combines these ideas to prove Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}.
 
 \section{Minuscule posets}\label{sec:minuscule}
@@ -516,7 +516,8 @@ Then the multiset of cardinalities of $\Psi$-orbits on $J(P \times \mathbf{k})$ 
 %By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
 %\end{proof}
 
-\section{Inflation and deflation}
+\section{Inflation and deflation}\label{sec:inflation}
+In light of Corollary~\ref{cor:multisets}, we now turn to a more thorough studying of increasing tableaux. Let $\lambda$ be an order ideal in a minuscule poset.
 Suppose $T \in \inc^m(\lambda)$ and consider $T$ as a strictly order-preserving map from $\lambda$ to the chain poset ${\bf m}$. We say that $T$ is {\bf gapless} if this map is surjective and {\bf gappy} otherwise. We write $\incgl^m(\lambda)$ for the subset of all gapless tableaux in $\inc^m(\lambda)$. Notice that the set 
 \[
 \incgl(\lambda) \coloneqq \coprod_{m} \incgl^m(\lambda)
@@ -589,10 +590,10 @@ Let $v = (1,1,0,1,1,1,0) \in \{0,1\}^7$. Then, $N_v = 5$ and the map $\inflate^7
 Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v \circ S = \ytableaushort{456,125}$. Note that this process has recovered the tableau $T$ of Example~\ref{ex:deflate} from $S=\deflate^7(T)$ and $v=\content^7(T)$.
 \end{example}
 
-\section{Interaction between $K$-promotion and deflation}
+\section{Interaction between $K$-promotion and deflation}\label{sec:interaction}
 By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus a finite amount of data governs the action of $\pro^m$ on $\inc^m(\lambda)$ for all $m$.
 
-Using this characterization, we give names to the intermediate products of $\pro^m$.
+Using this definition of $K$-promotion from Section~\ref{sec:Kpromotion}, we give names to the intermediate products of $\pro^m$.
 For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
 \[T^{(n)} \coloneqq \swap_n \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $n > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
 \[
