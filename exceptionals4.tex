@@ -865,7 +865,7 @@ $m_T$ & period ($\tau$) & number of orbits ($N$)\\
 \end{table}
 
  
-We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on any set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$ and any $m$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
 \\
 \begin{theorem}~\label{thm:actualpdbound}
 For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is 
@@ -877,11 +877,9 @@ For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is
 (Here `$m \gg 0$' means $m \geq 2p$ for $P = P_p$, $m \geq 12$ for $P = P_{CM}$, and $m \geq 22$ for $P = P_F$.) For $m \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^m$ on $\inc^m(P_F)$ is $m$.
 \end{theorem}
 \begin{proof}
-Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gapless tableau  divides its height ($m_T$). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$. Clearly the $\pro^{12}$-period of $P_{CM}$ is $12$, and whenever $m> 12$, it is possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(P_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$. The analogous calculation for $P = P_p$ is easy by inspection of Table~\ref{tab:prop}.
+Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gapless tableau  divides its height ($m_T$). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$. Clearly the period of $\pro^{12}$ on $\inc^{12}(P_{CM})$ is $12$, and whenever $m> 12$, it is possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(P_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$ (for example, by just considering $T \in \incgl^{12}(P_{CM})$ as a gappy tableau in $\inc^m(P_{CM})$). The analogous calculation for $P = P_p$ is easy by inspection of Table~\ref{tab:prop}.
 
-The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$, the period of all gapless tableaux of height $q$ divides $3q$ for each $q$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each tableau divides $3m$. When $m \geq 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$.
-
-
+The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$ and for every $m$, the period of each gapless tableaux of height $m$ divides $3m$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each (possibly gappy) tableau divides $3m$. When $m \geq 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$ (for example, by considering $T$ as a gappy tableau in $\inc^m(P_{CM})$).
 \end{proof}
 
 
