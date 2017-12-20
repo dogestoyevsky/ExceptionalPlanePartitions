@@ -912,7 +912,7 @@ For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm},
 Therefore, $V$ has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now $d$ divides $d'$ if and only if the period of $v$ divides $m\{i\}/d$. But, by Theorem~\ref{thm:rsw}, the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ $1$s and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$.
 \end{proof}
 
-The resulting formula is simple enough to check by hand. 
+The formula resulting from Theorem~\ref{thm:mainresult} is simple enough to check by hand. 
 As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we need the following elementary identity, which allows us to work with integers rather than $q$-integers. 
 
 
@@ -929,11 +929,13 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{lemma}
 
 For example, we evaluate $f_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. By definition,
-\[ f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}.\]
+\tiny
+\[   f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}. \]
+\normalsize
 Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multisets of equivalence classes modulo $d$. Pairing equivalent terms and using the lemma, we have
 \[ f_{P_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
 
-An important special case allows us to improve Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
+An important special case allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
 f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d)(i)}{(d)  (2d)  \cdots  (j-d) (j)}. 
 \end{equation}
@@ -942,7 +944,10 @@ This equation holds even when $j > i$, since in that case one of terms in the nu
 
 
 \begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d$ divides $m$. We have that \[ f_{P_p}(\zeta) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
-\[ \mathcal{R}(P_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) = \binom{m}{2p-1} + 2 \binom{m}{2p} = \frac{(2m-2p+2)m!}{(2p)!(m-2p+1)!} = f_{P_p}(1). \]
+\begin{align*}
+ \mathcal{R}(P_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) &= \binom{m}{2p-1} + 2 \binom{m}{2p} \\
+ &= \frac{(2m-2p+2)m!}{(2p)!(m-2p+1)!} = f_{P_p}(1). 
+ \end{align*}
 Now for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
 \[ \mathcal{R}(P_p,m,d) = 2 \, f_{m,2p}(\zeta^{m/d}) = 2\binom{m/d}{2p/d} = f_{P_p}(\zeta^{m/d}).\]
 
