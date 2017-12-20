@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 14:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1581,12 +1581,16 @@ Overfull \hbox (22.25423pt too wide) detected at line 957
 2 :
  []
 
-
+[21]
 Overfull \hbox (93.76979pt too wide) in paragraph at lines 978--978
 [] 
  []
 
-[21] [22] (./exceptionals4.bbl (./exceptionals4.brf)
+
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+ [22]
+(./exceptionals4.bbl (./exceptionals4.brf)
 \tf@brf=\write5
 \openout5 = `exceptionals4.brf'.
 
@@ -1609,7 +1613,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1041.
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: BD0AC2CA7F89A156ACA2E7AAD2215AF2;535.
 Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
-(rerunfilecheck)             Checksum: 3B61B07666DCB65A28C704D289CEA938;2243.
+(rerunfilecheck)             Checksum: 935FC4AF8C0EF3A17A8F73EC222D3491;2248.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1618,8 +1622,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1041.
  ) 
 Here is how much of TeX's memory you used:
  29499 strings out of 493089
- 588952 string characters out of 6134842
- 666205 words of memory out of 5000000
+ 588953 string characters out of 6134842
+ 666209 words of memory out of 5000000
  32225 multiletter control sequences out of 15000+600000
  29939 words of font info for 115 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1652,7 +1656,7 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 420691 bytes).
+Output written on exceptionals4.pdf (25 pages, 421060 bytes).
 PDF statistics:
  614 PDF objects out of 1000 (max. 8388607)
  549 compressed objects within 6 object streams

@@ -427,7 +427,7 @@ For $T \in \inc^m(\lambda)$, let $m_T$ be the number of distinct labels in $T$. 
 \]
 for $T \in \inc^m(\lambda)$ and $\x \in \lambda$. Note that $\deflate^m(T) \in \incgl^{m_T}(\lambda)$ and that $m_T \leq m$.
 
-For positive integers $j$ and $k$, let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
+For nonnegative integers $j$ and $k$, let $\binom{[j]}{k}$ denote the collection of binary vectors of length $j$ with $k$ $1$'s. We now define the {\bf content vector} function 
 \[
  \content^m : \inc^m(\lambda) \to \{ 0, 1\}^m = \coprod_{0 \leq  n \leq m} \binom{[m]}{n}
  \] 
@@ -435,7 +435,7 @@ For positive integers $j$ and $k$, let $\binom{[j]}{k}$ denote the collection of
 \[
 \content^m(T) = (c_1, \dots, c_m),
 \] 
-where $c_i = 1$ if $i \in \mathrm{range}(T)$ and $c_i = 0$ if $i \notin \mathrm{range}(T)$. Note that this definition of content differs from the usual notion of content for semistandard tableaux in that here we do not care about the multiplicity of a label, but only its presence or absence.
+where $c_i = 1$ if $i \in \mathrm{range}(T)$ and $c_i = 0$ if $i \notin \mathrm{range}(T)$. (Note that this definition of content differs from the usual notion of content for semistandard tableaux in that here we do not care about the multiplicity of a label, but only its presence or absence.)
 
 \begin{example}\label{ex:deflate}
 If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $T$ is \[\deflate^7(T) = \ytableaushort{345,124} \in \incgl^5(2 \times 3).\] The content vector of $T$ is $\content^7(T) = (1,1,0,1,1,1,0) \in \binom{[7]}{5} \subset \{0,1\}^7$.
@@ -445,12 +445,12 @@ Now if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \binom{[m]
 \compress^m \coloneqq (\deflate^m,\content^m).
 %: \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right).
 \] 
-\begin{theorem}\label{thm:compressbijective} The map 
+\begin{proposition}\label{prop:compressbijective} The map 
 \[
 \compress^m : \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right)
 \]
  is bijective.
-\end{theorem}
+\end{proposition}
 \begin{proof}
 %We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
 A two-sided inverse for $\compress^m$ is given as follows. For any nonnegative integer $j$, let $[j]$ denote the set $\{1, 2, \dots, j\}$.
@@ -495,7 +495,7 @@ The $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K} gives rise t
 
 In this section, we determine how $\pro^m$ interacts with $\compress^m$. Our results will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus a finite amount of data governs the action of $\pro^m$ on $\inc^m(\lambda)$ for all $m$.
 
-First, we define $\pro^m$, setting up notation we will use. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then \cite[Proposition~2.4]{DPS} gives the following characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
+First, we define $\pro^m$, setting up notation we will need. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then, following \cite{Pechenik}, we define $K$-promotion on $\inc^m(\lambda)$ by 
 \begin{equation}\label{eq:kprodef2}
 \pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
 \end{equation}
@@ -531,7 +531,7 @@ An example of computing $K$-promotion via this process is shown in Figure~\ref{f
 
 We give names to the intermediate products of $\pro^m$.
 For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lambda \rightarrow \lbrace 2, \dots, m, \bullet \rbrace$ by 
-\[T^{(n)} \coloneqq \swap_n \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T)\] for $n > 1$ and $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$. We define the associated order ideal 
+\[T^{(n)} \coloneqq \swap_n \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}(T).\] (In particular, $T^{(1)} \coloneqq \rep_{1 \rightarrow \bullet}(T)$.) We define the associated order ideal 
 \[
 \lambda \left( T^{(n)} \right) \coloneqq \left( T^{(n)} \right)^{-1}(\{2,\dots,n\})
 \]
@@ -564,7 +564,7 @@ $\rep_{1 \rightarrow \bullet}$, $\swap_2$, and $\swap_3$.
 We then obtain $T_3$ from $T^{(3)}$ by restricting to 
 those boxes with labels less than or equal to $3$. The order ideal
  $\lambda \left( T^{(3)} \right)$ is the 
-shape of the tableau $T_3$. }\label{fig:restricted_promotions}
+shape $\ydiagram{2}$ of the tableau $T_3$. }\label{fig:restricted_promotions}
 \end{figure}
 
 %-- not obvious that $\lambda$  is a shape but don't think need this here -- 
@@ -588,7 +588,7 @@ Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_j
 \begin{proof} We proceed by induction on $j$. Fix $T \in \inc^m(\lambda)$  with $\content^m(T) \lbrace 1 \rbrace = 1$. In the base case $j = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^m(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^m(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^m(T)(\x) = 1$. But since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all such $T$ in the case $j < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T(\x) = i_t$. This is, in turn, equivalent by Theorem~\ref{thm:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
+Now, say the lemma holds for all such $T$ in the case $j < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T(\x) = i_t$. This is, in turn, equivalent by Proposition~\ref{prop:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
 
 Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This scenario is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^m(T)(\x') = \deflate^m(T)^{(t-1)}(\x') = t$. Since $\deflate^m(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) = \bullet$, and we are done.
 \end{proof}
@@ -713,7 +713,7 @@ We first show that, for $T \in \inc^m(\lambda)$,
 Let $\pi_1$ be the projection onto the first factor of $\coprod_{n \leq m}\incgl^n(\lambda) \times \binom{[m]}{n}$ and $\pi_2$ the projection onto the second factor. It is immediate from the definitions that \[ \pi_2(K^m \circ \compress^m(T)) = \Sigma^m \circ \content^m(T).\] But by \cite[Lemma~2.1]{DPS},
 \[  \Sigma^m \circ \content^m(T) = \content^m \circ \pro^m(T) = \pi_2(\compress^m \circ \pro^m(T)).\] Thus, the two sides of Equation~(\ref{eq:k_commutes}) are equal in the second factor.  
 
-We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \[ w \coloneqq \content^m(T) = \pi_2(\compress^m(T)). \]  By Theorem~\ref{thm:compressbijective}, we can write
+We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \[ w \coloneqq \content^m(T) = \pi_2(\compress^m(T)). \]  By Proposition~\ref{prop:compressbijective}, we can write
 \[ T = \tinflate^m(\deflate^m(T), w).\] 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
@@ -731,7 +731,7 @@ On the other hand, if $w \lbrace 1 \rbrace = 0$, then
 \end{align*}
 This completes the proof of Equation~(\ref{eq:k_commutes}).
 
-Now, since $\compress^m$ is a bijection by Theorem~\ref{thm:compressbijective}, $(\pro^m)^{\circ n}(T) = T$ exactly when $\compress^m \circ (\pro^m)^{\circ n}(T) = \compress^m \circ T$. So, by Equation~(\ref{eq:k_commutes}), we are reduced to determining which powers $n$ of $K^m$ stabilize $\compress^m(T)$.
+Now, since $\compress^m$ is a bijection by Proposition~\ref{prop:compressbijective}, $(\pro^m)^{\circ n}(T) = T$ exactly when $\compress^m \circ (\pro^m)^{\circ n}(T) = \compress^m \circ T$. So, by Equation~(\ref{eq:k_commutes}), we are reduced to determining which powers $n$ of $K^m$ stabilize $\compress^m(T)$.
  
 
  
@@ -769,7 +769,7 @@ Now say $\tau$ divides $jm_T$. Then \[ \frac{\tau}{\text{gcd}(\frac{\ell m_T}{m}
 
 In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(P \times \mathbf{k})$ equals the multiset of $\pro^{\rank(P)+ k+1}$-orbit cardinalities for $\inc^{ \rank(P)+ k+1}(P)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. Denote the Cayley-Moufang shape by $P_{CM}$, the Freudenthal shape by $P_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $P_p$. 
 
-By Theorem~\ref{thm:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined its period under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
+By Proposition~\ref{prop:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined its period under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
@@ -905,7 +905,7 @@ Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $
 \end{equation}
 \end{theorem}
 \begin{proof}
-Theorem~\ref{thm:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_T$ ones, where $m_T$ is the height of the gapless tableau. The table corresponding to $P$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
+Proposition~\ref{prop:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_T$ ones, where $m_T$ is the height of the gapless tableau. The table corresponding to $P$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
 
 For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a gapless tableau of height $m_T\{i\}$ and a content vector with period $m\{i\}/d'$ give a tableau of period \[ \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{d'},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},d')}{d' c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},d')}. \] 
 Therefore, the tableau has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now $d$ divides $d'$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
