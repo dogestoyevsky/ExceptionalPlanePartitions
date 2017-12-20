@@ -388,37 +388,7 @@ Let $\lambda$ be an order ideal in a minuscule poset, considered as an generaliz
 
 Using the $K$-jeu de taquin of H.~Thomas and A.~Yong \cite{Thomas.Yong:K}, one has a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. $K$-promotion was first studied in \cite{Pechenik}, and has been further investigated in \cite{BPS, Pressey.Stokke.Visentin, Rhoades:skein, DPS, Pechenik:frames,Vorland}. 
 
-We recall the definition of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then \cite[Proposition~2.4]{DPS} gives the following characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
-\begin{equation}\label{eq:kprodef2}
-\pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
-\end{equation}
-An example of computing $K$-promotion via this process is shown in Figure~\ref{fig:promotion_via_swaps}.
- 
- \begin{figure}[h]
- \begin{tikzpicture}
-\node (T) {$T= \;$\ytableaushort{ \none \none \none 7,\none \none 467,12345}};
-\node[right  = 1.7 of T] (T4) {\ytableaushort{ \none \none \none 7,\none \none 467,\bullet 2345}};
-\node[right  = 1.7 of T4] (T5) {\ytableaushort{  \none \none \none 7,\none \none 467,2 \bullet 345}};
-\node[below right  = 1.5 and -3.4 of T] (T6) {\ytableaushort{\none \none \none 7,\none \none 467,23 \bullet 45 }};
-\node[right  = 1.7 of T6] (T7) {\ytableaushort{\none \none \none 7,\none \none \bullet 67,234 \bullet 5 }};
-\node[right  = 1.7 of T7] (T9) {\ytableaushort{\none \none \none 7,\none \none \bullet 67,2345 \bullet }};
-\node[below right = 1.5 and -3.4 of T6] (T10) {\ytableaushort{\none \none \none 7,\none \none 6 \bullet 7,2345 \bullet }};
-\node[right  = 1.7 of T10] (T11) {\ytableaushort{\none \none \none \bullet,\none \none 6 7 \bullet ,2345 7 }};
-\node[right  = 1.7 of T11] (T12) {\ytableaushort{\none \none \none 8,\none \none 6 7 8 ,2345 7 }};
-\node[below right = 1.5 and -3.4 of T10] (T13) {\ytableaushort{\none \none \none 7,\none \none 5 6 7 ,1234 6 }};
-\node[right = -0.1 of T13] (pro) {$=\pro^7(T)$};
-\path (T) edge[pil]  node[above]{$\rep_{1 \rightarrow \bullet}$} (T4);
-\path (T4) edge[pil] node[above]{$\swap_2$} (T5);
-\draw[->, thick] (T5.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
-\draw[->, thick] (T12.south) .. node[above]{$\decr$} controls ([yshift=-3cm] T12) and ([yshift=3cm] T13) .. (T13.north);
-\path (T6) edge[pil] node[above]{$\swap_4$} (T7);
-\path (T11) edge[pil] node[above]{$\rep_{\bullet \rightarrow 8}$} (T12);
-\path (T7) edge[pil] node[above]{$\swap_5$} (T9);
-\draw[->, thick] (T9.south) .. node[above]{$\swap_6$} controls ([yshift=-3cm] T9) and ([yshift=3cm] T10) .. (T10.north);
-\path (T10) edge[pil] node[above]{$\swap_7$} (T11);
-\end{tikzpicture}
-\caption{The calculation of the $K$-promotion $\pro^7(T)$ of the increasing tableau $T \in \inc^7(\lambda)$, where $\lambda$ is the illustrated order ideal of $P_{CM}$.}\label{fig:promotion_via_swaps}
- \end{figure}
+
 %We will use both the original formulation from \cite{Pechenik} and an equivalent formulation from \cite[Proposition~2.4]{DPS}.
 %
 %Let $T \in \inc^m(\lambda)$. The {\bf $K$-Bender-Knuth operator} $\rho_i$ acts on $T$ by swapping the letters $i$ and $i+1$ everywhere in $T$ \emph{where doing so would not violate the increasingness conditions.} More precisely, $\rho_i$ looks at the set of boxes labeled $i$ or $i+1$, decomposes that set into edge-connected components, swaps the labels $i$ and $i+1$ in each component that is a single box, and leaves unchanged each non-trivial connected component. 
@@ -591,6 +561,38 @@ Now, for $S = \ytableaushort{345,124}$, we have $\tinflate^7(S,v) = \inflate^7_v
 \end{example}
 
 \section{Interaction between $K$-promotion and deflation}\label{sec:interaction}
+We recall the definition of $\pro^m$. Let $\rep_{1 \rightarrow \bullet}$ be the operator on $\inc^m(\lambda)$ that replaces each instance of $1$ by $\bullet$. Let $\swap_n$ be the operator that finds all edge-connected components containing $\bullet$ and $n$, leaves trivial components unchanged, and switches $n$ and $\bullet$ in nontrivial connected components. Let $\rep_{\bullet \rightarrow m+1}$ replace each instance of $\bullet$ with $m+1$. Finally, let $\decr$ be the operator that decrements each label by $1$. Then \cite[Proposition~2.4]{DPS} gives the following characterization of the operation of $K$-promotion on $\inc^m(\lambda)$: 
+\begin{equation}\label{eq:kprodef2}
+\pro^m = \decr \circ \rep_{\bullet \rightarrow m+1} \circ \swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}.
+\end{equation}
+An example of computing $K$-promotion via this process is shown in Figure~\ref{fig:promotion_via_swaps}.
+ 
+ \begin{figure}[h]
+ \begin{tikzpicture}
+\node (T) {$T= \;$\ytableaushort{ \none \none \none 7,\none \none 467,12345}};
+\node[right  = 1.7 of T] (T4) {\ytableaushort{ \none \none \none 7,\none \none 467,\bullet 2345}};
+\node[right  = 1.7 of T4] (T5) {\ytableaushort{  \none \none \none 7,\none \none 467,2 \bullet 345}};
+\node[below right  = 1.5 and -3.4 of T] (T6) {\ytableaushort{\none \none \none 7,\none \none 467,23 \bullet 45 }};
+\node[right  = 1.7 of T6] (T7) {\ytableaushort{\none \none \none 7,\none \none \bullet 67,234 \bullet 5 }};
+\node[right  = 1.7 of T7] (T9) {\ytableaushort{\none \none \none 7,\none \none \bullet 67,2345 \bullet }};
+\node[below right = 1.5 and -3.4 of T6] (T10) {\ytableaushort{\none \none \none 7,\none \none 6 \bullet 7,2345 \bullet }};
+\node[right  = 1.7 of T10] (T11) {\ytableaushort{\none \none \none \bullet,\none \none 6 7 \bullet ,2345 7 }};
+\node[right  = 1.7 of T11] (T12) {\ytableaushort{\none \none \none 8,\none \none 6 7 8 ,2345 7 }};
+\node[below right = 1.5 and -3.4 of T10] (T13) {\ytableaushort{\none \none \none 7,\none \none 5 6 7 ,1234 6 }};
+\node[right = -0.1 of T13] (pro) {$=\pro^7(T)$};
+\path (T) edge[pil]  node[above]{$\rep_{1 \rightarrow \bullet}$} (T4);
+\path (T4) edge[pil] node[above]{$\swap_2$} (T5);
+\draw[->, thick] (T5.south) .. node[above]{$\swap_3$} controls ([yshift=-3cm] T5) and ([yshift=3cm] T6) .. (T6.north);
+\draw[->, thick] (T12.south) .. node[above]{$\decr$} controls ([yshift=-3cm] T12) and ([yshift=3cm] T13) .. (T13.north);
+\path (T6) edge[pil] node[above]{$\swap_4$} (T7);
+\path (T11) edge[pil] node[above]{$\rep_{\bullet \rightarrow 8}$} (T12);
+\path (T7) edge[pil] node[above]{$\swap_5$} (T9);
+\draw[->, thick] (T9.south) .. node[above]{$\swap_6$} controls ([yshift=-3cm] T9) and ([yshift=3cm] T10) .. (T10.north);
+\path (T10) edge[pil] node[above]{$\swap_7$} (T11);
+\end{tikzpicture}
+\caption{The calculation of the $K$-promotion $\pro^7(T)$ of the increasing tableau $T \in \inc^7(\lambda)$, where $\lambda$ is the illustrated order ideal of $P_{CM}$.}\label{fig:promotion_via_swaps}
+ \end{figure}
+ 
 By determining the relation between the maps $\compress^m$ and $\pro^m$, we will show that $\pro^m$ is controlled by its action on gapless increasing tableaux. The power of this observation is that there are only finitely-many gapless increasing tableaux of any fixed shape $\lambda$. Thus a finite amount of data governs the action of $\pro^m$ on $\inc^m(\lambda)$ for all $m$.
 
 We give names to the intermediate products of $\pro^m$.
