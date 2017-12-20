@@ -882,24 +882,7 @@ Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gaple
 The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$ and for every $m$, the period of each gapless tableaux of height $m$ divides $3m$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each (possibly gappy) tableau divides $3m$. When $m \geq 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$ (for example, by considering $T$ as a gappy tableau in $\inc^m(P_{CM})$).
 \end{proof}
 
-
-For specified $P \in \{P_p, P_{CM}, P_F\}$, we denote by $m_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
-\\
-
-\begin{theorem}~\label{thm:mainresult}
-Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(P,m,d)$ be the number of increasing tableaux $T \in \inc^m(P)$ whose $\pro^m$-period divides $m/d$. Then,
-\begin{equation}\label{eq:mainresulteq} 
-\mathcal{R}(P,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{m_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,m_T}(\zeta^{m/d}).
-\end{equation}
-\end{theorem}
-\begin{proof}
-Proposition~\ref{prop:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_T$ ones, where $m_T$ is the height of the gapless tableau. The table corresponding to $P$ gives all possible gapless tableaux. We loop over the rows of the table and determine for each row how many content vectors yield height-$m$ tableaux whose periods divide $m/d$. 
-
-For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a gapless tableau of height $m_T\{i\}$ and a content vector with period $m\{i\}/d'$ give a tableau of period \[ \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{d'},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},d')}{d' c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},d')}. \] 
-Therefore, the tableau has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now $d$ divides $d'$ if and only if the period of the content vector divides $m\{i\}/d$. But the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ ones and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$ (Theorem~\ref{thm:rsw}).
-\end{proof}
-
-The resulting formula is simple enough to check by hand. We will need the fact that the number of elements of $\binom{[i]}{j}$ of any fixed $\Sigma^i$-period is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
+We will need the fact that the number of elements of $\binom{[i]}{j}$ of any fixed $\Sigma^i$-period is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
 \begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
 Let 
 \begin{equation*}
@@ -913,7 +896,24 @@ where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b 
 \[\#\left\{ v \in \binom{[i]}{j} : (\Sigma^i)^{\circ s}(v) = v \right\} = f_{i,j}(\zeta^s),\] where $\zeta$ is any primitive $i$th root of unity. \qed
 \end{theorem} 
 
-Additionally, as in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we need the following elementary identity, which allows us to work with integers rather than $q$-integers. 
+For specified $P \in \{P_p, P_{CM}, P_F\}$, we denote by $m_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
+\\
+
+\begin{theorem}~\label{thm:mainresult}
+Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(P,m,d)$ be the number of increasing tableaux $T \in \inc^m(P)$ whose $\pro^m$-period divides $m/d$. Then,
+\begin{equation}\label{eq:mainresulteq} 
+\mathcal{R}(P,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{m_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,m_T}(\zeta^{m/d}).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Proposition~\ref{prop:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_T$ ones, where $m_T$ is the height of the gapless tableau. The table corresponding to $P$ gives all gapless tableaux. We iterate over the rows of the table and determine for each row how many content vectors yield tableaux in $\inc^m(P)$ whose periods divide $m/d$. 
+
+For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a gapless tableau $U \in \incgl^{m_T\{i\}}(P)$ and a content vector $v$ with period $m\{i\}/d'$ inflate to a tableau $V$ of period \[ \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{d'},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},d')}{d' c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},d')}. \] 
+Therefore, $V$ has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now $d$ divides $d'$ if and only if the period of $v$ divides $m\{i\}/d$. But, by Theorem~\ref{thm:rsw}, the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ $1$s and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$.
+\end{proof}
+
+The resulting formula is simple enough to check by hand. 
+As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we need the following elementary identity, which allows us to work with integers rather than $q$-integers. 
 
 
 \begin{lemma}\label{lem:evalq}

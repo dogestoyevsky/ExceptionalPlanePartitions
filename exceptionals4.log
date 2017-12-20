@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1559,12 +1559,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 868--870
 
  []
 
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 886--888
+[17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 899--901
 
  []
 
-[19]
+
 Overfull \hbox (56.7784pt too wide) detected at line 932
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^P[]\OT1/cmr/m/n/12 ) = 
 []\OML/cmm/m/it/12 :
@@ -1610,7 +1610,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1029.
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: BD0AC2CA7F89A156ACA2E7AAD2215AF2;535.
 Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
-(rerunfilecheck)             Checksum: 935FC4AF8C0EF3A17A8F73EC222D3491;2248.
+(rerunfilecheck)             Checksum: 3B2E38565206BD3CAE0EB4A9E2A52691;2248.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1653,10 +1653,10 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 421105 bytes).
+Output written on exceptionals4.pdf (25 pages, 421557 bytes).
 PDF statistics:
- 614 PDF objects out of 1000 (max. 8388607)
- 549 compressed objects within 6 object streams
+ 615 PDF objects out of 1000 (max. 8388607)
+ 550 compressed objects within 6 object streams
  109 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
