@@ -617,23 +617,12 @@ Now, we analyze the right side of Equation~(\ref{eq:gappy_promotion}). Take $\x 
 \[
 \left[ \swap_{\ell+1} \left(T^{(\ell)} \right) \right](\x) = T^{(\ell)}(\x)
 \]
- for all $i_{t-1} \leq \ell$. Therefore by the previous paragraph and the inductive hypothesis,
+ for all $i_{t-1} \leq \ell$. Therefore, by the previous paragraph and the inductive hypothesis,
  \[ T^{(i_t)}(\x) = T^{(i_{t-1})}(\x) = \inflate^m_{\content^m(T)} \circ \deflate^m(T)^{(t-1)}(\x) =  \inflate^m_{\content^m(T)} \circ \deflate^m(T)^{(t)}(\x). \] This shows that Equation~(\ref{eq:gappy_promotion}) holds at $\x$. If $\x \in \lambda \left(T^{(i_{t})} \right) \setminus \lambda \left(T^{(i_{t-1})} \right)$, then $i_{t-1} < T^{(i_{t})}(\x) \leq i_t$. Thus, we must have that $T^{(i_{t})}(\x) = i_{t}$, since the $\swap$ operators do not change the content of a tableau. Therefore, either $T^{(i_{t-1})}(\x) = \bullet$ or $T^{(i_{t-1})}(\x) =  T(\x) = i_{t}$. In the former case, there must be a box $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = T(\x') = i_{t}$. This occurs exactly when $\deflate^m(T)^{(t-1)}(\x') = \deflate^m(T)(\x') = t$. In the latter case, there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = \bullet$. Since we have assumed that  $\content^m(T) \lbrace 1 \rbrace = 1$, Lemma~\ref{lem:bullet_placement} implies that this occurs exactly when  $\deflate^m(T)^{(t-1)}(\x') \neq \bullet$ for every box $\x'$ adjacent to $\x$. Therefore each of these conditions is equivalent to the corresponding condition from the previous paragraph. 
  
 Putting these facts together, we have shown that $\lambda \left(T^{(i_j)} \right) = \lambda \left(\deflate^m(T)^{(j)} \right)$ for all $j$, and that $\deflate^m(T)_j(\x) = h$ if and only if $T_j(\x) = \inflate^m_{\content^m(T)}(h)$. 
 \end{proof}
 
-%\begin{remark}
-%As a corollary to Lemma~\ref{lem:gappy_promotion}, one can show that each $T_j$ is, in fact, in $\inc^m \left(\lambda \left( T^{(j)} \right) \right)$. However, we do not need this observation here.
-%\end{remark}
-%
-
-%\begin{proof} Since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)$ and $T$ are labelled by $1$ in the same boxes, and therefore $\rep_{1 \rightarrow \bullet}(\deflate^m(T))$ and $\rep_{1 \rightarrow \bullet}(T)$ have $\bullet$s in the same boxes. 
-%
-%Now each operation $\swap_j$ either leaves the tableau unchanged or exchanges $\bullet$s and numerical values in a way that depends only on the relative magnitude of the labels of the tableau. Since $\deflate^m$ preserves the relative magnitude of labels, it therefore clear that the relative magnitudes of the labels of $\rep_{\bullet \rightarrow m+1} \circ \swap_m \circ ... \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ are the same as the relative magnitudes of the labels of  $\rep_{\bullet \rightarrow {m_T}+1} \circ \swap_{m_T} \circ ... \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (\deflate^m(T))$.  
-%
-%Since $\decr$ does not change the relative order of labels, it follows that $\pro^m(T)$ and $\pro^{m_T} \circ \deflate^m(T)$ have the same relative magnitudes of labels. But $\pro^m$ does not change the content vector of $T$, so $\inflate^m_{\content^m(T)} \circ \pro^{m_T} \circ \deflate^m(T) = \pro^m(T)$. 
-%\end{proof}
 \begin{proof}[Proof of Lemma~\ref{lem:deflation_commutation}]
 If $\compress^m(T)\lbrace 1 \rbrace = 0$, then $\rep_{1 \rightarrow \bullet}(T) = T$. But then $\swap_\ell(T) = T$ for all $\ell$, since there are no nontrivial short ribbons containing the labels $\bullet$ and $\ell$. Also, $\rep_{\bullet \rightarrow 1}(T) = T$, since there is no $\bullet$ label in $T$. Therefore, $\decr$ is the only operator in Equation~(\ref{eq:kprodef2}) that acts nontrivially on $T$. 
 
