@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1528,13 +1528,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 745--747
  []
 
 [16]
-Underfull \hbox (badness 1102) in paragraph at lines 786--786
+Underfull \hbox (badness 1102) in paragraph at lines 787--787
 []\OT1/cmr/m/sc/12 Table 1.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 832--832
+Underfull \hbox (badness 1102) in paragraph at lines 833--833
 []\OT1/cmr/m/sc/12 Table 2.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1546,7 +1546,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 862--862
+Underfull \hbox (badness 1102) in paragraph at lines 863--863
 []\OT1/cmr/m/sc/12 Table 3.|\OT1/cmr/m/n/12 The dis-tri-bu-tion of $[][]$-orbit
 s of gap-less in-creas-ing
  []
@@ -1555,23 +1555,26 @@ s of gap-less in-creas-ing
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 867--869
+Underfull \hbox (badness 10000) in paragraph at lines 868--870
 
  []
 
 [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 887--889
+Underfull \hbox (badness 10000) in paragraph at lines 888--890
 
  []
 
-[19]
-Overfull \hbox (56.7784pt too wide) detected at line 933
+
+Underfull \vbox (badness 2150) has occurred while \output is active []
+
+ [19]
+Overfull \hbox (56.7784pt too wide) detected at line 934
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^P[]\OT1/cmr/m/n/12 ) = 
 []\OML/cmm/m/it/12 :
  []
 
 [20]
-Overfull \hbox (22.25423pt too wide) detected at line 946
+Overfull \hbox (22.25423pt too wide) detected at line 947
 \OMS/cmsy/m/n/12 R\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 P[]; m; d\OT1/cmr/m/n/12 ) 
 = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1) + 2 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/
 12 (1) = [] + 2[] = [] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (1)\OML/cmm/m/it/1
@@ -1579,7 +1582,7 @@ Overfull \hbox (22.25423pt too wide) detected at line 946
  []
 
 [21]
-Overfull \hbox (93.76979pt too wide) in paragraph at lines 967--967
+Overfull \hbox (93.76979pt too wide) in paragraph at lines 968--968
 [] 
  []
 
@@ -1595,17 +1598,17 @@ Underfull \vbox (badness 1953) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24])
-Underfull \hbox (badness 7030) in paragraph at lines 1030--1030
+Underfull \hbox (badness 7030) in paragraph at lines 1031--1031
 []\OT1/cmr/m/n/10 (HM) \OT1/cmr/m/sc/10 De-part-ment of Math-e-mat-ics, Uni-ver
 -sity of Cal-i-for-nia, Berke-ley,
  []
 
 [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1030.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1030.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1031.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1031.
  (./exceptionals4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1030.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1030.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1031.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1031.
 
 Package rerunfilecheck Info: File `exceptionals4.out' has not changed.
 (rerunfilecheck)             Checksum: BD0AC2CA7F89A156ACA2E7AAD2215AF2;535.
@@ -1615,7 +1618,7 @@ Package rerunfilecheck Info: File `exceptionals4.brf' has not changed.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1030.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1031.
  ) 
 Here is how much of TeX's memory you used:
  29499 strings out of 493089
@@ -1653,7 +1656,7 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 421049 bytes).
+Output written on exceptionals4.pdf (25 pages, 420851 bytes).
 PDF statistics:
  614 PDF objects out of 1000 (max. 8388607)
  549 compressed objects within 6 object streams
