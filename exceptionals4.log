@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1509,15 +1509,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12]
-Overfull \hbox (15.82944pt too wide) in paragraph at lines 627--628
-[]\OT1/cmr/m/n/12 If $[][](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 
-f\OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = 0$, then $[][](\OML/cmm/
-m/it/12 T\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 T$\OT1/cmr/m/n/12 . But then $[][
-](\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 ) =
- []
-
-[13]
+[10] [11] [12] [13]
 Overfull \hbox (31.94872pt too wide) detected at line 655
 \OT1/cmr/m/n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 
 (\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 ))[] = [][] \OMS/cmsy/m/n/12 ^^N \OT1/cmr/m/
@@ -1622,7 +1614,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1030.
  ) 
 Here is how much of TeX's memory you used:
  29499 strings out of 493089
- 588953 string characters out of 6134842
+ 588954 string characters out of 6134842
  666209 words of memory out of 5000000
  32225 multiletter control sequences out of 15000+600000
  29939 words of font info for 115 fonts, out of 8000000 for 9000
@@ -1656,7 +1648,7 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 421060 bytes).
+Output written on exceptionals4.pdf (25 pages, 421077 bytes).
 PDF statistics:
  614 PDF objects out of 1000 (max. 8388607)
  549 compressed objects within 6 object streams
