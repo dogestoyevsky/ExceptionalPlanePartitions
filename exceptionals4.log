@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1517,7 +1517,12 @@ n/12 ([][] \OMS/cmsy/m/n/12 ^^N [] ^^N [][] ^^N [][] ^^N [][]\OT1/cmr/m/n/12 (\
 OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )[])\OML/cmm/m/it/12 :
  []
 
-[14] [15]
+[14]
+Overfull \hbox (2.35643pt too wide) in paragraph at lines 713--713
+[] 
+ []
+
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 745--747
 
  []
@@ -1648,7 +1653,7 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 421072 bytes).
+Output written on exceptionals4.pdf (25 pages, 421049 bytes).
 PDF statistics:
  614 PDF objects out of 1000 (max. 8388607)
  549 compressed objects within 6 object streams
