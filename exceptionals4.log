@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 DEC 2017 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1474,10 +1474,10 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 394.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \hbox (54.95316pt too wide) in paragraph at lines 394--395
-[]\OT1/cmr/m/n/12 There is a $\OML/cmm/m/it/12 K$\OT1/cmr/m/n/12 -promotion op-
-er-a-tor $[][]$ on $[][](\OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 )$ that di-rectly 
-ex-tends M.-P. Sch^^?utzenberger's
+Overfull \hbox (2.234pt too wide) in paragraph at lines 394--395
+[]\OT1/cmr/m/n/12 From the com-bi-na-torics of $\OML/cmm/m/it/12 K$\OT1/cmr/m/n
+/12 -theoretic Schu-bert cal-cu-lus one ob-tains a $\OML/cmm/m/it/12 K$\OT1/cmr
+/m/n/12 -promotion
  []
 
 [6] [7]
@@ -1627,7 +1627,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1040.
 Here is how much of TeX's memory you used:
  29500 strings out of 493089
  588968 string characters out of 6134842
- 666305 words of memory out of 5000000
+ 666319 words of memory out of 5000000
  32226 multiletter control sequences out of 15000+600000
  29939 words of font info for 115 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1660,7 +1660,7 @@ st/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exceptionals4.pdf (25 pages, 420882 bytes).
+Output written on exceptionals4.pdf (25 pages, 420967 bytes).
 PDF statistics:
  615 PDF objects out of 1000 (max. 8388607)
  550 compressed objects within 6 object streams
