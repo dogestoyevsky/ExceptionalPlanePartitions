@@ -941,44 +941,66 @@ Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $P_F$ cases. Hence, it remains to consider $P = P_{CM}$.
 
-Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = m_T\{i\}/\tau\{i\}$ are $1,11,2,4$ and $8$. Therefore we evaluate $\mathcal{R}(P_{CM},m,d)$ for each $d$ that divides one or more of these $\ell$ values. We verify that this matches the prediction given by $f^m_{CM}$, and that $f^m_{CM}$ predicts $\mathcal{R}(P_{CM},m,d) = 0$ for all $d$ not dividing any of these integers.
-\begin{itemize}
-\item If $d$ divides $1$, then Theorem~\ref{thm:mainresult} predicts 
+Fix $k$ and let $m \coloneqq k +11   = k + \rank(P_{CM})$. 
+
+By inspection of Table~\ref{tab:E6}, the possible values of $\ell\{i\} \coloneqq m_T\{i\}/\tau\{i\}$ are $1$, $11$, $2$, $4$, and $8$. Therefore, we will determine $\mathcal{R}(P_{CM},m,d)$ for each $d$ that divides at least one of these values. We will verify that this number matches the prediction given by $f^{m-11}_{CM}$ and Conjecture~\ref{conj:rush.shi}, and moreover that $f^{m-11}_{CM}$ and Conjecture~\ref{conj:rush.shi}  predict $\mathcal{R}(P_{CM},m,d) = 0$ for all $d$ not dividing any of these values.
+
+\smallskip
+
+\noindent
+{\sf (Case 1 : $d = 1$)}:
+Here, Theorem~\ref{thm:mainresult} gives 
 \tiny
 \begin{align*}
 \mathcal{R}(P_{CM},m,1) &= 1 \cdot 1 \cdot \binom{m}{11} + (3 \cdot 1  + 12 \cdot 1)  \cdot \binom{m}{12} + 13 \cdot 6 \cdot \binom{m}{13} + (7\cdot 2 + 14 \cdot 12) \binom{m}{14}  \\ &\ \ \ \ \ \ + 15 \cdot 13 \cdot \binom{m}{15} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1 + 16 \cdot 4) \binom{m}{16} \\
 &= \frac{(m-10)(m-9)(m-8)(m-7)^2(m-6)^2(m-5)^2(m-4)^2(m-3)^2(m-2)(m-1)m}{1\cdot 2\cdot 3\cdot 4^2 \cdot 5^2 \cdot 6^2 \cdot 7^2 \cdot 8^2 \cdot 9 \cdot 10 \cdot 11} \\
-&= f_{CM}^m(1).
+&= f_{CM}^{m-11}(1),
 \end{align*}
 \normalsize
-\item If $d$ divides $11$ but not $1$, Theorem~\ref{thm:mainresult} predicts
+as desired.
+
+\smallskip
+\noindent
+{\sf (Case 2 : $d = 11$)}:
+By Theorem~\ref{thm:mainresult} and Lemma~\ref{lem:evalq}, we have
 \begin{align*}
 \mathcal{R}(P_{CM},m,11) &= 1 \cdot 1 \cdot \binom{m/11}{11/11} \\
 &= m/11 \\ 
-&= f_{CM}^m(\zeta^{m/11}).
+&= f_{CM}^{m-11}(\zeta^{m/11}).
 \end{align*}
-\item If $d$ divides $8$ but not $4$, Theorem~\ref{thm:mainresult} predicts
+
+\smallskip
+\noindent
+{\sf (Case 3 : $d \divides 8, d \not \divides 4$)}:
+By Theorem~\ref{thm:mainresult} and Lemma~\ref{lem:evalq}, we have
 \begin{align*}
 \mathcal{R}(P_{CM},m,8) &= 2 \cdot 1 \cdot \binom{m/8}{16/8} \\
 &= \frac{(m)(m-8)}{8^2} \\
-&= f_{CM}^m(\zeta^{m/8}).
+&= f_{CM}^{m-11}(\zeta^{m/8}).
 \end{align*}
-\item If $d$ divides $4$ but not $2$, Theorem~\ref{thm:mainresult} predicts
+
+\smallskip
+\noindent
+{\sf (Case 4 : $d \divides 4, d \not \divides 2$)}:
+By Theorem~\ref{thm:mainresult} and Lemma~\ref{lem:evalq}, we have
 \begin{align*}
 \mathcal{R}(P_{CM},m,4) &= 3 \cdot 1 \cdot \binom{m/4}{12/4} + (4 \cdot 1 + 2 \cdot 1) \cdot \binom{m/4}{16/4}  \\
 &= \frac{(m-8)(m-4)^2m}{4^2 \cdot 8^2} \\
-&= f_{CM}^m(\zeta^{m/4}).
+&= f_{CM}^{m-11}(\zeta^{m/4}).
 \end{align*}
-\item If $d$ divides $2$ but not $1$, Theorem~\ref{thm:mainresult} predicts
+
+\smallskip
+\noindent
+{\sf (Case 5 : $d = 2$)}:
+By Theorem~\ref{thm:mainresult} and Lemma~\ref{lem:evalq}, we have
 \begin{align*}
 \mathcal{R}(P_{CM},m,2) &= 3 \cdot 1 \cdot \binom{m/2}{12/2} + 7 \cdot 2 \cdot \binom{m/2}{14/2} + (2 \cdot 1 + 4 \cdot 1 + 8 \cdot 1) \cdot \binom{m/2}{16/2} \\
 &= \frac{(m-10)(m-8)(m-6)^2(m-4)^2(m-2)m}{10 \cdot 8^2 \cdot 6^2 \cdot  4^2 \cdot 2}\\
-&= f_{CM}^m(\zeta^{m/2}).
+&= f_{CM}^{m-11}(\zeta^{m/2}).
 \end{align*}
-\end{itemize}
-This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f^m_{CM}(\zeta^{m/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{m/d}}$) is zero, while none of the denominator terms are. 
 
-Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
+It remains to check that for all other values of $d$, we have $f^{m-11}_{CM}(\zeta^{m/d}) = 0$.  First, observe that $f^{m-11}_{CM}(\zeta^{m/d}) = 0$ if $d > 11$, for in this case, Lemma~\ref{lem:evalq} implies that the factor $[m]_{\zeta^{m/d}}$ in the numerator is zero, while all of the factors in the denominator are nonzero. 
+For the remaining cases $d \in \{3,5,6,7,9,10 \}$, it is easy to check, using Lemma~\ref{lem:evalq} and counting congruences to $0$ in the numerator and denominator, that $f^{m-11}_{CM}(\zeta^{m/d}) = 0$. 
 \end{proof}
 
 \section*{Acknowledgements}
