@@ -910,7 +910,6 @@ f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d
 Equation~(\ref{eq:evalstraightshape}) holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
 
 
-
 \begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $k$. Let $m = k+2p-1 = k + \rank(P_p)$ and suppose $d$ divides $m$. We have that \[ f^{m-2p+1}_{P_p}(q) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \begin{align*}
  \mathcal{R}(P_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) &= \binom{m}{2p-1} + 2 \binom{m}{2p} \\
@@ -924,7 +923,23 @@ If instead $d$ divides $2p-1$, then we have
 Finally, if $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} claims $\mathcal{R}(P_p,m,d) = 0$, while on the other hand $d$ divides $\lceil{\frac{2p-1}{d}}\rceil$ of the terms in the numerator of $f^{m-2p+1}_{P_p}(\zeta^{m/d})$ and at most $\lfloor{\frac{2p-1}{d}}\rfloor$ of the terms in the denominator, so $f^{m-2p+1}_{P_p}(\zeta^{m/d}) = 0$. 
 \end{proof}
 
-The verification for $P = P_{CM}$ is similarly straightforward. 
+The verification for $P = P_{CM}$ is similarly straightforward. Before carrying out this verification, we resolve Conjecture~\ref{conj:rush.shi} as it applies to $P_F$.
+
+\begin{theorem}\label{thm:F_bad}
+Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
+\end{theorem}
+\begin{proof}
+That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
+%note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
+
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F)$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
+
+Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(P_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
+
+%Therefore $\gcd{(m_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
+
+Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}(\zeta) = 0$. But this is impossible, for if $f_{P_F}(\zeta) = 0$, then the minimal polynomial of $\zeta$ would divide the numerator of $f_{P_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+\end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $P_F$ cases. Hence, it remains to consider $P = P_{CM}$.
@@ -967,22 +982,6 @@ Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = m
 This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f^m_{CM}(\zeta^{m/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{m/d}}$) is zero, while none of the denominator terms are. 
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
-\end{proof}
-
-\begin{theorem}\label{thm:F_bad}
-Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
-\end{theorem}
-\begin{proof}
-That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
-%note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
-
-It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
-
-Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(P_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
-
-%Therefore $\gcd{(m_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
-
-Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}(\zeta) = 0$. But this is impossible, for if $f_{P_F}(\zeta) = 0$, then the minimal polynomial of $\zeta$ would divide the numerator of $f_{P_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
 \end{proof}
 
 \section*{Acknowledgements}
