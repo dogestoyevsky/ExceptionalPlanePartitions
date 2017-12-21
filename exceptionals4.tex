@@ -320,7 +320,7 @@ A poset that is linearly ordered is called a {\bf chain}; we denote the chain of
 f_P^k(q) = \frac{(1 - q^{h_1 + k})(1 - q^{h_2 + k})\cdots(1 - q^{h_t + k})}{(1 - q^{h_1})(1 - q^{h_2})\cdots(1 - q^{h_t})},
 \]
 for some nonnegative integers $t, h_1, h_2, \dots, h_t \in \mathbb{Z}_{\geq 0}$ independent of $k$.
-R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed, it is conjectured that there are no other Gaussian posets. In the case of a minuscule poset $P$, one can in fact take $t = |P|$ and, for $\x \in P$, take $h_\x = \rank(\x)$, where $\rank(\x)$ denotes the size of the largest chain in $P$ with maximum element $\x$. Given the beautiful form of these generating functions, it is perhaps not surprising that $f_P^k$ should play a role in some instances of cyclic sieving, as in Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}. 
+R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed, it is conjectured that there are no other Gaussian posets. In the case of a minuscule poset $P$, one can in fact take $t = |P|$ and, for $\x \in P$, take $h_\x = \rank(\x) + 1$, where $\rank(\x)$ denotes the length of the largest chain in $P$ with maximum element $\x$. Given the beautiful form of these generating functions, it is perhaps not surprising that $f_P^k$ should play a role in some instances of cyclic sieving, as in Theorems~\ref{thm:exceptionals} and \ref{thm:propeller}. 
 
 \begin{figure}[h]
 	\begin{subfigure}[b]{0.27\textwidth}
@@ -343,37 +343,6 @@ R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed,
 \caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. The propeller $P_p$ consists of two rows of length $p$, overlapping by two boxes in the center. The Cayley-Moufang and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
 \end{figure}
 
-%Here, we recall the facts that we will need about rowmotion. For $x \in P$, define the {\bf toggle at $x$} to be the operator $t_x : J(P) \to J(P)$ defined by
-%\[
-%t_x(\uu) = \left\{ \begin{array}{ll}
-%        \uu \cup \{x\}, & \text{for } x \notin \uu \text{ and } \uu \cup \{x\} \in J(P); \\
-%        \uu - \{x\}, & \text{for } x \in \uu \text{ and } \uu - \{x\} \in J(P);\\
-%        \uu, & \text{otherwise. }
-%        \end{array} \right.
-%\]
-%Following the terminology of \cite{DPS}, a {\bf $3$-dimensional lattice projection} of a finite ranked poset P is an order- and rank-preserving map $\pi : P \to \mathbb{Z}^3$, where the partial order on $\mathbb{Z}^3$ is given by componentwise comparison and $\mathbb{Z}^3$ is ranked by the sum of its coordinates. Considering the classification of minuscule posets in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}, observe that for every minuscule $P$ and any $k > 0$, the poset $P \times {\bf k}$ has an injective $3$-dimensional lattice projection induced from the embeddings of these pictures in the Cartesian plane. For $v = \{\pm 1 \}^3$ and $i \in \mathbb{Z}$, let 
-%\begin{equation}\label{eq:taudef}
-%\tau_{\pi,v}^i = \prod_{\langle v, \pi(x) \rangle = i} t_x.
-%\end{equation}
-%That is, $\tau_{\pi,v}^i$ is the composition of the toggles $t_x$ for all $x$ with $\pi(x)$ lying on the affine plane defined by $\langle v, \cdot \rangle = i$. Since the toggles $t_{x_1}$ and $t_{x_2}$ clearly commute whenever neither $x_1$ nor $x_2$ covers the other, this composition is well-defined. Then {\bf  $(\pi, v)$-motion} on $P$ is the operator
-%\[
-%\mot_{\pi, v} \coloneqq \prod_{i \in \mathbb{Z}} \tau_{\pi,v}^i,
-%\]
-%where the factors are taken in reverse of the natural order. Note that in this product, only finitely many factors act nontrivially, since $\pi(P)$ intersects only a finite number of the affine planes defined by $\langle v, \cdot \rangle = i$. We recall the following pair of results, which are fundamental to our further analysis of rowmotion on minuscule plane partitions.
-%
-%\begin{proposition}[{\cite[Lemma~1]{Cameron.Fonderflaass}}; {\cite[Proposition~3.18]{DPS}}]
-%\label{prop:psi_is_toggle}
-%For any finite ranked poset $P$ with a $3$-dimensional lattice projection $\pi$, we have 
-%\[
-% \Psi  = \mot_{\pi, (1,1,1)}  \] 
-% as operators on $J(P)$. \qed
-%\end{proposition}
-%
-%\begin{proposition}[{\cite[Theorem~3.25]{DPS}}]
-%\label{prop:conjugate_actions}
-%For any finite ranked poset $P$ with a $3$-dimensional lattice projection $\pi$ and any vectors $v,w \in \{ \pm 1 \}^3$, there is an equivariant bijection between $J(P)$ under $\mot_{\pi, v}$ and $J(P)$ under $\mot_{\pi,w}$. In particular, $\mot_{\pi, v}$ and $\mot_{\pi,w}$ induce the same multiset of orbit cardinalities on $J(P)$. \qed
-%\end{proposition}
-
 \section{The rowmotion operator $\Psi$}\label{sec:rowmotion}
 
 If $P$ is any finite poset, let $J(P)$ denote the set of its order ideals. For $\uu \in J(P)$, we define $\Psi(\uu) \in J(P)$ to be the order ideal generated by the minimal elements of the complement $P - \uu$. This operator $\Psi$ is closely related to those described in \cite{Brouwer.Schrijver,Duchet,Cameron.Fonderflaass} in different contexts. It was first considered explicitly as an action on order ideals by J.~Striker and N.~Williams \cite{Striker.Williams}. We follow them in referring to $\Psi$ as {\bf rowmotion}.
@@ -381,7 +350,7 @@ If $P$ is any finite poset, let $J(P)$ denote the set of its order ideals. For $
 We now observe that results of \cite{DPS} and \cite{Dilks.Striker.Vorland} enable us to study the rowmotion action $\Psi$ via the action of $K$-promotion on increasing tableaux.
 
 \begin{definition}
-Let $\lambda$ be an order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of a positive integer to each box of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^m(\lambda)$ denote the set of increasing tableaux of shape $\lambda$ with all entries at most $m$. We identify $\inc^m(\lambda)$ with the set of strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{m}$ of size $m$. For an example of an increasing tableau, see Figure~\ref{fig:inctab}.
+Let $\lambda$ be an order ideal in a minuscule poset, considered as an generalized Young diagram in Cartesian orientation as in Figures~\ref{fig:min_poset_E} and \ref{fig:min_poset}. An {\bf increasing tableau} of shape $\lambda$ is an assignment of a positive integer to each box of $\lambda$, such that entries strictly increase from left to right along rows and strictly increase from bottom to top going up columns. Let $\inc^m(\lambda)$ denote the set of increasing tableaux of shape $\lambda$ with all entries at most $m$. We identify $\inc^m(\lambda)$ with the set of strictly order-preserving maps from the poset $\lambda$ to the chain poset $\mathbf{m} = \{1, 2, \dots, m\}$ of size $m$. For an example of an increasing tableau, see Figure~\ref{fig:inctab}.
 \end{definition}
 
 \begin{figure}[h]
@@ -886,7 +855,7 @@ f_{i,j}(q) \coloneqq
  0 & \text{if } i < j 
 \end{cases}
 \end{equation*}
-where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b = 0}^{a-1} q^b$ are the standard $q$-analogues. Then, 
+where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b = 0}^{a-1} q^b = \frac{1-q^{a+1}}{1-q}$ are the standard $q$-analogues. Then, 
 \[\#\left\{ v \in \binom{[i]}{j} : (\Sigma^i)^{\circ s}(v) = v \right\} = f_{i,j}(\zeta^s),\] where $\zeta$ is any primitive $i$th root of unity. \qed
 \end{theorem} 
 
@@ -900,10 +869,10 @@ Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $
 \end{equation}
 \end{theorem}
 \begin{proof}
-Proposition~\ref{prop:compressbijective} gives that tableaux of height $m$ correspond bijectively to pairs of gapless tableaux and content vectors of length $m$ with $m_T$ ones, where $m_T$ is the height of the gapless tableau. The table corresponding to $P$ gives all gapless tableaux. We iterate over the rows of the table and determine for each row how many content vectors yield tableaux in $\inc^m(P)$ whose periods divide $m/d$. 
+Proposition~\ref{prop:compressbijective} gives that a tableau $T \in \inc^m(P)$ corresponds bijectively to a pair consisting of a gapless tableau $U \in \incgl^{m_T}(P)$ and a content vector of length $m$ with $m_T$ ones. The table corresponding to $P$ enumerates all gapless tableaux. We iterate over the rows of the table and determine, for each row, how many content vectors yield tableaux in $\inc^m(P)$ whose periods divide $m/d$. 
 
 For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a gapless tableau $U \in \incgl^{m_T\{i\}}(P)$ and a content vector $v$ with period $m\{i\}/d'$ inflate to a tableau $V$ of period \[ \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{d'},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},d')}{d' c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},d')}. \] 
-Therefore, $V$ has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now $d$ divides $d'$ if and only if the period of $v$ divides $m\{i\}/d$. But, by Theorem~\ref{thm:rsw}, the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ $1$s and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$.
+Therefore, $V$ has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now, $d$ divides $d'$ if and only if the period of $v$ divides $m\{i\}/d$. But, by Theorem~\ref{thm:rsw}, the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ $1$s and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$.
 \end{proof}
 
 The formula resulting from Theorem~\ref{thm:mainresult} is simple enough to check by hand. 
@@ -922,35 +891,52 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{equation}
 \end{lemma}
 
-For example, we evaluate $f_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. By definition,
+For example, we evaluate $f_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. Since the minuscule posets are Gaussian, we have
 \tiny
-\[   f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}. \]
+\[   f_{P_p}^{m-2p+1}(q) = \frac{[m-(2p-2)]_{q}[m-(2p-2)+1]_{q} \cdots [m-(p-1)]_{q}^2 \cdots [m-1]_{q}[m]_{q}}{[1]_{q}[2]_{q} \cdots [p]_{q}^2 \cdots [2p-2]_{q}[2p-1]_{q}}. \]
+%\[   f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}. \]
 \normalsize
-Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multisets of equivalence classes modulo $d$. Pairing equivalent terms and using the lemma, we have
-\[ f_{P_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
+Since $f_{P_p}(q)$ is, by definition, a polynomial, we clearly have $f_{P_p}(\zeta^{m/d}) = \lim_{q \rightarrow \zeta^{m/d}} f_{P_p}(q)$.
+Thus, Lemma~\ref{lem:evalq} allows us to replace this ratio of polynomials with a ratio of integers by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multiset of equivalence classes modulo $d$. Pairing equivalent terms and using Lemma~\ref{lem:evalq}, we have
+\[ f_{P_p}^{m-2p+1}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
 
-An important special case allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
+An important special case allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is a primitive $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
 f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d)(i)}{(d)  (2d)  \cdots  (j-d) (j)}. 
 \end{equation}
-This equation holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
+Equation~(\ref{eq:evalstraightshape}) holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
 
 
-
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $m$, and suppose $d$ divides $m$. We have that \[ f_{P_p}(\zeta) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $k$. Let $m = k+2p-1 = k + \rank(P_p)$ and suppose $d$ divides $m$. We have that \[ f^{m-2p+1}_{P_p}(q) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \begin{align*}
  \mathcal{R}(P_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) &= \binom{m}{2p-1} + 2 \binom{m}{2p} \\
- &= \frac{(2m-2p+2)m!}{(2p)!(m-2p+1)!} = f_{P_p}(1). 
+ &= \frac{(2m-2p+2)m!}{(2p)!(m-2p+1)!} = f^{m-2p+1}_{P_p}(1),
  \end{align*}
-Now, for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Equation~\ref{eq:evalstraightshape},
-\[ \mathcal{R}(P_p,m,d) = 2 \, f_{m,2p}(\zeta^{m/d}) = 2\binom{m/d}{2p/d} = f_{P_p}(\zeta^{m/d}).\]
-
-If $d$ divides $2p-1$,  then
-\[ \mathcal{R}(P_p,m,d) =  f_{m,2p-1}(\zeta^{m/d}) = \binom{m/d}{(2p-1)/d} = f_{P_p}(\zeta^{m/d}).\]
-If $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} predicts that $\mathcal{R}(P_p,m,d) = 0$, and on the other hand $d$ divides $\lceil{\frac{2p-1}{d}}\rceil$ of the terms in the numerator of $f_{P_p}(\zeta^{m/d})$ and at most $\lfloor{\frac{2p-1}{d}}\rfloor$ of the terms in the denominator, so $f_{P_p}(\zeta^{m/d}) = 0$. 
+ as desired.
+Now, for $d > 1$, we can have that $d$ divides $p$, or $d$ divides $2p-1$, or $d$ divides neither. If $d$ divides $p$, then by Theorem~\ref{thm:mainresult} and Equation~(\ref{eq:evalstraightshape}),
+\[ \mathcal{R}(P_p,m,d) = 2 \, f_{m,2p}(\zeta^{m/d}) = 2\binom{m/d}{2p/d} = f^{m-2p+1}_{P_p}(\zeta^{m/d}).\]
+If instead $d$ divides $2p-1$, then we have
+\[ \mathcal{R}(P_p,m,d) =  f_{m,2p-1}(\zeta^{m/d}) = \binom{m/d}{(2p-1)/d} = f^{m-2p+1}_{P_p}(\zeta^{m/d}).\]
+Finally, if $d$ divides neither $p$ nor $2p-1$, then on the one hand Theorem~\ref{thm:mainresult} claims $\mathcal{R}(P_p,m,d) = 0$, while on the other hand $d$ divides $\lceil{\frac{2p-1}{d}}\rceil$ of the terms in the numerator of $f^{m-2p+1}_{P_p}(\zeta^{m/d})$ and at most $\lfloor{\frac{2p-1}{d}}\rfloor$ of the terms in the denominator, so $f^{m-2p+1}_{P_p}(\zeta^{m/d}) = 0$. 
 \end{proof}
 
-The verification for $P = P_{CM}$ is similarly straightforward. 
+The verification for $P = P_{CM}$ is similarly straightforward. Before carrying out this verification, we resolve Conjecture~\ref{conj:rush.shi} as it applies to $P_F$.
+
+\begin{theorem}\label{thm:F_bad}
+Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
+\end{theorem}
+\begin{proof}
+That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
+%note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
+
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F)$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
+
+Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(P_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
+
+%Therefore $\gcd{(m_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
+
+Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}(\zeta) = 0$. But this is impossible, for if $f_{P_F}(\zeta) = 0$, then the minimal polynomial of $\zeta$ would divide the numerator of $f_{P_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+\end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $P_F$ cases. Hence, it remains to consider $P = P_{CM}$.
@@ -993,22 +979,6 @@ Inspecting Table~\ref{tab:E6}, we see that the possible values of $\ell\{i\} = m
 This exhausts all possible $d$ dividing one of the above integers. To see that the cyclic sieving polynomial predicts all other $d$ values are $0$, we first observe that $f^m_{CM}(\zeta^{m/d}) = 0$ if $d > 11$. For in this case, Lemma~\ref{lem:evalq} implies that one of the numerator terms (namely, $[m]_{\zeta^{m/d}}$) is zero, while none of the denominator terms are. 
 
 Using the same identity to count zeros in the numerator and denominator, it is easily checked that the remaining values of $d \leq 11$ evaluate to $0$. 
-\end{proof}
-
-\begin{theorem}\label{thm:F_bad}
-Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
-\end{theorem}
-\begin{proof}
-That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
-%note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
-
-It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
-
-Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(P_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
-
-%Therefore $\gcd{(m_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
-
-Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}(\zeta) = 0$. But this is impossible, for if $f_{P_F}(\zeta) = 0$, then the minimal polynomial of $\zeta$ would divide the numerator of $f_{P_F}$, which is the product of polynomials of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
 \end{proof}
 
 \section*{Acknowledgements}
