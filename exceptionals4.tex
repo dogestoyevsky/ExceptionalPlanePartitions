@@ -612,10 +612,10 @@ Now by \cite[Lemma~2.1]{DPS}, the content vector of
   [\decr \circ \rep_{\bullet \rightarrow m_T + 1} \circ \swap_{m_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} \circ \deflate(T)](\x) = m_T.
   \] 
 
-Now say $\x \in \lambda(T^{(m)})$ and let $i_1, \ldots, i_{m_T}$ be as in Lemma~\ref{lem:bullet_placement}. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{m_T} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{m_T}$, we have that
+Now say $\x \in \lambda(T^{(m)})$ and let $i_1, \ldots, i_{m_T}$ be as in Lemma~\ref{lem:bullet_placement}. We observe that since $\swap_\ell$ does not affect the tableau $\swap_{i_{m_T}} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet} (T)$ for $\ell > i_{m_T}$, we have that
 \[ (\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_m = (\swap_{i_{m_T}} \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_{i_{m_T}}.  \]
 Therefore, it follows from Lemma~\ref{lem:gappy_promotion}, taking $j = m_T$, that 
-\[ (\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T ))_m = \inflate^m_{\content^m(T)} \circ (\swap_{m_T} \circ \cdots \circ   \swap_2  \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m(T)_{m_T}). \]
+\[ [\swap_m \circ \cdots \circ \swap_2 \circ \rep_{1 \rightarrow \bullet}( T )](\x) = [\inflate^m_{\content^m(T)} \circ (\swap_{m_T} \circ \cdots \circ   \swap_2  \circ \rep_{1 \rightarrow \bullet} \circ \deflate^m(T))](\x). \]
 
 Now, since $\x \in \lambda(T^{(m)})$, we have that $T^{(m)}(\x) = \ell$ for $\ell \in \{2,3,\dots,m\}$. This implies that $\ell = i_j$ for some $2 \leq j \leq m_T$. Then, 
 \[
