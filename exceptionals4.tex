@@ -536,8 +536,7 @@ For $T \in \inc^m(\lambda)$ and $n \leq m$, we define the tableau $T^{(n)}: \lam
  \[
  T_n \coloneqq T^{(n)} \vert_{\lambda \left( T^{(n)} \right) }.
  \]
-  Intuitively, $T^{(n)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $n$ have been acted upon by $\swap$ operators, while $T_n$ is the restriction of $T^{(n)}$ to this subset of boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. 
-  
+  Intuitively, $T^{(n)}$ shows $T$ at the point in $K$-promotion at which the boxes labeled $2$ through $n$ have been acted upon by $\swap$ operators, while $T_n$ is the restriction of $T^{(n)}$ to this subset of boxes. Examples of these intermediate tableaux appear in Figure~\ref{fig:restricted_promotions}. They will be crucial for inductive proofs of the results of this section. 
   
 \begin{figure}[h]
 %\includegraphics[scale=.35]{lemma_4p2.jpg}
@@ -563,9 +562,7 @@ those boxes with labels less than or equal to $3$. The order ideal
  $\lambda \left( T^{(3)} \right)$ is the 
 shape $\ydiagram{2}$ of the tableau $T_3$. }\label{fig:restricted_promotions}
 \end{figure}
-
-%-- not obvious that $\lambda$  is a shape but don't think need this here -- 
-We use these intermediate products to characterize the action of $K$-promotion on gappy tableaux. 
+ 
 
 \begin{proposition}\label{prop:deflation_commutation}
 Let $T \in \inc^m(\lambda)$. If $\content^m(T) \lbrace 1 \rbrace = 1$, then
@@ -585,7 +582,7 @@ Let $T \in \inc^m(\lambda)$ with $\content^m(T) \lbrace 1 \rbrace = 1$. Let $i_j
 \begin{proof} We proceed by induction on $j$. Fix $T \in \inc^m(\lambda)$  with $\content^m(T) \lbrace 1 \rbrace = 1$. In the base case $j = 1$,  $T^{(i_1)} = T^{(1)} = \rep_{1 \rightarrow \bullet}(T)$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $T(\x) = 1$. On the other hand, $\deflate^m(T)^{(1)} =  \rep_{1 \rightarrow \bullet}(\deflate^m(T))$ has $\bullet$ in exactly those boxes $\x \in \lambda$ such that $\deflate^m(T)(\x) = 1$. But since $\content^m(T) \lbrace 1 \rbrace = 1$, $\deflate^m(T)(\x) = 1$ if and only if $T(\x) = 1$. 
 
 
-Now, say the lemma holds for all such $T$ in the case $j < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T(\x) = i_t$. This is, in turn, equivalent by Proposition~\ref{prop:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
+Now, say the lemma holds for all such $T$ in the case $j < t$. First consider the case where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) \neq \bullet$. Now if $\content^m(T)\{ \ell \} = 0$, there are no nontrivial short ribbons containing $\bullet$ and $\ell$, so $\swap_\ell$ acts trivially on $T$. Therefore This is equivalent to the statement that $T^{(i_{t-1})}(\x) = i_t$ and $T^{(i_{t-1})}(\x') = \bullet$ for some $\x'$ adjacent to $\x$. But since $\rep_{1 \rightarrow \bullet}$ and $\swap_j$ for  $j \leq i_{t-1}$ only act on elements of $T$ labeled with $\bullet$'s or values less than or equal to $i_{t-1}$, $T^{(i_{t-1})}(\x) = i_t$ implies that $T(\x) = i_t$. This is, in turn, equivalent by Proposition~\ref{prop:compressbijective} to the statement $\deflate^m(T)(\x) = t$, implying that $\deflate^m(T)^{(t-1)}(\x) = t$. Additionally, by the inductive hypothesis, $T^{(i_{t-1})}(\x') = \bullet$ if and only if $\deflate^m(T)^{(t-1)}(\x') = \bullet$. Therefore, the conditions of this case are equivalent to the conditions $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) \neq \bullet$, as desired. 
 
 Consider the other possible case, where $T^{(i_t)}(\x) = \bullet$ and $T^{(i_{t-1})}(\x) = \bullet$. This scenario is equivalent to the statement that $T^{(i_{t-1})}(\x) = \bullet$ and there is no $\x'$ adjacent to $\x$ such that $T^{(i_{t-1})}(\x') = i_t$. By similar reasoning as in the previous case, the second condition is equivalent to the statement that there is no $\x'$ adjacent to $\x$ with $T(\x') = i_t$. This statement is, in turn, equivalent to saying that there is no $\x'$ adjacent to $\x$ with $\deflate^m(T)(\x') = \deflate^m(T)^{(t-1)}(\x') = t$. Since $\deflate^m(T)^{(t-1)}(\x) = \bullet$ by the inductive hypothesis, the conditions of this case are finally equivalent to the conditions that $\deflate^m(T)^{(t)}(\x) = \bullet$ and $\deflate^m(T)^{(t-1)}(\x) = \bullet$, and we are done.
 \end{proof}
