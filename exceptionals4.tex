@@ -894,11 +894,13 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]
 \end{equation}
 \end{lemma}
 
-For example, we evaluate $f_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. By definition,
+For example, we evaluate $f_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. Since the minuscule posets are Gaussian, we have
 \tiny
-\[   f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}. \]
+\[   f_{P_p}(q) = \frac{[m-(2p-2)]_{q}[m-(2p-2)+1]_{q} \cdots [m-(p-1)]_{q}^2 \cdots [m-1]_{q}[m]_{q}}{[1]_{q}[2]_{q} \cdots [p]_{q}^2 \cdots [2p-2]_{q}[2p-1]_{q}}. \]
+%\[   f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}. \]
 \normalsize
-Lemma~\ref{lem:evalq} allows us to convert this to a ratio of polynomials by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multisets of equivalence classes modulo $d$. Pairing equivalent terms and using the lemma, we have
+Since $f_{P_p}(q)$ is, by definition, a polynomial, we clearly have $f_{P_p}(\zeta^{m/d}) = \lim_{q \rightarrow \zeta^{m/d}} f_{P_p}(q)$.
+Thus, Lemma~\ref{lem:evalq} allows us to replace this ratio of polynomials with a ratio of integers by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multiset of equivalence classes modulo $d$. Pairing equivalent terms and using Lemma~\ref{lem:evalq}, we have
 \[ f_{P_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
 
 An important special case allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is an $i$th root of unity and $d$ divides $\gcd(i,j)$, then
