@@ -665,20 +665,18 @@ We first show that, for $T \in \inc^m(\lambda)$,
 Let $\pi_1$ be the projection onto the first factor of $\coprod_{n \leq m}\incgl^n(\lambda) \times \binom{[m]}{n}$ and $\pi_2$ the projection onto the second factor. It is immediate from the definitions that \[ \pi_2(K^m \circ \compress^m(T)) = \Sigma^m \circ \content^m(T).\] But by \cite[Lemma~2.1]{DPS},
 \[  \Sigma^m \circ \content^m(T) = \content^m \circ \pro^m(T) = \pi_2(\compress^m \circ \pro^m(T)).\] Thus, the two sides of Equation~(\ref{eq:k_commutes}) are equal in the second factor.  
 
-We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \[ w \coloneqq \content^m(T) = \pi_2(\compress^m(T)). \]  By Proposition~\ref{prop:compressbijective}, we can write
+We now show that Equation~(\ref{eq:k_commutes}) holds in the first factor. Let \[ w \coloneqq \content^m(T) = \pi_2(\compress^m(T)). \]  By the proof of Proposition~\ref{prop:compressbijective}, we can write
 \[ T = \tinflate^m(\deflate^m(T), w).\] 
 If $w\lbrace 1 \rbrace = 1 $, then
 \begin{align*}
 \pi_1(\compress^m \circ \pro^m(T)) &= \deflate^m \circ \pro^m(T) \\
 &= \pro^{m_T} \circ \deflate^m (T) &\text{(by Proposition~\ref{prop:deflation_commutation}, $w\lbrace 1 \rbrace = 1$)} \\
-&= \pro^{m_T} \circ \pi_1 \circ \compress^m(T) \\ 
 &= \pi_1(K^m \circ \compress^m(T)) &\text{(because $w\lbrace 1 \rbrace = 1$).}
 \end{align*}
 On the other hand, if $w \lbrace 1 \rbrace = 0$, then 
 \begin{align*}
 \pi_1(\compress^m \circ \pro^m(T)) &= \deflate^m \circ \pro^m(T) \\
 &= \deflate^m(T) &\text{(by Proposition~\ref{prop:deflation_commutation}, $w \lbrace 1 \rbrace = 0$)} \\
-&= \pi_1 ( \compress^m(T) ) \\
 &= \pi_1 ( K^m \circ \compress^m(T)) &\text{(because $w\lbrace 1 \rbrace = 0$).}
 \end{align*}
 This completes the proof of Equation~(\ref{eq:k_commutes}).
