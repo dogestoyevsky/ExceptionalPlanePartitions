@@ -373,9 +373,7 @@ Hence \cite[Corollary~3.28]{Dilks.Striker.Vorland} applies, and in these cases w
 Let $P \in \{ P_{CM}, P_F, P_p \}$ and $k \in \mathbb{Z}_{\geq 0}$.
 Then the multiset of cardinalities of $\Psi$-orbits on $J(P \times \mathbf{k})$ and the multiset of cardinalities of $\pro^{\rank(P)+ k+1}$-orbits on $\inc^{\rank(P)+ k+1}(\lambda)$ are equal. \qed
 \end{corollary}
-%\begin{proof}
-%By Proposition~\ref{prop:bijection}, $\Omega$ is a bijection between $J(\lambda \times \mathbf{m})$ and $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$. By Proposition~\ref{prop:equivariant}, the orbit structure of $\pro^{\rank(\lambda)+ m+1}$ on $\inc^{\rank(\lambda)+ m+1}(\lambda^\star)$ is the same as the orbit structure of $\mot_{\mathrm{id},(1,1,-1)}$ on $J(\lambda \times \mathbf{m})$. By Proposition~\ref{prop:psi_is_toggle}, the action of $\Psi$ on $J(\lambda \times \mathbf{m})$ is the same as the action of $\mot_{\mathrm{id},(1,1,1)}$. By Proposition~\ref{prop:conjugate_actions}, $\mot_{\mathrm{id},(1,1,1)}$ and $\mot_{\mathrm{id},(1,1,-1)}$ induce the same multiset of orbit cardinalities on $J(\lambda \times \mathbf{m})$.
-%\end{proof}
+
 
 \section{Inflation and deflation}\label{sec:inflation}
 In light of Corollary~\ref{cor:multisets}, we now turn to a more thorough study of increasing tableaux. Let $\lambda$ be an order ideal in a minuscule poset.
@@ -408,7 +406,6 @@ If $T = \ytableaushort{456,125} \in \inc^7(2 \times 3)$, then the deflation of $
 Now if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \binom{[m]}{n}$. We denote by $\compress^m$ the product map
 \[
 \compress^m \coloneqq (\deflate^m,\content^m).
-%: \inc^m(\lambda) \to \coprod_{0 \leq n \leq m} \left( \incgl^n(\lambda) \times \binom{[m]}{n} \right).
 \] 
 \begin{proposition}\label{prop:compressbijective} The map 
 \[
@@ -417,7 +414,6 @@ Now if $\deflate^m(T) \in \incgl^n(\lambda)$, then $\content^m(T) \in \binom{[m]
  is bijective.
 \end{proposition}
 \begin{proof}
-%We claim that $W = (W_1,W_2)$ is an injection $\text{Inc}^q(\lambda) \rightarrow \coprod_{M \leq N+1} \text{Inc}^{M}(\lambda)\times  (\mathbb{Z}/2\mathbb{Z})^{q}$. 
 A two-sided inverse for $\compress^m$ is given as follows. For any nonnegative integer $j$, let $[j]$ denote the set $\{1, 2, \dots, j\}$.
 For a binary vector $v \in \{0,1\}^m$, let $N_v$ be the number of $1$'s in $v$, and define a {\bf vector inflation} map \[\inflate^m_v : [N_v] \to [m]\] by
 \[ \inflate^m_v(k) = \min \bigg\lbrace n \in [m]:   \sum_{\ell = 1}^n v\lbrace \ell \rbrace = k \bigg\rbrace.\] (We use curly braces $``\{\}"$ throughout the paper to denote vector components.) An integer $j \in [m]$ is in the range of $\inflate^m_v$ if and only if $v\lbrace j \rbrace = 1$. Therefore
@@ -564,7 +560,6 @@ That is, the two sides are identical functions on the same domain.
 \begin{remark}The statement of the lemma involves a slight abuse of notation, since in general $\content^m(T)$ has more nonzero entries than $\lambda(\deflate^m(T)^{(j)})$ has boxes. This does not present an issue, since $\tinflate^m$ extends to a well-defined (but not bijective) operator on vectors with excess $1$s.
 \end{remark}
 \begin{proof}  We proceed again by induction on $j$. The base case $j=1$ is trivial, since for any $T \in \inc^m(\lambda)$, $\lambda \left( \deflate^m(T)^{(1)} \right)$ and $\lambda \left( T^{(1)} \right)$ are both the empty order ideal.
-%To establish the base case for this $T$, note that all numerical entries of $\rep_{1 \rightarrow \bullet}(T)_{1}$ are at least $2$. Therefore, $\swap_1$ acts trivially, $\lambda(T^{(1)}) = \emptyset$, and $T_1 = T_{i_1}$ is the empty tableau. The same reasoning shows that $\lambda(\deflate^q(T)^{(1)})$ is the empty tableau. %
 
 Now, assume that the lemma holds for all increasing tableaux $T$ in the case $j < t$. We first analyze the left side of Equation~(\ref{eq:gappy_promotion}). Take $\x \in \lambda\left( \deflate^m(T)^{(t)} \right)$. If $\x \in \lambda\left( \deflate^m(T)^{(t-1)} \right)$, then 
 $[\deflate^m(T)^{(t-1)}](\x) \leq t-1$ and hence
@@ -717,7 +712,6 @@ Now, say $\tau$ divides $jm_T$. Then, \[ \frac{\tau}{\text{gcd}(\frac{\ell m_T}{
 \section{Proof of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}}\label{sec:arithmetic}
 
 In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(P \times \mathbf{k})$ equals the multiset of $\pro^{\rank(P)+ k+1}$-orbit cardinalities for $\inc^{ \rank(P)+ k+1}(P)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. 
-%Denote the Cayley-Moufang shape by $P_{CM}$, the Freudenthal shape by $P_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $P_p$. 
 
 By Proposition~\ref{prop:deflation_commutation}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined its period under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
 
@@ -888,14 +882,13 @@ Let $\zeta$ be a primitive $N$th root of unity and let $d$ divide $N$. Then $[n]
 \end{equation}
 \end{lemma}
 
-For example, we evaluate $f_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. Since the minuscule posets are Gaussian, we have
+For example, we evaluate $f^{m-2p+1}_{P_p}(\zeta^{m/d})$ for some $d > 1$ dividing both $m$ and $p$. Since the minuscule posets are Gaussian, we have
 \tiny
-\[   f_{P_p}^{m-2p+1}(q) = \frac{[m-(2p-2)]_{q}[m-(2p-2)+1]_{q} \cdots [m-(p-1)]_{q}^2 \cdots [m-1]_{q}[m]_{q}}{[1]_{q}[2]_{q} \cdots [p]_{q}^2 \cdots [2p-2]_{q}[2p-1]_{q}}. \]
-%\[   f_{P_p}(\zeta^{m/d}) = \frac{[m-(2p-2)]_{\zeta^{m/d}}[m-(2p-2)+1]_{\zeta^{m/d}} \cdots [m-(p-1)]_{\zeta^{m/d}}^2 \cdots [m-1]_{\zeta^{m/d}}[m]_{\zeta^{m/d}}}{[1]_{\zeta^{m/d}}[2]_{\zeta^{m/d}} \cdots [p]_{\zeta^{m/d}}^2 \cdots [2p-2]_{\zeta^{m/d}}[2p-1]_{\zeta^{m/d}}}. \]
+\[   f^{m-2p+1}_{P_p}(q) = \frac{[m-(2p-2)]_{q}[m-(2p-2)+1]_{q} \cdots [m-(p-1)]_{q}^2 \cdots [m-1]_{q}[m]_{q}}{[1]_{q}[2]_{q} \cdots [p]_{q}^2 \cdots [2p-2]_{q}[2p-1]_{q}}. \]
 \normalsize
 Since $f^{m-2p+1}_{P_p}(q)$ is, by definition, a polynomial, we clearly have $f^{m-2p+1}_{P_p}(\zeta^{m/d}) = \lim_{q \rightarrow \zeta^{m/d}} f^{m-2p+1}_{P_p}(q)$.
 Thus, Lemma~\ref{lem:evalq} allows us to replace this ratio of polynomials with a ratio of integers by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multiset of equivalence classes modulo $d$. Pairing equivalent terms and using Lemma~\ref{lem:evalq}, we have
-\[ f_{P_p}^{m-2p+1}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
+\[ f^{m-2p+1}_{P_p}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
 
 An important special case of Lemma~\ref{lem:evalq} allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is a primitive $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
@@ -924,15 +917,12 @@ Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
 \end{theorem}
 \begin{proof}
 That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
-%note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
 
 It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
 
 Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(P_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
 
-%Therefore $\gcd{(m_T/d,\tau)} = 1$, where $\tau$ is the full-content period of the tableau. But then Equation~\ref{eq:period} implies that $\tau = 1$. However, there are no full-content tableau of height $22$ and orbit size $1$. Therefore, there are no tableau fixed by $\pro^{22}$. Theorem~\ref{thm:periodthm} and Table~\ref{tab:E7} allow us to compute that there are $0$ tableaux fixed by $\pro^{22}$.
-
-Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}^{m-17}(\zeta) = 0$. But this is impossible, for then the minimal polynomial of $\zeta$ would divide the numerator of $f^{m-17}_{P_F}(q)$, which is a product of factors of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
+Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture~\ref{conj:rush.shi} claims that $f_{P_F}^{m-17}(\zeta) = 0$. But this is impossible, for then the minimal polynomial of $\zeta$ would divide the numerator of $f^{m-17}_{P_F}(q)$, which itself divides a product of factors of the form $1-q^n$ where $n < 3m$. Thus, Conjecture~\ref{conj:rush.shi} fails in these cases. 
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
