@@ -719,7 +719,7 @@ Now, say $\tau$ divides $jm_T$. Then, \[ \frac{\tau}{\text{gcd}(\frac{\ell m_T}{
 In this final section, we collect the above results into proofs of Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller}. Consider a poset $P$ that is either the Cayley-Moufang poset, the Freudenthal poset, or one of the propellers. By Corollary~\ref{cor:multisets},  the multiset of $\Psi$-orbit cardinalities for $J(P \times \mathbf{k})$ equals the multiset of $\pro^{\rank(P)+ k+1}$-orbit cardinalities for $\inc^{ \rank(P)+ k+1}(P)$. Therefore, we may prove Theorems~\ref{thm:exceptionals} and~\ref{thm:propeller} by studying increasing tableaux instead of plane partitions. 
 %Denote the Cayley-Moufang shape by $P_{CM}$, the Freudenthal shape by $P_F$, and the propeller shape with $2p$ boxes ($p \geq 3$) by $P_p$. 
 
-By Proposition~\ref{prop:compressbijective}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined its period under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
+By Proposition~\ref{prop:deflation_commutation}, the $\pro$-orbit structure of increasing tableaux is controlled by the data of gapless increasing tableaux and binary vectors. But for any fixed $P$, $\incgl(P)$ is a finite set. Using a computer, we found all $549$ gapless increasing tableaux of shape $P_{CM}$, as well as all $624\, 493$ gapless increasing tableaux of shape $P_F$. For each such tableau $T \in \incgl^m(P_{CM})$ or $\incgl^m(P_F)$, we then determined its period under $\pro^m$ by direct calculation. These data are given in Table~\ref{tab:E6} for $P_{CM}$ and in Table \ref{tab:E7} for $P_F$. 
 
 \begin{table}[h]
 \begin{tabular}{|c|c|c|}
@@ -837,9 +837,9 @@ For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is
 (Here `$m \gg 0$' means $m \geq 2p$ for $P = P_p$, $m \geq 12$ for $P = P_{CM}$, and $m \geq 22$ for $P = P_F$.) For $m \in \lbrace 18,19,20, 21 \rbrace$, the period of $\pro^m$ on $\inc^m(P_F)$ is $m$.
 \end{theorem}
 \begin{proof}
-Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gapless tableau  divides its height ($m_T$). By Corollary~\ref{corr:pdbound}, this implies that for any $m$, the $\pro^m$-period of each tableau divides $m$. Clearly the period of $\pro^{12}$ on $\inc^{12}(P_{CM})$ is $12$, and whenever $m> 12$, it is possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(P_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$ (for example, by just considering $T \in \incgl^{12}(P_{CM})$ as a gappy tableau in $\inc^m(P_{CM})$). The analogous calculation for $P = P_p$ is easy by inspection of Table~\ref{tab:prop}.
+Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gapless tableau  divides its height ($m_T$). By Corollary~\ref{corr:pdbound}, this implies that for all $m$, the period of each tableau of height $m$ divides $m$. Clearly the period of $\pro^{12}$ on $\inc^{12}(P_{CM})$ is no less than $12$, and whenever $m> 12$, it is possible to find a tableau attaining period $m$ by taking a gapless tableau $T \in \incgl^{12}(P_{CM})$ with period $12$ and then inflating according to a content vector with $\Sigma^m$-period $m$ (for example, by just considering $T \in \incgl^{12}(P_{CM})$ as a gappy tableau in $\inc^m(P_{CM})$). The analogous calculation for $P = P_p$ is easy by inspection of Table~\ref{tab:prop}.
 
-The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$ and for every $m$, the period of each gapless tableaux of height $m_T$ divides $3m_T$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each (possibly gappy) tableau divides $3m$. When $m \geq 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$ (for example, by considering $T$ as a gappy tableau in $\inc^m(P_{CM})$).
+The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$ and for every $m$, the period of each gapless tableaux of height $m_T$ divides $3m_T$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each tableau of height $m$ divides $3m$. Clearly the period of $\pro^{22}$ on $\inc^{22}(P_{F})$ is no less than $66$, and when $m > 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$ (for example, by considering $T$ as a gappy tableau in $\inc^m(P_{CM})$).
 \end{proof}
 
 We will need the fact that the number of elements of $\binom{[i]}{j}$ of any fixed $\Sigma^i$-period is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
@@ -862,14 +862,14 @@ For specified $P \in \{P_p, P_{CM}, P_F\}$, we denote by $m_T\{i\}$, $\tau\{i\}$
 \begin{theorem}~\label{thm:mainresult}
 Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(P,m,d)$ be the number of increasing tableaux $T \in \inc^m(P)$ whose $\pro^m$-period divides $m/d$. Then,
 \begin{equation}\label{eq:mainresulteq} 
-\mathcal{R}(P,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{m_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,m_T}(\zeta^{m/d}).
+\mathcal{R}(P,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{m_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,m_T\{i\}}(\zeta^{m/d}).
 \end{equation}
 \end{theorem}
 \begin{proof}
 Proposition~\ref{prop:compressbijective} gives that a tableau $T \in \inc^m(P)$ corresponds bijectively to a pair consisting of a gapless tableau $U \in \incgl^{m_T}(P)$ and a content vector of length $m$ with $m_T$ ones. The table corresponding to $P$ enumerates all gapless tableaux. We iterate over the rows of the table and determine, for each row, how many content vectors yield tableaux in $\inc^m(P)$ whose periods divide $m/d$. 
 
 For each $i$, let $c\{i\} = m_T\{i\}/\tau\{i\}$. By Theorem~\ref{thm:periodthm}, a gapless tableau $U \in \incgl^{m_T\{i\}}(P)$ and a content vector $v$ with period $m\{i\}/d'$ inflate to a tableau $V$ of period \[ \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\gcd(\frac{m_T\{i\}}{d'},\frac{m_T\{i\}}{c\{i\}})} = \frac{\frac{m\{i\}}{d'} \frac{m_T\{i\}}{c\{i\}}}{\frac{m_T\{i\} \, \gcd(c\{i\},d')}{d' c\{i\}}} = \frac{m\{i\}}{\gcd(c\{i\},d')}. \] 
-Therefore, $V$ has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now, $d$ divides $d'$ if and only if the period of $v$ divides $m\{i\}/d$. But, by Theorem~\ref{thm:rsw}, the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ $1$s and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T}(\zeta^{m/d})$.
+Therefore, $V$ has period dividing $m\{i\}/d$ if and only if $d$ divides both $d'$ and $c\{i\}$. Now, $d$ divides $d'$ if and only if the period of $v$ divides $m\{i\}/d$. But, by Theorem~\ref{thm:rsw}, the number of content vectors of length $m\{i\}$ with $m_T\{i\}$ $1$s and with period dividing $m\{i\}/d$ is precisely $f_{m,m_T\{i\}}(\zeta^{m/d})$.
 \end{proof}
 
 The formula resulting from Theorem~\ref{thm:mainresult} is simple enough to check by hand. 
@@ -877,7 +877,7 @@ As in \cite[Proof of Theorem 7.1]{Reiner.Stanton.White}, we need the following e
 
 
 \begin{lemma}\label{lem:evalq}
-Let $\zeta$ be a primitive $N$th root of unity and let $d \divides N$. Then $[n]_{\zeta^{N/d}} = 0$ if and only if $n \equiv 0 \mod d$. Moreover, if $n_1 \equiv n_2 \mod d$, then 
+Let $\zeta$ be a primitive $N$th root of unity and let $d$ divide $N$. Then $[n]_{\zeta^{N/d}} = 0$ if and only if $d>1$ and $n \equiv 0 \mod d$. Moreover, if $n_1 \equiv n_2 \mod d$, then 
 \begin{equation}\label{eq:evalq}
 \pushQED{\qed}
 \lim \limits_{q \rightarrow \zeta^{N/d}} \frac{[n_1]_q}{[n_2]_q} = 
@@ -897,14 +897,14 @@ Since $f^{m-2p+1}_{P_p}(q)$ is, by definition, a polynomial, we clearly have $f^
 Thus, Lemma~\ref{lem:evalq} allows us to replace this ratio of polynomials with a ratio of integers by matching equivalence classes modulo $d$ in the numerator and denominator. We see that the numerator and denominator have the same multiset of equivalence classes modulo $d$. Pairing equivalent terms and using Lemma~\ref{lem:evalq}, we have
 \[ f_{P_p}^{m-2p+1}(\zeta^{m/d}) = \frac{(m-(2p-d)) \cdots  (m)}{(d) \cdots  (2p-d) p} = \frac{2p}{p}  \binom{m/d}{2p/d} = 2 \binom{m/d}{2p/d}.\]     
 
-An important special case allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is a primitive $i$th root of unity and $d$ divides $\gcd(i,j)$, then
+An important special case of Lemma~\ref{lem:evalq} allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is a primitive $i$th root of unity and $d$ divides $\gcd(i,j)$, then
 \begin{equation}~\label{eq:evalstraightshape}
 f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d)(i)}{(d)  (2d)  \cdots  (j-d) (j)}. 
 \end{equation}
 Equation~(\ref{eq:evalstraightshape}) holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
 
 
-\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $k$. Let $m = k+2p-1 = k + \rank(P_p)$ and suppose $d$ divides $m$. We have that \[ f^{m-2p+1}_{P_p}(q) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
+\begin{proof}[Proof of Theorem~\ref{thm:propeller}] Fix positive integers $p$ and $k$. Let $m = k+2p-1 = k + \rank(P_p) + 1$ and suppose $d$ divides $m$. We have that \[ f^{m-2p+1}_{P_p}(q) = \frac{[m]!_q [m-(p-1)]_q}{[2p-1]!_q [m-(2p-1)]!_q [p]_q }.\]  If $d = 1$, then by Theorem~\ref{thm:mainresult}, 
 \begin{align*}
  \mathcal{R}(P_p,m,d) = f_{m,2p-1}(1) + 2 \, f_{m,2p}(1) &= \binom{m}{2p-1} + 2 \binom{m}{2p} \\
  &= \frac{(2m-2p+2)m!}{(2p)!(m-2p+1)!} = f^{m-2p+1}_{P_p}(1),
@@ -926,7 +926,7 @@ Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
 That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
 %note that if you only look at the first 4 rows you don't tend to recover the symbolic expression of the cyclic sieving polynomial, because this requires a lot of terms that are zeroed out at low values.
 
-It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F)$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
+It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
 
 Suppose $T \in \inc^m(P_F)$ were fixed by $\pro^m$.  By Equation~\ref{eq:period}, the $\Sigma^m$-period of $\content^m(T)$ is $1$. Since $\content^m(T)$ is certainly not a vector of all $0$'s, it must therefore be a vector of all $1$'s. Hence, $m_T = m$ and $\deflate(T) = T$. Therefore, $T$ is gapless. However, Table~\ref{tab:E7} shows that no element of $\incgl^m(P_F)$ is fixed by $\pro^m$, for any $m \geq 22$, so such a $T$ does not exist.
 
@@ -937,7 +937,7 @@ Now, let $\zeta$ be a primitive $(3m)$th root of unity. By the above, Conjecture
 
 \begin{proof}[Proof of Theorem~\ref{thm:exceptionals}]
 Theorem~\ref{thm:F_bad} proves the $P_F$ cases. Hence, it remains to consider $P = P_{CM}$.
-Fix $k$ and let $m \coloneqq k +11   = k + \rank(P_{CM})$. 
+Fix $k$ and let $m \coloneqq k +11   = k + \rank(P_{CM}) + 1$. 
 
 By inspection of Table~\ref{tab:E6}, the possible values of $\ell\{i\} \coloneqq m_T\{i\}/\tau\{i\}$ are $1$, $11$, $2$, $4$, and $8$. Therefore, we will determine $\mathcal{R}(P_{CM},m,d)$ for each $d$ that divides at least one of these values. We will verify that this number matches the prediction given by $f^{m-11}_{CM}$ and Conjecture~\ref{conj:rush.shi}. For all other values of $d$, we have $\mathcal{R}(P_{CM},m,d) = 0$, so our final check will be that  $f^{m-11}_{CM}(\zeta^{m/d}) = 0$ in these cases.
 
