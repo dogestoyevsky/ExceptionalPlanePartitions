@@ -168,7 +168,7 @@ The \emph{minuscule posets} are a remarkable collection of partially-ordered set
 A special case is the set of ordinary plane partitions that fit inside a fixed rectangular box. In this context, P.~Cameron and D.~Fon-der-Flaass \cite{Cameron.Fonderflaass} initiated the study of a combinatorially-natural operator $\Psi$. This operator is now generally known as \emph{rowmotion} and has become a subject of intense study (cf., e.g., \cite{Panyushev,Striker.Williams,Armstrong.Stump.Thomas,Rush.Shi,Einstein.Propp,Propp.Roby,Grinberg.Roby:2,Grinberg.Roby:1,DPS,Vorland, Dilks.Striker.Vorland}).
 We will describe minuscule posets and the operation of rowmotion in Sections~\ref{sec:minuscule} and \ref{sec:rowmotion}, respectively.
 
-For any poset $P$, let $\pp^k(P)$ denote the set of plane partitions of height at most $k$ over $P$, or equivalently, the set of order ideals in the product $P \times {\bf k}$ of $P$ with a chain poset of size $k$. Let $f_P^k$ denote the generating function that enumerates the elements of $\pp^k(P)$  by cardinality, so 
+For any poset $P$, let $\pp^k(P)$ denote the set of plane partitions of height at most $k$ over $P$, or equivalently, the set of order ideals in the product $P \times {\bf k}$ of $P$ with a chain poset of length $k$. Let $f_P^k$ denote the generating function that enumerates the elements of $\pp^k(P)$  by cardinality, so 
 $f_P^k(q) \coloneqq \sum_{\mathcal{I} \in \pp^k(P)} q^{|\mathcal{I}|}.$ In the special case $k \leq 2$ and $P$ minuscule, D.~Rush and X.~Shi \cite{Rush.Shi} showed that $f_P^k$ also encodes the orbit structure of rowmotion via an instance of the {\bf cyclic sieving phenomenon} (introduced by V.~Reiner, D.~Stanton, and D.~White \cite{Reiner.Stanton.White}). Thus for $k \leq 2$, the number of minuscule plane partitions fixed by the $d$-fold application of rowmotion $\Psi^{\circ d}$ is the evaluation of the polynomial $f_P^k$ at $\zeta^d$, where $\zeta$ is any primitive $n$th root-of-unity and $n$ is the period of $\Psi$ on $\pp^k(P)$. (Since some of our other operators have superscripts in their names, we denote the $d$-fold composition of an operator $\tau$ by $\tau^{\circ d}$.)
 
 It was noted in \cite{Rush.Shi} that this instance of cyclic sieving does not extend to the case $k\geq 3$ for general minuscule posets.
@@ -339,7 +339,7 @@ R.~Proctor showed that every minuscule poset is Gaussian \cite{Proctor}. Indeed,
 		\ydiagram{3+5,5}
 		\caption{Propeller, $P_5$}
 	\end{subfigure}
-\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule poset, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. The propeller $P_p$ consists of two rows of length $p$, overlapping by two boxes in the center. The Cayley-Moufang and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
+\caption{Together with the two posets shown in Figure~\ref{fig:min_poset_E}, these are exemplars of all five families of minuscule posets, shown in Cartesian orientation. The elements of each poset are the boxes, and each box is covered by any box immediately above it or immediately to its right. Rectangles may have arbitrary height and width. Shifted staircases have arbitrary width, and height equal to their width. The propeller $P_p$ consists of two rows of length $p$, overlapping by two boxes in the center. The Cayley-Moufang and Freudenthal posets of Figure~\ref{fig:min_poset_E} are exceptional, forming singleton families.}\label{fig:min_poset}
 \end{figure}
 
 \section{The rowmotion operator $\Psi$}\label{sec:rowmotion}
@@ -357,7 +357,7 @@ Let $\lambda$ be an order ideal in a minuscule poset, considered as an generaliz
 \caption{A representative increasing tableau $T \in \inc^{23}(P_F)$.}\label{fig:inctab}
 \end{figure}
 
-From the combinatorics of $K$-theoretic Schubert calculus one obtains a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. We will define $\pro^m$ in Section~\ref{sec:interaction}. For a finite poset $P$, let $\rank(P)$ denote the size of the longest chain in $P$.
+From the combinatorics of $K$-theoretic Schubert calculus one obtains a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. We will define $\pro^m$ in Section~\ref{sec:interaction}. For a finite poset $P$, let $\rank(P)$ denote the length of the longest chain in $P$.
 
 \begin{proposition}
 Let $P \in \{ P_{CM}, P_F, P_p \}$ and $k \in \mathbb{Z}_{\geq 0}$.
@@ -698,7 +698,7 @@ as desired.
 \end{proof}
 
 The following corollary will allow us to determine the period of $\pro^m$ on $\inc^m(\lambda)$ in Section~\ref{sec:arithmetic}. 
-\\
+
 \begin{corollary}~\label{corr:pdbound}
 In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer such that $\tau$ divides $j m_T$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
 \end{corollary} 
@@ -820,7 +820,7 @@ $m_T$ & period ($\tau$) & number of orbits ($N$)\\
 
  
 We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$ and any $m$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
-\\
+
 \begin{theorem}~\label{thm:actualpdbound}
 For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is 
 \begin{itemize}
@@ -851,7 +851,6 @@ where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b 
 \end{theorem} 
 
 For specified $P \in \{P_p, P_{CM}, P_F\}$, we denote by $m_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
-\\
 
 \begin{theorem}~\label{thm:mainresult}
 Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(P,m,d)$ be the number of increasing tableaux $T \in \inc^m(P)$ whose $\pro^m$-period divides $m/d$. Then,
@@ -990,7 +989,9 @@ For the remaining cases $d \in \{3,5,6,7,9,10 \}$, it is similarly easy to check
 \end{proof}
 
 \section*{Acknowledgements}
-The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was supported by the Graduate Research Fellowship from the National Science Foundation. 
+The authors thank Julianna Tymoczko for introducing them to each other. OP was partially supported by a Mathematical Sciences Postdoctoral Research Fellowship from the National Science Foundation. HM was partially supported by a Graduate Research Fellowship from the National Science Foundation.
+
+This material is based upon work supported by the National Science Foundation Graduate Research Fellowship Program under Grant No. DGE-1752814. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
