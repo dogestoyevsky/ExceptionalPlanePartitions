@@ -699,12 +699,12 @@ as desired.
 
 The following corollary will allow us to determine the period of $\pro^m$ on $\inc^m(\lambda)$ in Section~\ref{sec:arithmetic}. 
 
-\begin{corollary}~\label{corr:pdbound}
+\begin{corollary}\label{corr:pdbound}
 In the notation of Theorem~\ref{thm:periodthm}, suppose $j$ is a positive integer such that $\tau$ divides $j m_T$. Then, the period $h$ of $\pro^m$ on $T$ divides $j m$. 
 \end{corollary} 
 \begin{proof}
 First, say $j m_T = \tau$. Then,
-\begin{equation}~\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell m_T}{m},\tau)} = \frac{\ell \cdot j m_T}{\text{gcd}(\frac{\ell m_T}{m},j m_T)} = \frac{\ell \cdot j m_T}{\frac{\ell m_T}{m}} = jm. 
+\begin{equation}\label{eq:pdbound} h=  \frac{\ell \tau}{\text{gcd}(\frac{\ell m_T}{m},\tau)} = \frac{\ell \cdot j m_T}{\text{gcd}(\frac{\ell m_T}{m},j m_T)} = \frac{\ell \cdot j m_T}{\frac{\ell m_T}{m}} = jm. 
 \end{equation}
 Now, say $\tau$ divides $jm_T$. Then, \[ \frac{\tau}{\text{gcd}(\frac{\ell m_T}{m},\tau)} \ \ \  \text{    divides   } \ \ \ \frac{j m_T}{\text{gcd}(\frac{\ell m_T}{m},j m_T)}.\] Thus, $h$ divides $j m$. 
 \end{proof}
@@ -819,9 +819,9 @@ $m_T$ & period ($\tau$) & number of orbits ($N$)\\
 \end{table}
 
  
-We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to completely determine the multiset of $\pro^m$-orbit cardinalities on set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$ and any $m$. These tables, along with Corollary~\ref{corr:pdbound}, immediately give the period of $\pro^m$.
+We will use Theorems~\ref{thm:periodthm} and~\ref{thm:rsw}, together with the data of Tables~\ref{tab:E6},~\ref{tab:E7}, and~\ref{tab:prop}, to determine the multiset of $\pro^m$-orbit cardinalities on set $\inc^m(P)$ for $P \in \{P_p, P_{CM}, P_F \}$ and any $m$. These tables and Corollary~\ref{corr:pdbound} immediately give the period of $\pro^m$.
 
-\begin{theorem}~\label{thm:actualpdbound}
+\begin{theorem}\label{thm:actualpdbound}
 For $m \gg 0$, the period of $\pro^m$ on $\inc^m(P)$ is 
 \begin{itemize}
 \item $m$ for $P = P_p$, 
@@ -852,7 +852,7 @@ where $[\ell]!_q \coloneqq \prod_{a=1}^\ell [a]_q$ and $[a]_q \coloneqq \sum_{b 
 
 For specified $P \in \{P_p, P_{CM}, P_F\}$, we denote by $m_T\{i\}$, $\tau\{i\}$, and $N\{i\}$ the $i$th element of the first, second, and third columns of the corresponding table, respectively. 
 
-\begin{theorem}~\label{thm:mainresult}
+\begin{theorem}\label{thm:mainresult}
 Fix $P \in \lbrace  P_p, P_{CM} \rbrace$, $m \gg 0$, and $d$ dividing $m$. Let $\mathcal{R}(P,m,d)$ be the number of increasing tableaux $T \in \inc^m(P)$ whose $\pro^m$-period divides $m/d$. Then,
 \begin{equation}\label{eq:mainresulteq} 
 \mathcal{R}(P,m,d)  = \sum \limits_{i: \, d \, \vert \, \frac{m_T\{i\}}{\tau\{i\}}} \tau\{i\} \, N\{i\} \, f_{m,m_T\{i\}}(\zeta^{m/d}).
@@ -890,7 +890,7 @@ Thus, Lemma~\ref{lem:evalq} allows us to replace this ratio of polynomials with 
 \[ f^{m-2p+1}_{P_p}(\zeta^{m/d}) = \frac{(m-2p+d)(m-2p+2d) \cdots  (m-d)(m)}{(d) (2d)\cdots  (2p-2d)(2p-d) p} = 2 \binom{m/d}{2p/d}.\]     
 
 An important special case of Lemma~\ref{lem:evalq} allows us to extend Theorem~\ref{thm:rsw}. We have that for any $i, j \in \mathbb{Z}_{> 0}$, if $\zeta$ is a primitive $i$th root of unity and $d$ divides $\gcd(i,j)$, then
-\begin{equation}~\label{eq:evalstraightshape}
+\begin{equation}\label{eq:evalstraightshape}
 f_{i,j}(\zeta^{i/d}) = \binom{i/d}{j/d} = \frac{(i-(j-d))(i-(j-2d)) \cdots  (i-d)(i)}{(d)  (2d)  \cdots  (j-d) (j)}. 
 \end{equation}
 Equation~(\ref{eq:evalstraightshape}) holds even when $j > i$, since in that case one of terms in the numerator is $0$. 
