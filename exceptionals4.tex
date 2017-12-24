@@ -361,11 +361,11 @@ From the combinatorics of $K$-theoretic Schubert calculus one obtains a $K$-prom
 
 \begin{proposition}
 Let $P \in \{ P_{CM}, P_F, P_p \}$ and $k \in \mathbb{Z}_{\geq 0}$.
-There is an equivariant bijection between $\inc^{k+\rank(P)}(P)$ under $K$-promotion and $J(P \times {\bf k})$ under $\Psi$.
+There is an equivariant bijection between $\inc^{k+\rank(P)+1}(P)$ under $K$-promotion and $J(P \times {\bf k})$ under $\Psi$.
 \end{proposition}
 \begin{proof}
 By \cite[Corollary~5.2]{Dilks.Striker.Vorland}, there is an equivariant bijection between the sets $\inc^{k+\rank(P)}(P)$ under $K$-promotion and $J(\Gamma_1(P,k+\rank(P)))$  under $\Psi$, where $\Gamma_1(P,k+\rank(P))$ is an auxilliary poset constructed from $P$ in \cite[\textsection 3.1]{Dilks.Striker.Vorland}.
-For any $\x \in P$, note that the maximal length of a chain through $\x$ is independent of $\x$. (Specifically, this maximal length is $\rank(P)$; we have $\rank(P_{CM}) = 11$, $\rank(P_F)= 17$, and $\rank(P_p) = 2p-1$.)
+For any $\x \in P$, note that the maximal length of a chain through $\x$ is independent of $\x$. (Specifically, this maximal length is $\rank(P)$; we have $\rank(P_{CM}) = 10$, $\rank(P_F)= 16$, and $\rank(P_p) = 2p-2$.)
 Hence \cite[Corollary~3.28]{Dilks.Striker.Vorland} applies, and in these cases we have the isomorphism of posets $\Gamma_1(P,k+\rank(P)) \cong P \times {\bf k}$.
 \end{proof}
 
@@ -427,7 +427,7 @@ by
 \[
 \tinflate^m(S,v) = \inflate^m_v \circ S.
 \]
-Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective onto $[n]$ and $\inflate^m_v$ maps $[n]$ onto the indices of nonzero components in $v$, $\content^m \circ \tinflate^m(S,v) = v$.  Also,
+Say $(S,v) \in \incgl^n(\lambda) \times \binom{[m]}{n}$. Since $S$ is surjective onto $[n]$ and $\inflate^m_v$ maps $[n]$ onto the indices of nonzero components in $v$, $\content^m (\tinflate^m(S,v)) = v$.  Also,
 \begin{align*}
  [\deflate^m(\inflate^m_v  \circ S)](\x) &= \# \{ h \in \mathrm{range}(\inflate^m_v \circ S): h \leq \inflate^m_v \circ S(\x) \} \\  
  &= \# \{ h: v\{h\} \neq 0 \text{ and } \sum_{\ell = 1}^h v\{\ell\} \leq S(\x)  \} \\
