@@ -168,7 +168,7 @@ The \emph{minuscule posets} are a remarkable collection of partially-ordered set
 A special case is the set of ordinary plane partitions that fit inside a fixed rectangular box. In this context, P.~Cameron and D.~Fon-der-Flaass \cite{Cameron.Fonderflaass} initiated the study of a combinatorially-natural operator $\Psi$. This operator is now generally known as \emph{rowmotion} and has become a subject of intense study (cf., e.g., \cite{Panyushev,Striker.Williams,Armstrong.Stump.Thomas,Rush.Shi,Einstein.Propp,Propp.Roby,Grinberg.Roby:2,Grinberg.Roby:1,DPS,Vorland, Dilks.Striker.Vorland}).
 We will describe minuscule posets and the operation of rowmotion in Sections~\ref{sec:minuscule} and \ref{sec:rowmotion}, respectively.
 
-For any poset $P$, let $\pp^k(P)$ denote the set of plane partitions of height at most $k$ over $P$, or equivalently, the set of order ideals in the product $P \times {\bf k}$ of $P$ with a chain poset of length $k$. Let $f_P^k$ denote the generating function that enumerates the elements of $\pp^k(P)$  by cardinality, so 
+For any poset $P$, let $\pp^k(P)$ denote the set of plane partitions of height at most $k$ over $P$, or equivalently, the set of order ideals in the product $P \times {\bf k}$ of $P$ with a chain poset of size $k$. Let $f_P^k$ denote the generating function that enumerates the elements of $\pp^k(P)$  by cardinality, so 
 $f_P^k(q) \coloneqq \sum_{\mathcal{I} \in \pp^k(P)} q^{|\mathcal{I}|}.$ In the special case $k \leq 2$ and $P$ minuscule, D.~Rush and X.~Shi \cite{Rush.Shi} showed that $f_P^k$ also encodes the orbit structure of rowmotion via an instance of the {\bf cyclic sieving phenomenon} (introduced by V.~Reiner, D.~Stanton, and D.~White \cite{Reiner.Stanton.White}). Thus for $k \leq 2$, the number of minuscule plane partitions fixed by the $d$-fold application of rowmotion $\Psi^{\circ d}$ is the evaluation of the polynomial $f_P^k$ at $\zeta^d$, where $\zeta$ is any primitive $n$th root-of-unity and $n$ is the period of $\Psi$ on $\pp^k(P)$. (Since some of our other operators have superscripts in their names, we denote the $d$-fold composition of an operator $\tau$ by $\tau^{\circ d}$.)
 
 It was noted in \cite{Rush.Shi} that this instance of cyclic sieving does not extend to the case $k\geq 3$ for general minuscule posets.
@@ -357,7 +357,7 @@ Let $\lambda$ be an order ideal in a minuscule poset, considered as an generaliz
 \caption{A representative increasing tableau $T \in \inc^{23}(P_F)$.}\label{fig:inctab}
 \end{figure}
 
-From the combinatorics of $K$-theoretic Schubert calculus one obtains a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. We will define $\pro^m$ in Section~\ref{sec:interaction}. For a finite poset $P$, let $\rank(P)$ denote the length of the longest chain in $P$. Our rank function is one less than the rank function defined in \cite{Dilks.Striker.Vorland}. 
+From the combinatorics of $K$-theoretic Schubert calculus one obtains a $K$-promotion operator $\pro^m$ on $\inc^m(\lambda)$ that directly extends M.-P.~Sch\"utzenberger's classical definition of promotion \cite{Schutzenberger:promotion}. We will define $\pro^m$ in Section~\ref{sec:interaction}. For a finite poset $P$, let $\rank(P)$ denote the length of the longest chain in $P$. (This is one less than the definition of $\rank$ in \cite{Dilks.Striker.Vorland}.) 
 
 \begin{proposition}
 Let $P \in \{ P_{CM}, P_F, P_p \}$ and $k \in \mathbb{Z}_{\geq 0}$.
@@ -915,7 +915,7 @@ The verification for $P = P_{CM}$ is similarly straightforward. Before carrying 
 Conjecture~\ref{conj:rush.shi} holds for $P_F$ only when $k \leq 4$.
 \end{theorem}
 \begin{proof}
-That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and Theorem~\ref{thm:mainresult}.
+That Conjecture~\ref{conj:rush.shi} holds for $P_F$ in the case $k \leq 4$ can be checked numerically using Table~\ref{tab:E7} and the proof of Theorem~\ref{thm:mainresult}.
 
 It remains to show that the conjecture fails for $k \geq 5$. Hence, let $m \geq 22 = 5 +  \rank(P_F) + 1$. By Theorem~\ref{thm:actualpdbound}, $\pro^m$ has period $3m$ on $\inc^m(P_F)$. 
 
