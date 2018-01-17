@@ -112,6 +112,8 @@
 \newcommand{\content}{\ensuremath{\mathsf{Con}}}
 \newcommand{\compress}{\ensuremath{\mathsf{DeflCon}}}
 
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+
 \newcommand{\uu}{\mathcal{I}}
 
 \begin{document}
@@ -835,6 +837,21 @@ Inspecting Table~\ref{tab:E6} shows that, for $P_{CM}$, the period of each gaple
 
 The argument is identical for $P = P_F$ when $m \in \lbrace 18,19,20, 21 \rbrace$, but when $m \geq 22$, we do not have that the period of each gapless tableau divides its height. However, inspecting Table~\ref{tab:E7} shows that, for $P_F$ and for every $m$, the period of each gapless tableaux of height $m_T$ divides $3m_T$. Therefore, Corollary~\ref{corr:pdbound} gives that for every $m$, the period of each tableau of height $m$ divides $3m$. Clearly the period of $\pro^{22}$ on $\inc^{22}(P_{F})$ is no less than $66$, and when $m > 22$, it is possible to find a tableau attaining period $3m$ by taking a gapless tableau  $T \in \incgl^{22}(P_F)$ with period $66$ and inflating according to a content vector of $\Sigma^m$-period $m$ (for example, by considering $T$ as a gappy tableau in $\inc^m(P_{CM})$).
 \end{proof}
+
+\begin{remark}
+It seems that the crux of the failure of Conjecture~\ref{conj:rush.shi} for $P_F$ is this fact that the period of $\pro^m$ on $\inc^m(P_F)$ is generally $3m$ rather than $m$. It is therefore interesting to consider the internal structure of those gapless tableaux $T \in \inc^m(P_F)$ with $\pro^m$-period strictly greater than $m$. We show one such example in Figure~\ref{fig:75}.
+\end{remark}
+
+\begin{figure}[ht]
+\[
+\begin{tikzpicture}
+\node (T) {\Scale[0.75]{\ytableaushort{\none \none \none \none \none \none \none \none {25},\none \none \none \none \none \none \none \none {24},\none \none \none \none \none \none \none \none {23}, \none \none \none \none \none \none \none {21} {22}, \none \none \none \none {12} {15} {18} {20} {21}, \none \none \none \none {10} {14} {16} {17} {19}, \none \none \none \none 9 {13} {14}, \none \none \none 5 8 {11}, 123467}}};
+\node[right = 1 of T] (proT) {\Scale[0.75]{\ytableaushort{\none \none \none \none \none \none \none \none {25},\none \none \none \none \none \none \none \none {24},\none \none \none \none \none \none \none \none {23}, \none \none \none \none \none \none \none {21} {22}, \none \none \none \none {12} {15} {18} {20} {21}, \none \none \none \none {10} {*(pink) 13} {16} {17} {19}, \none \none \none \none 9 {*(pink) 11} {14}, \none \none \none 5 8 {*(pink) 9}, 123467}}};
+\path (T) edge[pil, color=black,shorten >=-1.7cm] node[above right]{$(\pro^{25})^{\circ 25}$}  (proT);
+\end{tikzpicture}
+\]
+\caption{An increasing tableau $T \in\inc^{25}(P_F)$ together with its $25$-fold promotion $U = (\pro^{25})^{\circ 25}(T)$. In pink, we have marked the boxes where the entries of $T$ and $U$ differ. It can be computed that the $\pro^{25}$-period of $T$ is actually $75$.}\label{fig:75}
+\end{figure}
 
 We will need the fact that the number of elements of $\binom{[i]}{j}$ of any fixed $\Sigma^i$-period is given explicitly by \cite[Theorem~1.1(b)]{Reiner.Stanton.White}:
 \begin{theorem}[Reiner, Stanton, and White]\label{thm:rsw}
